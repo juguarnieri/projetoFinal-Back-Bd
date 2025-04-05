@@ -25,10 +25,27 @@ const getAllVideos = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar vídeos" });
     }
 };
+const getVideosByCategory = async (table, category) => {
+    const result = await pool.query(
+        `SELECT * FROM ${table} WHERE category ILIKE $1`,
+        [category]
+    );
+    return result.rows;
+};
+const getByCategory = async (req, res) => {
+    const { category } = req.params;
 
+    try {
+        const videos = await getVideosByCategory("videos", category);
+        res.json(videos);
+    } catch (err) {
+        console.error("Erro ao buscar vídeos por categoria:", err);
+        res.status(500).json({ error: "Erro ao buscar vídeos por categoria" });
+    }
+};
 
 module.exports = {
     getAllVideos,
-    //getByCategory,
+    getByCategory,
     createVideo
 };
