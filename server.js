@@ -1,15 +1,16 @@
 require("dotenv").config();
 const express = require("express");
-const cors = require("cors");
-//const wizardRoutes = require("./src/routes/wizardRoutes");
-//const houseRoutes = require("./src/routes/houseRoutes");
+const userRoutes = require("./src/Routes/userRoutes");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-//app.use("/api/wizards", wizardRoutes);
-//app.use("/api/houses", houseRoutes);
+app.use("/api/users", userRoutes);
+
+app.get("/", (req, res) => {
+    res.send("🚀 API funcionando com Users, Posts, Comments, News, Videos e Podcasts!");
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
