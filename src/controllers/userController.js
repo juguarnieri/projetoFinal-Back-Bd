@@ -56,14 +56,22 @@ const unfollowUser = async (req, res) => {
         res.status(500).json({ error: "Erro ao deixar de seguir" });
     }
 };
-
+const getAllUsers = async (req, res) => {
+    try {
+        const users = await User.findAll();
+        res.json(users);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao buscar usuários" });
+    }
+};
 
 module.exports = {
     createUser,
     getUserProfile,
     followUser,
     unfollowUser,
-    //getAllUsers,  
+    getAllUsers,  
     //updateUser,
     //listFollowers,
     //listFollowing

@@ -11,6 +11,10 @@ const findById = async (id) => {
     const result = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
     return result.rows[0];
 };
+const findAll = async () => {
+    const result = await pool.query("SELECT * FROM users");
+    return result.rows;
+};
 const countFollowers = async (userId) => {
     const result = await pool.query(
         "SELECT COUNT(*) FROM followers WHERE following_id = $1",
@@ -64,7 +68,7 @@ const isAlreadyFollowing = async (userId, targetId) => {
 module.exports = {
     create,
     findById,
-    //findAll,
+    findAll,
     //update,
     follow,
     unfollow,
