@@ -1,12 +1,14 @@
 require("dotenv").config();
 const express = require("express");
-const userRoutes = require("./src/Routes/userRoutes");
+const userRoutes = require("./src/routes/userRoutes");
+const postRoutes = require("./src/routes/postRoutes");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
 
 app.get("/", (req, res) => {
     res.send("🚀 API funcionando com Users, Posts, Comments, News, Videos e Podcasts!");
