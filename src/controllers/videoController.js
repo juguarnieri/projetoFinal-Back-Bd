@@ -16,9 +16,19 @@ const createVideo = async (req, res) => {
         res.status(500).json({ error: "Erro ao criar vídeo", details: err.message });
     }
 };
+const getAllVideos = async (req, res) => {
+    try {
+        const videos = await Video.findAll();
+        res.json(videos);
+    } catch (err) {
+        console.error("Erro ao buscar vídeos:", err);
+        res.status(500).json({ error: "Erro ao buscar vídeos" });
+    }
+};
+
 
 module.exports = {
-    //getAllVideos,
+    getAllVideos,
     //getByCategory,
     createVideo
 };
