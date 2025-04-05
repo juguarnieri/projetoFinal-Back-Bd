@@ -22,12 +22,50 @@ const getCommentsByPost = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar comentários" });
     }
 };
+const updateComment = async (req, res) => {
+    const { id } = req.params;
+    const { content } = req.body;
+
+    try {
+        const updated = await commentModel.updateComment(id, content);
+        if (!updated) return res.status(404).json({ error: "Comentário não encontrado" });
+        res.json(updated);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao atualizar comentário" });
+    }
+};
+const deleteComment = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const deleted = await commentModel.deleteComment(id);
+        if (!deleted) return res.status(404).json({ error: "Comentário não encontrado" });
+        res.json({ message: "Comentário deletado com sucesso" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao deletar comentário" });
+    }
+};
+const getCommentById = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const comment = await commentModel.getCommentById(id);
+        if (!comment) return res.status(404).json({ error: "Comentário não encontrado" });
+        res.json(comment);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao buscar comentário" });
+    }
+};
+
 
 module.exports = {
     createComment,
     getCommentsByPost,
-    //updateComment,
-    //deleteComment,
-    //getCommentById
+    updateComment,
+    deleteComment,
+    getCommentById
     
 };

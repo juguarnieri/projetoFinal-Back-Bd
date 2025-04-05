@@ -18,11 +18,36 @@ const getCommentsByPost = async (post_id) => {
     );
     return result.rows;
 };
+const getCommentById = async (id) => {
+    const result = await pool.query(
+        `SELECT c.id, c.content, c.created_at, u.username
+         FROM comments c
+         JOIN users u ON c.user_id = u.id
+         WHERE c.id = $1`,
+        [id]
+    );
+    return result.rows[0];
+};
+
+const updateComment = async (id, content) => {
+    const result = await pool.query(
+        "UPDATE comments SET content = $1 WHERE id = $2 RETURNING *",
+        [content, id]
+    );
+    return result.rows[0];
+};
+const deleteComment = async (id) => {
+    const result = await pool.query(
+        "DELETE FROM comments WHERE id = $1 RETURNING *",
+        [id]
+    );
+    return result.rows[0];
+};
 
 module.exports = {
     createComment,
     getCommentsByPost,
-    //updateComment,
-    //deleteComment,
-    //getCommentById
+    updateComment,
+    deleteComment,
+    getCommentById
 };
