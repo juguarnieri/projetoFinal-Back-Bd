@@ -65,11 +65,22 @@ const isAlreadyFollowing = async (userId, targetId) => {
     return result.rowCount > 0;
 };
 
+const update = async (id, { username, name, profile_picture }) => {
+    const result = await pool.query(
+        `UPDATE users 
+         SET username = $1, name = $2, profile_picture = $3
+         WHERE id = $4 
+         RETURNING *`,
+        [username, name, profile_picture, id]
+    );
+    return result.rows[0];
+};
+
 module.exports = {
     create,
     findById,
     findAll,
-    //update,
+    update,
     follow,
     unfollow,
     countFollowers,

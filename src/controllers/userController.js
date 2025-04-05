@@ -65,6 +65,23 @@ const getAllUsers = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar usuários" });
     }
 };
+const updateUser = async (req, res) => {
+    const { id } = req.params;
+    const { username, name, profile_picture } = req.body;
+
+    try {
+        const updatedUser = await User.update(id, { username, name, profile_picture });
+        if (!updatedUser) return res.status(404).json({ error: "Usuário não encontrado" });
+
+        res.json({
+            message: "✅ Usuário atualizado com sucesso!",
+            user: updatedUser
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao atualizar usuário" });
+    }
+};
 
 module.exports = {
     createUser,
@@ -72,7 +89,7 @@ module.exports = {
     followUser,
     unfollowUser,
     getAllUsers,  
-    //updateUser,
+    updateUser,
     //listFollowers,
     //listFollowing
 };
