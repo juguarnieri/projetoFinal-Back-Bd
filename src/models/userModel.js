@@ -96,6 +96,19 @@ const getFollowingList = async (userId) => {
     );
     return result.rows;
 };
+const deleteUser = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const deletedUser = await User.remove(id);
+        if (!deletedUser) return res.status(404).json({ error: "Usuário não encontrado" });
+
+        res.json({ message: "Usuário deletado com sucesso", user: deletedUser });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao deletar usuário" });
+    }
+};
 
 module.exports = {
     create,
@@ -110,4 +123,5 @@ module.exports = {
     getFollowersList,
     getFollowingList,
     isAlreadyFollowing,
+    deleteUser,
 };

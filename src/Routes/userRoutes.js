@@ -10,5 +10,6 @@ router.get("/", userController.getAllUsers);
 router.put("/:id", userController.updateUser);
 router.get("/:id/followers", userController.listFollowers);
 router.get("/:id/following", userController.listFollowing);
+router.delete("/:id", userController.deleteUser);
 
 module.exports = router;

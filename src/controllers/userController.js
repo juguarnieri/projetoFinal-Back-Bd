@@ -103,6 +103,14 @@ const listFollowing = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar seguindo" });
     }
 };
+const remove = async (id) => {
+    const result = await pool.query(
+        "DELETE FROM users WHERE id = $1 RETURNING *",
+        [id]
+    );
+    return result.rows[0];
+};
+
 
 module.exports = {
     createUser,
@@ -112,5 +120,6 @@ module.exports = {
     getAllUsers,  
     updateUser,
     listFollowers,
-    listFollowing
+    listFollowing,
+    remove
 };
