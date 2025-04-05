@@ -22,11 +22,34 @@ const getUserPosts = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar posts do usuário" });
     }
 };
+const likePost = async (req, res) => {
+    const { postId, userId } = req.params;
+
+    try {
+        await postModel.like(userId, postId);
+        res.json({ message: "Post curtido com sucesso" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao curtir post" });
+    }
+};
+
+const unlikePost = async (req, res) => {
+    const { postId, userId } = req.params;
+
+    try {
+        await postModel.unlike(userId, postId);
+        res.json({ message: "Curtida removida com sucesso" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao remover curtida" });
+    }
+};
 
 module.exports = {
     createPost,
     getUserPosts,
-    //likePost,
-    //unlikePost,
+    likePost,
+    unlikePost,
     //getLikesCount,
 };

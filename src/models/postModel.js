@@ -11,12 +11,26 @@ const findByUser = async (user_id) => {
     const result = await pool.query("SELECT * FROM posts WHERE user_id = $1", [user_id]);
     return result.rows;
 };
+const like = async (user_id, post_id) => {
+    try {
+        await pool.query(
+            "INSERT INTO likes (user_id, post_id) VALUES ($1, $2) ON CONFLICT DO NOTHING",
+            [user_id, post_id]
+        );
+    } catch (err) {
+        console.error("Erro ao curtir:", err);
+        throw err;
+    }
+};
+const unlike = async (user_id, post_id) => {
+    await pool.query("DELETE FROM likes WHERE user_id = $1 AND post_id = $2", [user_id, post_id]);
+};
 
 
 module.exports = {
     create,
     findByUser,
-    //like,
-    //unlike,
+    like,
+    unlike,
     //countLikes,
 };
