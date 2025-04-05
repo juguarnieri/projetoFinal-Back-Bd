@@ -5,6 +5,7 @@ const postRoutes = require("./src/routes/postRoutes");
 const commentRoutes = require("./src/routes/commentRoutes");
 const newsRoutes = require("./src/routes/newsRoutes");  
 const podcastRoutes = require("./src/routes/podcastRoutes"); 
+const videoRoutes = require("./src/routes/videosRoutes");   
 
 const app = express();
 app.use(cors());
@@ -15,6 +16,7 @@ app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/news", newsRoutes);   
 app.use("/api/podcasts", podcastRoutes);
+app.use("/api/videos", videoRoutes); 
 
 app.get("/", (req, res) => {
     res.send("🚀 API funcionando com Users, Posts, Comments, News, Videos e Podcasts!");
