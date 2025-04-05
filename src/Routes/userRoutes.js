@@ -3,7 +3,7 @@ const router = express.Router();
 const userController = require("../controllers/userController");
 
 router.post("/", userController.createUser);
-//router.get("/:id", userController.getUserProfile);
+router.get("/:id", userController.getUserProfile);
 //router.post("/:id/follow/:targetId", userController.followUser);
 //router.delete("/:id/unfollow/:targetId", userController.unfollowUser);
 //router.get("/", userController.getAllUsers);
