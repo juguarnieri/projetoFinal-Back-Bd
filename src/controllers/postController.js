@@ -45,11 +45,22 @@ const unlikePost = async (req, res) => {
         res.status(500).json({ error: "Erro ao remover curtida" });
     }
 };
+const getLikesCount = async (req, res) => {
+    const { postId } = req.params;
+
+    try {
+        const count = await postModel.countLikes(postId);
+        res.json({ likes: count }); 
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao contar curtidas" });
+    }
+};
 
 module.exports = {
     createPost,
     getUserPosts,
     likePost,
     unlikePost,
-    //getLikesCount,
+    getLikesCount,
 };

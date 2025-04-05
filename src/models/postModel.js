@@ -25,6 +25,14 @@ const like = async (user_id, post_id) => {
 const unlike = async (user_id, post_id) => {
     await pool.query("DELETE FROM likes WHERE user_id = $1 AND post_id = $2", [user_id, post_id]);
 };
+const countLikes = async (post_id) => {
+    const result = await pool.query(
+        "SELECT COUNT(*) FROM likes WHERE post_id = $1",
+        [post_id]
+    );
+    return parseInt(result.rows[0].count);
+};
+
 
 
 module.exports = {
@@ -32,5 +40,5 @@ module.exports = {
     findByUser,
     like,
     unlike,
-    //countLikes,
+    countLikes,
 };
