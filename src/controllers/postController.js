@@ -62,5 +62,5 @@ module.exports = {
     getUserPosts,
     likePost,
     unlikePost,
-    getLikesCount,
+    getLikesCount
 };

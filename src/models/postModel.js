@@ -40,5 +40,5 @@ module.exports = {
     findByUser,
     like,
     unlike,
-    countLikes,
+    countLikes
 };

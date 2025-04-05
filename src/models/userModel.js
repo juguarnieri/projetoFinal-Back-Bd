@@ -123,5 +123,5 @@ module.exports = {
     getFollowersList,
     getFollowingList,
     isAlreadyFollowing,
-    deleteUser,
+    deleteUser
 };
