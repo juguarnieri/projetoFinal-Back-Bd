@@ -11,10 +11,21 @@ const createComment = async (req, res) => {
         res.status(500).json({ error: "Erro ao criar comentário" });
     }
 };
+const getCommentsByPost = async (req, res) => {
+    const { postId } = req.params;
+
+    try {
+        const comments = await commentModel.getCommentsByPost(postId);
+        res.json(comments);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao buscar comentários" });
+    }
+};
 
 module.exports = {
     createComment,
-    //getCommentsByPost,
+    getCommentsByPost,
     //updateComment,
     //deleteComment,
     //getCommentById
