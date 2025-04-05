@@ -8,7 +8,7 @@ router.get("/post/:postId", commentController.getCommentsByPost);
 router.get("/:id", commentController.getCommentById);
 router.put("/:id", commentController.updateComment);
 router.delete("/:id", commentController.deleteComment);
-router.get("/post/:postId/count", commentController.countComments);
+router.get("/post/:postId/count", commentController.getCommentsCount);
 
 
 module.exports = router;

@@ -70,6 +70,18 @@ const countComments = async (req, res) => {
         res.status(500).json({ error: "Erro ao contar comentários" });
     }
 };
+const getCommentsCount = async (req, res) => {
+    const { postId } = req.params;
+
+    try {
+        const count = await commentModel.countCommentsByPost(postId);
+        res.json({ totalComments: count });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao contar comentários" });
+    }
+};
+
 
 module.exports = {
     createComment,
@@ -77,5 +89,6 @@ module.exports = {
     updateComment,
     deleteComment,
     getCommentById,
-    countComments    
+    countComments, 
+    getCommentsCount
 };
