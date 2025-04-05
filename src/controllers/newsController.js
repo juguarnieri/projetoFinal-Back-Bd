@@ -15,9 +15,18 @@ const createNews = async (req, res) => {
         res.status(500).json({ error: "Erro ao criar notícia", details: err.message });
     }
 };
+const getAllNews = async (req, res) => {
+    try {
+        const news = await News.findAll();
+        res.json(news);
+    } catch (err) {
+        console.error("Erro ao buscar notícias:", err);
+        res.status(500).json({ error: "Erro ao buscar notícias" });
+    }
+};
 
 module.exports = {
-    //getAllNews,
+    getAllNews,
     //getByCategory,
     createNews
 };

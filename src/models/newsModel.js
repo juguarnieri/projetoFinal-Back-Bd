@@ -7,3 +7,18 @@ const create = async ({ title, description, link, image, category }) => {
     );
     return result.rows[0];
 };
+const getAll = async () => {
+    const result = await pool.query("SELECT * FROM news ORDER BY created_at DESC");
+    return result.rows;
+};
+const findAll = async () => {
+    const result = await pool.query("SELECT * FROM news ORDER BY created_at DESC");
+    return result.rows;
+};
+
+module.exports = {
+    getAll,
+    //getByCategory,
+    create,
+    findAll
+};
