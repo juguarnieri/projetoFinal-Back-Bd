@@ -28,12 +28,41 @@ const getUserProfile = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar perfil" });
     }
 };
+const followUser = async (req, res) => {
+    const { id, targetId } = req.params;
+    if (id === targetId) return res.status(400).json({ error: "Você não pode seguir a si mesmo" });
+
+    try {
+        await User.follow(id, targetId);
+        res.json({ message: "Usuário seguido com sucesso" });
+    } catch (err) {
+        if (err.message.includes("já está seguindo")) {
+            return res.status(400).json({ error: err.message });
+        }
+
+        console.error(err);
+        res.status(500).json({ error: "Erro ao seguir usuário" });
+    }
+};
+
+const unfollowUser = async (req, res) => {
+    const { id, targetId } = req.params;
+
+    try {
+        await User.unfollow(id, targetId);
+        res.json({ message: "Deixou de seguir com sucesso" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao deixar de seguir" });
+    }
+};
+
 
 module.exports = {
     createUser,
     getUserProfile,
-    //followUser,
-    //unfollowUser,
+    followUser,
+    unfollowUser,
     //getAllUsers,  
     //updateUser,
     //listFollowers,

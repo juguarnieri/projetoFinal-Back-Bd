@@ -18,7 +18,6 @@ const countFollowers = async (userId) => {
     );
     return parseInt(result.rows[0].count);
 };
-
 const countFollowing = async (userId) => {
     const result = await pool.query(
         "SELECT COUNT(*) FROM followers WHERE follower_id = $1", 
@@ -37,18 +36,42 @@ const countLikes = async (userId) => {
     );
     return parseInt(result.rows[0].count);
 };
+const follow = async (userId, targetId) => {
+    const alreadyFollowing = await isAlreadyFollowing(userId, targetId);
+    if (alreadyFollowing) {
+        throw new Error("Usuário já está seguindo este perfil.");
+    }
+
+    await pool.query(
+        "INSERT INTO followers (follower_id, following_id) VALUES ($1, $2)",
+        [userId, targetId]
+    );
+};
+const unfollow = async (userId, targetId) => {
+    await pool.query(
+        "DELETE FROM followers WHERE follower_id = $1 AND following_id = $2", 
+        [userId, targetId]
+    );
+};
+const isAlreadyFollowing = async (userId, targetId) => {
+    const result = await pool.query(
+        "SELECT 1 FROM followers WHERE follower_id = $1 AND following_id = $2",
+        [userId, targetId]
+    );
+    return result.rowCount > 0;
+};
 
 module.exports = {
     create,
     findById,
     //findAll,
     //update,
-    //follow,
-    //unfollow,
+    follow,
+    unfollow,
     countFollowers,
     countFollowing,
     countLikes,
     //getFollowersList,
     //getFollowingList,
-    //isAlreadyFollowing,
+    isAlreadyFollowing,
 };
