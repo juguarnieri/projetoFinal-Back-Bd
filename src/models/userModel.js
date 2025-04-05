@@ -75,6 +75,27 @@ const update = async (id, { username, name, profile_picture }) => {
     );
     return result.rows[0];
 };
+const getFollowersList = async (userId) => {
+    const result = await pool.query(
+        `SELECT u.id, u.username, u.name, u.profile_picture
+         FROM followers f
+         JOIN users u ON u.id = f.follower_id
+         WHERE f.following_id = $1`,
+        [userId]
+    );
+    return result.rows;
+};
+
+const getFollowingList = async (userId) => {
+    const result = await pool.query(
+        `SELECT u.id, u.username, u.name, u.profile_picture
+         FROM followers f
+         JOIN users u ON u.id = f.following_id
+         WHERE f.follower_id = $1`,
+        [userId]
+    );
+    return result.rows;
+};
 
 module.exports = {
     create,
@@ -86,7 +107,7 @@ module.exports = {
     countFollowers,
     countFollowing,
     countLikes,
-    //getFollowersList,
-    //getFollowingList,
+    getFollowersList,
+    getFollowingList,
     isAlreadyFollowing,
 };

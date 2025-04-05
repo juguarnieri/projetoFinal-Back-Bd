@@ -82,6 +82,27 @@ const updateUser = async (req, res) => {
         res.status(500).json({ error: "Erro ao atualizar usuário" });
     }
 };
+const listFollowers = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const followers = await User.getFollowersList(id); 
+        res.json(followers);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao buscar seguidores" });
+    }
+};
+
+const listFollowing = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const following = await User.getFollowingList(id); 
+        res.json(following);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao buscar seguindo" });
+    }
+};
 
 module.exports = {
     createUser,
@@ -90,6 +111,6 @@ module.exports = {
     unfollowUser,
     getAllUsers,  
     updateUser,
-    //listFollowers,
-    //listFollowing
+    listFollowers,
+    listFollowing
 };
