@@ -16,10 +16,16 @@ const getAll = async () => {
     const result = await pool.query("SELECT * FROM podcasts ORDER BY created_at DESC");
     return result.rows;
 };
-
+const getByCategory = async (category) => {
+    const result = await pool.query(
+        "SELECT * FROM podcasts WHERE category = $1 ORDER BY created_at DESC",
+        [category]
+    );
+    return result.rows;
+};
 module.exports = {
     getAll,
-    //getByCategory,
+    getByCategory,
     create,
     findAll
 };
