@@ -11,10 +11,21 @@ const createPost = async (req, res) => {
         res.status(500).json({ error: "Erro ao criar post" });
     }
 };
+const getUserPosts = async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+        const posts = await postModel.findByUser(userId);
+        res.json(posts);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao buscar posts do usuário" });
+    }
+};
 
 module.exports = {
     createPost,
-    //getUserPosts,
+    getUserPosts,
     //likePost,
     //unlikePost,
     //getLikesCount,

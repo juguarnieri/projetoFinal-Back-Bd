@@ -7,10 +7,15 @@ const create = async ({ user_id, title, caption, media_url }) => {
     );
     return result.rows[0];
 };
+const findByUser = async (user_id) => {
+    const result = await pool.query("SELECT * FROM posts WHERE user_id = $1", [user_id]);
+    return result.rows;
+};
+
 
 module.exports = {
     create,
-    //findByUser,
+    findByUser,
     //like,
     //unlike,
     //countLikes,
