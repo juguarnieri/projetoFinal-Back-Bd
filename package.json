@@ -1,0 +1,29 @@
+{
+  "name": "projeto-final-back-bd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+
+  },
+  "keywords": [
+    "express",
+    "node",
+    "postgresql",
+    "api",
+    "cors",
+    "dotenv",
+    "nodemon",
+    "pg",
+    "pg-pool",
+    "projetoFinal",
+    "SENAI",
+    "perfil",
+    "back-end"
+  ],
+  "author": "Júlia Guarnieri",
+  "license": "MIT",
+  "description": "Aqui está armazenado o código do back-end do projeto final do curso de Desenvolvimento de Sistemas do SENAI, onde o objetivo é criar uma API para gerenciar perfis de usuários."
+}
