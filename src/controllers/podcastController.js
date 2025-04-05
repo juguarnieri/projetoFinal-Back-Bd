@@ -17,10 +17,20 @@ const createPodcast = async (req, res) => {
     }
 };
 
+const getAllPodcasts = async (req, res) => {
+    try {
+        const podcasts = await Podcast.findAll();
+        res.json(podcasts);
+    } catch (err) {
+        console.error("Erro ao buscar podcasts:", err);
+        res.status(500).json({ error: "Erro ao buscar podcasts" });
+    }
+};
+
 
 
 module.exports = {
-    //getAllPodcasts,
+    getAllPodcasts,
     //getByCategory,
     createPodcast
 };
