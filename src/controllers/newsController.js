@@ -15,6 +15,13 @@ const createNews = async (req, res) => {
         res.status(500).json({ error: "Erro ao criar notícia", details: err.message });
     }
 };
+const getNewsByCategory = async (table, category) => {
+    const result = await pool.query(
+        `SELECT * FROM ${table} WHERE category ILIKE $1`,
+        [category]
+    );
+    return result.rows;
+};
 const getAllNews = async (req, res) => {
     try {
         const news = await News.findAll();
@@ -24,9 +31,20 @@ const getAllNews = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar notícias" });
     }
 };
+const getByCategory = async (req, res) => {
+    const { category } = req.params;
+
+    try {
+        const news = await getNewsByCategory("news", category);
+        res.json(news);
+    } catch (err) {
+        console.error("Erro ao buscar por categoria:", err);
+        res.status(500).json({ error: "Erro ao buscar notícias por categoria" });
+    }
+};
 
 module.exports = {
     getAllNews,
-    //getByCategory,
+    getByCategory,
     createNews
 };
