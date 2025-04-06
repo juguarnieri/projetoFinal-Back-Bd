@@ -1,32 +1,51 @@
 const pool = require("../config/database");
 
 const create = async ({ title, description, link, image, category }) => {
-    const result = await pool.query(
-        `INSERT INTO videos (title, description, link, image, category) 
-         VALUES ($1, $2, $3, $4, $5) RETURNING *`,
-        [title, description, link, image, category]
-    );
-    return result.rows[0];
+  const result = await pool.query(
+    `INSERT INTO videos (title, description, link, image, category)
+     VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+    [title, description, link, image, category]
+  );
+  return result.rows[0];
 };
-const getAll = async () => {
-    const result = await pool.query("SELECT * FROM videos ORDER BY created_at DESC");
-    return result.rows;
-};
+
 const findAll = async () => {
-    const result = await pool.query("SELECT * FROM videos ORDER BY created_at DESC");
-    return result.rows;
+  const result = await pool.query("SELECT * FROM videos ORDER BY created_at DESC");
+  return result.rows;
 };
+
 const getByCategory = async (category) => {
-    const result = await pool.query(
-        "SELECT * FROM videos WHERE category = $1 ORDER BY created_at DESC",
-        [category]
-    );
-    return result.rows;
+  const result = await pool.query(
+    "SELECT * FROM videos WHERE category ILIKE $1 ORDER BY created_at DESC",
+    [category]
+  );
+  return result.rows;
+};
+
+const findById = async (id) => {
+  const result = await pool.query("SELECT * FROM videos WHERE id = $1", [id]);
+  return result.rows[0];
+};
+
+const update = async (id, { title, description, link, image, category }) => {
+  const result = await pool.query(
+    `UPDATE videos
+     SET title = $1, description = $2, link = $3, image = $4, category = $5
+     WHERE id = $6 RETURNING *`,
+    [title, description, link, image, category, id]
+  );
+  return result.rows[0];
+};
+
+const remove = async (id) => {
+  await pool.query("DELETE FROM videos WHERE id = $1", [id]);
 };
 
 module.exports = {
-    getAll,
-    getByCategory,
-    create,
-    findAll
+  create,
+  findAll,
+  getByCategory,
+  findById,
+  update,
+  remove
 };
