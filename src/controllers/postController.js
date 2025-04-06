@@ -65,6 +65,22 @@ const getAllPosts = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar posts" });
     }
 };
+const deletePost = async (req, res) => {
+    const { postId } = req.params;
+
+    try {
+        const deleted = await postModel.deletePost(postId);
+        if (deleted) {
+            res.json({ message: "Post deletado com sucesso" });
+        } else {
+            res.status(404).json({ error: "Post não encontrado" });
+        }
+    } catch (err) {
+        console.error("Erro ao deletar post:", err);
+        res.status(500).json({ error: "Erro ao deletar post" });
+    }
+};
+
 
 
 module.exports = {
@@ -73,5 +89,6 @@ module.exports = {
     likePost,
     unlikePost,
     getLikesCount,
-    getAllPosts
+    getAllPosts,
+    deletePost
 };

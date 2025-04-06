@@ -45,7 +45,10 @@ const findAll = async () => {
     `);
     return result.rows;
 };
-
+const deletePost = async (postId) => {
+    const result = await pool.query("DELETE FROM posts WHERE id = $1", [postId]);
+    return result.rowCount > 0; 
+};
 
 
 
@@ -55,5 +58,6 @@ module.exports = {
     like,
     unlike,
     countLikes,
-    findAll
+    findAll,
+    deletePost
 };
