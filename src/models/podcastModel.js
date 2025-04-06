@@ -23,6 +23,8 @@ const getByCategory = async (category) => {
     );
     return result.rows;
 };
+
+
 module.exports = {
     getAll,
     getByCategory,

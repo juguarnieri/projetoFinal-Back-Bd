@@ -1,11 +1,12 @@
 require("dotenv").config();
+const cors = require("cors");
 const express = require("express");
 const userRoutes = require("./src/routes/userRoutes");
 const postRoutes = require("./src/routes/postRoutes");
-const commentRoutes = require("./src/routes/commentRoutes");
+const commentRoutes = require('./src/routes/commentRoutes');
 const newsRoutes = require("./src/routes/newsRoutes");  
 const podcastRoutes = require("./src/routes/podcastRoutes"); 
-const videoRoutes = require("./src/routes/videosRoutes");   
+const videoRoutes = require("./src/routes/videoRoutes");   
 
 const app = express();
 app.use(cors());

@@ -9,12 +9,16 @@ const createNews = async (req, res) => {
 
     try {
         const news = await News.create({ title, description, link, image, category });
-        res.status(201).json(news);
+        res.status(201).json({
+            message: "Notícia criada com sucesso",
+            data: news
+        });
     } catch (err) {
         console.error("Erro ao criar notícia:", err);
         res.status(500).json({ error: "Erro ao criar notícia", details: err.message });
     }
 };
+
 const getNewsByCategory = async (table, category) => {
     const result = await pool.query(
         `SELECT * FROM ${table} WHERE category ILIKE $1`,

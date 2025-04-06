@@ -56,11 +56,22 @@ const getLikesCount = async (req, res) => {
         res.status(500).json({ error: "Erro ao contar curtidas" });
     }
 };
+const getAllPosts = async (req, res) => {
+    try {
+        const posts = await postModel.findAll();
+        res.json(posts);
+    } catch (err) {
+        console.error("Erro ao buscar todos os posts:", err);
+        res.status(500).json({ error: "Erro ao buscar posts" });
+    }
+};
+
 
 module.exports = {
     createPost,
     getUserPosts,
     likePost,
     unlikePost,
-    getLikesCount
+    getLikesCount,
+    getAllPosts
 };

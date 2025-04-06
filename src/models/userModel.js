@@ -7,12 +7,24 @@ const create = async ({ username, name, profile_picture }) => {
     );
     return result.rows[0];
 };
+
 const findById = async (id) => {
     const result = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
+    console.log("Resultado findById:", result.rows);
     return result.rows[0];
 };
+
 const findAll = async () => {
-    const result = await pool.query("SELECT * FROM users");
+    const result = await pool.query(`
+        SELECT 
+            posts.*, 
+            users.name AS user_name, 
+            users.username, 
+            users.profile_picture
+        FROM posts
+        JOIN users ON posts.user_id = users.id
+        ORDER BY posts.created_at DESC
+    `);
     return result.rows;
 };
 const countFollowers = async (userId) => {
@@ -22,24 +34,35 @@ const countFollowers = async (userId) => {
     );
     return parseInt(result.rows[0].count);
 };
+
 const countFollowing = async (userId) => {
     const result = await pool.query(
-        "SELECT COUNT(*) FROM followers WHERE follower_id = $1", 
+        "SELECT COUNT(*) FROM followers WHERE follower_id = $1",
         [userId]
     );
     return parseInt(result.rows[0].count);
 };
+
 const countLikes = async (userId) => {
     const result = await pool.query(
         `SELECT COUNT(*) 
          FROM likes 
          WHERE post_id IN (
-        SELECT id FROM posts WHERE user_id = $1
+            SELECT id FROM posts WHERE user_id = $1
          )`,
         [userId]
     );
     return parseInt(result.rows[0].count);
 };
+
+const isAlreadyFollowing = async (userId, targetId) => {
+    const result = await pool.query(
+        "SELECT 1 FROM followers WHERE follower_id = $1 AND following_id = $2",
+        [userId, targetId]
+    );
+    return result.rowCount > 0;
+};
+
 const follow = async (userId, targetId) => {
     const alreadyFollowing = await isAlreadyFollowing(userId, targetId);
     if (alreadyFollowing) {
@@ -51,18 +74,12 @@ const follow = async (userId, targetId) => {
         [userId, targetId]
     );
 };
+
 const unfollow = async (userId, targetId) => {
     await pool.query(
-        "DELETE FROM followers WHERE follower_id = $1 AND following_id = $2", 
+        "DELETE FROM followers WHERE follower_id = $1 AND following_id = $2",
         [userId, targetId]
     );
-};
-const isAlreadyFollowing = async (userId, targetId) => {
-    const result = await pool.query(
-        "SELECT 1 FROM followers WHERE follower_id = $1 AND following_id = $2",
-        [userId, targetId]
-    );
-    return result.rowCount > 0;
 };
 
 const update = async (id, { username, name, profile_picture }) => {
@@ -75,6 +92,7 @@ const update = async (id, { username, name, profile_picture }) => {
     );
     return result.rows[0];
 };
+
 const getFollowersList = async (userId) => {
     const result = await pool.query(
         `SELECT u.id, u.username, u.name, u.profile_picture
@@ -96,18 +114,13 @@ const getFollowingList = async (userId) => {
     );
     return result.rows;
 };
-const deleteUser = async (req, res) => {
-    const { id } = req.params;
 
-    try {
-        const deletedUser = await User.remove(id);
-        if (!deletedUser) return res.status(404).json({ error: "Usuário não encontrado" });
-
-        res.json({ message: "Usuário deletado com sucesso", user: deletedUser });
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: "Erro ao deletar usuário" });
-    }
+const remove = async (id) => {
+    const result = await pool.query(
+        'DELETE FROM users WHERE id = $1 RETURNING *',
+        [id]
+    );
+    return result.rows[0];
 };
 
 module.exports = {
@@ -123,5 +136,5 @@ module.exports = {
     getFollowersList,
     getFollowingList,
     isAlreadyFollowing,
-    deleteUser
+    remove
 };

@@ -32,6 +32,20 @@ const countLikes = async (post_id) => {
     );
     return parseInt(result.rows[0].count);
 };
+const findAll = async () => {
+    const result = await pool.query(`
+        SELECT 
+            posts.*, 
+            users.name AS user_name, 
+            users.username, 
+            users.profile_picture
+        FROM posts
+        JOIN users ON posts.user_id = users.id
+        ORDER BY posts.created_at DESC
+    `);
+    return result.rows;
+};
+
 
 
 
@@ -40,5 +54,6 @@ module.exports = {
     findByUser,
     like,
     unlike,
-    countLikes
+    countLikes,
+    findAll
 };

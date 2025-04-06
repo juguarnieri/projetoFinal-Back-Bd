@@ -10,12 +10,16 @@ const createVideo = async (req, res) => {
 
     try {
         const video = await Video.create({ title, description, link, image, category });
-        res.status(201).json(video);
+        res.status(201).json({
+            message: "Vídeo criado com sucesso",
+            data: video
+        });
     } catch (err) {
         console.error("Erro ao criar vídeo:", err);
         res.status(500).json({ error: "Erro ao criar vídeo", details: err.message });
     }
 };
+
 const getAllVideos = async (req, res) => {
     try {
         const videos = await Video.findAll();

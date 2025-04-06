@@ -25,16 +25,22 @@ const getCommentsByPost = async (req, res) => {
 const updateComment = async (req, res) => {
     const { id } = req.params;
     const { content } = req.body;
+    const userId = req.user.id; 
 
     try {
-        const updated = await commentModel.updateComment(id, content);
-        if (!updated) return res.status(404).json({ error: "Comentário não encontrado" });
-        res.json(updated);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: "Erro ao atualizar comentário" });
+        const updated = await commentModel.updateComment(id, content, userId);
+
+        if (!updated) {
+            return res.status(403).json({ message: 'Você não pode atualizar esse comentário' });
+        }
+
+        res.status(200).json({ message: 'Comentário atualizado com sucesso' });
+    } catch (error) {
+        console.error('Erro ao atualizar comentário:', error);
+        res.status(500).json({ message: 'Erro interno ao atualizar comentário' });
     }
 };
+
 const deleteComment = async (req, res) => {
     const { id } = req.params;
 
@@ -71,6 +77,15 @@ const getCommentsCount = async (req, res) => {
     }
 };
 
+const getAllComments = async (req, res) => {
+    try {
+      const comments = await commentModel.getAllComments();
+      res.json(comments);
+    } catch (error) {
+      console.error('Erro ao buscar comentários:', error);
+      res.status(500).json({ message: 'Erro interno do servidor' });
+    }
+  };
 
 module.exports = {
     createComment,
@@ -78,5 +93,6 @@ module.exports = {
     updateComment,
     deleteComment,
     getCommentById,
-    getCommentsCount
+    getCommentsCount,
+    getAllComments
 };

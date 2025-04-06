@@ -11,23 +11,26 @@ const createUser = async (req, res) => {
         res.status(500).json({ error: "Erro ao criar usuário", details: err.message }); 
     }
 };
+
 const getUserProfile = async (req, res) => {
     const { id } = req.params;
 
     try {
         const user = await User.findById(id);
+
         if (!user) return res.status(404).json({ error: "Usuário não encontrado" });
 
         const followers = await User.countFollowers(id);
         const following = await User.countFollowing(id);
         const likes = await User.countLikes(id);
 
-        res.json({ ...user, followers, following, likes });
+        res.json({ ...user, followers, following, likes }); 
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Erro ao buscar perfil" });
     }
 };
+
 const followUser = async (req, res) => {
     const { id, targetId } = req.params;
     if (id === targetId) return res.status(400).json({ error: "Você não pode seguir a si mesmo" });
@@ -56,6 +59,7 @@ const unfollowUser = async (req, res) => {
         res.status(500).json({ error: "Erro ao deixar de seguir" });
     }
 };
+
 const getAllUsers = async (req, res) => {
     try {
         const users = await User.findAll();
@@ -65,6 +69,7 @@ const getAllUsers = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar usuários" });
     }
 };
+
 const updateUser = async (req, res) => {
     const { id } = req.params;
     const { username, name, profile_picture } = req.body;
@@ -82,6 +87,7 @@ const updateUser = async (req, res) => {
         res.status(500).json({ error: "Erro ao atualizar usuário" });
     }
 };
+
 const listFollowers = async (req, res) => {
     const { id } = req.params;
     try {
@@ -103,14 +109,23 @@ const listFollowing = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar seguindo" });
     }
 };
-const remove = async (id) => {
-    const result = await pool.query(
-        "DELETE FROM users WHERE id = $1 RETURNING *",
-        [id]
-    );
-    return result.rows[0];
-};
 
+const deleteUser = async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+        const deletedUser = await User.remove(id);
+  
+        if (!deletedUser) {
+            return res.status(404).json({ error: 'Usuário não encontrado' });
+        }
+  
+        res.json({ message: 'Usuário deletado com sucesso', user: deletedUser });
+    } catch (error) {
+        console.error('Erro ao deletar usuário:', error);
+        res.status(500).json({ error: 'Erro interno ao deletar usuário' });
+    }
+};
 
 module.exports = {
     createUser,
@@ -121,5 +136,5 @@ module.exports = {
     updateUser,
     listFollowers,
     listFollowing,
-    remove
+    deleteUser
 };

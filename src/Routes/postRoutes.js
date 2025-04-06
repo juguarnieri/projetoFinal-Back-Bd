@@ -7,5 +7,7 @@ router.get("/usuario/:userId", postController.getUserPosts);
 router.post("/:postId/like/:userId", postController.likePost);
 router.delete("/:postId/unlike/:userId", postController.unlikePost);
 router.get("/:postId/likes", postController.getLikesCount);
+router.get("/", postController.getAllPosts);
+
 
 module.exports = router;

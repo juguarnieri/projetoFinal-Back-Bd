@@ -10,12 +10,16 @@ const createPodcast = async (req, res) => {
 
     try {
         const podcast = await Podcast.create({ title, description, link, image, category });
-        res.status(201).json(podcast);
+        res.status(201).json({
+            message: "Podcast criado com sucesso",
+            data: podcast
+        });
     } catch (err) {
         console.error("Erro ao criar podcast:", err);
         res.status(500).json({ error: "Erro ao criar podcast", details: err.message });
     }
 };
+
 const getAllPodcasts = async (req, res) => {
     try {
         const podcasts = await Podcast.findAll();
