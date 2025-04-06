@@ -38,13 +38,17 @@ const findAll = async () => {
             posts.*, 
             users.name AS user_name, 
             users.username, 
-            users.profile_picture
+            users.profile_picture,
+            COUNT(likes.post_id) AS like_count
         FROM posts
         JOIN users ON posts.user_id = users.id
+        LEFT JOIN likes ON posts.id = likes.post_id
+        GROUP BY posts.id, users.id
         ORDER BY posts.created_at DESC
     `);
     return result.rows;
 };
+
 const deletePost = async (postId) => {
     const result = await pool.query("DELETE FROM posts WHERE id = $1", [postId]);
     return result.rowCount > 0; 
