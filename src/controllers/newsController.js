@@ -113,11 +113,35 @@ const deleteNews = async (req, res) => {
     });
   }
 };
+const getNewsById = async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+      const news = await News.findById(id);
+  
+      if (!news) {
+        return res.status(404).json({ error: "Notícia não encontrada." });
+      }
+  
+      res.status(200).json({
+        message: "Notícia recuperada com sucesso.",
+        data: news
+      });
+    } catch (err) {
+      console.error("Erro ao buscar notícia por ID:", err);
+      res.status(500).json({
+        error: "Erro ao buscar notícia por ID.",
+        details: err.message
+      });
+    }
+  };
+  
 
 module.exports = {
   createNews,
   getAllNews,
   getNewsByCategory,
   updateNews,
-  deleteNews
+  deleteNews,
+  getNewsById
 };

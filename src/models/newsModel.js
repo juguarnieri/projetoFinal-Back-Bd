@@ -34,11 +34,16 @@ const update = async (id, { title, description, link, image, category }) => {
 const remove = async (id) => {
     await pool.query("DELETE FROM news WHERE id = $1", [id]);
 };
+const findById = async (id) => {
+    const result = await pool.query("SELECT * FROM news WHERE id = $1", [id]);
+    return result.rows[0];
+};
 
 module.exports = {
     create,
     findAll,
     getByCategory,
     update,
-    remove
+    remove,
+    findById
 };

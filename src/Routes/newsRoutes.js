@@ -7,5 +7,6 @@ router.get("/category/:category", newsController.getNewsByCategory);
 router.post("/", newsController.createNews);
 router.put("/:id", newsController.updateNews);
 router.delete("/:id", newsController.deleteNews);
+router.get("/:id", newsController.getNewsById);
 
 module.exports = router;
