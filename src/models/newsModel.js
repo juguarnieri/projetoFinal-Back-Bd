@@ -45,7 +45,14 @@ const findById = async (id) => {
     const result = await pool.query("SELECT * FROM news WHERE id = $1", [id]);
     return result.rows[0];
 };
-
+const getByDecade = async (decade) => {
+    const result = await pool.query(
+      "SELECT * FROM news WHERE decade = $1 ORDER BY created_at DESC",
+      [decade]
+    );
+    return result.rows;
+  };
+  
 module.exports = {
     create,
     findAll,
@@ -53,5 +60,6 @@ module.exports = {
     getFeatured,
     update,
     remove,
-    findById
+    findById,
+    getByDecade
 };

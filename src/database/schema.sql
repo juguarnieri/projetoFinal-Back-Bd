@@ -51,7 +51,8 @@ CREATE TABLE news (
     description TEXT,
     link TEXT NOT NULL,
     image TEXT,
-    category TEXT,
+    category VARCHAR(100),
+    decade VARCHAR(10),
     views INTEGER DEFAULT 0,
     is_featured BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -64,7 +65,7 @@ CREATE TABLE podcasts (
     description TEXT,
     link TEXT NOT NULL,
     image TEXT,
-    category TEXT,
+    category VARCHAR(100),
     views INTEGER DEFAULT 0,
     is_featured BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -77,7 +78,7 @@ CREATE TABLE videos (
     description TEXT,
     link TEXT NOT NULL,
     image TEXT,
-    category TEXT,
+    category VARCHAR(100),
     views INTEGER DEFAULT 0,
     is_featured BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

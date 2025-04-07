@@ -136,6 +136,19 @@ const deletePodcast = async (req, res) => {
     });
   }
 };
+const getFeaturedPodcasts = async (req, res) => {
+  try {
+    const podcasts = await Podcast.getFeatured();
+    res.status(200).json({
+      message: "Podcasts em destaque recuperados com sucesso.",
+      total: podcasts.length,
+      data: podcasts
+    });
+  } catch (err) {
+    console.error("Erro ao buscar podcasts em destaque:", err);
+    res.status(500).json({ error: "Erro ao buscar podcasts em destaque.", details: err.message });
+  }
+};
 
 module.exports = {
   createPodcast,
@@ -143,5 +156,6 @@ module.exports = {
   getPodcastsByCategory,
   getPodcastById,
   updatePodcast,
-  deletePodcast
+  deletePodcast,
+  getFeaturedPodcasts
 };

@@ -27,6 +27,7 @@ const getFeatured = async () => {
     return result.rows;
 };
 
+
 const update = async (id, { title, description, link, image, category, is_featured }) => {
     const result = await pool.query(
         `UPDATE videos 

@@ -136,6 +136,20 @@ const getVideoById = async (req, res) => {
     });
   }
 };
+const getFeaturedVideos = async (req, res) => {
+  try {
+    const videos = await Video.getFeatured();
+    res.status(200).json({
+      message: "Vídeos em destaque recuperados com sucesso.",
+      total: videos.length,
+      data: videos
+    });
+  } catch (err) {
+    console.error("Erro ao buscar vídeos em destaque:", err);
+    res.status(500).json({ error: "Erro ao buscar vídeos em destaque.", details: err.message });
+  }
+};
+
 
 module.exports = {
   createVideo,
@@ -143,5 +157,6 @@ module.exports = {
   getVideosByCategory,
   updateVideo,
   deleteVideo,
-  getVideoById
+  getVideoById,
+  getFeaturedVideos
 };

@@ -9,5 +9,7 @@ router.get("/categoria/:category", podcastController.getPodcastsByCategory);
 router.put("/:id", podcastController.updatePodcast);
 router.delete("/:id", podcastController.deletePodcast);
 router.get("/:id", podcastController.getPodcastById);
+router.get("/featured", podcastController.getFeaturedPodcasts);
+
 
 module.exports = router;
