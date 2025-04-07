@@ -1,10 +1,10 @@
 const pool = require("../config/database");
 
-const create = async ({ title, description, link, image, category }) => {
+const create = async ({ title, description, link, image, category, is_featured }) => {
     const result = await pool.query(
-        `INSERT INTO podcasts (title, description, link, image, category)
-         VALUES ($1, $2, $3, $4, $5) RETURNING *`,
-        [title, description, link, image, category]
+        `INSERT INTO podcasts (title, description, link, image, category, is_featured)
+         VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+        [title, description, link, image, category, is_featured || false]
     );
     return result.rows[0];
 };
@@ -22,11 +22,17 @@ const getByCategory = async (category) => {
     return result.rows;
 };
 
-const update = async (id, { title, description, link, image, category }) => {
+const getFeatured = async () => {
+    const result = await pool.query("SELECT * FROM podcasts WHERE is_featured = TRUE ORDER BY created_at DESC");
+    return result.rows;
+};
+
+const update = async (id, { title, description, link, image, category, is_featured }) => {
     const result = await pool.query(
-        `UPDATE podcasts SET title = $1, description = $2, link = $3, image = $4, category = $5
-         WHERE id = $6 RETURNING *`,
-        [title, description, link, image, category, id]
+        `UPDATE podcasts 
+         SET title = $1, description = $2, link = $3, image = $4, category = $5, is_featured = $6
+         WHERE id = $7 RETURNING *`,
+        [title, description, link, image, category, is_featured || false, id]
     );
     return result.rows[0];
 };
@@ -44,6 +50,7 @@ module.exports = {
     create,
     findAll,
     getByCategory,
+    getFeatured,
     update,
     remove,
     findById

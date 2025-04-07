@@ -65,6 +65,29 @@ const getPodcastsByCategory = async (req, res) => {
   }
 };
 
+const getPodcastById = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const podcast = await Podcast.findById(id);
+
+    if (!podcast) {
+      return res.status(404).json({ error: "Podcast não encontrado." });
+    }
+
+    res.status(200).json({
+      message: "Podcast recuperado com sucesso.",
+      data: podcast
+    });
+  } catch (err) {
+    console.error("Erro ao buscar podcast por ID:", err);
+    res.status(500).json({
+      error: "Erro ao buscar podcast por ID.",
+      details: err.message
+    });
+  }
+};
+
 const updatePodcast = async (req, res) => {
   const { id } = req.params;
   const data = req.body;
@@ -113,35 +136,12 @@ const deletePodcast = async (req, res) => {
     });
   }
 };
-const getPodcastById = async (req, res) => {
-    const { id } = req.params;
-  
-    try {
-      const podcast = await Podcast.findById(id);
-  
-      if (!podcast) {
-        return res.status(404).json({ error: "Podcast não encontrado." });
-      }
-  
-      res.status(200).json({
-        message: "Podcast recuperado com sucesso.",
-        data: podcast
-      });
-    } catch (err) {
-      console.error("Erro ao buscar podcast por ID:", err);
-      res.status(500).json({
-        error: "Erro ao buscar podcast por ID.",
-        details: err.message
-      });
-    }
-  };
-  
 
 module.exports = {
   createPodcast,
   getAllPodcasts,
   getPodcastsByCategory,
+  getPodcastById,
   updatePodcast,
-  deletePodcast,
-  getPodcastById
+  deletePodcast
 };
