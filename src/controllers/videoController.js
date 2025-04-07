@@ -113,29 +113,29 @@ const deleteVideo = async (req, res) => {
     });
   }
 };
+
 const getVideoById = async (req, res) => {
-    const { id } = req.params;
-  
-    try {
-      const video = await Video.findById(id);
-  
-      if (!video) {
-        return res.status(404).json({ error: "Vídeo não encontrado." });
-      }
-  
-      res.status(200).json({
-        message: "Vídeo recuperado com sucesso.",
-        data: video
-      });
-    } catch (err) {
-      console.error("Erro ao buscar vídeo por ID:", err);
-      res.status(500).json({
-        error: "Erro ao buscar vídeo por ID.",
-        details: err.message
-      });
+  const { id } = req.params;
+
+  try {
+    const video = await Video.findById(id);
+
+    if (!video) {
+      return res.status(404).json({ error: "Vídeo não encontrado." });
     }
-  };
-  
+
+    res.status(200).json({
+      message: "Vídeo recuperado com sucesso.",
+      data: video
+    });
+  } catch (err) {
+    console.error("Erro ao buscar vídeo por ID:", err);
+    res.status(500).json({
+      error: "Erro ao buscar vídeo por ID.",
+      details: err.message
+    });
+  }
+};
 
 module.exports = {
   createVideo,
