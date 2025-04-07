@@ -1,7 +1,7 @@
 const pool = require("../config/database");
-const News = require("../models/newsModel");
+const Podcast = require("../models/podcastModel");
 
-const createNews = async (req, res) => {
+const createPodcast = async (req, res) => {
   const { title, description, link, image, category } = req.body;
 
   if (!title || !link) {
@@ -12,136 +12,136 @@ const createNews = async (req, res) => {
   }
 
   try {
-    const news = await News.create({ title, description, link, image, category });
+    const podcast = await Podcast.create({ title, description, link, image, category });
 
     res.status(201).json({
-      message: "Notícia criada com sucesso!",
-      data: news
+      message: "Podcast criado com sucesso!",
+      data: podcast
     });
   } catch (err) {
-    console.error("Erro ao criar notícia:", err);
+    console.error("Erro ao criar podcast:", err);
     res.status(500).json({
-      error: "Erro interno ao criar notícia.",
+      error: "Erro interno ao criar podcast.",
       details: err.message
     });
   }
 };
 
-const getAllNews = async (req, res) => {
+const getAllPodcasts = async (req, res) => {
   try {
-    const news = await News.findAll();
+    const podcasts = await Podcast.findAll();
 
     res.status(200).json({
-      message: "Lista de notícias recuperada com sucesso.",
-      total: news.length,
-      data: news
+      message: "Lista de podcasts recuperada com sucesso.",
+      total: podcasts.length,
+      data: podcasts
     });
   } catch (err) {
-    console.error("Erro ao buscar notícias:", err);
+    console.error("Erro ao buscar podcasts:", err);
     res.status(500).json({
-      error: "Erro ao buscar notícias.",
+      error: "Erro ao buscar podcasts.",
       details: err.message
     });
   }
 };
 
-const getNewsByCategory = async (req, res) => {
+const getPodcastsByCategory = async (req, res) => {
   const { category } = req.params;
 
   try {
-    const news = await News.getByCategory(category);
+    const podcasts = await Podcast.getByCategory(category);
 
     res.status(200).json({
-      message: `Notícias da categoria '${category}' recuperadas com sucesso.`,
-      total: news.length,
-      data: news
+      message: `Podcasts da categoria '${category}' recuperados com sucesso.`,
+      total: podcasts.length,
+      data: podcasts
     });
   } catch (err) {
     console.error("Erro ao buscar por categoria:", err);
     res.status(500).json({
-      error: "Erro ao buscar notícias por categoria.",
+      error: "Erro ao buscar podcasts por categoria.",
       details: err.message
     });
   }
 };
 
-const updateNews = async (req, res) => {
+const updatePodcast = async (req, res) => {
   const { id } = req.params;
   const data = req.body;
 
   try {
-    const existing = await pool.query("SELECT * FROM news WHERE id = $1", [id]);
+    const existing = await pool.query("SELECT * FROM podcasts WHERE id = $1", [id]);
 
     if (existing.rowCount === 0) {
-      return res.status(404).json({ error: "Notícia não encontrada." });
+      return res.status(404).json({ error: "Podcast não encontrado." });
     }
 
-    const updated = await News.update(id, data);
+    const updated = await Podcast.update(id, data);
 
     res.status(200).json({
-      message: "Notícia atualizada com sucesso.",
+      message: "Podcast atualizado com sucesso.",
       data: updated
     });
   } catch (err) {
-    console.error("Erro ao atualizar notícia:", err);
+    console.error("Erro ao atualizar podcast:", err);
     res.status(500).json({
-      error: "Erro ao atualizar notícia.",
+      error: "Erro ao atualizar podcast.",
       details: err.message
     });
   }
 };
 
-const deleteNews = async (req, res) => {
+const deletePodcast = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const result = await pool.query("DELETE FROM news WHERE id = $1 RETURNING *", [id]);
+    const result = await pool.query("DELETE FROM podcasts WHERE id = $1 RETURNING *", [id]);
 
     if (result.rowCount === 0) {
-      return res.status(404).json({ error: "Notícia não encontrada." });
+      return res.status(404).json({ error: "Podcast não encontrado." });
     }
 
     res.status(200).json({
-      message: "Notícia deletada com sucesso.",
+      message: "Podcast deletado com sucesso.",
       data: result.rows[0]
     });
   } catch (err) {
-    console.error("Erro ao deletar notícia:", err);
+    console.error("Erro ao deletar podcast:", err);
     res.status(500).json({
-      error: "Erro ao deletar notícia.",
+      error: "Erro ao deletar podcast.",
       details: err.message
     });
   }
 };
-const getNewsById = async (req, res) => {
-    const { id } = req.params;
-  
-    try {
-      const news = await News.findById(id);
-  
-      if (!news) {
-        return res.status(404).json({ error: "Notícia não encontrada." });
-      }
-  
-      res.status(200).json({
-        message: "Notícia recuperada com sucesso.",
-        data: news
-      });
-    } catch (err) {
-      console.error("Erro ao buscar notícia por ID:", err);
-      res.status(500).json({
-        error: "Erro ao buscar notícia por ID.",
-        details: err.message
-      });
+
+const getPodcastById = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const podcast = await Podcast.findById(id);
+
+    if (!podcast) {
+      return res.status(404).json({ error: "Podcast não encontrado." });
     }
-  };
-  
+
+    res.status(200).json({
+      message: "Podcast recuperado com sucesso.",
+      data: podcast
+    });
+  } catch (err) {
+    console.error("Erro ao buscar podcast por ID:", err);
+    res.status(500).json({
+      error: "Erro ao buscar podcast por ID.",
+      details: err.message
+    });
+  }
+};
 
 module.exports = {
-  createNews,
-  getAllNews,
-  getNewsByCategory,
-  updateNews,
-  deleteNews,
-  getNewsById
+  createPodcast,
+  getAllPodcasts,
+  getPodcastsByCategory,
+  updatePodcast,
+  deletePodcast,
+  getPodcastById
 };
