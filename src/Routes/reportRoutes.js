@@ -5,5 +5,8 @@ const reportController = require("../controllers/reportController");
 router.get("/reports/users/pdf", reportController.exportUsersPDF);
 router.get("/reports/users/pdf", reportController.exportUsersPDF);
 router.get("/reports/posts/pdf", reportController.exportPostsPDF);
+router.get("/reports/users/pdf", reportController.exportUsersPDF);
+router.get("/reports/posts/pdf", reportController.exportPostsPDF);
+router.get("/reports/comments/pdf", reportController.exportCommentsPDF);
 
 module.exports = router;

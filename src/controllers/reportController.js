@@ -1,6 +1,7 @@
 const PDFDocument = require("pdfkit");
 const User = require("../models/userModel");
 const Post = require("../models/postModel");
+const Comment = require("../models/commentModel");
 
 const exportUsersPDF = async (req, res) => {
     try {
@@ -65,8 +66,42 @@ const exportPostsPDF = async (req, res) => {
         res.status(500).json({ error: "Erro ao gerar PDF de posts", details: err.message });
     }
 };
+const exportCommentsPDF = async (req, res) => {
+    try {
+        const comments = await Comment.getAllComments();
+
+        if (!comments || comments.length === 0) {
+            return res.status(404).json({ error: "Nenhum comentário encontrado para exportação" });
+        }
+
+        res.setHeader("Content-Type", "application/pdf");
+        res.setHeader("Content-Disposition", "inline; filename=comentarios.pdf");
+
+        const doc = new PDFDocument();
+        doc.pipe(res);
+
+        doc.fontSize(20).text("Relatório de Comentários", { align: "center" });
+        doc.moveDown();
+
+        doc.fontSize(12).text("ID | Usuário | Post | Conteúdo", { underline: true });
+        doc.moveDown(0.5);
+
+        comments.forEach(comment => {
+            const line = `${comment.id} | ${comment.user_name || comment.username || '-'} | ${comment.post_title || '-'} | ${comment.content.slice(0, 50)}${comment.content.length > 50 ? "..." : ""}`;
+            doc.text(line);
+        });
+
+        doc.end();
+    } catch (err) {
+        console.error("Erro ao gerar PDF de comentários:", err);
+        res.status(500).json({ error: "Erro ao gerar PDF de comentários", details: err.message });
+    }
+};
 
 module.exports = {
+    exportUsersPDF,
+    exportPostsPDF,
+    exportCommentsPDF, 
     exportUsersPDF,
     exportPostsPDF,
     exportUsersPDF
