@@ -85,6 +85,29 @@ CREATE TABLE videos (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Tabela principal com informações da página "Sobre Nós"
+CREATE TABLE about_page (
+    id SERIAL PRIMARY KEY,
+    main_title TEXT NOT NULL,
+    subtitle TEXT,
+    description TEXT,
+    commitment_title TEXT,
+    commitment_text TEXT,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()  
+);
+
+-- Tabela de integrantes da equipe
+CREATE TABLE team_members (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    role VARCHAR(255) NOT NULL,
+    photo_url TEXT,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW() ON UPDATE NOW(),  
+    about_page_id INTEGER REFERENCES about_page(id) ON DELETE CASCADE
+);
+
 
 -- exemplos de inserts para popular as tabelas
 
@@ -144,30 +167,6 @@ VALUES
 ('Crime da Chacina de Unaí', 'Crime político com repercussão nacional', 'https://youtube.com/unai', 'https://img.com/unai.jpg', 'impactante', FALSE),
 ('Os Infiltrados', 'Documentário sobre operações da PF contra corrupção', 'https://youtube.com/infiltrados', 'https://img.com/infiltrados.jpg', 'investigacao', FALSE),
 ('Entendendo a Lei Maria da Penha', 'Explicação visual e casos práticos', 'https://youtube.com/mariadapenha', 'https://img.com/penha.jpg', 'leis', FALSE);
-
--- Tabela principal com informações da página "Sobre Nós"
-CREATE TABLE about_page (
-    id SERIAL PRIMARY KEY,
-    main_title TEXT NOT NULL,
-    subtitle TEXT,
-    description TEXT,
-    commitment_title TEXT,
-    commitment_text TEXT,
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP DEFAULT NOW()  
-);
-
--- Tabela de integrantes da equipe
-CREATE TABLE team_members (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    role VARCHAR(255) NOT NULL,
-    photo_url TEXT,
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP DEFAULT NOW() ON UPDATE NOW(),  
-    about_page_id INTEGER REFERENCES about_page(id) ON DELETE CASCADE
-);
-
 
 INSERT INTO about_page (main_title, subtitle, description, commitment_title, commitment_text)
 VALUES (

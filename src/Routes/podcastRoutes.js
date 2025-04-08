@@ -8,6 +8,6 @@ router.get("/featured", podcastController.getFeaturedPodcasts);
 router.get("/", podcastController.getAllPodcasts);
 router.put("/:id", podcastController.updatePodcast);
 router.delete("/:id", podcastController.deletePodcast);
-router.get("/:id", podcastController.getPodcastById); // <-- DEIXE ESSA POR ÚLTIMO
+router.get("/:id", podcastController.getPodcastById); 
 
 module.exports = router;
