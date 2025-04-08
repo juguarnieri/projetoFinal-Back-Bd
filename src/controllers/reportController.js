@@ -3,6 +3,7 @@ const User = require("../models/userModel");
 const Post = require("../models/postModel");
 const Comment = require("../models/commentModel");
 const News = require("../models/newsModel");
+const Podcast = require("../models/podcastModel");
 
 const exportUsersPDF = async (req, res) => {
     try {
@@ -132,8 +133,47 @@ const exportNewsPDF = async (req, res) => {
       });
     }
   };
+  const exportPodcastsPDF = async (req, res) => {
+    try {
+      const podcasts = await Podcast.findAll();
+  
+      if (!podcasts || podcasts.length === 0) {
+        return res.status(404).json({ error: "Nenhum podcast encontrado para exportação" });
+      }
+  
+      res.setHeader("Content-Type", "application/pdf");
+      res.setHeader("Content-Disposition", "inline; filename=podcasts.pdf");
+  
+      const doc = new PDFDocument();
+      doc.pipe(res);
+  
+      doc.fontSize(20).text("Relatório de Podcasts", { align: "center" });
+      doc.moveDown();
+  
+      doc.fontSize(12).text("ID | Título | Categoria", { underline: true });
+      doc.moveDown(0.5);
+  
+      podcasts.forEach(podcast => {
+        const line = `${podcast.id} | ${podcast.title.slice(0, 30)}${podcast.title.length > 30 ? "..." : ""} | ${podcast.category}`;
+        doc.text(line);
+      });
+  
+      doc.end();
+    } catch (err) {
+      console.error("Erro ao gerar PDF de podcasts:", err);
+      res.status(500).json({
+        error: "Erro ao gerar PDF de podcasts",
+        details: err.message
+      });
+    }
+  };
   
   module.exports = {
+    exportUsersPDF,
+    exportPostsPDF,
+    exportCommentsPDF,
+    exportNewsPDF,
+    exportPodcastsPDF,
     exportUsersPDF,
     exportPostsPDF,
     exportCommentsPDF,
