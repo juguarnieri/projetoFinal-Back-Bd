@@ -53,6 +53,7 @@ CREATE TABLE news (
     image TEXT,
     category VARCHAR(100),
     decade VARCHAR(10),
+    year INTEGER, 
     views INTEGER DEFAULT 0,
     is_featured BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -119,26 +120,63 @@ INSERT INTO comments (user_id, post_id, content) VALUES
 (4, 3, 'Estilo top!'),
 (3, 4, 'Fofo demais!');
 
-INSERT INTO news (title, description, link, image, category)
+-- Ajustando os inserts da tabela NEWS com o campo decade e is_featured
+INSERT INTO news (title, description, link, image, category, decade, is_featured)
 VALUES 
-('Caso Araceli', 'Crime brutal envolvendo uma criança, década de 70', 'https://exemplo.com/araceli', 'https://img.com/araceli.jpg', 'anos_70'),
-('Caso Eloá', 'Sequestro trágico transmitido ao vivo, década de 2000', 'https://exemplo.com/eloa', 'https://img.com/eloa.jpg', 'anos_2000'),
-('Massacre de Realengo', 'Tragédia escolar no Rio de Janeiro', 'https://exemplo.com/realengo', 'https://img.com/realengo.jpg', 'anos_2010'),
-('Caso Marielle', 'Assassinato de vereadora ainda sem solução', 'https://exemplo.com/marielle', 'https://img.com/marielle.jpg', 'recente'),
-('Caso Isabella Nardoni', 'Menina morta em SP, pai e madrasta condenados', 'https://exemplo.com/isabella', 'https://img.com/isabella.jpg', 'famoso');
+('Caso Araceli', 'Crime brutal envolvendo uma criança, década de 70', 'https://exemplo.com/araceli', 'https://img.com/araceli.jpg', 'anos_70', '70', TRUE),
+('Caso Eloá', 'Sequestro trágico transmitido ao vivo, década de 2000', 'https://exemplo.com/eloa', 'https://img.com/eloa.jpg', 'anos_2000', '00', TRUE),
+('Massacre de Realengo', 'Tragédia escolar no Rio de Janeiro', 'https://exemplo.com/realengo', 'https://img.com/realengo.jpg', 'anos_2010', '10', FALSE),
+('Caso Marielle', 'Assassinato de vereadora ainda sem solução', 'https://exemplo.com/marielle', 'https://img.com/marielle.jpg', 'recente', '20', TRUE),
+('Caso Isabella Nardoni', 'Menina morta em SP, pai e madrasta condenados', 'https://exemplo.com/isabella', 'https://img.com/isabella.jpg', 'famoso', '00', FALSE);
 
-INSERT INTO podcasts (title, description, link, image, category)
+INSERT INTO podcasts (title, description, link, image, category, is_featured)
 VALUES 
-('O Caso Evandro', 'Podcast investigativo sobre o desaparecimento de um garoto nos anos 90', 'https://exemplo.com/casoevandro', 'https://img.com/evandro.jpg', 'famoso'),
-('Caso Daniel Alves', 'Podcast analisa as acusações contra o jogador em 2023', 'https://exemplo.com/danielalves', 'https://img.com/daniel.jpg', 'recente'),
-('Boate Kiss', 'Tragédia com mais de 240 mortos em Santa Maria-RS', 'https://exemplo.com/kiss', 'https://img.com/kiss.jpg', 'impactante'),
-('Investigação da Máfia da Merenda', 'Esquemas de corrupção em contratos públicos', 'https://exemplo.com/mafia', 'https://img.com/mafia.jpg', 'investigacao'),
-('Pacote Anticrime', 'Podcast explicando os impactos da nova legislação criminal', 'https://exemplo.com/anticrime', 'https://img.com/anticrime.jpg', 'leis');
+('O Caso Evandro', 'Podcast investigativo sobre o desaparecimento de um garoto nos anos 90', 'https://exemplo.com/casoevandro', 'https://img.com/evandro.jpg', 'famoso', TRUE),
+('Caso Daniel Alves', 'Podcast analisa as acusações contra o jogador em 2023', 'https://exemplo.com/danielalves', 'https://img.com/daniel.jpg', 'recente', TRUE),
+('Boate Kiss', 'Tragédia com mais de 240 mortos em Santa Maria-RS', 'https://exemplo.com/kiss', 'https://img.com/kiss.jpg', 'impactante', FALSE),
+('Investigação da Máfia da Merenda', 'Esquemas de corrupção em contratos públicos', 'https://exemplo.com/mafia', 'https://img.com/mafia.jpg', 'investigacao', FALSE),
+('Pacote Anticrime', 'Podcast explicando os impactos da nova legislação criminal', 'https://exemplo.com/anticrime', 'https://img.com/anticrime.jpg', 'leis', FALSE);
 
-INSERT INTO videos (title, description, link, image, category)
+INSERT INTO videos (title, description, link, image, category, is_featured)
 VALUES 
-('Caso Richthofen', 'Entrevistas e reconstituições do assassinato dos pais', 'https://youtube.com/richthofen', 'https://img.com/richthofen.jpg', 'famoso'),
-('Caso Lázaro Barbosa', 'Cobertura completa da caçada policial de 2021', 'https://youtube.com/lazaro', 'https://img.com/lazaro.jpg', 'recente'),
-('Crime da Chacina de Unaí', 'Crime político com repercussão nacional', 'https://youtube.com/unai', 'https://img.com/unai.jpg', 'impactante'),
-('Os Infiltrados', 'Documentário sobre operações da PF contra corrupção', 'https://youtube.com/infiltrados', 'https://img.com/infiltrados.jpg', 'investigacao'),
-('Entendendo a Lei Maria da Penha', 'Explicação visual e casos práticos', 'https://youtube.com/mariadapenha', 'https://img.com/penha.jpg', 'leis');
+('Caso Richthofen', 'Entrevistas e reconstituições do assassinato dos pais', 'https://youtube.com/richthofen', 'https://img.com/richthofen.jpg', 'famoso', TRUE),
+('Caso Lázaro Barbosa', 'Cobertura completa da caçada policial de 2021', 'https://youtube.com/lazaro', 'https://img.com/lazaro.jpg', 'recente', TRUE),
+('Crime da Chacina de Unaí', 'Crime político com repercussão nacional', 'https://youtube.com/unai', 'https://img.com/unai.jpg', 'impactante', FALSE),
+('Os Infiltrados', 'Documentário sobre operações da PF contra corrupção', 'https://youtube.com/infiltrados', 'https://img.com/infiltrados.jpg', 'investigacao', FALSE),
+('Entendendo a Lei Maria da Penha', 'Explicação visual e casos práticos', 'https://youtube.com/mariadapenha', 'https://img.com/penha.jpg', 'leis', FALSE);
+
+-- Tabela principal com informações da página "Sobre Nós"
+CREATE TABLE about_page (
+    id SERIAL PRIMARY KEY,
+    main_title VARCHAR(255) NOT NULL,         
+    subtitle VARCHAR(255),                        
+    description TEXT,                          
+    commitment_title VARCHAR(255),               
+    commitment_text TEXT,                       
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- Tabela de integrantes da equipe
+CREATE TABLE team_members (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,                
+    role VARCHAR(255) NOT NULL,                   
+    photo_url TEXT,                           
+    created_at TIMESTAMP DEFAULT NOW(),
+    about_page_id INTEGER REFERENCES about_page(id) ON DELETE CASCADE
+);
+
+INSERT INTO about_page (main_title, subtitle, description, commitment_title, commitment_text)
+VALUES (
+    'Sobre Nós',
+    'Conheça nossa equipe e propósito',
+    'Somos uma equipe dedicada a preservar e divulgar a memória histórica de décadas passadas por meio de notícias, vídeos e podcasts.',
+    'Nosso Compromisso',
+    'Garantir informação de qualidade, curadoria histórica e acesso livre ao conhecimento.'
+);
+
+INSERT INTO team_members (name, role, photo_url, about_page_id)
+VALUES 
+    ('João Silva', 'Editor-Chefe', 'https://exemplo.com/fotos/joao.jpg', 1),
+    ('Maria Oliveira', 'Produtora de Conteúdo', 'https://exemplo.com/fotos/maria.jpg', 1),
+    ('Carlos Mendes', 'Designer Gráfico', 'https://exemplo.com/fotos/carlos.jpg', 1);

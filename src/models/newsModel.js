@@ -1,13 +1,15 @@
 const pool = require("../config/database");
 
-const create = async ({ title, description, link, image, category, is_featured }) => {
+const create = async ({ title, description, link, image, category, is_featured, year, decade }) => {
     const result = await pool.query(
-        `INSERT INTO news (title, description, link, image, category, is_featured)
-         VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
-        [title, description, link, image, category, is_featured || false]
+        `INSERT INTO news (title, description, link, image, category, is_featured, year, decade)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+         RETURNING *`,
+        [title, description, link, image, category, is_featured, year, decade]
     );
     return result.rows[0];
 };
+
 
 const findAll = async () => {
     const result = await pool.query("SELECT * FROM news ORDER BY created_at DESC");

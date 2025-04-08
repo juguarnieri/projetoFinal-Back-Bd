@@ -71,10 +71,9 @@ const getCommentById = async (id) => {
 
 const updateComment = async (id, content, userId) => {
     const result = await pool.query(`
-        UPDATE comments
-        SET content = $1
-        WHERE id = $2 AND user_id = $3
-        RETURNING *
+UPDATE comments
+SET content = $1
+WHERE id = $2 AND user_id = $3
     `, [content, id, userId]);
 
     return result.rowCount > 0;
@@ -148,3 +147,4 @@ module.exports = {
     getAllComments
 
 };
+

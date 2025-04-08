@@ -15,18 +15,10 @@ const findById = async (id) => {
 };
 
 const findAll = async () => {
-    const result = await pool.query(`
-        SELECT 
-            posts.*, 
-            users.name AS user_name, 
-            users.username, 
-            users.profile_picture
-        FROM posts
-        JOIN users ON posts.user_id = users.id
-        ORDER BY posts.created_at DESC
-    `);
+    const result = await pool.query("SELECT * FROM users ORDER BY id ASC");
     return result.rows;
 };
+
 const countFollowers = async (userId) => {
     const result = await pool.query(
         "SELECT COUNT(*) FROM followers WHERE following_id = $1",

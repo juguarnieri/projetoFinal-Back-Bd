@@ -13,6 +13,7 @@ const createComment = async (req, res) => {
 };
 const getCommentsByPost = async (req, res) => {
     const { postId } = req.params;
+    console.log("Buscando comentários para post:", postId); // <-- aqui
 
     try {
         const comments = await commentModel.getCommentsByPost(postId);
@@ -22,13 +23,13 @@ const getCommentsByPost = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar comentários" });
     }
 };
+
 const updateComment = async (req, res) => {
-    const { id } = req.params;
-    const { content } = req.body;
-    const userId = req.user.id; 
+    const { id } = req.params;       
+    const { content, user_id } = req.body;
 
     try {
-        const updated = await commentModel.updateComment(id, content, userId);
+        const updated = await commentModel.updateComment(id, content, user_id);
 
         if (!updated) {
             return res.status(403).json({ message: 'Você não pode atualizar esse comentário' });
@@ -39,6 +40,7 @@ const updateComment = async (req, res) => {
         console.error('Erro ao atualizar comentário:', error);
         res.status(500).json({ message: 'Erro interno ao atualizar comentário' });
     }
+    
 };
 
 const deleteComment = async (req, res) => {

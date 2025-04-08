@@ -11,10 +11,13 @@ function extractDecadeFromYear(year) {
 const createNews = async (req, res) => {
   const { title, description, link, image, category, is_featured, year } = req.body;
 
-  if (!title || !link || !year) {
+  const requiredFields = ['title', 'description', 'link', 'image', 'category', 'year', 'is_featured'];
+  const missingFields = requiredFields.filter(field => req.body[field] === undefined);
+
+  if (missingFields.length > 0) {
     return res.status(400).json({
       error: "Campos obrigatórios ausentes.",
-      details: "Os campos 'title', 'link' e 'year' são obrigatórios."
+      missing_fields: missingFields
     });
   }
 
