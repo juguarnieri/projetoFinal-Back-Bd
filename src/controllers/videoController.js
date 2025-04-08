@@ -64,7 +64,6 @@ const getVideosByCategory = async (req, res) => {
     });
   }
 };
-
 const updateVideo = async (req, res) => {
   const { id } = req.params;
   const data = req.body;
@@ -90,7 +89,6 @@ const updateVideo = async (req, res) => {
     });
   }
 };
-
 const deleteVideo = async (req, res) => {
   const { id } = req.params;
 
@@ -113,7 +111,6 @@ const deleteVideo = async (req, res) => {
     });
   }
 };
-
 const getVideoById = async (req, res) => {
   const { id } = req.params;
 
@@ -149,7 +146,6 @@ const getFeaturedVideos = async (req, res) => {
     res.status(500).json({ error: "Erro ao buscar vídeos em destaque.", details: err.message });
   }
 };
-
 
 module.exports = {
   createVideo,

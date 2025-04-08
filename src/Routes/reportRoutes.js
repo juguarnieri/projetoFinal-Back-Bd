@@ -10,5 +10,9 @@ router.get("/reports/posts/pdf", reportController.exportPostsPDF);
 router.get("/reports/comments/pdf", reportController.exportCommentsPDF);
 router.get("/reports/news/pdf", reportController.exportNewsPDF);
 router.get("/reports/podcasts/pdf", reportController.exportPodcastsPDF);
+router.get("/reports/videos/pdf", reportController.exportVideosPDF);
+
 
 module.exports = router;
+
+//http://localhost:3000/api/reports/  arquivo  /pdf

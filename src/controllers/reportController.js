@@ -4,6 +4,7 @@ const Post = require("../models/postModel");
 const Comment = require("../models/commentModel");
 const News = require("../models/newsModel");
 const Podcast = require("../models/podcastModel");
+const Video = require("../models/videoModel");
 
 const exportUsersPDF = async (req, res) => {
     try {
@@ -167,21 +168,47 @@ const exportNewsPDF = async (req, res) => {
       });
     }
   };
+  const exportVideosPDF = async (req, res) => {
+    try {
+      const videos = await Video.findAll();
   
+      if (!videos || videos.length === 0) {
+        return res.status(404).json({ error: "Nenhum vídeo encontrado para exportação" });
+      }
+  
+      res.setHeader("Content-Type", "application/pdf");
+      res.setHeader("Content-Disposition", "inline; filename=videos.pdf");
+  
+      const doc = new PDFDocument();
+      doc.pipe(res);
+  
+      doc.fontSize(20).text("Relatório de Vídeos", { align: "center" });
+      doc.moveDown();
+  
+      doc.fontSize(12).text("ID | Título | Categoria", { underline: true });
+      doc.moveDown(0.5);
+  
+      videos.forEach(video => {
+        const line = `${video.id} | ${video.title.slice(0, 30)}${video.title.length > 30 ? "..." : ""} | ${video.category}`;
+        doc.text(line);
+      });
+  
+      doc.end();
+    } catch (err) {
+      console.error("Erro ao gerar PDF de vídeos:", err);
+      res.status(500).json({
+        error: "Erro ao gerar PDF de vídeos",
+        details: err.message
+      });
+    }
+  };
+
   module.exports = {
     exportUsersPDF,
     exportPostsPDF,
     exportCommentsPDF,
     exportNewsPDF,
     exportPodcastsPDF,
-    exportUsersPDF,
-    exportPostsPDF,
-    exportCommentsPDF,
-    exportNewsPDF, 
-    exportUsersPDF,
-    exportPostsPDF,
-    exportCommentsPDF, 
-    exportUsersPDF,
-    exportPostsPDF,
-    exportUsersPDF
+    exportVideosPDF
+   
 };
