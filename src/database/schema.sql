@@ -121,13 +121,53 @@ INSERT INTO comments (user_id, post_id, content) VALUES
 (3, 4, 'Fofo demais!');
 
 -- Ajustando os inserts da tabela NEWS com o campo decade e is_featured
-INSERT INTO news (title, description, link, image, category, decade, is_featured)
-VALUES 
-('Caso Araceli', 'Crime brutal envolvendo uma criança, década de 70', 'https://exemplo.com/araceli', 'https://img.com/araceli.jpg', 'anos_70', '70', TRUE),
-('Caso Eloá', 'Sequestro trágico transmitido ao vivo, década de 2000', 'https://exemplo.com/eloa', 'https://img.com/eloa.jpg', 'anos_2000', '00', TRUE),
-('Massacre de Realengo', 'Tragédia escolar no Rio de Janeiro', 'https://exemplo.com/realengo', 'https://img.com/realengo.jpg', 'anos_2010', '10', FALSE),
-('Caso Marielle', 'Assassinato de vereadora ainda sem solução', 'https://exemplo.com/marielle', 'https://img.com/marielle.jpg', 'recente', '20', TRUE),
-('Caso Isabella Nardoni', 'Menina morta em SP, pai e madrasta condenados', 'https://exemplo.com/isabella', 'https://img.com/isabella.jpg', 'famoso', '00', FALSE);
+INSERT INTO news (title, description, link, image, category, decade, year, is_featured)
+VALUES (
+  'Tecnologia Revoluciona a Medicina',
+  'Novas tecnologias estão transformando os diagnósticos médicos.',
+  'https://exemplo.com/medicina-tecnologia',
+  'https://exemplo.com/imagem1.jpg',
+  'tecnologia',
+  '20',
+  2020,
+  TRUE
+);
+
+INSERT INTO news (title, description, link, image, category, decade, year, is_featured)
+VALUES (
+  'Clima Global em Alerta',
+  'Pesquisadores alertam sobre mudanças climáticas cada vez mais intensas.',
+  'https://exemplo.com/clima-alerta',
+  'https://exemplo.com/imagem2.jpg',
+  'meio-ambiente',
+  '10',
+  2010,
+  FALSE
+);
+
+INSERT INTO news (title, description, link, image, category, decade, year, is_featured)
+VALUES (
+  'Educação Digital Ganha Espaço',
+  'Escolas adotam ferramentas online para ensino remoto.',
+  'https://exemplo.com/educacao-digital',
+  'https://exemplo.com/imagem3.jpg',
+  'educação',
+  '20',
+  2021,
+  TRUE
+);
+
+INSERT INTO news (title, description, link, image, category, decade, year, is_featured)
+VALUES (
+  'Avanços na Energia Renovável',
+  'Painéis solares e eólicos têm crescimento recorde no país.',
+  'https://exemplo.com/energia-renovavel',
+  'https://exemplo.com/imagem4.jpg',
+  'energia',
+  '10',
+  2019,
+  FALSE
+);
 
 INSERT INTO podcasts (title, description, link, image, category, is_featured)
 VALUES 
