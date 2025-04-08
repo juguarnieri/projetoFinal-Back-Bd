@@ -148,23 +148,26 @@ VALUES
 -- Tabela principal com informações da página "Sobre Nós"
 CREATE TABLE about_page (
     id SERIAL PRIMARY KEY,
-    main_title VARCHAR(255) NOT NULL,         
-    subtitle VARCHAR(255),                        
-    description TEXT,                          
-    commitment_title VARCHAR(255),               
-    commitment_text TEXT,                       
-    created_at TIMESTAMP DEFAULT NOW()
+    main_title TEXT NOT NULL,
+    subtitle TEXT,
+    description TEXT,
+    commitment_title TEXT,
+    commitment_text TEXT,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()  
 );
 
 -- Tabela de integrantes da equipe
 CREATE TABLE team_members (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,                
-    role VARCHAR(255) NOT NULL,                   
-    photo_url TEXT,                           
+    name VARCHAR(255) NOT NULL,
+    role VARCHAR(255) NOT NULL,
+    photo_url TEXT,
     created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW() ON UPDATE NOW(),  
     about_page_id INTEGER REFERENCES about_page(id) ON DELETE CASCADE
 );
+
 
 INSERT INTO about_page (main_title, subtitle, description, commitment_title, commitment_text)
 VALUES (

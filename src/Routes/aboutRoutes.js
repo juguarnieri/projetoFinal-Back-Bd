@@ -5,6 +5,7 @@ const aboutController = require("../controllers/aboutController");
 router.get("/", aboutController.getAboutPage);
 router.post("/", aboutController.createAbout);
 router.put("/:id", aboutController.updateAbout);
+router.get("/team", aboutController.getAllMembers);   
 router.post("/team", aboutController.addMember);
 router.put("/team/:id", aboutController.updateMember);
 router.get("/team/:id", aboutController.getMemberById);

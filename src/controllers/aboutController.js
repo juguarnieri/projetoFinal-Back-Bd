@@ -82,6 +82,16 @@ const getMemberById = async (req, res) => {
       res.status(500).json({ error: "Erro ao buscar membro.", details: err.message });
     }
   };
+  const getAllMembers = async (req, res) => {
+    try {
+      const members = await About.getTeamMembers();
+      res.status(200).json({ message: "Membros listados com sucesso.", data: members });
+    } catch (err) {
+      console.error("Erro ao buscar membros:", err);
+      res.status(500).json({ error: "Erro ao buscar membros.", details: err.message });
+    }
+  };
+  
   
 module.exports = {
   getAboutPage,
@@ -91,4 +101,5 @@ module.exports = {
   updateMember,
   deleteMember,
   getMemberById,
+  getAllMembers
 };
