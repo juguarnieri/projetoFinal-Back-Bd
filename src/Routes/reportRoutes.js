@@ -11,6 +11,7 @@ router.get("/reports/comments/pdf", reportController.exportCommentsPDF);
 router.get("/reports/news/pdf", reportController.exportNewsPDF);
 router.get("/reports/podcasts/pdf", reportController.exportPodcastsPDF);
 router.get("/reports/videos/pdf", reportController.exportVideosPDF);
+router.get("/reports/about/pdf", reportController.exportAboutPDF);
 
 
 module.exports = router;

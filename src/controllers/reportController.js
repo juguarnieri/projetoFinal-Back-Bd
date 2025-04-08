@@ -5,6 +5,7 @@ const Comment = require("../models/commentModel");
 const News = require("../models/newsModel");
 const Podcast = require("../models/podcastModel");
 const Video = require("../models/videoModel");
+const About = require("../models/aboutModel");
 
 const exportUsersPDF = async (req, res) => {
     try {
@@ -202,6 +203,48 @@ const exportNewsPDF = async (req, res) => {
       });
     }
   };
+  const exportAboutPDF = async (req, res) => {
+    try {
+      const page = await About.findAboutPage();
+      const team = await About.getTeamMembers();
+  
+      if (!page) {
+        return res.status(404).json({ error: "Página 'Sobre Nós' não encontrada para exportação." });
+      }
+  
+      res.setHeader("Content-Type", "application/pdf");
+      res.setHeader("Content-Disposition", "inline; filename=sobre-nos.pdf");
+  
+      const doc = new PDFDocument({ margin: 50 });
+      doc.pipe(res);
+  
+      doc.fontSize(20).text("Página Sobre Nós", { align: "center" });
+      doc.moveDown();
+  
+      doc.fontSize(14).text(`Título Principal: ${page.main_title}`);
+      doc.text(`Subtítulo: ${page.subtitle}`);
+      doc.text(`Descrição: ${page.description}`);
+      doc.text(`Compromisso: ${page.commitment_title}`);
+      doc.text(`Texto do Compromisso: ${page.commitment_text}`);
+      doc.moveDown();
+  
+      doc.fontSize(16).text("Equipe", { underline: true });
+      doc.moveDown(0.5);
+  
+      if (team.length === 0) {
+        doc.fontSize(12).text("Nenhum membro da equipe cadastrado.");
+      } else {
+        team.forEach((member, index) => {
+          doc.fontSize(12).text(`${index + 1}. ${member.name} - ${member.role}`);
+        });
+      }
+  
+      doc.end();
+    } catch (err) {
+      console.error("Erro ao gerar PDF da página Sobre:", err);
+      res.status(500).json({ error: "Erro ao gerar PDF da página Sobre", details: err.message });
+    }
+  };
 
   module.exports = {
     exportUsersPDF,
@@ -209,6 +252,7 @@ const exportNewsPDF = async (req, res) => {
     exportCommentsPDF,
     exportNewsPDF,
     exportPodcastsPDF,
-    exportVideosPDF
+    exportVideosPDF,
+    exportAboutPDF
    
 };
