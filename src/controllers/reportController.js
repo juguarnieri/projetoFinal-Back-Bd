@@ -1,5 +1,6 @@
 const PDFDocument = require("pdfkit");
 const User = require("../models/userModel");
+const Post = require("../models/postModel");
 
 const exportUsersPDF = async (req, res) => {
     try {
@@ -32,6 +33,41 @@ const exportUsersPDF = async (req, res) => {
     }
 };
 
+const exportPostsPDF = async (req, res) => {
+    try {
+        const posts = await Post.findAll();
+
+        if (!posts || posts.length === 0) {
+            return res.status(404).json({ error: "Nenhum post encontrado para exportação" });
+        }
+
+        res.setHeader("Content-Type", "application/pdf");
+        res.setHeader("Content-Disposition", "inline; filename=posts.pdf");
+
+        const doc = new PDFDocument();
+        doc.pipe(res);
+
+        doc.fontSize(20).text("Relatório de Posts", { align: "center" });
+        doc.moveDown();
+
+        doc.fontSize(12).text("ID | Usuário | Título | Curtidas", { underline: true });
+        doc.moveDown(0.5);
+
+        posts.forEach(post => {
+            doc.text(
+                `${post.id} | ${post.user_name || post.username || '-'} | ${post.title || '-'} | ${post.like_count || 0}`
+            );
+        });
+
+        doc.end();
+    } catch (err) {
+        console.error("Erro ao gerar PDF de posts:", err);
+        res.status(500).json({ error: "Erro ao gerar PDF de posts", details: err.message });
+    }
+};
+
 module.exports = {
+    exportUsersPDF,
+    exportPostsPDF,
     exportUsersPDF
 };
