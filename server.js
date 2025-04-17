@@ -9,10 +9,12 @@ const podcastRoutes = require("./src/routes/podcastRoutes");
 const videoRoutes = require("./src/routes/videoRoutes");   
 const aboutRoutes = require("./src/routes/aboutRoutes");
 const reportRoutes = require("./src/routes/reportRoutes");
+const setupSwagger = require("./src/config/swagger");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+setupSwagger(app)
 
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);

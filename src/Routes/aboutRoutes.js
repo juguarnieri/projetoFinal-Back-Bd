@@ -3,6 +3,33 @@ const router = express.Router();
 const aboutController = require("../controllers/aboutController");
 
 router.get("/", aboutController.getAboutPage);
+
+/**
+ * @swagger
+ * tags:
+ *   name: About
+ *   description: Nossa página Sobre nós
+ */
+
+/**
+ * @swagger
+ * /api/about:
+ *   get:
+ *     summary: Lista todos os membros da nossa equipe
+ *     tags: [About]
+ *     parameters:
+ *       - in: query
+ *         name: name
+ *         schema:
+ *           type: string
+ *         description: Filtro por nome
+ *     responses:
+ *       200:
+ *         description: Lista de membros
+ */
+router.get("/team", aboutController.getAllMembers);
+
+
 router.post("/", aboutController.createAbout);
 router.put("/:id", aboutController.updateAbout);
 router.get("/team", aboutController.getAllMembers);   
