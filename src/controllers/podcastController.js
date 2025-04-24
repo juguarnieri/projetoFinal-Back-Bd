@@ -30,7 +30,7 @@ const createPodcast = async (req, res) => {
 const getAllPodcasts = async (req, res) => {
   try {
     const { titulo } = req.query;
-    console.log("🔎 Valor recebido de 'titulo':", titulo);
+    console.log("🎶 Valor recebido de 'titulo':", titulo);
     let result;
 
     if (titulo) {
