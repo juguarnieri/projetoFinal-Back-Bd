@@ -1,5 +1,15 @@
 const pool = require("../config/database");
 
+const getNews = async(title) => {
+    if(!title) {
+        const result = await pool.query("SELECT * FROM videos");
+        return result.rows;
+    } else {
+        const result = await pool.query("SELECT * FROM videos WHERE title ILIKE $1", [`%${title}`])
+        return result.rows;
+    }
+}
+
 const create = async ({ title, description, link, image, category, is_featured, year, decade }) => {
     const result = await pool.query(
         `INSERT INTO news (title, description, link, image, category, is_featured, year, decade)
@@ -63,5 +73,6 @@ module.exports = {
     update,
     remove,
     findById,
-    getByDecade
+    getByDecade,
+    getNews
 };
