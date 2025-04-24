@@ -29,7 +29,20 @@ const createPodcast = async (req, res) => {
 
 const getAllPodcasts = async (req, res) => {
   try {
-    const podcasts = await Podcast.findAll();
+    const { titulo } = req.query;
+    console.log("🔎 Valor recebido de 'titulo':", titulo);
+    let result;
+
+    if (titulo) {
+      result = await pool.query(
+        "SELECT * FROM podcasts WHERE title ILIKE $1 ORDER BY title ASC",
+        [`%${titulo}%`]
+      );
+    } else {
+      result = await pool.query("SELECT * FROM podcasts ORDER BY title ASC");
+    }
+
+    const podcasts = result.rows;
 
     res.status(200).json({
       message: "Lista de podcasts recuperada com sucesso.",

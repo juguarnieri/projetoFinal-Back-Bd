@@ -9,9 +9,17 @@ const create = async ({ title, description, link, image, category, is_featured }
     return result.rows[0];
 };
 
-const findAll = async () => {
-    const result = await pool.query("SELECT * FROM podcasts ORDER BY created_at DESC");
+const findAll = async (titulo) => {
+    if (titulo) {
+        const result = await pool.query(
+            "SELECT * FROM podcasts WHERE title ILIKE $1 ORDER BY title ASC",
+    [`%${titulo}%`] 
+    );
     return result.rows;
+} else {
+    const result = await pool.query("SELECT * FROM podcasts ORDER BY title ASC");  
+        return result.rows;
+    }
 };
 
 const getByCategory = async (category) => {
