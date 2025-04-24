@@ -27,14 +27,14 @@
   "description": "Aqui está armazenado o código do back-end do projeto final do curso de Desenvolvimento de Sistemas do SENAI, onde o objetivo é criar uma API para gerenciar perfis de usuários.",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "pdfkit": "^0.16.0",
-    "pg": "^8.14.1",
+    "pg": "^8.15.5",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.10"
   }
 }
