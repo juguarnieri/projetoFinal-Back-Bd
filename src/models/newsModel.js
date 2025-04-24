@@ -63,7 +63,5 @@ module.exports = {
     update,
     remove,
     findById,
-    getByDecade,
-    getNewsTitle,
-    getNewsCategoria
+    getByDecade
 };
