@@ -1,5 +1,23 @@
 const pool = require("../config/database");
 
+const getAllPosts = async (minLikes = 0) => {
+    const result = await pool.query(`
+        SELECT 
+            posts.*, 
+            users.name AS user_name, 
+            users.username, 
+            users.profile_picture,
+            COUNT(likes.post_id) AS like_count
+        FROM posts
+        JOIN users ON posts.user_id = users.id
+        LEFT JOIN likes ON posts.id = likes.post_id
+        GROUP BY posts.id, users.id
+        HAVING COUNT(likes.post_id) >= $1
+        ORDER BY posts.created_at DESC
+    `, [minLikes]);
+    return result.rows;
+};
+
 const create = async ({ user_id, title, caption, media_url }) => {
     const result = await pool.query(
         "INSERT INTO posts (user_id, title, caption, media_url) VALUES ($1, $2, $3, $4) RETURNING *",
@@ -57,6 +75,7 @@ const deletePost = async (postId) => {
 
 
 module.exports = {
+    getAllPosts,
     create,
     findByUser,
     like,

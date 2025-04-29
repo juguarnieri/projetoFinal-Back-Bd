@@ -57,8 +57,9 @@ const getLikesCount = async (req, res) => {
     }
 };
 const getAllPosts = async (req, res) => {
+    const minLikes = parseInt(req.query.minLikes) || 0;
     try {
-        const posts = await postModel.findAll();
+        const posts = await postModel.getAllPosts(minLikes);
         res.json(posts);
     } catch (err) {
         console.error("Erro ao buscar todos os posts:", err);
