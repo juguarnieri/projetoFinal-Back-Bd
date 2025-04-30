@@ -1,3 +1,4 @@
+const pool = require("../config/database");
 const postModel = require("../models/postModel");
 
 
@@ -68,7 +69,25 @@ const getAllPosts = async (req, res) => {
     }
 };
 
+const getPostsByTitle = async (req, res) => {
+    const { title } = req.query;
+    console.log("Titulo recebido: ", title);
+    try {
+        const posts = await postModel.getPostsTitle(title);
 
+        res.status(200).json({
+            message: "Posts encontrados com sucesso",
+            total: posts.length,
+            data: posts
+        });
+        } catch (err) {
+            console.error("Erro ao buscar posts:", err);
+            res.status(500).json({
+                error: "Erro ao buscar posts",
+                details: err.message
+        });
+    }
+};
 const deletePost = async (req, res) => {
     const { postId } = req.params;
 
@@ -94,5 +113,6 @@ module.exports = {
     unlikePost,
     getLikesCount,
     getAllPosts,
+    getPostsByTitle,
     deletePost
 };

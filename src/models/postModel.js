@@ -1,6 +1,7 @@
 const pool = require("../config/database");
 
 const getAllPosts = async (minLikes = 0) => {
+    if (minLikes === 0) {
     const result = await pool.query(`
         SELECT 
             posts.id,
@@ -17,8 +18,8 @@ const getAllPosts = async (minLikes = 0) => {
         ORDER BY posts.created_at DESC
     `, [minLikes]);
     return result.rows;
+    }
 };
-
 const create = async ({ user_id, title, caption, media_url }) => {
     const result = await pool.query(
         "INSERT INTO posts (user_id, title, caption, media_url) VALUES ($1, $2, $3, $4) RETURNING *",
@@ -51,23 +52,20 @@ const countLikes = async (post_id) => {
     );
     return parseInt(result.rows[0].count);
 };
-const findAll = async () => {
-    const result = await pool.query(`
-        SELECT 
-            posts.*, 
-            users.name AS user_name, 
-            users.username, 
-            users.profile_picture,
-            COUNT(likes.post_id) AS like_count
-        FROM posts
-        JOIN users ON posts.user_id = users.id
-        LEFT JOIN likes ON posts.id = likes.post_id
-        GROUP BY posts.id, users.id
-        ORDER BY posts.created_at DESC
-    `);
-    return result.rows;
+const getPostsTitle = async (title) => {
+    try {
+        if (!title) {
+            const result = await pool.query("SELECT * FROM posts");
+            return result.rows;
+        }else {
+            const result = await pool.query("SELECT * FROM posts WHERE LOWER(title) LIKE LOWER($1)", [title]);
+            return result.rows;
+        }
+    } catch (err) {
+        console.error("Erro ao buscar posts:", err);
+        throw err;
+    }
 };
-
 const deletePost = async (postId) => {
     const result = await pool.query("DELETE FROM posts WHERE id = $1", [postId]);
     return result.rowCount > 0; 
@@ -82,6 +80,6 @@ module.exports = {
     like,
     unlike,
     countLikes,
-    findAll,
+    getPostsTitle,
     deletePost
 };
