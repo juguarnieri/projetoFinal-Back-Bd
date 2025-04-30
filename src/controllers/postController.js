@@ -88,6 +88,21 @@ const getPostsByTitle = async (req, res) => {
         });
     }
 };
+const getPostsByStartDate = async (req, res) => {
+    try {
+        const { startDate } = req.query;
+        if (!startDate) {
+            return res.status(400).json({ error: "startDate é obrigatório" });
+        }
+        const posts = await postModel.filterByStartDate(startDate);
+        res.json(posts);
+    } catch (err) {
+        console.error("Erro ao buscar posts:", err);
+        res.status(500).json({
+            error: "Erro ao buscar posts"});
+    }
+};
+
 const deletePost = async (req, res) => {
     const { postId } = req.params;
 
@@ -114,5 +129,6 @@ module.exports = {
     getLikesCount,
     getAllPosts,
     getPostsByTitle,
+    getPostsByStartDate,
     deletePost
 };

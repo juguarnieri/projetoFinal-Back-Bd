@@ -1,7 +1,6 @@
 const pool = require("../config/database");
 
 const getAllPosts = async (minLikes = 0) => {
-    if (minLikes === 0) {
     const result = await pool.query(`
         SELECT 
             posts.id,
@@ -18,7 +17,6 @@ const getAllPosts = async (minLikes = 0) => {
         ORDER BY posts.created_at DESC
     `, [minLikes]);
     return result.rows;
-    }
 };
 const create = async ({ user_id, title, caption, media_url }) => {
     const result = await pool.query(
@@ -66,6 +64,25 @@ const getPostsTitle = async (title) => {
         throw err;
     }
 };
+const filterByStartDate = async (startDate) => {
+    const result = await pool.query(`
+        SELECT 
+            posts.id,
+            posts.user_id,
+            posts.title,
+            posts.caption,
+            posts.media_url,
+            posts.created_at,
+            COUNT(likes.id) AS like_count
+        FROM posts
+        LEFT JOIN likes ON posts.id = likes.post_id
+        WHERE DATE(posts.created_at) >= DATE($1)
+        GROUP BY posts.id
+        ORDER BY posts.created_at DESC`,
+        [startDate]
+    );
+    return result.rows;
+};
 const deletePost = async (postId) => {
     const result = await pool.query("DELETE FROM posts WHERE id = $1", [postId]);
     return result.rowCount > 0; 
@@ -81,5 +98,6 @@ module.exports = {
     unlike,
     countLikes,
     getPostsTitle,
+    filterByStartDate,
     deletePost
 };
