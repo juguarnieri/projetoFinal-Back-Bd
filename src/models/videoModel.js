@@ -1,38 +1,9 @@
 const pool = require("../config/database");
 
-const getVideoTitle = async (title) => {
-    try {
-        if (!title) {
-            console.log("Nenhum título fornecido. Retornando todos os vídeos.");
-            const result = await pool.query("SELECT * FROM videos");
-            return result.rows;
-        } else {
-            const query = "SELECT * FROM videos WHERE title = $1"; 
-            const values = [title.trim()]; 
-            const result = await pool.query(query, values);
-
-            if (result.rows.length === 0) {
-                console.log(`Nenhum vídeo encontrado com o título "${title}".`);
-                return []; 
-            }
-
-            return result.rows; 
-        }
-    } catch (error) {
-        console.error("Erro ao buscar o título:", error.message);
-        throw error;
-    }
+const findTitlesAndCategories = async () => {
+    const result = await pool.query("SELECT title, category FROM videos ORDER BY created_at DESC");
+    return result.rows;
 };
-
-const getVideoCategoria = async(category) => {
-    if(!category) {
-        const result = await pool.query("SELECT * FROM videos");
-        return result.rows;
-    } else {
-        const result = await pool.query("SELECT * FROM videos WHERE category ILIKE $1", [`%${category}`])
-        return result.rows;
-    }
-}
 
 const create = async ({ title, description, link, image, category, is_featured }) => {
     const result = await pool.query(
@@ -89,6 +60,5 @@ module.exports = {
     update,
     remove,
     findById,
-    getVideoTitle,
-    getVideoCategoria
+    findTitlesAndCategories
 };
