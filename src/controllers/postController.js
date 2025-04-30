@@ -1,5 +1,6 @@
 const postModel = require("../models/postModel");
 
+
 const createPost = async (req, res) => {
     const { user_id, title, caption, media_url } = req.body;
 
@@ -66,6 +67,8 @@ const getAllPosts = async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar posts" });
     }
 };
+
+
 const deletePost = async (req, res) => {
     const { postId } = req.params;
 

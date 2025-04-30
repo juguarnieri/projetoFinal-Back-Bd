@@ -9,24 +9,11 @@ const getAllPosts = async (minLikes = 0) => {
             posts.caption,
             posts.media_url,
             posts.created_at,
-            users.name AS user_name, 
-            users.username, 
-            users.profile_picture,
-            COUNT(likes.post_id) AS like_count
+            COUNT(likes.id) AS like_count
         FROM posts
-        JOIN users ON posts.user_id = users.id
         LEFT JOIN likes ON posts.id = likes.post_id
-        GROUP BY 
-            posts.id,
-            posts.user_id,
-            posts.title,
-            posts.caption,
-            posts.media_url,
-            posts.created_at,
-            users.name, 
-            users.username, 
-            users.profile_picture
-        HAVING COUNT(likes.post_id) >= $1
+        GROUP BY posts.id
+        HAVING COUNT(likes.id) >= $1
         ORDER BY posts.created_at DESC
     `, [minLikes]);
     return result.rows;
