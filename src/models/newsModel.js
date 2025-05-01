@@ -39,6 +39,14 @@ const getByCategory = async (category) => {
     return result.rows;
 };
 
+const getByYear = async (year) => {
+    const result = await pool.query(
+        "SELECT * FROM news WHERE year = $1 ORDER BY created_at DESC",
+        [year]
+    );
+    return result.rows;
+};
+
 const getFeatured = async () => {
     const result = await pool.query("SELECT * FROM news WHERE is_featured = TRUE ORDER BY created_at DESC");
     return result.rows;
@@ -79,5 +87,6 @@ module.exports = {
     remove,
     findById,
     getByDecade,
-    getByTitle
+    getByTitle,
+    getByYear
 };
