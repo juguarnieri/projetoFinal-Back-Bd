@@ -48,7 +48,6 @@ const getTitlesAndCategories = async (req, res) => {
 const getAllVideos = async (req, res) => {
   try {
     const videos = await Video.findAll();
-    const {title} = req.query;
    
     res.status(200).json({
       message: "Lista de vídeos recuperada com sucesso.",
