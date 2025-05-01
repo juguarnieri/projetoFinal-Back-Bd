@@ -168,12 +168,6 @@ VALUES
 ('Os Infiltrados', 'Documentário sobre operações da PF contra corrupção', 'https://youtube.com/infiltrados', 'https://img.com/infiltrados.jpg', 'investigacao', FALSE),
 ('Entendendo a Lei Maria da Penha', 'Explicação visual e casos práticos', 'https://youtube.com/mariadapenha', 'https://img.com/penha.jpg', 'leis', FALSE);
 
-INSERT INTO team_members (name, role, photo_url, about_page_id)
-VALUES 
-    ('João Silva', 'Editor-Chefe', 'https://exemplo.com/fotos/joao.jpg', 1),
-    ('Maria Oliveira', 'Produtora de Conteúdo', 'https://exemplo.com/fotos/maria.jpg', 1),
-    ('Carlos Mendes', 'Designer Gráfico', 'https://exemplo.com/fotos/carlos.jpg', 1);
-
 INSERT INTO about_page (main_title, subtitle, description, commitment_title, commitment_text)
 VALUES (
     'Sobre Nós',
@@ -182,3 +176,9 @@ VALUES (
     'Nosso Compromisso',
     'Garantir informação de qualidade, curadoria histórica e acesso livre ao conhecimento.'
 );
+
+INSERT INTO team_members (name, role, photo_url, about_page_id)
+VALUES 
+    ('João Silva', 'Editor-Chefe', 'https://exemplo.com/fotos/joao.jpg', 1),
+    ('Maria Oliveira', 'Produtora de Conteúdo', 'https://exemplo.com/fotos/maria.jpg', 1),
+    ('Carlos Mendes', 'Designer Gráfico', 'https://exemplo.com/fotos/carlos.jpg', 1);
