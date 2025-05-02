@@ -1,9 +1,14 @@
 const About = require("../models/aboutModel");
 
+const filterTeamMembers = async () => {
+  const result = await About.getTeamMembers();
+  return result.map(member => ({ name: member.name, role: member.role }));
+};
+
 const getAboutPage = async (req, res) => {
   try {
     const page = await About.findAboutPage();
-    const team = await About.getTeamMembers();
+    const team = await About.filterTeamMembers();
 
     res.status(200).json({
       message: "Página 'Sobre Nós' carregada com sucesso.",

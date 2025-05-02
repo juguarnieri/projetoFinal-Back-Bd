@@ -1,5 +1,10 @@
 const pool = require("../config/database");
 
+const findTitlesAndCategories = async () => {
+    const result = await pool.query("SELECT title, category FROM videos ORDER BY created_at DESC");
+    return result.rows;
+};
+
 const create = async ({ title, description, link, image, category, is_featured }) => {
     const result = await pool.query(
         `INSERT INTO videos (title, description, link, image, category, is_featured)
@@ -54,5 +59,6 @@ module.exports = {
     getFeatured,
     update,
     remove,
-    findById
+    findById,
+    findTitlesAndCategories
 };
