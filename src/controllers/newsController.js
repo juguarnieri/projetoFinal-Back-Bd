@@ -46,10 +46,15 @@ const createNews = async (req, res) => {
     });
   }
 };
-
 const getAllNews = async (req, res) => {
+  const { title } = req.query; 
   try {
-    const news = await News.findAll();
+    let news;
+    if (title) {
+      news = await News.getByTitle(title);
+    } else {
+      news = await News.findAll();
+    }
 
     res.status(200).json({
       message: "Lista de notícias recuperada com sucesso.",
