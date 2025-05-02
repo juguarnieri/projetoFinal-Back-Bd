@@ -1,5 +1,10 @@
 const pool = require("../config/database");
 
+const filterTeamMembers = async () => {
+  const result = await pool.query("SELECT name, role FROM team_members ORDER BY created_at ASC");
+  return result.rows;
+};
+
 const createAboutPage = async ({ main_title, subtitle, description, commitment_title, commitment_text }) => {
   const result = await pool.query(
     `INSERT INTO about_page (main_title, subtitle, description, commitment_title, commitment_text)

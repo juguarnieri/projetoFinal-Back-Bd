@@ -27,10 +27,28 @@ const createVideo = async (req, res) => {
   }
 };
 
+const getTitlesAndCategories = async (req, res) => {
+  try {
+    const videos = await Video.findTitlesAndCategories();
+
+    res.status(200).json({
+      message: "Lista de títulos e categorias recuperada com sucesso.",
+      total: videos.length,
+      data: videos
+    });
+  } catch (err) {
+    console.error("Erro ao buscar títulos e categorias:", err);
+    res.status(500).json({
+      error: "Erro ao buscar títulos e categorias.",
+      details: err.message
+    });
+  }
+};
+
 const getAllVideos = async (req, res) => {
   try {
     const videos = await Video.findAll();
-
+   
     res.status(200).json({
       message: "Lista de vídeos recuperada com sucesso.",
       total: videos.length,
@@ -154,5 +172,6 @@ module.exports = {
   updateVideo,
   deleteVideo,
   getVideoById,
-  getFeaturedVideos
+  getFeaturedVideos,
+  getTitlesAndCategories
 };

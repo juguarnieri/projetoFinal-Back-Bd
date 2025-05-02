@@ -16,10 +16,33 @@ const findAll = async () => {
     return result.rows;
 };
 
+const getByTitle = async (title) => {
+    if (!title) {
+        const result = await pool.query("SELECT * FROM news ORDER BY created_at DESC");
+        return result.rows;
+    } else {
+        const result = await pool.query(
+            "SELECT * FROM news WHERE title ILIKE $1 ORDER BY created_at DESC",
+            [`%${title}%`]
+        );
+        return result.rows;
+    }
+};
+
+
+
 const getByCategory = async (category) => {
     const result = await pool.query(
         "SELECT * FROM news WHERE category ILIKE $1 ORDER BY created_at DESC",
         [category]
+    );
+    return result.rows;
+};
+
+const getByYear = async (year) => {
+    const result = await pool.query(
+        "SELECT * FROM news WHERE year = $1 ORDER BY created_at DESC",
+        [year]
     );
     return result.rows;
 };
@@ -63,5 +86,7 @@ module.exports = {
     update,
     remove,
     findById,
-    getByDecade
+    getByDecade,
+    getByTitle,
+    getByYear
 };
