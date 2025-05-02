@@ -1,5 +1,23 @@
 const pool = require("../config/database");
 
+const getAllPosts = async (minLikes = 0) => {
+    const result = await pool.query(`
+        SELECT 
+            posts.id,
+            posts.user_id,
+            posts.title,
+            posts.caption,
+            posts.media_url,
+            posts.created_at,
+            COUNT(likes.id) AS like_count
+        FROM posts
+        LEFT JOIN likes ON posts.id = likes.post_id
+        GROUP BY posts.id
+        HAVING COUNT(likes.id) >= $1
+        ORDER BY posts.created_at DESC
+    `, [minLikes]);
+    return result.rows;
+};
 const create = async ({ user_id, title, caption, media_url }) => {
     const result = await pool.query(
         "INSERT INTO posts (user_id, title, caption, media_url) VALUES ($1, $2, $3, $4) RETURNING *",
@@ -32,23 +50,45 @@ const countLikes = async (post_id) => {
     );
     return parseInt(result.rows[0].count);
 };
-const findAll = async () => {
+const getPostsTitle = async (titulo) =>{
+    if (!titulo) {
+        const result = await pool.query(`
+            SELECT * FROM posts WHERE title ILIKE $1 ORDER BY title ASC`,
+            [`%${titulo}%`]
+        );
+        return result.rows;
+    } else {
+        const result = await pool.query(`
+            SELECT * FROM posts ORDER BY title ASC`,
+            [`%${titulo}%`]
+        );
+        return result.rows;
+    }
+};
+const filterByStartDate = async (startDate) => {
     const result = await pool.query(`
         SELECT 
-            posts.*, 
-            users.name AS user_name, 
-            users.username, 
-            users.profile_picture,
-            COUNT(likes.post_id) AS like_count
+            posts.id,
+            posts.user_id,
+            posts.title,
+            posts.caption,
+            posts.media_url,
+            posts.created_at,
+            COUNT(likes.id) AS like_count
         FROM posts
-        JOIN users ON posts.user_id = users.id
         LEFT JOIN likes ON posts.id = likes.post_id
-        GROUP BY posts.id, users.id
-        ORDER BY posts.created_at DESC
-    `);
+        WHERE DATE(posts.created_at) >= DATE($1)
+        GROUP BY posts.id,
+        posts.user_id,
+        posts.title,
+        posts.caption,
+        posts.media_url,
+        posts.created_at
+        ORDER BY posts.created_at DESC`,
+        [startDate]
+    );
     return result.rows;
 };
-
 const deletePost = async (postId) => {
     const result = await pool.query("DELETE FROM posts WHERE id = $1", [postId]);
     return result.rowCount > 0; 
@@ -57,11 +97,13 @@ const deletePost = async (postId) => {
 
 
 module.exports = {
+    getAllPosts,
     create,
     findByUser,
     like,
     unlike,
     countLikes,
-    findAll,
+    getPostsTitle,
+    filterByStartDate,
     deletePost
 };

@@ -1,4 +1,6 @@
+const pool = require("../config/database");
 const postModel = require("../models/postModel");
+
 
 const createPost = async (req, res) => {
     const { user_id, title, caption, media_url } = req.body;
@@ -57,14 +59,64 @@ const getLikesCount = async (req, res) => {
     }
 };
 const getAllPosts = async (req, res) => {
+    const minLikes = parseInt(req.query.minLikes) || 0;
     try {
-        const posts = await postModel.findAll();
+        const posts = await postModel.getAllPosts(minLikes);
         res.json(posts);
     } catch (err) {
         console.error("Erro ao buscar todos os posts:", err);
         res.status(500).json({ error: "Erro ao buscar posts" });
     }
 };
+
+const getPostsByTitle = async (req, res) => {
+    try {
+        const { titulo } = req.query;
+        console.log("🎊Valor recebido de 'titulo':", titulo);
+        let result;
+
+        if (!titulo) {
+            result= await pool.query(
+                "SELECT * FROM posts WHERE title ILIKE $1 ORDER BY title ASC",
+                [`%${titulo}%`]
+            );
+        }else{
+            result = await pool.query(
+                "SELECT * FROM posts ORDER BY title ASC",
+                [`%${titulo}%`]
+            );
+        }
+
+        const posts = result.rows;
+
+        res.status(200).json({
+            message: "Posts encontrados com sucesso",
+            total: posts.length,
+            data: posts
+        });
+    } catch (err) {
+        console.error("Erro ao buscar posts:", err);
+        res.status(500).json({
+            error: "Erro ao buscar posts",
+            details: err.message
+        });
+    }
+};
+const getPostsByStartDate = async (req, res) => {
+    try {
+        const { startDate } = req.query;
+        if (!startDate) {
+            return res.status(400).json({ error: "startDate é obrigatório" });
+        }
+        const posts = await postModel.filterByStartDate(startDate);
+        res.json(posts);
+    } catch (err) {
+        console.error("Erro ao buscar posts:", err);
+        res.status(500).json({
+            error: "Erro ao buscar posts"});
+    }
+};
+
 const deletePost = async (req, res) => {
     const { postId } = req.params;
 
@@ -90,5 +142,7 @@ module.exports = {
     unlikePost,
     getLikesCount,
     getAllPosts,
+    getPostsByTitle,
+    getPostsByStartDate,
     deletePost
 };
