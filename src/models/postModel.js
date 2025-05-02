@@ -78,7 +78,12 @@ const filterByStartDate = async (startDate) => {
         FROM posts
         LEFT JOIN likes ON posts.id = likes.post_id
         WHERE DATE(posts.created_at) >= DATE($1)
-        GROUP BY posts.id
+        GROUP BY posts.id,
+        posts.user_id,
+        posts.title,
+        posts.caption,
+        posts.media_url,
+        posts.created_at
         ORDER BY posts.created_at DESC`,
         [startDate]
     );
