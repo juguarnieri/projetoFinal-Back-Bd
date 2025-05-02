@@ -50,18 +50,19 @@ const countLikes = async (post_id) => {
     );
     return parseInt(result.rows[0].count);
 };
-const getPostsTitle = async (title) => {
-    try {
-        if (!title) {
-            const result = await pool.query("SELECT * FROM posts");
-            return result.rows;
-        }else {
-            const result = await pool.query("SELECT * FROM posts WHERE LOWER(title) LIKE LOWER($1)", [title]);
-            return result.rows;
-        }
-    } catch (err) {
-        console.error("Erro ao buscar posts:", err);
-        throw err;
+const getPostsTitle = async (titulo) =>{
+    if (!titulo) {
+        const result = await pool.query(`
+            SELECT * FROM posts WHERE title ILIKE $1 ORDER BY title ASC`,
+            [`%${titulo}%`]
+        );
+        return result.rows;
+    } else {
+        const result = await pool.query(`
+            SELECT * FROM posts ORDER BY title ASC`,
+            [`%${titulo}%`]
+        );
+        return result.rows;
     }
 };
 const filterByStartDate = async (startDate) => {

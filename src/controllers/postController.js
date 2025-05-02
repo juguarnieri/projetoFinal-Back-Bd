@@ -70,21 +70,35 @@ const getAllPosts = async (req, res) => {
 };
 
 const getPostsByTitle = async (req, res) => {
-    const { title } = req.query;
-    console.log("Titulo recebido: ", title);
     try {
-        const posts = await postModel.getPostsTitle(title);
+        const { titulo } = req.query;
+        console.log("🎊Valor recebido de 'titulo':", titulo);
+        let result;
+
+        if (!titulo) {
+            result= await pool.query(
+                "SELECT * FROM posts WHERE title ILIKE $1 ORDER BY title ASC",
+                [`%${titulo}%`]
+            );
+        }else{
+            result = await pool.query(
+                "SELECT * FROM posts ORDER BY title ASC",
+                [`%${titulo}%`]
+            );
+        }
+
+        const posts = result.rows;
 
         res.status(200).json({
             message: "Posts encontrados com sucesso",
             total: posts.length,
             data: posts
         });
-        } catch (err) {
-            console.error("Erro ao buscar posts:", err);
-            res.status(500).json({
-                error: "Erro ao buscar posts",
-                details: err.message
+    } catch (err) {
+        console.error("Erro ao buscar posts:", err);
+        res.status(500).json({
+            error: "Erro ao buscar posts",
+            details: err.message
         });
     }
 };
