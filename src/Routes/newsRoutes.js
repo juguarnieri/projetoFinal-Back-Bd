@@ -5,6 +5,7 @@ const newsController = require("../controllers/newsController");
 router.get("/featured", newsController.getFeaturedNews);
 router.get("/category/:category", newsController.getNewsByCategory);
 router.get("/decade/:decade", newsController.getNewsByDecade);
+router.get("/year/:year", newsController.getNewsByYear); 
 router.get("/", newsController.getAllNews);
 
 router.post("/", newsController.createNews);
