@@ -62,6 +62,7 @@ router.get("/category/:category", newsController.getNewsByCategory);
  *         description: Erro ao buscar notícias por década
  */
 router.get("/decade/:decade", newsController.getNewsByDecade);
+router.get("/year/:year", newsController.getNewsByYear); 
 
 /**
  * @swagger

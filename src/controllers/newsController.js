@@ -47,11 +47,17 @@ const createNews = async (req, res) => {
   }
 };
 const getAllNews = async (req, res) => {
-  const { title } = req.query; 
+  const { title, year, decade, category } = req.query; 
   try {
     let news;
     if (title) {
       news = await News.getByTitle(title);
+    } else if (year) {
+      news = await News.getByYear(year);
+    } else if (decade) {
+      news = await News.getByDecade(decade);
+    } else if (category) {
+      news = await News.getByCategory(category);
     } else {
       news = await News.findAll();
     }
@@ -85,6 +91,26 @@ const getNewsByCategory = async (req, res) => {
     console.error("Erro ao buscar por categoria:", err);
     res.status(500).json({
       error: "Erro ao buscar notícias por categoria.",
+      details: err.message
+    });
+  }
+};
+
+const getNewsByYear = async (req, res) => {
+  const { year } = req.params;
+
+  try {
+    const news = await News.getByYear(year);
+
+    res.status(200).json({
+      message: `Notícias do ano de ${year} recuperadas com sucesso.`,
+      total: news.length,
+      data: news
+    });
+  } catch (err) {
+    console.error("Erro ao buscar notícias por ano:", err);
+    res.status(500).json({
+      error: "Erro ao buscar notícias por ano.",
       details: err.message
     });
   }
@@ -204,6 +230,7 @@ module.exports = {
   createNews,
   getAllNews,
   getNewsByCategory,
+  getNewsByYear,
   getNewsByDecade,
   updateNews,
   deleteNews,
