@@ -172,6 +172,9 @@ router.delete("/:postId/unlike/:userId", postController.unlikePost);
  *         description: Erro ao buscar contagem de likes
  */
 router.get("/:postId/likes", postController.getLikesCount);
+router.get("/", postController.getAllPosts);
+router.get("/s", postController.getPostsByTitle);
+
 
 /**
  * @swagger

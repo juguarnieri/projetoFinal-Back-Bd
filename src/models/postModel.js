@@ -50,17 +50,15 @@ const countLikes = async (post_id) => {
     );
     return parseInt(result.rows[0].count);
 };
-const getPostsTitle = async (titulo) =>{
-    if (!titulo) {
+const getPostsTitle = async (title) =>{
+    if (!title) {
         const result = await pool.query(`
-            SELECT * FROM posts WHERE title ILIKE $1 ORDER BY title ASC`,
-            [`%${titulo}%`]
-        );
+            SELECT * FROM posts ORDER BY created_at DESC`);
         return result.rows;
     } else {
         const result = await pool.query(`
-            SELECT * FROM posts ORDER BY title ASC`,
-            [`%${titulo}%`]
+            SELECT * FROM posts WHERE title ILIKE $1 ORDER BY created_at DESC`,
+            [`%${title}%`]
         );
         return result.rows;
     }
