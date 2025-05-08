@@ -8,7 +8,7 @@ router.post("/:postId/like/:userId", postController.likePost);
 router.delete("/:postId/unlike/:userId", postController.unlikePost);
 router.get("/:postId/likes", postController.getLikesCount);
 router.get("/", postController.getAllPosts);
-router.get("/", postController.getPostsByTitle);
+router.get("/s", postController.getPostsByTitle);
 router.get("/startDate", postController.getPostsByStartDate);
 router.delete("/:postId", postController.deletePost);
 
