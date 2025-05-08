@@ -34,7 +34,7 @@ const getByTitle = async (title) => {
 const getByCategory = async (category) => {
     const result = await pool.query(
         "SELECT * FROM news WHERE category ILIKE $1 ORDER BY created_at DESC",
-        [category]
+        [`%${category}%`]
     );
     return result.rows;
 };
@@ -44,6 +44,7 @@ const getByYear = async (year) => {
         "SELECT * FROM news WHERE year = $1 ORDER BY created_at DESC",
         [year]
     );
+    console.log("Notícias encontradas pelo ano:", result.rows);
     return result.rows;
 };
 
