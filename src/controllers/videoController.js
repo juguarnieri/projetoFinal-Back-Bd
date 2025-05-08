@@ -27,39 +27,13 @@ const createVideo = async (req, res) => {
   }
 };
 
-const getTitlesAndCategories = async (req, res) => {
-  try {
-    const videos = await Video.findTitlesAndCategories();
-
-    res.status(200).json({
-      message: "Lista de títulos e categorias recuperada com sucesso.",
-      total: videos.length,
-      data: videos
-    });
-  } catch (err) {
-    console.error("Erro ao buscar títulos e categorias:", err);
-    res.status(500).json({
-      error: "Erro ao buscar títulos e categorias.",
-      details: err.message
-    });
-  }
-};
-
 const getAllVideos = async (req, res) => {
   try {
-    const videos = await Video.findAll();
-   
-    res.status(200).json({
-      message: "Lista de vídeos recuperada com sucesso.",
-      total: videos.length,
-      data: videos
-    });
-  } catch (err) {
-    console.error("Erro ao buscar vídeos:", err);
-    res.status(500).json({
-      error: "Erro ao buscar vídeos.",
-      details: err.message
-    });
+      const {title} = req.query;
+      const videos = await Video.getAllVideos(title);
+      res.json(videos);
+  } catch (error) {
+      res.status(500).json({ message: "Erro ao buscar videos." });
   }
 };
 
@@ -173,5 +147,5 @@ module.exports = {
   deleteVideo,
   getVideoById,
   getFeaturedVideos,
-  getTitlesAndCategories
+  getAllVideos
 };

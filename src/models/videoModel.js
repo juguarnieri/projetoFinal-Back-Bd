@@ -1,10 +1,5 @@
 const pool = require("../config/database");
 
-const findTitlesAndCategories = async () => {
-    const result = await pool.query("SELECT title, category FROM videos ORDER BY created_at DESC");
-    return result.rows;
-};
-
 const create = async ({ title, description, link, image, category, is_featured }) => {
     const result = await pool.query(
         `INSERT INTO videos (title, description, link, image, category, is_featured)
@@ -12,6 +7,16 @@ const create = async ({ title, description, link, image, category, is_featured }
         [title, description, link, image, category, is_featured || false]
     );
     return result.rows[0];
+};
+
+const getAllVideos = async (title) => {
+    if(!title){
+    const result = await pool.query("SELECT * FROM videos");
+    return result.rows;
+    } else {
+        const result = await pool.query("SELECT * FROM videos WHERE title ILIKE $1", [`%${title}`])
+        return result.rows;
+    }
 };
 
 const findAll = async () => {
@@ -36,7 +41,7 @@ const getFeatured = async () => {
 const update = async (id, { title, description, link, image, category, is_featured }) => {
     const result = await pool.query(
         `UPDATE videos 
-         SET title = $1, description = $2, link = $3, image = $4, category = $5, is_featured = $6
+        SET title = $1, description = $2, link = $3, image = $4, category = $5, is_featured = $6
          WHERE id = $7 RETURNING *`,
         [title, description, link, image, category, is_featured || false, id]
     );
@@ -60,5 +65,5 @@ module.exports = {
     update,
     remove,
     findById,
-    findTitlesAndCategories
+    getAllVideos
 };
