@@ -95,7 +95,7 @@ router.post("/", postController.createPost);
  *       500:
  *         description: Erro ao buscar posts do usuário
  */
-router.get("/usuario/:userId", postController.getPostsByUser);
+router.get("/usuario/:userId", postController.getUserPosts);
 
 /**
  * @swagger

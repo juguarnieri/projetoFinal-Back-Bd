@@ -88,7 +88,7 @@ router.get("/", userController.getAllUsers);
  *       404:
  *         description: Usuário não encontrado
  */
-router.get("/:id", userController.getUserById);
+router.get("/:id", userController.getUserProfile);
 
 /**
  * @swagger
@@ -159,7 +159,7 @@ router.delete("/:id", userController.deleteUser);
  *       200:
  *         description: Lista de seguidores retornada com sucesso
  */
-router.get("/:id/followers", userController.getFollowers);
+router.get("/:id/followers", userController.listFollowers);
 
 /**
  * @swagger
@@ -177,7 +177,7 @@ router.get("/:id/followers", userController.getFollowers);
  *       200:
  *         description: Lista de usuários seguidos retornada com sucesso
  */
-router.get("/:id/following", userController.getFollowing);
+router.get("/:id/following", userController.listFollowing);
 
 /**
  * @swagger
