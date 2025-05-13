@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const podcastController = require("../controllers/podcastController");
 const apiKeyMiddleware = require("../config/apiKey");
+const upload = require("../config/upload");
 
 router.use(apiKeyMiddleware);
 
@@ -95,7 +96,7 @@ router.get("/", podcastController.getAllPodcasts);
  *                   type: string
  *                   example: Erro interno do servidor
  */
-router.post("/", podcastController.createPodcast);
+router.post("/", upload.single("image") , podcastController.createPodcast);
 
 /**
  * @swagger

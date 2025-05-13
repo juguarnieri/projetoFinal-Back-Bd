@@ -2,7 +2,7 @@ const Podcast = require("../models/podcastModel");
 
 const createPodcast = async (req, res) => {
     try {
-        const { title, description, link, image, category, is_featured } = req.body;
+        const { title, description, link, category, is_featured } = req.body;
 
         if (!title || !link) {
             return res.status(400).json({
@@ -11,6 +11,7 @@ const createPodcast = async (req, res) => {
             });
         }
 
+        const image = req.file ? req.file.filename : req.body.image;
         const podcast = await Podcast.create({ title, description, link, image, category, is_featured });
         
         res.status(201).json({
