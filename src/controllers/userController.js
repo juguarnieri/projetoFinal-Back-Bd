@@ -1,9 +1,10 @@
 const User = require("../models/userModel");
 
 const createUser = async (req, res) => {
-    const { username, name, profile_picture } = req.body;
+    const { username, name } = req.body;
 
     try {
+        const profile_picture = req.file ? req.file.filename : req.body.profile_picture;
         const user = await User.create({ username, name, profile_picture });
         res.status(201).json(user);
     } catch (err) {

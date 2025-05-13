@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
 const apiKeyMiddleware = require("../config/apiKey");
+const upload = require("../config/upload");
 
 router.use(apiKeyMiddleware);
 /**
@@ -64,7 +65,7 @@ router.use(apiKeyMiddleware);
  *                   type: string
  *                   example: "Erro ao criar usuário"
  */
-router.post("/", userController.createUser);
+router.post("/", upload.single("profile_picture") , userController.createUser);
 
 /**
  * @swagger
