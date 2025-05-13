@@ -6,6 +6,7 @@ const postRoutes = require("./src/routes/postRoutes");
 const commentRoutes = require('./src/routes/commentRoutes');
 const newsRoutes = require("./src/Routes/newsRoutes");  
 const podcastRoutes = require("./src/routes/podcastRoutes"); 
+const path = require("path");
 const videoRoutes = require("./src/routes/videoRoutes");   
 const aboutRoutes = require("./src/routes/aboutRoutes");
 const reportRoutes = require("./src/routes/reportRoutes");
@@ -13,6 +14,7 @@ const setupSwagger = require("./src/config/swagger");
 
 const app = express();
 app.use(cors());
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.json());
 setupSwagger(app)
 

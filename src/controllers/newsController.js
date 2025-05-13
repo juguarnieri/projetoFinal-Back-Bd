@@ -8,9 +8,9 @@ function extractDecadeFromYear(year) {
 }
 
 const createNews = async (req, res) => {
-  const { title, description, link, image, category, is_featured, year } = req.body;
+  const { title, description, link, category, is_featured, year } = req.body;
 
-  const requiredFields = ['title', 'description', 'link', 'image', 'category', 'year', 'is_featured'];
+  const requiredFields = ['title', 'description', 'link', 'category', 'year', 'is_featured'];
   const missingFields = requiredFields.filter(field => req.body[field] === undefined);
 
   if (missingFields.length > 0) {
@@ -22,6 +22,7 @@ const createNews = async (req, res) => {
 
   try {
     const decade = extractDecadeFromYear(year);
+    const image = req.file ? req.file.filename : req.body.image;
     const news = await News.create({
       title,
       description,

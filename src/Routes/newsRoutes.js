@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const newsController = require("../controllers/newsController");
 const apiKeyMiddleware = require("../config/apiKey");
+const upload = require("../config/upload.js");
 
 router.use(apiKeyMiddleware);
 
@@ -173,7 +174,7 @@ router.get("/", newsController.getAllNews);
  *                   type: string
  *                   example: "Erro ao inserir no banco de dados."
  */
-router.post("/", newsController.createNews);
+router.post("/", upload.single("image") , newsController.createNews);
 /**
  * @swagger
  * /api/news/featured:
