@@ -23,7 +23,7 @@ app.use("/api/news", newsRoutes);
 app.use("/api/podcasts", podcastRoutes);
 app.use("/api/videos", videoRoutes); 
 app.use("/api/about", aboutRoutes);
-app.use("/api", reportRoutes);
+app.use("/api/reports", reportRoutes);
 
 app.get("/", (req, res) => {
     res.send("🚀 API funcionando com Users, Posts, Comments, News, Videos e Podcasts!");

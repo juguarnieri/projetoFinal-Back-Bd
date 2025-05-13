@@ -1,9 +1,5 @@
 const pool = require("../config/database");
 
-const filterTeamMembers = async () => {
-  const result = await pool.query("SELECT name, role FROM team_members ORDER BY created_at ASC");
-  return result.rows;
-};
 
 const createAboutPage = async ({ main_title, subtitle, description, commitment_title, commitment_text }) => {
   const result = await pool.query(
@@ -39,6 +35,7 @@ const getTeamMembers = async () => {
   const result = await pool.query("SELECT * FROM team_members ORDER BY created_at ASC");
   return result.rows;
 };
+
 
 const addTeamMember = async ({ name, role, photo_url, about_page_id }) => {
   const result = await pool.query(

@@ -1,11 +1,10 @@
 const pool = require("../config/database");
 const News = require("../models/newsModel");
 
-// Função para extrair década a partir do ano
 function extractDecadeFromYear(year) {
   if (!year) return null;
   const decade = Math.floor(year / 10) * 10;
-  return decade.toString().slice(2); 
+  return decade.toString().slice(2);
 }
 
 const createNews = async (req, res) => {
@@ -46,21 +45,17 @@ const createNews = async (req, res) => {
     });
   }
 };
+
 const getAllNews = async (req, res) => {
-  const { title, year, decade, category } = req.query; 
+  const { title, year, decade, category } = req.query;
+
   try {
     let news;
-    if (title) {
-      news = await News.getByTitle(title);
-    } else if (year) {
-      news = await News.getByYear(year);
-    } else if (decade) {
-      news = await News.getByDecade(decade);
-    } else if (category) {
-      news = await News.getByCategory(category);
-    } else {
-      news = await News.findAll();
-    }
+    if (title) news = await News.getByTitle(title);
+    else if (year) news = await News.getByYear(year);
+    else if (decade) news = await News.getByDecade(decade);
+    else if (category) news = await News.getByCategory(category);
+    else news = await News.findAll();
 
     res.status(200).json({
       message: "Lista de notícias recuperada com sucesso.",
@@ -138,31 +133,34 @@ const getNewsByDecade = async (req, res) => {
 
 const updateNews = async (req, res) => {
   const { id } = req.params;
-  const data = req.body;
+  const { title, description, link, image, category, is_featured, year } = req.body;
 
   try {
-    const existing = await pool.query("SELECT * FROM news WHERE id = $1", [id]);
+    const decade = extractDecadeFromYear(year);
+    const updatedNews = await News.update(parseInt(id, 10), {
+      title,
+      description,
+      link,
+      image,
+      category,
+      is_featured,
+      year,
+      decade
+    });
 
-    if (existing.rowCount === 0) {
+    if (!updatedNews) {
       return res.status(404).json({ error: "Notícia não encontrada." });
     }
 
-    // Atualiza década se o ano estiver presente
-    if (data.year) {
-      data.decade = extractDecadeFromYear(data.year);
-    }
-
-    const updated = await News.update(id, data);
-
     res.status(200).json({
       message: "Notícia atualizada com sucesso.",
-      data: updated
+      data: updatedNews
     });
-  } catch (err) {
-    console.error("Erro ao atualizar notícia:", err);
+  } catch (error) {
+    console.error("Erro ao atualizar notícia:", error);
     res.status(500).json({
       error: "Erro ao atualizar notícia.",
-      details: err.message
+      details: error.message
     });
   }
 };
@@ -193,6 +191,10 @@ const deleteNews = async (req, res) => {
 const getNewsById = async (req, res) => {
   const { id } = req.params;
 
+  if (isNaN(id)) {
+    return res.status(400).json({ error: "ID inválido." });
+  }
+
   try {
     const news = await News.findById(id);
 
@@ -204,27 +206,30 @@ const getNewsById = async (req, res) => {
       message: "Notícia recuperada com sucesso.",
       data: news
     });
-  } catch (err) {
-    console.error("Erro ao buscar notícia por ID:", err);
+  } catch (error) {
+    console.error("Erro ao buscar notícia por ID:", error);
     res.status(500).json({
       error: "Erro ao buscar notícia por ID.",
-      details: err.message
+      details: error.message
     });
-  }
-};
-const getFeaturedNews = async (req, res) => {
-  try {
-    const news = await News.getFeatured();
-    res.status(200).json({
-      message: "Notícias em destaque recuperadas com sucesso.",
-      total: news.length,
-      data: news
-    });
-  } catch (err) {
-    res.status(500).json({ error: "Erro ao buscar notícias em destaque.", details: err.message });
   }
 };
 
+const getFeaturedNews = async (req, res) => {
+  try {
+    const featuredNews = await News.getFeatured();
+    res.status(200).json({
+      message: "Notícias em destaque recuperadas com sucesso.",
+      data: featuredNews
+    });
+  } catch (error) {
+    console.error("Erro ao buscar notícias em destaque:", error);
+    res.status(500).json({
+      error: "Erro ao buscar notícias em destaque.",
+      details: error.message
+    });
+  }
+};
 
 module.exports = {
   createNews,
@@ -235,5 +240,5 @@ module.exports = {
   updateNews,
   deleteNews,
   getNewsById,
-  getFeaturedNews
+  getFeaturedNews,
 };

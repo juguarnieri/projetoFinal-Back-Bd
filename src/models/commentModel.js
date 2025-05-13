@@ -40,7 +40,7 @@ const getCommentsByPost = async (post_id) => {
             comments.created_at,
             users.id AS user_id,
             users.username,
-            users.name,
+            users.name AS user_name,
             users.profile_picture
          FROM comments
          JOIN users ON comments.user_id = users.id
@@ -59,7 +59,7 @@ const getCommentById = async (id) => {
             comments.created_at,
             users.id AS user_id,
             users.username,
-            users.name,
+            users.name AS user_name,
             users.profile_picture
          FROM comments
          JOIN users ON comments.user_id = users.id
@@ -70,15 +70,37 @@ const getCommentById = async (id) => {
 };
 
 const updateComment = async (id, content, userId) => {
-    const result = await pool.query(`
-UPDATE comments
-SET content = $1
-WHERE id = $2 AND user_id = $3
-    `, [content, id, userId]);
+    const result = await pool.query(
+        `UPDATE comments
+         SET content = $1
+         WHERE id = $2 AND user_id = $3
+         RETURNING id, content, created_at`,
+        [content, id, userId]
+    );
 
-    return result.rowCount > 0;
+    if (result.rowCount === 0) {
+        return null; 
+    }
+
+    const updatedComment = await pool.query(
+        `SELECT 
+            comments.id AS comment_id,
+            comments.content AS comment_content,
+            comments.created_at AS comment_created_at,
+            posts.id AS post_id,
+            posts.title AS post_title,
+            users.id AS user_id,
+            users.username AS user_username,
+            users.name AS user_name
+         FROM comments
+         JOIN posts ON comments.post_id = posts.id
+         JOIN users ON comments.user_id = users.id
+         WHERE comments.id = $1`,
+        [id]
+    );
+
+    return updatedComment.rows[0];
 };
-
 const deleteComment = async (id) => {
     const result = await pool.query(
         `DELETE FROM comments 

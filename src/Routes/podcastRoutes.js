@@ -1,20 +1,29 @@
 const express = require("express");
 const router = express.Router();
 const podcastController = require("../controllers/podcastController");
+const apiKeyMiddleware = require("../config/apiKey");
+
+router.use(apiKeyMiddleware);
 
 /**
  * @swagger
  * tags:
  *   name: Podcasts
- *   description: Operações relacionadas aos podcasts
+ *   description: Endpoints para gerenciar e acessar podcasts
  */
 
 /**
  * @swagger
  * /api/podcasts:
  *   get:
- *     summary: Retorna todos os podcasts
+ *     summary: Lista todos os podcasts
  *     tags: [Podcasts]
+ *     parameters:
+ *       - in: query
+ *         name: title
+ *         schema:
+ *           type: string
+ *         description: Filtro pelo título do podcast
  *     responses:
  *       200:
  *         description: Lista de podcasts retornada com sucesso
@@ -23,28 +32,20 @@ const podcastController = require("../controllers/podcastController");
  *             schema:
  *               type: array
  *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: integer
- *                     example: 1
- *                   title:
- *                     type: string
- *                     example: "Podcast sobre tecnologia"
- *                   description:
- *                     type: string
- *                     example: "Discussões sobre o futuro da tecnologia."
- *                   link:
- *                     type: string
- *                     example: "https://example.com/podcast"
- *                   category:
- *                     type: string
- *                     example: "Tecnologia"
- *                   image:
- *                     type: string
- *                     example: "https://example.com/image.jpg"
+ *                 $ref: '#/components/schemas/Podcast'
  *       500:
  *         description: Erro interno do servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 500
+ *                 message:
+ *                   type: string
+ *                   example: Erro interno do servidor
  */
 router.get("/", podcastController.getAllPodcasts);
 
@@ -59,34 +60,79 @@ router.get("/", podcastController.getAllPodcasts);
  *       content:
  *         application/json:
  *           schema:
- *             type: object
- *             required:
- *               - title
- *               - link
- *             properties:
- *               title:
- *                 type: string
- *               description:
- *                 type: string
- *               link:
- *                 type: string
- *               category:
- *                 type: string
- *               image:
- *                 type: string
+ *             $ref: '#/components/schemas/PodcastInput'
  *     responses:
  *       201:
  *         description: Podcast criado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Podcast'
+ *       400:
+ *         description: Dados inválidos ou campos obrigatórios ausentes
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 400
+ *                 message:
+ *                   type: string
+ *                   example: Campos obrigatórios ausentes
  *       500:
  *         description: Erro ao criar podcast
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 500
+ *                 message:
+ *                   type: string
+ *                   example: Erro interno do servidor
  */
 router.post("/", podcastController.createPodcast);
 
 /**
  * @swagger
+ * /api/podcasts/featured:
+ *   get:
+ *     summary: Lista de podcasts em destaque
+ *     tags: [Podcasts]
+ *     responses:
+ *       200:
+ *         description: Podcasts em destaque retornados com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Podcast'
+ *       500:
+ *         description: Erro interno do servidor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 500
+ *                 message:
+ *                   type: string
+ *                   example: Erro interno do servidor
+ */
+router.get("/featured", podcastController.getFeaturedPodcasts);
+
+/**
+ * @swagger
  * /api/podcasts/{id}:
  *   get:
- *     summary: Retorna um podcast específico pelo ID
+ *     summary: Obtém um podcast por ID
  *     tags: [Podcasts]
  *     parameters:
  *       - in: path
@@ -94,13 +140,40 @@ router.post("/", podcastController.createPodcast);
  *         required: true
  *         schema:
  *           type: integer
+ *         description: ID do podcast
  *     responses:
  *       200:
- *         description: Podcast encontrado
+ *         description: Podcast encontrado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Podcast'
  *       404:
  *         description: Podcast não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 404
+ *                 message:
+ *                   type: string
+ *                   example: Podcast não encontrado
  *       500:
  *         description: Erro ao buscar podcast
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 500
+ *                 message:
+ *                   type: string
+ *                   example: Erro interno do servidor
  */
 router.get("/:id", podcastController.getPodcastById);
 
@@ -108,7 +181,7 @@ router.get("/:id", podcastController.getPodcastById);
  * @swagger
  * /api/podcasts/{id}:
  *   put:
- *     summary: Atualiza um podcast específico
+ *     summary: Atualiza um podcast existente
  *     tags: [Podcasts]
  *     parameters:
  *       - in: path
@@ -116,30 +189,48 @@ router.get("/:id", podcastController.getPodcastById);
  *         required: true
  *         schema:
  *           type: integer
+ *         description: ID do podcast
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             type: object
- *             properties:
- *               title:
- *                 type: string
- *               description:
- *                 type: string
- *               link:
- *                 type: string
- *               category:
- *                 type: string
- *               image:
- *                 type: string
+ *             $ref: '#/components/schemas/PodcastInput'
  *     responses:
  *       200:
  *         description: Podcast atualizado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Podcast'
+ *       400:
+ *         description: Dados inválidos enviados
  *       404:
  *         description: Podcast não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 404
+ *                 message:
+ *                   type: string
+ *                   example: Podcast não encontrado
  *       500:
  *         description: Erro ao atualizar podcast
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 500
+ *                 message:
+ *                   type: string
+ *                   example: Erro interno do servidor
  */
 router.put("/:id", podcastController.updatePodcast);
 
@@ -147,7 +238,7 @@ router.put("/:id", podcastController.updatePodcast);
  * @swagger
  * /api/podcasts/{id}:
  *   delete:
- *     summary: Deleta um podcast
+ *     summary: Remove um podcast pelo ID
  *     tags: [Podcasts]
  *     parameters:
  *       - in: path
@@ -155,53 +246,45 @@ router.put("/:id", podcastController.updatePodcast);
  *         required: true
  *         schema:
  *           type: integer
+ *         description: ID do podcast
  *     responses:
  *       200:
  *         description: Podcast deletado com sucesso
- *       404:
- *         description: Podcast não encontrado
- *       500:
- *         description: Erro ao deletar podcast
- */
-router.delete("/:id", podcastController.deletePodcast);
-
-/**
- * @swagger
- * /api/podcasts/featured:
- *   get:
- *     summary: Retorna podcasts em destaque
- *     tags: [Podcasts]
- *     responses:
- *       200:
- *         description: Lista de podcasts em destaque retornada com sucesso
  *         content:
  *           application/json:
  *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: integer
- *                     example: 1
- *                   title:
- *                     type: string
- *                     example: "Podcast sobre tecnologia"
- *                   description:
- *                     type: string
- *                     example: "Discussões sobre o futuro da tecnologia."
- *                   link:
- *                     type: string
- *                     example: "https://example.com/podcast"
- *                   category:
- *                     type: string
- *                     example: "Tecnologia"
- *                   image:
- *                     type: string
- *                     example: "https://example.com/image.jpg"
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Podcast deletado com sucesso
+ *       404:
+ *         description: Podcast não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 404
+ *                 message:
+ *                   type: string
+ *                   example: Podcast não encontrado
  *       500:
- *         description: Erro interno do servidor
+ *         description: Erro ao deletar podcast
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 status:
+ *                   type: integer
+ *                   example: 500
+ *                 message:
+ *                   type: string
+ *                   example: Erro interno do servidor
  */
-router.get("/featured", podcastController.getFeaturedPodcasts);
+router.delete("/:id", podcastController.deletePodcast);
 
 module.exports = router;
