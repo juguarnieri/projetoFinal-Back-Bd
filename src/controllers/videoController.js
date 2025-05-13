@@ -2,7 +2,7 @@ const pool = require("../config/database");
 const Video = require("../models/videoModel");
 
 const createVideo = async (req, res) => {
-  const { title, description, link, image, category } = req.body;
+  const { title, description, link, category } = req.body;
 
   if (!title || !link) {
     return res.status(400).json({
@@ -12,6 +12,7 @@ const createVideo = async (req, res) => {
   }
 
   try {
+    const image = req.file ? req.file.filename : req.body.image;
     const video = await Video.create({ title, description, link, image, category });
 
     res.status(201).json({

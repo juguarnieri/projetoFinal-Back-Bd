@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const videoController = require("../controllers/videoController");
 const apiKeyMiddleware = require("../config/apiKey");
+const upload = require("../config/upload");
 
 router.use(apiKeyMiddleware);
 /**
@@ -76,7 +77,7 @@ router.use(apiKeyMiddleware);
  *               error: "Erro interno ao criar vídeo."
  *               details: "Detalhes técnicos do erro"
  */
-router.post("/", videoController.createVideo);
+router.post("/", upload.single("image") , videoController.createVideo);
 
 /**
  * @swagger
