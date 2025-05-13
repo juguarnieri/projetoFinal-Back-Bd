@@ -5,18 +5,28 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'API da rede social',
+      title: 'API Projeto Final',
       version: '1.0.0',
-      description: 'Documentação da API para gerenciar a nossa rede social ',
+      description: 'Documentação da API para gerenciar projeto final.',
     },
+    components: {
+      securitySchemes: {
+        ApiKeyAuth: {
+          type: 'apiKey',
+          in: 'header',
+          name: 'x-api-key',
+        },
+      },
+    },
+    security: [{ ApiKeyAuth: [] }],
   },
-  apis: ['./src/Routes/*.js'], // <- Caminho das suas rotas
+  apis: ['./src/routes/*.js'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
 
 const setupSwagger = (app) => {
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 };
 
 module.exports = setupSwagger;

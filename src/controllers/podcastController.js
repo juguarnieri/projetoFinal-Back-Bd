@@ -1,48 +1,34 @@
-const pool = require("../config/database");
 const Podcast = require("../models/podcastModel");
 
 const createPodcast = async (req, res) => {
-  const { title, description, link, image, category } = req.body;
+    try {
+        const { title, description, link, image, category, is_featured } = req.body;
 
-  if (!title || !link) {
-    return res.status(400).json({
-      error: "Campos obrigatórios ausentes.",
-      details: "Os campos 'title' e 'link' são obrigatórios."
-    });
-  }
+        if (!title || !link) {
+            return res.status(400).json({
+                error: "Campos obrigatórios ausentes.",
+                details: "Os campos 'title' e 'link' são obrigatórios."
+            });
+        }
 
-  try {
-    const podcast = await Podcast.create({ title, description, link, image, category });
-
-    res.status(201).json({
-      message: "Podcast criado com sucesso!",
-      data: podcast
-    });
-  } catch (err) {
-    console.error("Erro ao criar podcast:", err);
-    res.status(500).json({
-      error: "Erro interno ao criar podcast.",
-      details: err.message
-    });
-  }
+        const podcast = await Podcast.create({ title, description, link, image, category, is_featured });
+        
+        res.status(201).json({
+            message: "Podcast criado com sucesso!",
+            data: podcast
+        });
+    } catch (err) {
+        console.error("Erro ao criar podcast:", err);
+        res.status(500).json({ error: "Erro interno.", details: err.message });
+    }
 };
 
 const getAllPodcasts = async (req, res) => {
   try {
-    const { titulo } = req.query;
-    console.log("🎶 Valor recebido de 'titulo':", titulo);
-    let result;
+    const { title } = req.query;
+    console.log("🎶 Valor recebido de 'title':", title);
 
-    if (titulo) {
-      result = await pool.query(
-        "SELECT * FROM podcasts WHERE title ILIKE $1 ORDER BY title ASC",
-        [`%${titulo}%`]
-      );
-    } else {
-      result = await pool.query("SELECT * FROM podcasts ORDER BY title ASC");
-    }
-
-    const podcasts = result.rows;
+    const podcasts = await Podcast.findAll(title); 
 
     res.status(200).json({
       message: "Lista de podcasts recuperada com sucesso.",
@@ -58,117 +44,104 @@ const getAllPodcasts = async (req, res) => {
   }
 };
 
+
 const getPodcastsByCategory = async (req, res) => {
-  const { category } = req.params;
+    try {
+        const { category } = req.params;
+        const podcasts = await Podcast.getByCategory(category);
 
-  try {
-    const podcasts = await Podcast.getByCategory(category);
+        res.status(200).json({
+            message: `Podcasts da categoria '${category}' recuperados com sucesso.`,
+            total: podcasts.length,
+            data: podcasts
+        });
+    } catch (err) {
+        console.error("Erro ao buscar podcasts por categoria:", err);
+        res.status(500).json({ error: "Erro interno.", details: err.message });
+    }
+};
 
-    res.status(200).json({
-      message: `Podcasts da categoria '${category}' recuperados com sucesso.`,
-      total: podcasts.length,
-      data: podcasts
-    });
-  } catch (err) {
-    console.error("Erro ao buscar podcasts por categoria:", err);
-    res.status(500).json({
-      error: "Erro ao buscar podcasts por categoria.",
-      details: err.message
-    });
-  }
+const getFeaturedPodcasts = async (req, res) => {
+    try {
+        const podcasts = await Podcast.getFeatured();
+
+        res.status(200).json({
+            message: "Podcasts em destaque recuperados com sucesso.",
+            total: podcasts.length,
+            data: podcasts
+        });
+    } catch (err) {
+        console.error("Erro ao buscar podcasts em destaque:", err);
+        res.status(500).json({ error: "Erro interno.", details: err.message });
+    }
 };
 
 const getPodcastById = async (req, res) => {
-  const { id } = req.params;
+    try {
+        const { id } = req.params;
+        const podcast = await Podcast.findById(id);
 
-  try {
-    const podcast = await Podcast.findById(id);
+        if (!podcast) {
+            return res.status(404).json({ error: "Podcast não encontrado." });
+        }
 
-    if (!podcast) {
-      return res.status(404).json({ error: "Podcast não encontrado." });
+        res.status(200).json({
+            message: "Podcast recuperado com sucesso.",
+            data: podcast
+        });
+    } catch (err) {
+        console.error("Erro ao buscar podcast por ID:", err);
+        res.status(500).json({ error: "Erro interno.", details: err.message });
     }
-
-    res.status(200).json({
-      message: "Podcast recuperado com sucesso.",
-      data: podcast
-    });
-  } catch (err) {
-    console.error("Erro ao buscar podcast por ID:", err);
-    res.status(500).json({
-      error: "Erro ao buscar podcast por ID.",
-      details: err.message
-    });
-  }
 };
 
 const updatePodcast = async (req, res) => {
-  const { id } = req.params;
-  const data = req.body;
+    try {
+        const { id } = req.params;
+        const data = req.body;
 
-  try {
-    const existing = await pool.query("SELECT * FROM podcasts WHERE id = $1", [id]);
+        const podcast = await Podcast.findById(id);
+        if (!podcast) {
+            return res.status(404).json({ error: "Podcast não encontrado." });
+        }
 
-    if (existing.rowCount === 0) {
-      return res.status(404).json({ error: "Podcast não encontrado." });
+        const updated = await Podcast.update(id, data);
+
+        res.status(200).json({
+            message: "Podcast atualizado com sucesso.",
+            data: updated
+        });
+    } catch (err) {
+        console.error("Erro ao atualizar podcast:", err);
+        res.status(500).json({ error: "Erro interno.", details: err.message });
     }
-
-    const updated = await Podcast.update(id, data);
-
-    res.status(200).json({
-      message: "Podcast atualizado com sucesso.",
-      data: updated
-    });
-  } catch (err) {
-    console.error("Erro ao atualizar podcast:", err);
-    res.status(500).json({
-      error: "Erro ao atualizar podcast.",
-      details: err.message
-    });
-  }
 };
 
 const deletePodcast = async (req, res) => {
-  const { id } = req.params;
+    try {
+        const { id } = req.params;
+        const deleted = await Podcast.remove(id);
 
-  try {
-    const result = await pool.query("DELETE FROM podcasts WHERE id = $1 RETURNING *", [id]);
+        if (!deleted) {
+            return res.status(404).json({ error: "Podcast não encontrado." });
+        }
 
-    if (result.rowCount === 0) {
-      return res.status(404).json({ error: "Podcast não encontrado." });
+        res.status(200).json({
+            message: "Podcast deletado com sucesso.",
+            data: deleted
+        });
+    } catch (err) {
+        console.error("Erro ao deletar podcast:", err);
+        res.status(500).json({ error: "Erro interno.", details: err.message });
     }
-
-    res.status(200).json({
-      message: "Podcast deletado com sucesso.",
-      data: result.rows[0]
-    });
-  } catch (err) {
-    console.error("Erro ao deletar podcast:", err);
-    res.status(500).json({
-      error: "Erro ao deletar podcast.",
-      details: err.message
-    });
-  }
-};
-const getFeaturedPodcasts = async (req, res) => {
-  try {
-    const podcasts = await Podcast.getFeatured();
-    res.status(200).json({
-      message: "Podcasts em destaque recuperados com sucesso.",
-      total: podcasts.length,
-      data: podcasts
-    });
-  } catch (err) {
-    console.error("Erro ao buscar podcasts em destaque:", err);
-    res.status(500).json({ error: "Erro ao buscar podcasts em destaque.", details: err.message });
-  }
 };
 
 module.exports = {
-  createPodcast,
-  getAllPodcasts,
-  getPodcastsByCategory,
-  getPodcastById,
-  updatePodcast,
-  deletePodcast,
-  getFeaturedPodcasts
+    createPodcast,
+    getAllPodcasts,
+    getPodcastsByCategory,
+    getFeaturedPodcasts,
+    getPodcastById,
+    updatePodcast,
+    deletePodcast
 };

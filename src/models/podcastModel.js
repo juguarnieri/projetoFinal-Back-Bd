@@ -10,29 +10,41 @@ const create = async ({ title, description, link, image, category, is_featured }
 };
 
 const findAll = async (titulo) => {
+    let query = "SELECT * FROM podcasts";
+    const params = [];
+
     if (titulo) {
-        const result = await pool.query(
-            "SELECT * FROM podcasts WHERE title ILIKE $1 ORDER BY title ASC",
-    [`%${titulo}%`] 
-    );
-    return result.rows;
-} else {
-    const result = await pool.query("SELECT * FROM podcasts ORDER BY title ASC");  
-        return result.rows;
+        query += " WHERE title ILIKE $1";
+        params.push(`%${titulo}%`);
     }
+
+    query += " ORDER BY title ASC";
+    const result = await pool.query(query, params);
+
+    return result.rows;
 };
 
 const getByCategory = async (category) => {
     const result = await pool.query(
         "SELECT * FROM podcasts WHERE category ILIKE $1 ORDER BY created_at DESC",
-        [category]
+        [`%${category}%`]
     );
     return result.rows;
 };
 
 const getFeatured = async () => {
-    const result = await pool.query("SELECT * FROM podcasts WHERE is_featured = TRUE ORDER BY created_at DESC");
+    const result = await pool.query(
+        "SELECT * FROM podcasts WHERE is_featured = TRUE ORDER BY created_at DESC"
+    );
     return result.rows;
+};
+
+const findById = async (id) => {
+    const result = await pool.query(
+        "SELECT * FROM podcasts WHERE id = $1",
+        [id]
+    );
+    return result.rows[0];
 };
 
 const update = async (id, { title, description, link, image, category, is_featured }) => {
@@ -46,11 +58,10 @@ const update = async (id, { title, description, link, image, category, is_featur
 };
 
 const remove = async (id) => {
-    await pool.query("DELETE FROM podcasts WHERE id = $1", [id]);
-};
-
-const findById = async (id) => {
-    const result = await pool.query("SELECT * FROM podcasts WHERE id = $1", [id]);
+    const result = await pool.query(
+        "DELETE FROM podcasts WHERE id = $1 RETURNING *",
+        [id]
+    );
     return result.rows[0];
 };
 
@@ -59,7 +70,7 @@ module.exports = {
     findAll,
     getByCategory,
     getFeatured,
+    findById,
     update,
-    remove,
-    findById
+    remove
 };

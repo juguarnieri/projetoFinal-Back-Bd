@@ -10,11 +10,14 @@ const create = async ({ title, description, link, image, category, is_featured }
 };
 
 const getAllVideos = async (title) => {
-    if(!title){
-    const result = await pool.query("SELECT * FROM videos");
-    return result.rows;
+    if (!title) {
+        const result = await pool.query("SELECT * FROM videos ORDER BY created_at DESC");
+        return result.rows;
     } else {
-        const result = await pool.query("SELECT * FROM videos WHERE title ILIKE $1", [`%${title}`])
+        const result = await pool.query(
+            "SELECT * FROM videos WHERE title ILIKE $1 ORDER BY created_at DESC",
+            [`%${title}%`] 
+        );
         return result.rows;
     }
 };

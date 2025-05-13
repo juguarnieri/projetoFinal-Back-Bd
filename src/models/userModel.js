@@ -15,7 +15,9 @@ const findById = async (id) => {
 };
 
 const findAll = async () => {
-    const result = await pool.query("SELECT * FROM users ORDER BY id ASC");
+    const result = await pool.query(
+        `SELECT * FROM users ORDER BY name ASC` 
+    );
     return result.rows;
 };
 

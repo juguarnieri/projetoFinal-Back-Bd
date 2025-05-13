@@ -1,12 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
+const apiKeyMiddleware = require("../config/apiKey");
 
+router.use(apiKeyMiddleware);
 /**
  * @swagger
  * tags:
  *   name: Users
- *   description: Operações relacionadas aos usuários
+ *   description: Endpoints para gerenciar usuários
  */
 
 /**
@@ -21,21 +23,46 @@ const userController = require("../controllers/userController");
  *         application/json:
  *           schema:
  *             type: object
- *             required:
- *               - username
  *             properties:
  *               username:
  *                 type: string
- *                 example: "johndoe"
+ *                 example: "john_doe"
  *               name:
  *                 type: string
  *                 example: "John Doe"
  *               profile_picture:
  *                 type: string
- *                 example: "https://example.com/profile.jpg"
+ *                 example: "http://example.com/johndoe.jpg"
  *     responses:
  *       201:
  *         description: Usuário criado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                   example: 1
+ *                 username:
+ *                   type: string
+ *                   example: "john_doe"
+ *                 name:
+ *                   type: string
+ *                   example: "John Doe"
+ *                 profile_picture:
+ *                   type: string
+ *                   example: "http://example.com/johndoe.jpg"
+ *       500:
+ *         description: Erro ao criar usuário
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao criar usuário"
  */
 router.post("/", userController.createUser);
 
@@ -60,13 +87,23 @@ router.post("/", userController.createUser);
  *                     example: 1
  *                   username:
  *                     type: string
- *                     example: "johndoe"
+ *                     example: "john_doe"
  *                   name:
  *                     type: string
  *                     example: "John Doe"
  *                   profile_picture:
  *                     type: string
- *                     example: "https://example.com/profile.jpg"
+ *                     example: "http://example.com/johndoe.jpg"
+ *       500:
+ *         description: Erro ao buscar usuários
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao buscar usuários"
  */
 router.get("/", userController.getAllUsers);
 
@@ -82,11 +119,56 @@ router.get("/", userController.getAllUsers);
  *         required: true
  *         schema:
  *           type: integer
+ *         description: ID do usuário
  *     responses:
  *       200:
- *         description: Perfil do usuário retornado com sucesso
+ *         description: Perfil do usuário encontrado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                   example: 1
+ *                 username:
+ *                   type: string
+ *                   example: "john_doe"
+ *                 name:
+ *                   type: string
+ *                   example: "John Doe"
+ *                 profile_picture:
+ *                   type: string
+ *                   example: "http://example.com/johndoe.jpg"
+ *                 followers:
+ *                   type: integer
+ *                   example: 120
+ *                 following:
+ *                   type: integer
+ *                   example: 85
+ *                 likes:
+ *                   type: integer
+ *                   example: 300
  *       404:
  *         description: Usuário não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Usuário não encontrado"
+ *       500:
+ *         description: Erro ao buscar perfil
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao buscar perfil"
  */
 router.get("/:id", userController.getUserProfile);
 
@@ -94,7 +176,7 @@ router.get("/:id", userController.getUserProfile);
  * @swagger
  * /api/users/{id}:
  *   put:
- *     summary: Atualiza o perfil de um usuário
+ *     summary: Atualiza um usuário
  *     tags: [Users]
  *     parameters:
  *       - in: path
@@ -102,6 +184,7 @@ router.get("/:id", userController.getUserProfile);
  *         required: true
  *         schema:
  *           type: integer
+ *         description: ID do usuário a ser atualizado
  *     requestBody:
  *       required: true
  *       content:
@@ -111,15 +194,59 @@ router.get("/:id", userController.getUserProfile);
  *             properties:
  *               username:
  *                 type: string
+ *                 example: "john_doe_updated"
  *               name:
  *                 type: string
+ *                 example: "John Doe Updated"
  *               profile_picture:
  *                 type: string
+ *                 example: "http://example.com/johndoe_updated.jpg"
  *     responses:
  *       200:
  *         description: Usuário atualizado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "✅ Usuário atualizado com sucesso!"
+ *                 user:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: integer
+ *                       example: 1
+ *                     username:
+ *                       type: string
+ *                       example: "john_doe_updated"
+ *                     name:
+ *                       type: string
+ *                       example: "John Doe Updated"
+ *                     profile_picture:
+ *                       type: string
+ *                       example: "http://example.com/johndoe_updated.jpg"
  *       404:
  *         description: Usuário não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Usuário não encontrado"
+ *       500:
+ *         description: Erro ao atualizar usuário
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao atualizar usuário"
  */
 router.put("/:id", userController.updateUser);
 
@@ -135,19 +262,46 @@ router.put("/:id", userController.updateUser);
  *         required: true
  *         schema:
  *           type: integer
+ *         description: ID do usuário a ser deletado
  *     responses:
  *       200:
  *         description: Usuário deletado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Usuário deletado com sucesso"
  *       404:
  *         description: Usuário não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Usuário não encontrado"
+ *       500:
+ *         description: Erro ao deletar usuário
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao deletar usuário"
  */
 router.delete("/:id", userController.deleteUser);
 
 /**
  * @swagger
- * /api/users/{id}/followers:
- *   get:
- *     summary: Lista os seguidores de um usuário
+ * /api/users/{id}/follow/{targetId}:
+ *   post:
+ *     summary: Segue um usuário
  *     tags: [Users]
  *     parameters:
  *       - in: path
@@ -155,34 +309,51 @@ router.delete("/:id", userController.deleteUser);
  *         required: true
  *         schema:
  *           type: integer
- *     responses:
- *       200:
- *         description: Lista de seguidores retornada com sucesso
- */
-router.get("/:id/followers", userController.listFollowers);
-
-/**
- * @swagger
- * /api/users/{id}/following:
- *   get:
- *     summary: Lista os usuários seguidos por um usuário
- *     tags: [Users]
- *     parameters:
+ *         description: ID do usuário que está seguindo
  *       - in: path
- *         name: id
+ *         name: targetId
  *         required: true
  *         schema:
  *           type: integer
+ *         description: ID do usuário a ser seguido
  *     responses:
  *       200:
- *         description: Lista de usuários seguidos retornada com sucesso
+ *         description: Usuário seguido com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Usuário seguido com sucesso"
+ *       400:
+ *         description: Erro ao seguir usuário (por exemplo, se o usuário tentar seguir a si mesmo ou já está seguindo)
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Você não pode seguir a si mesmo"
+ *       500:
+ *         description: Erro ao seguir usuário
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao seguir usuário"
  */
-router.get("/:id/following", userController.listFollowing);
+router.post("/:id/follow/:targetId", userController.followUser);
 
 /**
  * @swagger
  * /api/users/{id}/unfollow/{targetId}:
- *   delete:
+ *   post:
  *     summary: Deixa de seguir um usuário
  *     tags: [Users]
  *     parameters:
@@ -191,19 +362,35 @@ router.get("/:id/following", userController.listFollowing);
  *         required: true
  *         schema:
  *           type: integer
+ *         description: ID do usuário que está deixando de seguir
  *       - in: path
  *         name: targetId
  *         required: true
  *         schema:
  *           type: integer
+ *         description: ID do usuário a ser deixado de seguir
  *     responses:
  *       200:
- *         description: Usuário deixou de seguir com sucesso
- *       400:
- *         description: Você não pode deixar de seguir a si mesmo
- *       404:
- *         description: Usuário não encontrado
+ *         description: Usuário deixado de seguir com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Deixou de seguir com sucesso"
+ *       500:
+ *         description: Erro ao deixar de seguir
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao deixar de seguir"
  */
-router.delete("/:id/unfollow/:targetId", userController.unfollowUser);
+router.post("/:id/unfollow/:targetId", userController.unfollowUser);
 
 module.exports = router;

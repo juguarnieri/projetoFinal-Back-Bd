@@ -75,23 +75,33 @@ const filterByStartDate = async (startDate) => {
             COUNT(likes.id) AS like_count
         FROM posts
         LEFT JOIN likes ON posts.id = likes.post_id
-        WHERE DATE(posts.created_at) >= DATE($1)
-        GROUP BY posts.id,
-        posts.user_id,
-        posts.title,
-        posts.caption,
-        posts.media_url,
-        posts.created_at
-        ORDER BY posts.created_at DESC`,
-        [startDate]
-    );
+        WHERE posts.created_at >= $1
+        GROUP BY posts.id, posts.user_id, posts.title, posts.caption, posts.media_url, posts.created_at
+        ORDER BY posts.created_at DESC
+    `, [startDate]);
     return result.rows;
 };
+
 const deletePost = async (postId) => {
     const result = await pool.query("DELETE FROM posts WHERE id = $1", [postId]);
     return result.rowCount > 0; 
 };
 
+const getPostById = async (id) => {
+    const result = await pool.query("SELECT * FROM posts WHERE id = $1", [id]);
+    return result.rows[0]; // Retorna o post se existir, ou undefined se não existir
+};
+const findAll = async () => {
+    const result = await pool.query(
+        `SELECT posts.id, posts.title, users.username AS user_name, COUNT(likes.id) AS like_count
+         FROM posts
+         LEFT JOIN users ON posts.user_id = users.id
+         LEFT JOIN likes ON posts.id = likes.post_id
+         GROUP BY posts.id, users.username
+         ORDER BY posts.created_at DESC`
+    );
+    return result.rows;
+};
 
 
 module.exports = {
@@ -103,5 +113,7 @@ module.exports = {
     countLikes,
     getPostsTitle,
     filterByStartDate,
-    deletePost
+    getPostById,
+    deletePost,
+    findAll
 };

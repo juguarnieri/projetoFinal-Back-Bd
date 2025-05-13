@@ -1,47 +1,96 @@
 const express = require("express");
 const router = express.Router();
 const postController = require("../controllers/postController");
+const apiKeyMiddleware = require("../config/apiKey");
 
+router.use(apiKeyMiddleware);
 /**
  * @swagger
  * tags:
  *   name: Posts
- *   description: Operações relacionadas aos posts
+ *   description: Endpoints para gerenciar e acessar posts
  */
 
 /**
  * @swagger
  * /api/posts:
  *   get:
- *     summary: Retorna todos os posts
+ *     summary: Lista todos os posts
  *     tags: [Posts]
+ *     parameters:
+ *       - in: query
+ *         name: minLikes
+ *         description: Filtro opcional para listar posts com um número mínimo de curtidas
+ *         required: false
+ *         schema:
+ *           type: integer
+ *       - in: query
+ *         name: title
+ *         description: Filtro opcional para buscar posts pelo título
+ *         required: false
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: startDate
+ *         description: Filtro opcional para listar posts a partir de uma data específica (formato YYYY-MM-DD)
+ *         required: false
+ *         schema:
+ *           type: string
+ *           example: "2023-01-01"
  *     responses:
  *       200:
- *         description: Lista de posts retornada com sucesso
+ *         description: Lista de posts
  *         content:
  *           application/json:
  *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 properties:
- *                   id:
- *                     type: integer
- *                     example: 1
- *                   title:
- *                     type: string
- *                     example: "Título do post"
- *                   content:
- *                     type: string
- *                     example: "Conteúdo do post."
- *                   userId:
- *                     type: integer
- *                     example: 1
- *                   createdAt:
- *                     type: string
- *                     example: "2025-05-07T15:00:00Z"
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Lista de postagens recuperadas com sucesso"
+ *                 total:
+ *                   type: integer
+ *                   example: 5
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                         example: 1
+ *                       user_id:
+ *                         type: integer
+ *                         example: 1
+ *                       title:
+ *                         type: string
+ *                         example: "Meu Primeiro Post"
+ *                       caption:
+ *                         type: string
+ *                         example: "Esse é o meu primeiro post na plataforma!"
+ *                       media_url:
+ *                         type: string
+ *                         example: "http://example.com/image.jpg"
+ *                       created_at:
+ *                         type: string
+ *                         format: date-time
+ *                         example: "2023-05-12T10:00:00Z"
+ *                       like_count:
+ *                         type: integer
+ *                         example: 10
  *       500:
- *         description: Erro interno do servidor
+ *         description: Erro ao buscar postagens
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao buscar postagens"
+ *                 details:
+ *                   type: string
+ *                   example: "Erro ao consultar o banco de dados."
  */
 router.get("/", postController.getAllPosts);
 
@@ -58,44 +107,118 @@ router.get("/", postController.getAllPosts);
  *           schema:
  *             type: object
  *             required:
+ *               - user_id
  *               - title
- *               - content
+ *               - caption
+ *               - media_url
  *             properties:
+ *               user_id:
+ *                 type: integer
+ *                 description: ID do usuário que está criando o post
+ *                 example: 1
  *               title:
  *                 type: string
- *               content:
+ *                 description: Título do post
+ *                 example: "Meu Primeiro Post"
+ *               caption:
  *                 type: string
- *               userId:
- *                 type: integer
+ *                 description: Descrição do post
+ *                 example: "Esse é o meu primeiro post na plataforma!"
+ *               media_url:
+ *                 type: string
+ *                 description: URL da mídia (imagem, vídeo) do post
+ *                 example: "http://example.com/image.jpg"
  *     responses:
  *       201:
  *         description: Post criado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                   example: 1
+ *                 user_id:
+ *                   type: integer
+ *                   example: 1
+ *                 title:
+ *                   type: string
+ *                   example: "Meu Primeiro Post"
+ *                 caption:
+ *                   type: string
+ *                   example: "Esse é o meu primeiro post na plataforma!"
+ *                 media_url:
+ *                   type: string
+ *                   example: "http://example.com/image.jpg"
  *       500:
  *         description: Erro ao criar post
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao criar post"
  */
 router.post("/", postController.createPost);
 
 /**
  * @swagger
- * /api/posts/usuario/{userId}:
+ * /api/posts/user/{userId}:
  *   get:
- *     summary: Retorna os posts de um usuário
+ *     summary: Lista todos os posts de um usuário
  *     tags: [Posts]
  *     parameters:
  *       - in: path
  *         name: userId
  *         required: true
+ *         description: ID do usuário
  *         schema:
  *           type: integer
+ *           example: 1
  *     responses:
  *       200:
- *         description: Lista de posts do usuário retornada com sucesso
- *       404:
- *         description: Usuário não encontrado
+ *         description: Lista de posts do usuário
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                     example: 1
+ *                   user_id:
+ *                     type: integer
+ *                     example: 1
+ *                   title:
+ *                     type: string
+ *                     example: "Meu Primeiro Post"
+ *                   caption:
+ *                     type: string
+ *                     example: "Esse é o meu primeiro post na plataforma!"
+ *                   media_url:
+ *                     type: string
+ *                     example: "http://example.com/image.jpg"
+ *                   created_at:
+ *                     type: string
+ *                     format: date-time
+ *                     example: "2023-05-12T10:00:00Z"
  *       500:
  *         description: Erro ao buscar posts do usuário
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao buscar posts do usuário"
  */
-router.get("/usuario/:userId", postController.getUserPosts);
+router.get("/user/:userId", postController.getUserPosts);
 
 /**
  * @swagger
@@ -107,95 +230,125 @@ router.get("/usuario/:userId", postController.getUserPosts);
  *       - in: path
  *         name: postId
  *         required: true
+ *         description: ID do post
  *         schema:
  *           type: integer
+ *           example: 1
  *       - in: path
  *         name: userId
  *         required: true
+ *         description: ID do usuário que está curtindo o post
  *         schema:
  *           type: integer
+ *           example: 1
  *     responses:
  *       200:
  *         description: Post curtido com sucesso
- *       404:
- *         description: Post ou usuário não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Post curtido com sucesso"
  *       500:
  *         description: Erro ao curtir post
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao curtir post"
  */
 router.post("/:postId/like/:userId", postController.likePost);
 
 /**
  * @swagger
  * /api/posts/{postId}/unlike/{userId}:
- *   delete:
- *     summary: Descurte um post
+ *   post:
+ *     summary: Remove a curtida de um post
  *     tags: [Posts]
  *     parameters:
  *       - in: path
  *         name: postId
  *         required: true
+ *         description: ID do post
  *         schema:
  *           type: integer
+ *           example: 1
  *       - in: path
  *         name: userId
  *         required: true
+ *         description: ID do usuário que está removendo a curtida
  *         schema:
  *           type: integer
+ *           example: 1
  *     responses:
  *       200:
- *         description: Post descurtido com sucesso
- *       404:
- *         description: Post ou usuário não encontrado
+ *         description: Curtida removida com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Curtida removida com sucesso"
  *       500:
- *         description: Erro ao descurtir post
+ *         description: Erro ao remover curtida
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao remover curtida"
  */
-router.delete("/:postId/unlike/:userId", postController.unlikePost);
+router.post('/:postId/unlike/:userId', postController.unlikePost);
+
 
 /**
  * @swagger
  * /api/posts/{postId}/likes:
  *   get:
- *     summary: Retorna a quantidade de likes de um post
+ *     summary: Retorna o número de curtidas de um post
  *     tags: [Posts]
  *     parameters:
  *       - in: path
  *         name: postId
  *         required: true
+ *         description: ID do post
  *         schema:
  *           type: integer
+ *           example: 1
  *     responses:
  *       200:
- *         description: Contagem de likes retornada com sucesso
- *       404:
- *         description: Post não encontrado
+ *         description: Número de curtidas do post
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 likes:
+ *                   type: integer
+ *                   example: 10
  *       500:
- *         description: Erro ao buscar contagem de likes
+ *         description: Erro ao contar curtidas
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao contar curtidas"
  */
+
 router.get("/:postId/likes", postController.getLikesCount);
-router.get("/", postController.getAllPosts);
-router.get("/s", postController.getPostsByTitle);
-
-
-/**
- * @swagger
- * /api/posts/startDate:
- *   get:
- *     summary: Retorna posts a partir de uma data inicial
- *     tags: [Posts]
- *     parameters:
- *       - in: query
- *         name: startDate
- *         required: true
- *         schema:
- *           type: string
- *           format: date-time
- *     responses:
- *       200:
- *         description: Lista de posts retornada com sucesso
- *       500:
- *         description: Erro ao buscar posts
- */
-router.get("/startDate", postController.getPostsByStartDate);
 
 /**
  * @swagger
@@ -207,16 +360,43 @@ router.get("/startDate", postController.getPostsByStartDate);
  *       - in: path
  *         name: postId
  *         required: true
+ *         description: ID do post a ser deletado
  *         schema:
  *           type: integer
+ *           example: 1
  *     responses:
  *       200:
  *         description: Post deletado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Post deletado com sucesso"
  *       404:
  *         description: Post não encontrado
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Post não encontrado"
  *       500:
  *         description: Erro ao deletar post
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Erro ao deletar post"
  */
+
 router.delete("/:postId", postController.deletePost);
 
 module.exports = router;

@@ -59,30 +59,41 @@ const getLikesCount = async (req, res) => {
     }
 };
 const getAllPosts = async (req, res) => {
-    const { minLikes, title } = req.query;
-    try {
-        let posts;
-    if (minLikes) {
-        posts = await postModel.getAllPosts(minLikes);
+  const { minLikes, title, startDate } = req.query;
+
+  try {
+    let posts;
+
+    if (startDate) {
+      const parsedDate = new Date(startDate);
+      if (isNaN(parsedDate)) {
+        return res.status(400).json({ error: "Data inválida" });
+      }
+      const formattedDate = parsedDate.toISOString().split('T')[0];
+      posts = await postModel.filterByStartDate(formattedDate);
+    } else if (minLikes) {
+      posts = await postModel.getAllPosts(minLikes);
     } else if (title) {
-        posts = await postModel.getPostsTitle(title);
+      posts = await postModel.getPostsTitle(title);
     } else {
-        posts = await postModel.getAllPosts();
+      posts = await postModel.getAllPosts();
     }
 
     res.status(200).json({
-            message: "Lista de postagens recuperadas com sucesso",
-            total: posts.length,
-            data: posts
-        });
-    } catch (err) {
-        console.error("Erro ao buscar postagens", err);
-        res.status(500).json({
-            error: "Erro ao buscar postagens",
-            details: err.message
-        })
-    }
+      message: "Lista de postagens recuperadas com sucesso",
+      total: posts.length,
+      data: posts
+    });
+
+  } catch (err) {
+    console.error("Erro ao buscar postagens", err);
+    res.status(500).json({
+      error: "Erro ao buscar postagens",
+      details: err.message
+    });
+  }
 };
+
 const getPostsByTitle = async (req, res) => {
     try {
         const { title } = req.query;
