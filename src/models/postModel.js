@@ -1,22 +1,26 @@
 const pool = require("../config/database");
 
 const getAllPosts = async (minLikes = 0) => {
-    const result = await pool.query(`
-        SELECT 
-            posts.id,
-            posts.user_id,
-            posts.title,
-            posts.caption,
-            posts.media_url,
-            posts.created_at,
-            COUNT(likes.id) AS like_count
-        FROM posts
-        LEFT JOIN likes ON posts.id = likes.post_id
-        GROUP BY posts.id
-        HAVING COUNT(likes.id) >= $1
-        ORDER BY posts.created_at DESC
-    `, [minLikes]);
-    return result.rows;
+  const result = await pool.query(`
+    SELECT 
+      posts.id,
+      posts.user_id,
+      posts.title,
+      posts.caption,
+      posts.media_url,
+      posts.created_at,
+      COUNT(likes.id) AS like_count,
+      users.username,
+      users.profile_picture,
+      users.name
+    FROM posts
+    LEFT JOIN likes ON posts.id = likes.post_id
+    LEFT JOIN users ON posts.user_id = users.id
+    GROUP BY posts.id, users.username, users.profile_picture, users.name
+    HAVING COUNT(likes.id) >= $1
+    ORDER BY posts.created_at DESC
+  `, [minLikes]);
+  return result.rows;
 };
 const create = async ({ user_id, title, caption, media_url }) => {
     const result = await pool.query(
@@ -26,7 +30,16 @@ const create = async ({ user_id, title, caption, media_url }) => {
     return result.rows[0];
 };
 const findByUser = async (user_id) => {
-    const result = await pool.query("SELECT * FROM posts WHERE user_id = $1", [user_id]);
+    const result = await pool.query(`
+        SELECT 
+            posts.*,
+            users.username,
+            users.profile_picture
+        FROM posts
+        LEFT JOIN users ON posts.user_id = users.id
+        WHERE posts.user_id = $1
+        ORDER BY posts.created_at DESC
+    `, [user_id]);
     return result.rows;
 };
 const like = async (user_id, post_id) => {
