@@ -182,3 +182,6 @@ VALUES
     ('João Silva', 'Editor-Chefe', 'https://exemplo.com/fotos/joao.jpg', 1),
     ('Maria Oliveira', 'Produtora de Conteúdo', 'https://exemplo.com/fotos/maria.jpg', 1),
     ('Carlos Mendes', 'Designer Gráfico', 'https://exemplo.com/fotos/carlos.jpg', 1);
+
+
+    ALTER TABLE likes ADD CONSTRAINT unique_user_post UNIQUE (user_id, post_id);

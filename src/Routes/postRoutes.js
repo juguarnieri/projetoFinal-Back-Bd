@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const postController = require("../controllers/postController");
 const apiKeyMiddleware = require("../config/apiKey");
+const upload = require("../config/upload");
 
 router.use(apiKeyMiddleware);
 /**
@@ -100,17 +101,19 @@ router.get("/", postController.getAllPosts);
  *   post:
  *     summary: Cria um novo post
  *     tags: [Posts]
+ *     consumes:
+ *       - multipart/form-data
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             required:
  *               - user_id
  *               - title
  *               - caption
- *               - media_url
+ *               - media
  *             properties:
  *               user_id:
  *                 type: integer
@@ -124,10 +127,10 @@ router.get("/", postController.getAllPosts);
  *                 type: string
  *                 description: Descrição do post
  *                 example: "Esse é o meu primeiro post na plataforma!"
- *               media_url:
+ *               media:
  *                 type: string
- *                 description: URL da mídia (imagem, vídeo) do post
- *                 example: "http://example.com/image.jpg"
+ *                 format: binary
+ *                 description: Arquivo de mídia (imagem, vídeo) do post
  *     responses:
  *       201:
  *         description: Post criado com sucesso
@@ -162,7 +165,7 @@ router.get("/", postController.getAllPosts);
  *                   type: string
  *                   example: "Erro ao criar post"
  */
-router.post("/", postController.createPost);
+router.post("/", upload.single("media"), postController.createPost);
 
 /**
  * @swagger

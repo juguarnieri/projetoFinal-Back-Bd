@@ -16,7 +16,7 @@ const app = express();
 app.use(cors());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.json());
-setupSwagger(app)
+setupSwagger(app);
 
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
     res.send("🚀 API funcionando com Users, Posts, Comments, News, Videos e Podcasts!");
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
 });

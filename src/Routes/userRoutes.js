@@ -18,12 +18,18 @@ router.use(apiKeyMiddleware);
  *   post:
  *     summary: Cria um novo usuário
  *     tags: [Users]
+ *     consumes:
+ *       - multipart/form-data
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
+ *             required:
+ *               - username
+ *               - name
+ *               - profile_picture
  *             properties:
  *               username:
  *                 type: string
@@ -33,7 +39,7 @@ router.use(apiKeyMiddleware);
  *                 example: "John Doe"
  *               profile_picture:
  *                 type: string
- *                 example: "http://example.com/johndoe.jpg"
+ *                 format: binary
  *     responses:
  *       201:
  *         description: Usuário criado com sucesso
@@ -65,7 +71,7 @@ router.use(apiKeyMiddleware);
  *                   type: string
  *                   example: "Erro ao criar usuário"
  */
-router.post("/", upload.single("profile_picture") , userController.createUser);
+router.post("/", upload.single("profile_picture"), userController.createUser);
 
 /**
  * @swagger
