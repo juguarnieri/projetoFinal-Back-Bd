@@ -264,8 +264,10 @@ VALUES
 ('Crimes Reais: Ullisses Campbell e Beto Ribeiro', 'Discussão sobre crimes reais com escritores e roteiristas.', 'https://www.youtube.com/watch?v=p5xNmIgQ_Ps', 'https://i.ytimg.com/vi/p5xNmIgQ_Ps/maxresdefault.jpg', 'famoso', TRUE),
 ('Crimes Reais: Ivan Mizanzuk', 'Análise de crimes reais com o jornalista Ivan Mizanzuk.', 'https://www.youtube.com/watch?v=UywLajXBLw4', 'https://i.ytimg.com/vi/UywLajXBLw4/maxresdefault.jpg', 'reais', TRUE);
 
+
 INSERT INTO videos (title, description, link, image, category, is_featured)
 VALUES 
+
 ('Caso Evandro: Documentário Completo', 'Série documental sobre o desaparecimento de Evandro Ramos Caetano em 1992.', 'https://www.youtube.com/watch?v=XkoJiUI6jNg', 'https://i.ytimg.com/vi/XkoJiUI6jNg/maxresdefault.jpg', 'investigacao', TRUE),
 ('Daniel Alves: Absolvição na Espanha', 'Notícia sobre a absolvição de Daniel Alves da acusação de estupro.', 'https://www.youtube.com/watch?v=3Hs4beu3Pr8', 'https://i.ytimg.com/vi/3Hs4beu3Pr8/maxresdefault.jpg', 'recente', TRUE),
 ('Boate Kiss: A Tragédia de Santa Maria', 'Documentário sobre o incêndio na Boate Kiss que matou 242 pessoas.', 'https://www.youtube.com/watch?v=MCvD2tGSvSg', 'https://i.ytimg.com/vi/MCvD2tGSvSg/maxresdefault.jpg', 'impactante', FALSE),
