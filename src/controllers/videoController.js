@@ -2,25 +2,34 @@ const pool = require("../config/database");
 const Video = require("../models/videoModel");
 
 const createVideo = async (req, res) => {
-  const { title, description, link, category } = req.body;
+  const { title, description, link, category, is_featured } = req.body;
+  const image = req.file ? req.file.filename : null;
+
+  // Converte corretamente para booleano
+  const isFeaturedBool = is_featured === "true" || is_featured === true || is_featured === 1 || is_featured === "1";
 
   if (!title || !link) {
     return res.status(400).json({
       error: "Campos obrigatórios ausentes.",
-      details: "Os campos 'title' e 'link' são obrigatórios."
+      details: "Os campos title e link são obrigatórios."
     });
   }
 
   try {
-    const image = req.file ? req.file.filename : req.body.image;
-    const video = await Video.create({ title, description, link, image, category });
+    const video = await Video.create({
+      title,
+      description,
+      link,
+      image,
+      category,
+      is_featured: isFeaturedBool
+    });
 
     res.status(201).json({
       message: "Vídeo criado com sucesso!",
       data: video
     });
   } catch (err) {
-    console.error("Erro ao criar vídeo:", err);
     res.status(500).json({
       error: "Erro interno ao criar vídeo.",
       details: err.message

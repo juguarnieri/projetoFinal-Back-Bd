@@ -59,9 +59,31 @@ router.get("/", podcastController.getAllPodcasts);
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
- *             $ref: '#/components/schemas/PodcastInput'
+ *             type: object
+ *             required:
+ *               - title
+ *               - description
+ *               - link
+ *               - image
+ *               - is_featured
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 example: Meu Podcast
+ *               description:
+ *                 type: string
+ *                 example: Descrição do podcast
+ *               link:
+ *                 type: string
+ *                 example: https://www.youtube.com/watch?v=abc123
+ *               image:
+ *                 type: string
+ *                 format: binary
+ *               is_featured:
+ *                 type: boolean
+ *                 example: true
  *     responses:
  *       201:
  *         description: Podcast criado com sucesso
@@ -96,7 +118,7 @@ router.get("/", podcastController.getAllPodcasts);
  *                   type: string
  *                   example: Erro interno do servidor
  */
-router.post("/", upload.single("image") , podcastController.createPodcast);
+router.post("/", upload.single("image"), podcastController.createPodcast);
 
 /**
  * @swagger

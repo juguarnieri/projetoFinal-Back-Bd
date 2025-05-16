@@ -49,6 +49,7 @@ CREATE TABLE news (
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
     description TEXT,
+    text TEXT,
     link TEXT NOT NULL,
     image TEXT,
     category VARCHAR(100),
@@ -58,7 +59,6 @@ CREATE TABLE news (
     is_featured BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 -- Podcasts 
 CREATE TABLE podcasts (
     id SERIAL PRIMARY KEY,
@@ -144,14 +144,52 @@ INSERT INTO comments (user_id, post_id, content) VALUES
 (3, 4, 'Fofo demais!');
 
 
-INSERT INTO news (title, description, link, image, category, decade, year, is_featured)
+INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured)
 VALUES 
-  ('Tecnologia Revoluciona a Medicina', 'Novas tecnologias estão transformando os diagnósticos médicos.', 'https://exemplo.com/medicina-tecnologia', 'https://exemplo.com/imagem1.jpg', 'tecnologia', '20', 2020, TRUE),
-  ('Clima Global em Alerta', 'Pesquisadores alertam sobre mudanças climáticas cada vez mais intensas.', 'https://exemplo.com/clima-alerta', 'https://exemplo.com/imagem2.jpg', 'meio-ambiente', '10', 2010, FALSE),
-  ('Educação Digital Ganha Espaço', 'Escolas adotam ferramentas online para ensino remoto.', 'https://exemplo.com/educacao-digital', 'https://exemplo.com/imagem3.jpg', 'educação', '20', 2021, TRUE),
-  ('Avanços na Energia Renovável', 'Painéis solares e eólicos têm crescimento recorde no país.', 'https://exemplo.com/energia-renovavel', 'https://exemplo.com/imagem4.jpg', 'energia', '10', 2019, FALSE);
-
-
+  (
+    'Tecnologia Revoluciona a Medicina',
+    'Novas tecnologias estão transformando os diagnósticos médicos.',
+    'A tecnologia tem revolucionado a medicina com diagnósticos mais precisos, uso de inteligência artificial, telemedicina e avanços em tratamentos personalizados.',
+    'https://exemplo.com/medicina-tecnologia',
+    'https://exemplo.com/imagem1.jpg',
+    'tecnologia',
+    '20',
+    2020,
+    TRUE
+  ),
+  (
+    'Clima Global em Alerta',
+    'Pesquisadores alertam sobre mudanças climáticas cada vez mais intensas.',
+    'Estudos recentes mostram que eventos climáticos extremos estão se tornando mais frequentes devido ao aquecimento global, exigindo ações urgentes de governos e sociedade.',
+    'https://exemplo.com/clima-alerta',
+    'https://exemplo.com/imagem2.jpg',
+    'meio-ambiente',
+    '10',
+    2010,
+    FALSE
+  ),
+  (
+    'Educação Digital Ganha Espaço',
+    'Escolas adotam ferramentas online para ensino remoto.',
+    'Com a pandemia, a educação digital se tornou essencial. Plataformas online, videoaulas e recursos digitais passaram a fazer parte do cotidiano escolar.',
+    'https://exemplo.com/educacao-digital',
+    'https://exemplo.com/imagem3.jpg',
+    'educação',
+    '20',
+    2021,
+    TRUE
+  ),
+  (
+    'Avanços na Energia Renovável',
+    'Painéis solares e eólicos têm crescimento recorde no país.',
+    'O uso de fontes renováveis de energia, como solar e eólica, bateu recordes em 2019, contribuindo para a matriz energética limpa e sustentável.',
+    'https://exemplo.com/energia-renovavel',
+    'https://exemplo.com/imagem4.jpg',
+    'energia',
+    '10',
+    2019,
+    FALSE
+  );
 INSERT INTO podcasts (title, description, link, image, category, is_featured)
 VALUES 
 ('O Caso Evandro', 'Podcast investigativo sobre o desaparecimento de um garoto nos anos 90', 'https://exemplo.com/casoevandro', 'https://img.com/evandro.jpg', 'famoso', TRUE),

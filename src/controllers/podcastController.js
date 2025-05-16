@@ -3,17 +3,25 @@ const Podcast = require("../models/podcastModel");
 const createPodcast = async (req, res) => {
     try {
         const { title, description, link, category, is_featured } = req.body;
+        const image = req.file ? req.file.filename : null;
+        const isFeaturedBool = is_featured === "true" || is_featured === true;
 
-        if (!title || !link) {
+        if (!title || !description || !link || !image || typeof is_featured === "undefined") {
             return res.status(400).json({
                 error: "Campos obrigatórios ausentes.",
-                details: "Os campos 'title' e 'link' são obrigatórios."
+                details: "Os campos 'title', 'description', 'link', 'image' e 'is_featured' são obrigatórios."
             });
         }
 
-        const image = req.file ? req.file.filename : req.body.image;
-        const podcast = await Podcast.create({ title, description, link, image, category, is_featured });
-        
+        const podcast = await Podcast.create({
+            title,
+            description,
+            link,
+            image,
+            category,
+            is_featured: isFeaturedBool
+        });
+
         res.status(201).json({
             message: "Podcast criado com sucesso!",
             data: podcast
@@ -98,13 +106,6 @@ const getPodcastById = async (req, res) => {
 
 const updatePodcast = async (req, res) => {
     try {
-        const { id } = req.params;
-        const data = req.body;
-
-        const podcast = await Podcast.findById(id);
-        if (!podcast) {
-            return res.status(404).json({ error: "Podcast não encontrado." });
-        }
 
         const updated = await Podcast.update(id, data);
 

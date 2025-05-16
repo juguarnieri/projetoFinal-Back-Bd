@@ -22,7 +22,7 @@ router.use(apiKeyMiddleware);
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             required:
@@ -40,7 +40,7 @@ router.use(apiKeyMiddleware);
  *                 example: "https://youtube.com/watch?v=abc123"
  *               image:
  *                 type: string
- *                 example: "https://example.com/thumb.jpg"
+ *                 format: binary
  *               category:
  *                 type: string
  *                 example: "Tecnologia"
@@ -59,7 +59,7 @@ router.use(apiKeyMiddleware);
  *                 title: "Introdução ao Node.js"
  *                 description: "Explicação dos fundamentos do Node.js"
  *                 link: "https://youtube.com/watch?v=abc123"
- *                 image: "https://example.com/thumb.jpg"
+ *                 image: "richthofen.jpg"
  *                 category: "Tecnologia"
  *                 is_featured: true
  *       400:
@@ -77,7 +77,7 @@ router.use(apiKeyMiddleware);
  *               error: "Erro interno ao criar vídeo."
  *               details: "Detalhes técnicos do erro"
  */
-router.post("/", upload.single("image") , videoController.createVideo);
+router.post("/", upload.single("image"), videoController.createVideo);
 
 /**
  * @swagger

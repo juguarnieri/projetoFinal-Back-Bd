@@ -102,12 +102,13 @@ router.get("/", newsController.getAllNews);
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
  *             type: object
  *             required:
  *               - title
  *               - description
+ *               - text
  *               - link
  *               - image
  *               - category
@@ -116,32 +117,21 @@ router.get("/", newsController.getAllNews);
  *             properties:
  *               title:
  *                 type: string
- *                 description: Título da notícia
- *                 example: "Nova descoberta científica"
  *               description:
  *                 type: string
- *                 description: Descrição da notícia
- *                 example: "Pesquisadores descobriram uma nova espécie de planta."
+ *               text:
+ *                 type: string
  *               link:
  *                 type: string
- *                 description: Link da notícia
- *                 example: "https://example.com/noticia"
  *               image:
  *                 type: string
- *                 description: URL da imagem associada à notícia
- *                 example: "https://example.com/image.jpg"
+ *                 format: binary
  *               category:
  *                 type: string
- *                 description: Categoria da notícia
- *                 example: "Ciência"
  *               year:
  *                 type: integer
- *                 description: Ano da notícia
- *                 example: 2025
  *               is_featured:
  *                 type: boolean
- *                 description: Indica se a notícia é destacada
- *                 example: true
  *     responses:
  *       201:
  *         description: Notícia criada com sucesso
@@ -174,7 +164,7 @@ router.get("/", newsController.getAllNews);
  *                   type: string
  *                   example: "Erro ao inserir no banco de dados."
  */
-router.post("/", upload.single("image") , newsController.createNews);
+router.post("/", upload.single("image"), newsController.createNews);
 /**
  * @swagger
  * /api/news/featured:
@@ -205,6 +195,7 @@ router.post("/", upload.single("image") , newsController.createNews);
  *                         example: "Notícia importante"
  */
 router.get("/featured", newsController.getFeaturedNews);
+
 /**
  * @swagger
  * /api/news/{id}:

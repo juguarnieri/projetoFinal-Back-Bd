@@ -1,10 +1,10 @@
 const pool = require("../config/database");
 
-const create = async ({ title, description, link, image, category, is_featured, year, decade }) => {
+const create = async ({ title, description, text, link, image, category, is_featured, year, decade }) => {
   const result = await pool.query(
-    `INSERT INTO news (title, description, link, image, category, is_featured, year, decade)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`,
-    [title, description, link, image, category, is_featured, year, decade]
+    `INSERT INTO news (title, description, text, link, image, category, is_featured, year, decade)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`,
+    [title, description, text, link, image, category, is_featured, year, decade]
   );
   return result.rows[0];
 };
@@ -53,12 +53,12 @@ const getFeatured = async () => {
   return result.rows;
 };
 
-const update = async (id, { title, description, link, image, category, is_featured, year, decade }) => {
+const update = async (id, { title, description, text, link, image, category, is_featured, year, decade }) => {
   const result = await pool.query(
     `UPDATE news 
-     SET title = $1, description = $2, link = $3, image = $4, category = $5, is_featured = $6, year = $7, decade = $8
-     WHERE id = $9 RETURNING *`,
-    [title, description, link, image, category, is_featured || false, year, decade, id]
+     SET title = $1, description = $2, text = $3, link = $4, image = $5, category = $6, is_featured = $7, year = $8, decade = $9
+     WHERE id = $10 RETURNING *`,
+    [title, description, text, link, image, category, is_featured || false, year, decade, id]
   );
   return result.rows[0];
 };
