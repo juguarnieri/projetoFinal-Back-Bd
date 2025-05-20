@@ -115,11 +115,41 @@ INSERT INTO users (username, name, profile_picture) VALUES
 ('ana_silva', 'Ana Silva', 'https://example.com/ana.jpg'),
 ('joao_martins', 'João Martins', 'https://example.com/joao.jpg'),
 ('carla_oliveira', 'Carla Oliveira', 'https://example.com/carla.jpg'),
-('lucas_ferreira', 'Lucas Ferreira', 'https://example.com/lucas.jpg');
+('alice01', 'Alice Silva', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('bob02', 'Bob Costa', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('carol03', 'Carol Mendes', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('david04', 'David Rocha', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('eva05', 'Eva Lima', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('felipe06', 'Felipe Souza', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('gabriela07', 'Gabriela Oliveira', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('henrique08', 'Henrique Almeida', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('isabela09', 'Isabela Pereira', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('joao10', 'João Santos', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('karla11', 'Karla Martins', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('luan12', 'Luan Costa', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('mariana13', 'Mariana Rocha', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('natalia14', 'Natália Lima', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('olga15', 'Olga Fernandes', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+('lucas_ferreira', 'Lucas Ferreira', 'uploads/cadu.png');
 
 INSERT INTO followers (follower_id, following_id) VALUES
 (1, 2),
 (1, 3),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(2, 1),
+(2, 3),
+(2, 4),
+(2, 5),
+(2, 6),
+(3, 1),
+(3, 2),
+(3, 4),
+(3, 5),
+(3, 6),
 (2, 1),
 (3, 1),
 (4, 2);
@@ -128,20 +158,46 @@ INSERT INTO posts (user_id, title, caption, media_url) VALUES
 (1, 'Meu primeiro post!', 'Curtindo o dia na praia 🌊', 'https://example.com/foto1.jpg'),
 (2, 'Trabalho novo!', 'Começando um novo desafio 🚀', 'https://example.com/foto2.jpg'),
 (3, 'Look do dia', 'Pronta pra sair ✨', 'https://example.com/foto3.jpg'),
+(1, 'Amanhecer na praia', 'Começando o dia com essa vista maravilhosa!', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+(2, 'Trilha na montanha', 'Desafio superado! A vista lá de cima é incrível.', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+(3, 'Café da manhã', 'Nada melhor que um café quentinho pela manhã.', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+(4, 'Leitura do dia', 'Começando o dia com uma boa leitura.', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
+(5, 'Meu pet', 'Apresento o Max, meu fiel amigo!', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
 (1, 'Cachorro fofo', 'Olha esse doguinho 🐶', 'https://example.com/foto4.jpg');
 
 INSERT INTO likes (user_id, post_id) VALUES
-(2, 1),
-(3, 1),
 (1, 2),
-(4, 3);
+(1, 3),
+(2, 1),
+(2, 4),
+(3, 5),
+(3, 1),
+(4, 6),
+(4, 2),
+(5, 3),
+(5, 7),
+(6, 8),
+(7, 9),
+(8, 10),
+(9, 11),
+(10, 12);
 
 INSERT INTO comments (user_id, post_id, content) VALUES
-(2, 1, 'Que lugar lindo!'),
-(3, 1, 'Adorei essa foto!'),
-(1, 2, 'Parabéns pelo novo trabalho!'),
-(4, 3, 'Estilo top!'),
-(3, 4, 'Fofo demais!');
+(1, 2, 'Uau, que trilha incrível!'),
+(2, 1, 'Que nascer do sol espetacular!'),
+(3, 5, 'Seu pet é muito fofo 🐶'),
+(4, 3, 'Café é vida!'),
+(5, 4, 'Qual o nome do livro?'),
+(6, 6, 'Essa noite estava linda mesmo.'),
+(7, 7, 'Onde fica esse lugar?'),
+(8, 8, 'Foto maravilhosa!'),
+(9, 9, 'Gostei do enquadramento.'),
+(10, 10, 'Curti demais essa vibe.'),
+(11, 11, 'A cor dessa paisagem tá surreal.'),
+(12, 12, 'Post incrível 👏'),
+(13, 13, 'Lugar dos sonhos!'),
+(14, 14, 'Quero ir aí um dia!'),
+(15, 15, 'Inspiração pura nessa imagem!');
 
 
 INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured)
