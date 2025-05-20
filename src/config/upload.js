@@ -15,7 +15,7 @@ const upload = multer({
     storage,
     fileFilter: (req, file, cb) => {
         const ext = path.extname(file.originalname).toLowerCase();
-        const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'];
+        const allowedExtensions = ['.jpg', '.jfif', '.jpeg', '.png', '.gif', '.bmp', '.webp'];
         if (!allowedExtensions.includes(ext)) {
             return cb(new Error("Apenas imagens são permitidas"));
         }
