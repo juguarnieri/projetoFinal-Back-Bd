@@ -519,7 +519,7 @@ VALUES
     ('Luiza Nicoluci Schettini', 'Scrum Master', 'https://avatars.githubusercontent.com/u/158210596?v=4', 1),
     ('Anna Beatriz Leme Alves', 'Desenvolvedor (a)', 'https://avatars.githubusercontent.com/u/162629023?v=4', 1),
     ('Anna Beatriz Ribeiro Valentim', 'Desenvolvedor (a)', 'https://avatars.githubusercontent.com/u/158473512?v=4', 1),
-    ('Luiz Gabriel Lopes Carvalho Pinto', 'Desenvolvedor (a)', 'https://mail.google.com/mail/u/0?ui=2&ik=1a84e770a3&attid=0.1&permmsgid=msg-f:1832212135489621963&th=196d533ad104cfcb&view=fimg&fur=ip&permmsgid=msg-f:1832212135489621963&sz=s0-l75-ft&attbid=ANGjdJ_uSM2lS10wc1pjDksQ-c1DpQyGezR9izRsi9wmVRQmDctfDS4bVqhfLIyTIV4WF8AJS48rdHQaE8u4LzqGwwcXNhyRndhVkQHF_3rzn5EAWc8hggQsOna98d8&disp=emb&realattid=ii_196d5336f88654b64d21&zw', 1),
+    ('Luiz Gabriel Lopes Carvalho', 'Desenvolvedor (a)', 'https://mail.google.com/mail/u/0?ui=2&ik=1a84e770a3&attid=0.1&permmsgid=msg-f:1832212135489621963&th=196d533ad104cfcb&view=fimg&fur=ip&permmsgid=msg-f:1832212135489621963&sz=s0-l75-ft&attbid=ANGjdJ_uSM2lS10wc1pjDksQ-c1DpQyGezR9izRsi9wmVRQmDctfDS4bVqhfLIyTIV4WF8AJS48rdHQaE8u4LzqGwwcXNhyRndhVkQHF_3rzn5EAWc8hggQsOna98d8&disp=emb&realattid=ii_196d5336f88654b64d21&zw', 1),
     ('Carlos Eduardo Ferraz Augusto', 'Desenvolvedor (a)', 'https://avatars.githubusercontent.com/u/158209729?s=400&u=ea58c944f794b2851f01abda7ad25341d06255dc&v=4', 1);
 
 
