@@ -288,7 +288,63 @@ VALUES
 
 ('Filho mata pai alcoólatra em SC', 'Em fevereiro de 2025, um homem de 23 anos matou o pai de 47 anos a golpes de tesoura em São João Batista, SC. A vítima foi encontrada com 22 perfurações. O suspeito se entregou à polícia após o crime.', 'https://static.ndmais.com.br/2025/02/identificado-homem-morto-por-filho-a-tesouradas-sao-joao-batista-grande-florianopolis-elvis-marcos-da-silva-800x467.jpg', 'https://static.ndmais.com.br/2025/01/adalberto-fugitivo-presidio-florianopolis-550x310.png', 'Homicídio', '2020s', 2025, false),
 
-('Policial mata esposa e enteada durante Réveillon', 'Em janeiro de 2025, um policial penal matou a companheira e a enteada de 13 anos em Três Marias, MG. O suspeito tirou a própria vida após o crime. A motivação estaria ligada a uma discussão familiar.', 'https://s2-g1.glbimg.com/jrXuIuAs0fASIBRdA6-ZBApkasI=/0x0:1700x1065/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/Y/I/VLtRPSSjap7CQwdfzhJg/foto-g1-2-.png', 'https://s2-g1.glbimg.com/jrXuIuAs0fASIBRdA6-ZBApkasI=/0x0:1700x1065/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/Y/I/VLtRPSSjap7CQwdfzhJg/foto-g1-2-.png', 'Homicídio', '2020s', 2025, false);
+('Policial mata esposa e enteada durante Réveillon', 'Em janeiro de 2025, um policial penal matou a companheira e a enteada de 13 anos em Três Marias, MG. O suspeito tirou a própria vida após o crime. A motivação estaria ligada a uma discussão familiar.', 'https://s2-g1.glbimg.com/jrXuIuAs0fASIBRdA6-ZBApkasI=/0x0:1700x1065/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/Y/I/VLtRPSSjap7CQwdfzhJg/foto-g1-2-.png', 'https://s2-g1.glbimg.com/jrXuIuAs0fASIBRdA6-ZBApkasI=/0x0:1700x1065/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/Y/I/VLtRPSSjap7CQwdfzhJg/foto-g1-2-.png', 'Homicídio', '2020s', 2025, false),
+
+(
+    'Tecnologia Revoluciona a Medicina',
+    'Novas tecnologias estão transformando os diagnósticos médicos.',
+    'A tecnologia tem revolucionado a medicina com diagnósticos mais precisos, uso de inteligência artificial, telemedicina e avanços em tratamentos personalizados.',
+    'https://saolucasimagem.com.br/como-a-tecnologia-esta-revolucionando-os-diagnosticos-medicos/#:~:text=A%20realidade%20virtual%20e%20a,auxiliando%20na%20precis%C3%A3o%20dos%20diagn%C3%B3sticos.',
+    'https://mv.com.br/storage/blog/18181820240507663a9a9aef0f5.jpeg',
+    'tecnologia',
+    '20',
+    2020,
+    TRUE
+  ),
+  (
+    'Clima Global em Alerta',
+    'ONU alerta sobre impactos da mudança climática nas geleiras.',
+    'O Relatório Mundial de Desenvolvimento Hídrico das Nações Unidas de 2025 traz um alerta sobre o impacto do aquecimento global na água doce do planeta presente nas montanhas na forma de neve, gelo e solo congelado. Segundo o estudo, cerca de dois bilhões de pessoas no planeta dependem diretamente das águas das montanhas para viver, mas caso ela acabe, todo o mundo será afetado.',
+    'https://agenciabrasil.ebc.com.br/internacional/noticia/2025-03/onu-alerta-sobre-impactos-da-mudanca-climatica-nas-geleiras',
+    'https://imagens.ebc.com.br/_g_tM02lUY1tHXH7xTCwAPp6nfw=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/whatsapp_image_2019-11-06_at_22.00.00.jpeg?itok=7iSxTtBU',
+    'meio-ambiente',
+    '20',
+    2025,
+    TRUE
+  ),
+  (
+    'Educação Digital Ganha Espaço',
+    'Escolas adotam ferramentas online para ensino remoto.',
+    'Com a pandemia, a educação digital se tornou essencial. Plataformas online, videoaulas e recursos digitais passaram a fazer parte do cotidiano escolar.',
+    'https://exemplo.com/educacao-digital',
+    'https://exemplo.com/imagem3.jpg',
+    'educação',
+    '20',
+    2021,
+    TRUE
+  ),
+  (
+    'Número de feminicídios chega a 11 no DF em 5 meses',
+    'O Distrito Federal registrou 11 casos de feminicídio em 2025. Somente nas últimas 24 horas, duas mulheres foram mortas, uma em Samambaia e outra em Ceilândia.',
+    'Para a defensora pública Rafaela Ribeiro Mitre, chefe do Núcleo de Assistência Jurídica de Promoção e Defesa das Mulheres da Defensoria Pública do DF (DPDF), embora o feminicídio possa atingir mulheres de diferentes perfis, há um padrão comum: histórico de violência contínua, dependência emocional ou financeira e ausência de apoio.',
+    'https://g1.globo.com/df/distrito-federal/noticia/2025/05/19/numero-de-feminicidios-chega-a-11-no-df-em-5-meses-2-mulheres-morreram-nas-ultimas-24-horas.ghtml',
+    'https://s2-g1.glbimg.com/4G5IkRXowy_XiJp68W1qoPS5pfw=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/6/i/YM8bJ4RAyUcxb3kSLDOQ/coloquio-pos-unifor-800-foto-getty-images.jpg',
+    'feminicidio',
+    '20',
+    2023,
+    TRUE
+  ),
+  (
+    'Avanços na Energia Renovável',
+    'Painéis solares e eólicos têm crescimento recorde no país.',
+    'O uso de fontes renováveis de energia, como solar e eólica, bateu recordes em 2019, contribuindo para a matriz energética limpa e sustentável.',
+    'https://exemplo.com/energia-renovavel',
+    'https://exemplo.com/imagem4.jpg',
+    'energia',
+    '10',
+    2019,
+    FALSE
+  );
 
 INSERT INTO podcasts (title, description, link, image, category, is_featured)
 VALUES 
