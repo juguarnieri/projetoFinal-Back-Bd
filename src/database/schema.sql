@@ -150,8 +150,8 @@ VALUES
     'Tecnologia Revoluciona a Medicina',
     'Novas tecnologias estão transformando os diagnósticos médicos.',
     'A tecnologia tem revolucionado a medicina com diagnósticos mais precisos, uso de inteligência artificial, telemedicina e avanços em tratamentos personalizados.',
-    'https://exemplo.com/medicina-tecnologia',
-    'https://exemplo.com/imagem1.jpg',
+    'https://saolucasimagem.com.br/como-a-tecnologia-esta-revolucionando-os-diagnosticos-medicos/#:~:text=A%20realidade%20virtual%20e%20a,auxiliando%20na%20precis%C3%A3o%20dos%20diagn%C3%B3sticos.',
+    'https://mv.com.br/storage/blog/18181820240507663a9a9aef0f5.jpeg',
     'tecnologia',
     '20',
     2020,
@@ -159,14 +159,14 @@ VALUES
   ),
   (
     'Clima Global em Alerta',
-    'Pesquisadores alertam sobre mudanças climáticas cada vez mais intensas.',
-    'Estudos recentes mostram que eventos climáticos extremos estão se tornando mais frequentes devido ao aquecimento global, exigindo ações urgentes de governos e sociedade.',
-    'https://exemplo.com/clima-alerta',
-    'https://exemplo.com/imagem2.jpg',
+    'ONU alerta sobre impactos da mudança climática nas geleiras.',
+    'O Relatório Mundial de Desenvolvimento Hídrico das Nações Unidas de 2025 traz um alerta sobre o impacto do aquecimento global na água doce do planeta presente nas montanhas na forma de neve, gelo e solo congelado. Segundo o estudo, cerca de dois bilhões de pessoas no planeta dependem diretamente das águas das montanhas para viver, mas caso ela acabe, todo o mundo será afetado.',
+    'https://agenciabrasil.ebc.com.br/internacional/noticia/2025-03/onu-alerta-sobre-impactos-da-mudanca-climatica-nas-geleiras',
+    'https://imagens.ebc.com.br/_g_tM02lUY1tHXH7xTCwAPp6nfw=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/whatsapp_image_2019-11-06_at_22.00.00.jpeg?itok=7iSxTtBU',
     'meio-ambiente',
-    '10',
-    2010,
-    FALSE
+    '20',
+    2025,
+    TRUE
   ),
   (
     'Educação Digital Ganha Espaço',
@@ -180,6 +180,17 @@ VALUES
     TRUE
   ),
   (
+    'Número de feminicídios chega a 11 no DF em 5 meses',
+    'O Distrito Federal registrou 11 casos de feminicídio em 2025. Somente nas últimas 24 horas, duas mulheres foram mortas, uma em Samambaia e outra em Ceilândia.',
+    'Para a defensora pública Rafaela Ribeiro Mitre, chefe do Núcleo de Assistência Jurídica de Promoção e Defesa das Mulheres da Defensoria Pública do DF (DPDF), embora o feminicídio possa atingir mulheres de diferentes perfis, há um padrão comum: histórico de violência contínua, dependência emocional ou financeira e ausência de apoio.',
+    'https://g1.globo.com/df/distrito-federal/noticia/2025/05/19/numero-de-feminicidios-chega-a-11-no-df-em-5-meses-2-mulheres-morreram-nas-ultimas-24-horas.ghtml',
+    'https://s2-g1.glbimg.com/4G5IkRXowy_XiJp68W1qoPS5pfw=/0x0:800x450/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/6/i/YM8bJ4RAyUcxb3kSLDOQ/coloquio-pos-unifor-800-foto-getty-images.jpg',
+    'feminicidio',
+    '20',
+    2023,
+    TRUE
+  ),
+  (
     'Avanços na Energia Renovável',
     'Painéis solares e eólicos têm crescimento recorde no país.',
     'O uso de fontes renováveis de energia, como solar e eólica, bateu recordes em 2019, contribuindo para a matriz energética limpa e sustentável.',
@@ -190,6 +201,7 @@ VALUES
     2019,
     FALSE
   );
+  
 INSERT INTO podcasts (title, description, link, image, category, is_featured)
 VALUES 
 ('O Maníaco do Parque: Ullisses Campbel', 'Ullisses é escritor, e ele  vai contar histórias do livro que escreveu sobre o Maníaco do Parque, e como ele ludibriava as vítimas com sua moto. O Vilela nunca faria algo parecido, pois ele anda de patinete elétrico.', 'https://www.youtube.com/live/m_JMZDlVK9k?feature=shared', 'https://files.fm/u/bsqk5nqhs2', 'famoso', TRUE),
