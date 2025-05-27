@@ -135,17 +135,13 @@ INSERT INTO users (username, name, profile_picture) VALUES
 INSERT INTO followers (follower_id, following_id) VALUES
 (1, 2),
 (1, 3),
-(1, 2),
-(1, 3),
 (1, 4),
 (1, 5),
 (1, 6),
-(2, 1),
 (2, 3),
 (2, 4),
 (2, 5),
 (2, 6),
-(3, 1),
 (3, 2),
 (3, 4),
 (3, 5),
@@ -172,15 +168,15 @@ INSERT INTO likes (user_id, post_id) VALUES
 (2, 4),
 (3, 5),
 (3, 1),
-(4, 6),
+(4, 4),
 (4, 2),
 (5, 3),
-(5, 7),
-(6, 8),
+(5, 1),
+(6, 5),
 (7, 9),
-(8, 10),
-(9, 11),
-(10, 12);
+(8, 4),
+(9, 3),
+(10, 2);
 
 INSERT INTO comments (user_id, post_id, content) VALUES
 (1, 2, 'Uau, que trilha incrível!'),
@@ -188,16 +184,16 @@ INSERT INTO comments (user_id, post_id, content) VALUES
 (3, 5, 'Seu pet é muito fofo 🐶'),
 (4, 3, 'Café é vida!'),
 (5, 4, 'Qual o nome do livro?'),
-(6, 6, 'Essa noite estava linda mesmo.'),
-(7, 7, 'Onde fica esse lugar?'),
+(6, 5, 'Essa noite estava linda mesmo.'),
+(7, 3, 'Onde fica esse lugar?'),
 (8, 8, 'Foto maravilhosa!'),
 (9, 9, 'Gostei do enquadramento.'),
-(10, 10, 'Curti demais essa vibe.'),
-(11, 11, 'A cor dessa paisagem tá surreal.'),
-(12, 12, 'Post incrível 👏'),
-(13, 13, 'Lugar dos sonhos!'),
-(14, 14, 'Quero ir aí um dia!'),
-(15, 15, 'Inspiração pura nessa imagem!');
+(10, 2, 'Curti demais essa vibe.'),
+(11, 3, 'A cor dessa paisagem tá surreal.'),
+(12, 4, 'Post incrível 👏'),
+(13, 5, 'Lugar dos sonhos!'),
+(14, 1, 'Quero ir aí um dia!'),
+(15, 2, 'Inspiração pura nessa imagem!');
 
 
 INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured)
@@ -301,7 +297,10 @@ VALUES
 ('Crimes Reais: Ivan Mizanzuk', 'Ivan Mizanzuk é  professor universitário, designer, escritor, produtor de podcasts e jornalista. Ele conta “histórias reais de pessoas reais” no podcast Projeto Humanos. Já o Vilela só contrata projetos de humanos para trabalharem com ele.', 'https://youtu.be/UywLajXBLw4?feature=shared', 'https://vejasp.abril.com.br/wp-content/uploads/2023/08/Ilana-Casoy-Erik-Almeida-Divulgac%CC%A7a%CC%83o.jpg.jpg?crop=1&resize=1212,909', 'reais', TRUE),
 ('Ela cuida das mentes mais pertubadas - Gabriela Cruz', 'Ela conhece a mente dos ped0filos! Gabriela Cruz é uma renomada psicóloga especialista em sexualidade humana. Antes de atender em clínicas, ela trabalhou durante anos em penitenciárias, acompanhando indivíduos condenados por ped0filia e outros cr1mes s3xuais', 'https://youtu.be/mdwQUT0i5dc?feature=shared', 'https://i.ytimg.com/vi/mdwQUT0i5dc/maxresdefault.jpg', 'investigacao', TRUE),
 ('Crimes reais: Perita Rosangela Monteiro e Delegado Mauro Dias', 'Dra. Rosangela  é psicóloga e perita criminal, e MAURO DIAS é ex-delegado. Eles vão conversar sobre crimes reais e os processos de investigação e perícia para desvendar os casos. O Vilela é expert em esconder que comeu todo o chocolate da casa que nem um CSI São Paulo resolveria o caso.', 'https://www.youtube.com/live/28WQA1o1CDQ?feature=shared', 'https://i.ytimg.com/vi/28WQA1o1CDQ/maxresdefault.jpg', 'investigação', TRUE),
-('Crimes Reais: Caso Nardoni', 'Discussão sobre o assassinato de Isabella Nardoni.', 'https://www.youtube.com/watch?v=1XyODZb7APk', 'https://f.i.uol.com.br/fotografia/2018/03/12/15209076785aa7359ecb363_1520907678_3x2_xl.jpg', 'famoso', TRUE),
+('Crimes Reais: Caso Nardoni', 'Discussão sobre o assassinato de Isabella Nardoni.', 'https://www.youtube.com/watch?v=1XyODZb7APk', 'https://f.i.uol.com.br/fotografia/2018/03/12/15209076785aa7359ecb363_1520907678_3x2_xl.jpg', 'famoso', TRUE);
+
+INSERT INTO podcasts (title, description, link, image, category, is_featured)
+VALUES
 ('Crimes Reais: Caso Marísia e Marcos Matsunaga', 'Investigação sobre o assassinato de Marísia e Marcos Matsunaga.', 'https://www.youtube.com/watch?v=skj1q8v-f8k', 'https://s2-oglobo.glbimg.com/yqppgndr5hdBMscIOL-7ioLS2LM=/0x0:620x415/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/5/p/3jKTd5TzGIg9jBqCYRLA/63080943.jpg', 'investigacao', FALSE),
 ('Crime Junkie', 'Podcast semanal dedicado a cobrir casos de crimes reais.', 'https://open.spotify.com/show/3DgfoleqaW61T2amZQKINx', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3zmZm2qANnrB1IJ3qbjpzcfJmfVYrYUaLQ&s', 'impactante', TRUE),
 ('Most Notorious! A True Crime History Podcast', 'Histórias reais de crimes, criminosos, tragédias e desastres ao longo da história.', 'https://open.spotify.com/show/1JeYsvYZI4OxGTC9TJljLV', 'https://i.scdn.co/image/ab6765630000ba8a70b77a43012ee744d13a66a5', 'reais', FALSE),
@@ -310,7 +309,10 @@ VALUES
 ('Crimes Reais: Telma Rocha, Edu Tachlitsky e Leandro Lopes', 'Discussão sobre crimes reais no Brasil com especialistas.', 'https://www.youtube.com/watch?v=SCYsS6VgxPY', 'https://i.ytimg.com/vi/u6iCbtzIGM4/maxresdefault.jpg', 'famoso', TRUE),
 ('Crimes Reais: Ricardo Salada e Jorge Lordello', 'Análise de casos criminais com especialistas.', 'https://www.youtube.com/watch?v=aPEYYaR8hVY', 'https://i.ytimg.com/vi/aPEYYaR8hVY/maxresdefault.jpg', 'impactante', FALSE),
 ('Crimes Reais: Telma Rocha', '2 horas ouvindo crimes reais contados pela fotógrafa Telma Rocha', 'https://www.youtube.com/live/PPWehNBYq_M?feature=shared', 'https://conteudo.imguol.com.br/c/noticias/69/2024/10/24/fotografa-tecnico-pericial-telma-rocha-do-dhpp-departamento-estadual-de-homicidios-e-de-protecao-a-pessoa-no-podcast-inteligencia-ltda-em-27-de-agosto-de-2024-1729808672617_v2_900x506.png', 'famoso', FALSE),
-('Podcat: Rosangela - Melhores momentos', 'Melhores momentos com a Dra. Rosângela Monteiro sobre o caso da Milena Dantas Bereta Nistarda, que tinha acabado de sair da delegacia onde prestou queixa contra o marido, Marcelo Nistarda Antoniassi. Mas quis o destino que ele a encontrasse. Milena terminou sem vida e teve ainda seu coração arr4ncad0 pelas mãos daquele que jurou protegê-la.', 'https://youtu.be/nreTvJi_Mz4?feature=shared', 'https://i.ytimg.com/vi/nreTvJi_Mz4/hqdefault.jpg', 'impactante', TRUE ),
+('Podcat: Rosangela - Melhores momentos', 'Melhores momentos com a Dra. Rosângela Monteiro sobre o caso da Milena Dantas Bereta Nistarda, que tinha acabado de sair da delegacia onde prestou queixa contra o marido, Marcelo Nistarda Antoniassi. Mas quis o destino que ele a encontrasse. Milena terminou sem vida e teve ainda seu coração arr4ncad0 pelas mãos daquele que jurou protegê-la.', 'https://youtu.be/nreTvJi_Mz4?feature=shared', 'https://i.ytimg.com/vi/nreTvJi_Mz4/hqdefault.jpg', 'impactante', TRUE );
+
+INSERT INTO podcasts (title, description, link, image, category, is_featured)
+VALUES
 ('Christian Costa', 'Ele é diretor do Centro de Estudos do Comportamento Cr1min4l! O Dr. Christian Costa é um renomado profissional da área da psicologia cr1min4l, exaltado pelo seu trabalho de unir ciência e prática para tratar de cr1mes e psicopatologias.', 'https://youtu.be/0UwkMabyB78?feature=shared', 'https://emtempo.com.br/wp-content/uploads/2023/11/b0aaf3e3-5012-44bb-ade6-6d1e45e3297c.jpg', 'impactante', TRUE ),
 ('Márcia Lanze descobre morte através do tik tok', 'Ele foi pego pelo TikTok! Bruno Eustáquio ligou para a polícia depois de encontrar a mãe, Márcia Lanzane, m0rta. Porém, durante as investigações, os agentes descobriram uma dinâmica chocante: a mulher havia sido ass4ssin4da pelo próprio filho, que, depois de cometer o cr1me, foi para a sala e ficou assistindo televisão.', 'https://youtu.be/XKJ7Zzmifig?feature=shared', 'https://i.ytimg.com/vi/1M6QBfFAq7I/maxresdefault.jpg', 'impactante', TRUE ),
 ('Doutora Luíza - ela atuou em lugares que mudaram o Brasil', 'Ela atuou em casos que pararam o Brasil! Luísa Muchon é uma experiente advogada criminalista, que já trabalhou com casos de grande repercussão e conheceu de perto figuras emblemáticas do país. Além de ter sido advogada do casal Nardoni, foi a última pessoa a conversar com Farah Jorge Farah e representou diversos nomes associados à Operação Lava Jato.', 'https://youtu.be/NhK_MjWjxsU?feature=shared', 'https://is3-ssl.mzstatic.com/image/thumb/Podcasts112/v4/5f/fd/21/5ffd2174-6076-f55b-27bc-2daf7a0e93ca/mza_7189227837507334208.jpg/1200x1200bb.jpg', 'impactante', TRUE ),
@@ -321,7 +323,7 @@ VALUES
 ('Crimes Reais: Ju Cassini e Beto', 'JU CASSINI é YouTuber e BETO RIBEIRO é diretor e roteirista. Eles vão bater um papo sobre crimes reais com histórias assustadoras, bizarras e misteriosas. O Vilela já se preparou e comprou mais fraldas geriátricas pra trocar nessa live.', 'https://www.youtube.com/live/n9YXRqNtows?feature=shared', 'https://i.ytimg.com/vi/n9YXRqNtows/maxresdefault.jpg', 'casos reais', TRUE),
 ('Crimes Reais: O caso mais pesado', 'TELMA ROCHA é fotógrafa pericial, e EDU TACHLITSKY e LEANDRO LOPES são peritos criminais do Departamento de Homicídios e Proteção à Pessoa de São Paulo. Eles vão esclarecer muitas dúvidas sobre os bastidores dos crimes mais conhecidos e também os mais curiosos. O Vilela que seu cuide, pois ele está sempre em minoria no porão.', 'https://youtu.be/7x0UoLX4kmQ?feature=shared', 'https://i.ytimg.com/vi/7x0UoLX4kmQ/maxresdefault.jpg', 'crimes antigos', TRUE),
 ('Crimes Reais: Ricardo Salada, Telma Rocha e Rafael Heck', 'RICARDO SALADA, TELMA ROCHA E RAFAEL HECK são peritos criminais. Eles trabalham no DHPP (Departamento de Homicídios e de Proteção à Pessoa) do estado de SP e vão bater um papo sobre crimes reais. Já o Vilela presenciou vários crimes do passado.', 'https://www.youtube.com/live/17PwIYnL28Y?feature=shared', 'https://i.ytimg.com/vi/17PwIYnL28Y/maxresdefault.jpg', 'crimes antigos', TRUE),
-('Telma Rocha e André D/Ávila', 'Neste podcast Telma Rocha e André D’Ávila abordam questões cruciais relacionadas ao crime, à segurança pública e aos desafios enfrentados pela sociedade contemporânea.', 'https://youtu.be/azFRrtdUnvE?feature=shared', 'https://i.ytimg.com/vi/azFRrtdUnvE/sddefault.jpg?v=6362b027', 'crimes antigos', TRUE),
+('Telma Rocha e André DÁvila', 'Neste podcast Telma Rocha e André DÁvila abordam questões cruciais relacionadas ao crime, à segurança pública e aos desafios enfrentados pela sociedade contemporânea.', 'https://youtu.be/azFRrtdUnvE?feature=shared', 'https://i.ytimg.com/vi/azFRrtdUnvE/sddefault.jpg?v=6362b027', 'crimes antigos', TRUE),
 ('Crimes Reais: Ricardo Ventura e Ricardo Salada ', 'RICARDO VENTURA é psicanalista e RICARDO SALADA é perito criminal. Hoje descobriremos mutas técnicas de como pegar o mentiroso e o bandido com as calças na mão. A Mari deveria assistir a essa live, pois é óbvio que o Vilela vai pisar na bola.', 'https://www.youtube.com/live/rMT78xVz_Qc?feature=shared', 'https://i.ytimg.com/vi/rMT78xVz_Qc/maxresdefault.jpg', 'crimes antigos', TRUE),
 ('Caso Família Gonçalves ', 'Em uma noite comum de janeiro de 2020, em São Bernardo do Campo, no Grande ABC de São Paulo, Flaviana Gonçalves chegava em casa do trabalho quando encontrou sua família rendida por três ladrões. O Romoyuki, o marido, Juan, o filho adolescente, Anaflávia, a filha e a namorada de sua filha, Carina, todos estavam sob a mira dos assaltantes. Flaviana foi levada ao quarto para passar suas senhas de banco, quando foi morta ao lado do caçula e do esposo. ', 'https://youtu.be/kcIpYBnwlBk?feature=shared', 'https://i.ytimg.com/vi/kcIpYBnwlBk/maxresdefault.jpg', 'crimes antigos', TRUE);
 
