@@ -525,3 +525,245 @@ VALUES
 
 
     ALTER TABLE likes ADD CONSTRAINT unique_user_post UNIQUE (user_id, post_id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE questions (
+    id SERIAL PRIMARY KEY,
+    question_text TEXT NOT NULL
+);
+
+CREATE TABLE alternatives (
+    id SERIAL PRIMARY KEY,
+    question_id INTEGER REFERENCES questions(id) ON DELETE CASCADE,
+    alternative_text TEXT NOT NULL,
+    is_correct BOOLEAN DEFAULT FALSE
+);
+
+
+INSERT INTO questions (id, question_text) VALUES
+(1, 'Qual foi o principal erro apontado na condução do caso Evandro, que chocou o Brasil nos anos 1990?'),
+(2, 'Suzane von Richthofen foi condenada por:'),
+(3, 'Qual prova foi essencial para a condenação do casal Nardoni?'),
+(4, 'Onde desapareceu Madeleine McCann?'),
+(5, 'Qual era o perfil criminal de Jeffrey Dahmer?'),
+(6, 'A Lei Maria da Penha foi criada com o objetivo de:'),
+(7, 'O assassinato de George Floyd gerou:'),
+(8, 'Qual foi a condenação de Alexandre Nardoni?'),
+(9, 'O erro mais criticado da polícia no caso Eloá foi:'),
+(10, 'Marielle Franco foi assassinada por motivos ligados a:'),
+(11, 'Qual foi uma das inovações trazidas pela Lei Anticrime?'),
+(12, 'Cesare Battisti foi:'),
+(13, 'O goleiro Bruno foi condenado pelo assassinato de:'),
+(14, 'O julgamento de O.J. Simpson ficou famoso por:'),
+(15, 'Qual foi a principal causa das mortes na Boate Kiss?'),
+(16, 'O assassinato de João Hélio gerou discussão sobre:'),
+(17, 'O Crime de Hanau (Alemanha, 2020) teve como motivação:'),
+(18, 'Quantos presos morreram no massacre do Carandiru em 1992?'),
+(19, 'A investigação sobre a morte de JonBenét Ramsey foi criticada por:'),
+(20, 'O que resultou na morte de jovens em um baile funk em Paraisópolis (2019)?');
+
+INSERT INTO alternatives (question_id, alternative_text, is_correct) VALUES
+(1, 'Prisões sem mandado judicial', FALSE),
+(1, 'Coleta ilegal de provas técnicas', FALSE),
+(1, 'Confissões obtidas sob tortura', TRUE),
+(1, 'Ausência de julgamento público', FALSE),
+
+(2, 'Estelionato contra os pais', FALSE),
+(2, 'Envolvimento em sequestro', FALSE),
+(2, 'Participação no assassinato dos pais', TRUE),
+(2, 'Tráfico de entorpecentes', FALSE),
+
+(3, 'Mensagens de celular', FALSE),
+(3, 'Pegadas no parapeito e sangue no carro', TRUE),
+(3, 'Testemunho de um vizinho', FALSE),
+(3, 'Bilhete de confissão', FALSE),
+
+(4, 'França', FALSE),
+(4, 'Alemanha', FALSE),
+(4, 'Portugal', TRUE),
+(4, 'Espanha', FALSE),
+
+(5, 'Assassino em massa por motivação política', FALSE),
+(5, 'Serial killer e canibal', TRUE),
+(5, 'Líder de seita religiosa', FALSE),
+(5, 'Ladrão de bancos reincidente', FALSE),
+
+(6, 'Proteger crianças de abuso sexual', FALSE),
+(6, 'Combater o feminicídio em locais públicos', FALSE),
+(6, 'Prevenir e punir a violência doméstica contra a mulher', TRUE),
+(6, 'Criminalizar o assédio moral no trabalho', FALSE),
+
+(7, 'Reforma fiscal nos EUA', FALSE),
+(7, 'Movimentos antirracistas globais', TRUE),
+(7, 'Proibição do uso de armas de fogo', FALSE),
+(7, 'Reestruturação da OTAN', FALSE),
+
+(8, 'Absolvido por falta de provas', FALSE),
+(8, '15 anos por homicídio culposo', FALSE),
+(8, '31 anos por homicídio triplamente qualificado', TRUE),
+(8, 'Prisão perpétua', FALSE),
+
+(9, 'Não emitir alerta nacional', FALSE),
+(9, 'Atuar sem autorização judicial', FALSE),
+(9, 'Permitir a entrada de Nayara no cativeiro', TRUE),
+(9, 'Agir sem colete à prova de balas', FALSE),
+
+(10, 'Disputa familiar', FALSE),
+(10, 'Denúncias contra milícias', TRUE),
+(10, 'Desacato a autoridade', FALSE),
+(10, 'Fraude eleitoral', FALSE),
+
+(11, 'Redução de penas mínimas', FALSE),
+(11, 'Criação do juiz de garantias', TRUE),
+(11, 'Extinção da delação premiada', FALSE),
+(11, 'Revogação da prisão temporária', FALSE),
+
+(12, 'Um militante ambiental italiano', FALSE),
+(12, 'Um espião da Guerra Fria', FALSE),
+(12, 'Um ex-ativista italiano condenado por terrorismo', TRUE),
+(12, 'Um diplomata refugiado', FALSE),
+
+(13, 'Sua esposa', FALSE),
+(13, 'Um torcedor', FALSE),
+(13, 'Um técnico de futebol', FALSE),
+(13, 'Eliza Samudio, ex-companheira', TRUE),
+
+(14, 'Ser televisionado mundialmente', TRUE),
+(14, 'Envolver evidências plantadas', FALSE),
+(14, 'Ser julgado por tribunal militar', FALSE),
+(14, 'Levar à pena de morte', FALSE),
+
+(15, 'Falha estrutural do prédio', FALSE),
+(15, 'Briga generalizada com tiros', FALSE),
+(15, 'Incêndio causado por artefato pirotécnico', TRUE),
+(15, 'Envenenamento coletivo', FALSE),
+
+(16, 'Redução da maioridade penal', TRUE),
+(16, 'Pena de morte no Brasil', FALSE),
+(16, 'Porte de arma para civis', FALSE),
+(16, 'Limites da justiça restaurativa', FALSE),
+
+(17, 'Conflitos religiosos', FALSE),
+(17, 'Terrorismo racial e xenofobia', TRUE),
+(17, 'Roubo em massa de bancos', FALSE),
+(17, 'Protesto contra vacinas', FALSE),
+
+(18, '31', FALSE),
+(18, '72', FALSE),
+(18, '111', TRUE),
+(18, '201', FALSE),
+
+(19, 'Julgamento sem júri', FALSE),
+(19, 'Falta de coleta de provas iniciais', TRUE),
+(19, 'Condenação injusta dos pais', FALSE),
+(19, 'Arquivamento imediato', FALSE),
+
+(20, 'Desabamento do palco', FALSE),
+(20, 'Ataque de facção criminosa', FALSE),
+(20, 'Ação policial mal conduzida', TRUE),
+(20, 'Curto-circuito elétrico', FALSE);
