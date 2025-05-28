@@ -587,7 +587,6 @@ VALUES
 ('Crimes reais: Perita Rosangela Monteiro e Delegado Mauro Dias', 'Dra. Rosangela  e psicologa e perita criminal, e MAURO DIAS e ex-delegado. Eles vao conversar sobre crimes reais e os processos de investigacao e pericia para desvendar os casos. O Vilela e expert em esconder que comeu todo o chocolate da casa que nem um CSI Sao Paulo resolveria o caso.', 'https://www.youtube.com/live/28WQA1o1CDQ?feature=shared', 'https://i.ytimg.com/vi/28WQA1o1CDQ/maxresdefault.jpg', 'investigacao', TRUE),
 ('Crimes Reais: Caso Nardoni', 'Discussao sobre o assassinato de Isabella Nardoni.', 'https://www.youtube.com/watch?v=1XyODZb7APk', 'https://f.i.uol.com.br/fotografia/2018/03/12/15209076785aa7359ecb363_1520907678_3x2_xl.jpg', 'famoso', TRUE),
 ('Crimes Reais: Caso Marisia e Marcos Matsunaga', 'Investigacao sobre o assassinato de Marisia e Marcos Matsunaga.', 'https://www.youtube.com/watch?v=skj1q8v-f8k', 'https://s2-oglobo.glbimg.com/yqppgndr5hdBMscIOL-7ioLS2LM=/0x0:620x415/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/5/p/3jKTd5TzGIg9jBqCYRLA/63080943.jpg', 'investigacao', FALSE),
-('Crime Junkie', 'Podcast semanal dedicado a cobrir casos de crimes reais.', 'https://open.spotify.com/show/3DgfoleqaW61T2amZQKINx', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3zmZm2qANnrB1IJ3qbjpzcfJmfVYrYUaLQ&s', 'impactante', TRUE);
 
 INSERT INTO podcasts (title, description, link, image, category,  is_featured) 
 VALUES
