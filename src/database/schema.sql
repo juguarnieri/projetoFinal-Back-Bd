@@ -538,114 +538,7 @@ VALUES
         ('Carlos Eduardo Ferraz Augusto', 'Desenvolvedor (a)', 'https://avatars.githubusercontent.com/u/158209729?s=400&u=ea58c944f794b2851f01abda7ad25341d06255dc&v=4', 1);
 
 
-<<<<<<< HEAD
         ALTER TABLE likes ADD CONSTRAINT unique_user_post UNIQUE (user_id, post_id);
-=======
-    ALTER TABLE likes ADD CONSTRAINT unique_user_post UNIQUE (user_id, post_id);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -784,4 +677,3 @@ INSERT INTO alternatives (question_id, alternative_text, is_correct) VALUES
 (20, 'Ataque de facção criminosa', FALSE),
 (20, 'Ação policial mal conduzida', TRUE),
 (20, 'Curto-circuito elétrico', FALSE);
->>>>>>> 7ac870b369766fb56ed363017202c0d87652222e
