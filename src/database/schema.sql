@@ -203,21 +203,21 @@
     'Campbell tinha 23 anos quando desapareceu do resort no Colorado. Ela foi vista pela última vez indo ao saguão buscar uma revista e nunca voltou.',
     'Caryn Campbell foi uma das vítimas de Ted Bundy, sequestrada em um resort no Colorado.',
     'https://www.reddit.com/r/serialkillers/comments/1794p7g/caryn_campbell_one_of_ted_bundys_victims_was_on/?tl=pt-br',
-    '/uploads/caryn campbell.jpeg',
+    '/uploads/caryncampbell.jpeg',
     'Homicídio', '70', 1975, FALSE),
 
     ('Há 50 anos, Lynda Ann Healy foi sequestrada e assassinada por Ted Bundy. Ela tinha 21 anos e acredita-se que foi sua primeira vítima.',
     'Aos 21 anos, Lynda Ann Healey desapareceu em 1974. Sangue foi encontrado em seus lençóis, e sua camisola pendurada no armário.',
     'Lynda Ann Healy foi uma das primeiras vítimas de Ted Bundy, desaparecendo em 1974.',
     'https://aventurasnahistoria.com.br/noticias/vitrine/historia-as-vitimas-esquecidas-de-ted-bundy.phtml',
-    '/uploads/lynda ann healy.jpeg',
+    '/uploads/lyndaannhealy.jpeg',
     'Homicídio', '70', 1974, FALSE),
 
     ('Em memória de Kimberly Leach, 12, a última vítima de Ted Bundy: o mundo perdeu uma grande alma',
     'Kimberly Leach, 12 anos, desapareceu em 1978 em Lake City, Flórida. A polícia prendeu Ted Bundy, já procurado pelo FBI.',
     'Kimberly Leach foi a última vítima de Ted Bundy, desaparecendo em 1978.',
     'https://aventurasnahistoria.com.br/noticias/vitrine/historia-as-vitimas-esquecidas-de-ted-bundy.phtml',
-    '/uploads/Kimberly Leach.jpeg',
+    '/uploads/KimberlyLeach.jpeg',
     'Homicídio', '70', 1978, TRUE),
 
     ('Quem ama não mata: o feminicídio de 1976 que ajudou a mudar a Justiça brasileira',
@@ -241,35 +241,35 @@
     'Durante três décadas da segunda metade do século 20, a América do Norte registrou um crescimento expressivo no número de homicídios em série, caracterizados por crimes semelhantes cometidos por um mesmo autor, os chamados serial killers.',
     'Esse aumento teve início nos anos 1960 e intensificou-se nas décadas seguintes, atingindo seu auge nos anos 1980, quando os casos se tornaram mais frequentes e notórios.',
     'https://www.bbc.com/portuguese/internacional-45363043',
-    '/uploads/Serial Killers.jpeg',
+    '/uploads/SerialKillers.jpeg',
     'Criminologia', '80', 1980, TRUE),
 
     ('Um homem aparentemente inofensivo dos EUA: Ted Bundy',
     'Jeffrey Dahmer, o Canibal de Milwaukee, matou 17 homens e garotos entre 1977 e 1991. Nascido em 1960, cometeu o primeiro assassinato aos 17 anos.',
     'Atraía vítimas para casa, onde cometia atos horríveis e desmembrava os corpos. Antes da prisão, teve problemas com a lei e foi expulso do exército.',
     'https://f5.folha.uol.com.br/cinema-e-series/2022/10/jeffrey-dahmer-por-que-serie-sobre-serial-killer-americano-causa-tanta-polemica.shtml',
-    '/uploads/Jeffrey Dahmer.jpg',
+    '/uploads/JeffreyDahmer.jpg',
     'Homicídio Qualificado', '80', 1980, TRUE),
 
     ('O assassino em série que fez com que os palhaços nos aterrorizassem: John Wayne Gacy',
     'John Wayne Gacy, nascido em 1942 nos subúrbios de Chicago, teve uma infância marcada por abusos. Trabalhou em funerária, casou-se e virou gerente de restaurante, onde começou seus crimes.',
     'Enriquecido com sua empresa, criou o palhaço Pogo para eventos infantis, ocultando sua verdadeira face de predador sexual e assassino.',
     'https://brasil.elpais.com/brasil/2019/06/28/actualidad/1561705341_083525.html',
-    '/uploads/John Wayne.jpeg',
+    '/uploads/JohnWayne.jpeg',
     'Serial Killers', '80', 1980, TRUE),
 
-    ('Alemanha condena “enfermeiro da morte” que assassinou 85 pacientes',
-    'Niels Högel, enfermeiro alemão de 42 anos, foi condenado à prisão perpétua por matar 85 pacientes entre 2000 e 2005.',
-    'A justiça considerou sua culpa "particularmente grave", anulando a chance de liberdade após 15 anos. É considerado o maior assassino em massa da Alemanha desde a Segunda Guerra.',
+    ('Alemanha condena enfermeiro da morte que assassinou 85 pacientes',
+    'Niels H\u00F6gel, enfermeiro alem\u00E3o de 42 anos, foi condenado \u00E0 pris\u00E3o perp\u00E9tua por matar 85 pacientes entre 2000 e 2005.',
+    'A justiça considerou sua culpa particularmente grave, anulando a chance de liberdade após 15 anos. \u00C9 considerado o maior assassino em massa da Alemanha desde a Segunda Guerra.',
     'https://brasil.elpais.com/brasil/2019/06/06/internacional/1559810905_905194.html',
-    '/uploads/Niels Hogel.jpeg',
+    '/uploads/NielsHogel.jpeg',
     'Homicídio em Série', '80', 1980, TRUE),
 
     ('Assassinato de John Lennon: A Tragédia que Abalou o Mundo',
     'Em 8 de dezembro de 1980, o ex-Beatle John Lennon foi assassinado a tiros por Mark David Chapman na entrada do edifício Dakota, em Nova York.',
     'Chapman, fã obcecado, alegou ter sido inspirado pelo livro "O Apanhador no Campo de Centeio". Lennon morreu a caminho do hospital, aos 40 anos.',
     'https://people.com/john-lennon-death-what-to-know-7511226',
-    '/uploads/John Lennon.jpeg',
+    '/uploads/John_Lennon.jpeg',
     'Assassinato', '80', 1980, TRUE);
 
     --decadas de 90
@@ -279,35 +279,35 @@
     'Caso ocorrido no Rio de Janeiro, envolvendo o desaparecimento de 11 jovens. Supostamente mortos por policiais, o caso evidenciou questões de violência policial e omissão estatal, gerando repercussão internacional e pedidos de justiça por parte das famílias das vítimas.',
     'A Chacina de Ácari é um dos casos mais emblemáticos de violência policial no Brasil.',
     'https://g1.globo.com/jornal-nacional/noticia/2024/12/04/chacina-de-acari-corte-interamericana-responsabiliza-brasil-pelo-desaparecimento-de-11-jovens-no-rio.ghtml',
-    '/uploads/Chacina de Àcari.jpeg',
+    '/uploads/ChacinadeÀcari.jpeg',
     'Chacina', '90', 1990, FALSE),
 
     ('Caso da menina Míriam',
     'O desaparecimento e a morte da menina Míriam Brandão chocaram o Brasil em 1992. O caso expôs a brutalidade e a violência contra crianças, mobilizando a opinião pública e gerando questionamentos sobre a segurança infantil.',
     'O caso Míriam Brandão trouxe à tona a necessidade de maior proteção às crianças no Brasil.',
     'https://www.em.com.br/app/noticia/gerais/2011/09/02/interna_gerais,248406/assassino-que-chocou-a-capital-em-1992-esta-proximo-da-liberdade.shtml',
-    '/uploads/Menina Míriam.jpeg',
+    '/uploads/MeninaMíriam.jpeg',
     'Homicídio', '90', 1992, FALSE),
 
     ('Caso Daniella Perez',
     'O assassinato da atriz Daniella Perez em 1992, cometido por um colega de elenco, gerou grande comoção nacional. O crime foi amplamente coberto pela mídia e desencadeou um debate sobre feminicídio.',
     'O caso Daniella Perez foi um marco na luta contra o feminicídio no Brasil.',
     'https://www.cnnbrasil.com.br/entretenimento/daniella-perez-assassinato-de-atriz-completa-32-anos-relembre-o-caso/L',
-    '/uploads/Daniela Perez.jpeg',
+    '/uploads/DanielaPerez.jpeg',
     'Feminicídio', '90', 1992, TRUE),
 
     ('Caso Maníaco do Parque',
     'Francisco de Assis Pereira, o Maníaco do Parque, aterrorizou São Paulo no final dos anos 1990 com uma série de assassinatos brutais. Ele atraía mulheres ao parque sob falsos pretextos e as assassinava.',
     'O caso Maníaco do Parque é um dos mais conhecidos envolvendo serial killers no Brasil.',
     'https://www.cnnbrasil.com.br/nacional/relembere-o-caso-do-maniaco-do-parque-tema-de-filme-que-estreia-hoje/',
-    '/uploads/Maníaco do Parque.jpeg',
+    '/uploads/ManíacodoParque.jpeg',
     'Assassinato em série', '90', 1998, TRUE),
 
     ('Caso atirador do shopping',
     'Em 1998, um atirador abriu fogo em um shopping center no Brasil, deixando vítimas e espalhando pânico entre os frequentadores. O caso trouxe à tona discussões sobre segurança em locais públicos e o controle de armas.',
     'O caso do atirador do shopping gerou debates sobre segurança pública e controle de armas no Brasil.',
     'https://www.cnnbrasil.com.br/nacional/atirador-do-shopping-morumbi-em-sp-deixa-prisao-apos-25-anos-entenda/',
-    '/uploads/Atirador do Shopping.jpeg',
+    '/uploads/AtiradordoShopping.jpeg',
     'Homicídio', '90', 1998, FALSE);
 
     --decadas de 2000
@@ -331,14 +331,14 @@
     'Madeleine McCann desapareceu em 3 de maio de 2007 no resort Praia da Luz, Portugal, enquanto seus pais jantavam.',
     'A polícia portuguesa foi criticada por falhas na investigação. Em 2020, um suspeito alemão foi identificado, mas o paradeiro da menina ainda é um mistério.',
     'https://www.cnnbrasil.com.br/tudo-sobre/caso-madeleine-mccann/',
-    '/uploads/Madeleine McCann.jpeg',
+    '/uploads/MadeleineMcCann.jpeg',
     'Crime de Sequestro', '2000', 2007, FALSE),
 
     ('Caso Ônibus 174: o sequestro que parou o Brasil',
     'Em 12 de junho de 2000, Sandro Barbosa do Nascimento sequestrou um ônibus no Rio de Janeiro, mantendo reféns por quase cinco horas.',
     'O episódio foi transmitido ao vivo e terminou com a morte da refém Geísa Firmo Gonçalves, atingida por disparos durante a ação policial.',
     'https://oglobo.globo.com/blogs/blog-do-acervo/post/2024/03/sequestro-do-onibus-174-horas-de-tensao-com-uma-tragedia-no-final.ghtml',
-    '/uploads/Onibus 174.jpeg',
+    '/uploads/Onibus174.jpeg',
     'Crime Hediondo', '2000', 2000, FALSE),
 
     ('Caso Isabella Nardoni: o assassinato que comoveu o Brasil',
@@ -352,7 +352,7 @@
     'Em 13 de outubro de 2008, Lindemberg Alves sequestrou sua ex-namorada, Eloá, e a amiga Nayara, após o fim do relacionamento.',
     'Após quase 100 horas de cativeiro, a polícia invadiu o apartamento. Nayara foi libertada ferida, mas Eloá foi baleada e teve a morte cerebral confirmada em 18 de outubro.',
     'https://rollingstone.com.br/noticia/caso-eloa-producoes-para-entender-a-historia-que-chocou-o-pais/',
-    '/uploads/Caso Eloá.jpeg',
+    '/uploads/CasoEloá.jpeg',
     'Sequestro e Homicídio', '2000', 2008, TRUE);
 
     --decadas de 2010
@@ -362,28 +362,28 @@
     'O assassinato de Eliza Samudio, em 2010, envolveu o goleiro Bruno Fernandes, então astro do Flamengo.',
     'Eliza foi sequestrada e morta por ordem de Bruno após pedir reconhecimento de paternidade. O crime teve grande repercussão, gerando debates sobre violência doméstica e impunidade. Bruno foi condenado a 22 anos e tentou retomar a carreira após a prisão.',
     'https://g1.globo.com/tudo-sobre/eliza-samudio/',
-    '/uploads/Eliza Samúdio.jpeg',
+    '/uploads/ElizaSamúdio.jpeg',
     'Crime Hediondo', '2000', 2010, TRUE),
 
     ('Caso Luka Magnotta',
     'O assassinato de Jun Lin, em 2012, foi um dos crimes mais brutais da era digital.',
     'Luka Magnotta matou, esquartejou e enviou partes do corpo da vítima a escolas e partidos políticos no Canadá. O crime foi filmado e divulgado na internet, chocando o mundo. Magnotta foi capturado na Alemanha e condenado à prisão perpétua.',
     'https://noticias.uol.com.br/ultimas-noticias/efe/2017/06/21/canibal-de-montreal-se-casara-com-outro-preso-no-final-do-mes.htm',
-    '/uploads/Luka Magnnota.jpeg',
+    '/uploads/LukaMagnnota.jpeg',
     'Crime Hediondo', '2010', 2012, FALSE),
 
     ('Caso Chris Watts',
     'Em 2018, Chris Watts matou a esposa grávida e as duas filhas pequenas em Colorado, EUA.',
     'Ele enterrou a esposa em uma cova rasa e jogou os corpos das filhas em tanques de óleo. O crime chocou pela frieza e pelo contraste entre a imagem de família perfeita nas redes sociais e a realidade sombria do assassinato.',
     'https://g1.globo.com/mundo/noticia/2019/03/07/homem-que-matou-esposa-gravida-e-duas-filhas-nos-eua-revela-pela-primeira-vez-como-cometeu-crime.ghtml',
-    '/uploads/Chris Whatts.jpeg',
+    '/uploads/ChrisWhatts.jpeg',
     'Crime Hediondo', '2010', 2018, TRUE),
 
     ('Caso Stephen Paddock',
     'Em outubro de 2017, Stephen Paddock abriu fogo contra uma multidão em um festival de música country em Las Vegas, matando 60 pessoas e ferindo mais de 800.',
     'O ataque, o mais letal da história dos EUA, foi realizado do 32º andar do Mandalay Bay Hotel. Paddock se suicidou antes da abordagem policial e nunca foi encontrada uma motivação clara.',
     'https://g1.globo.com/mundo/noticia/veja-quem-e-stephen-paddock-o-atirador-de-las-vegas.ghtml',
-    '/uploads/Stephen Paddock.jpeg',
+    '/uploads/StephenPaddock.jpeg',
     'Crime Hediondo', '2010', 2017, FALSE);
 
     --decadas de 2020
@@ -393,21 +393,21 @@
     'Em dezembro de 2023, Florencia Aranguren foi brutalmente assassinada a facadas enquanto passeava com o cachorro em Búzios, RJ.',
     'Carlos José foi preso em flagrante e condenado a 33 anos de prisão. O corpo da trapezista foi encontrado em uma trilha e o cão permaneceu ao lado da vítima até a chegada das autoridades.',
     'https://www.condorcontabilidade.com.br/nb2/rj/regiao-dos-lagos/noticia/2025/04/03/julgamento-marcado-acusado-de-matar-trapezista-argentina-em-buzios-enfrenta-o-tribunal-do-juri-no-dia-9-de-abril.ghtml',
-    '/uploads/Trapezista argentina.jpeg',
+    '/uploads/Trapezistaargentina.jpeg',
     'Homicídio', '2020s', 2023, FALSE),
 
     ('Caso do menino arremessado da ponte pelo pai',
     'Em março de 2025, um homem arremessou o próprio filho de cinco anos de uma ponte em São Gabriel, RS, em um ato de vingança contra a ex-esposa.',
     'Ele confessou o crime e está preso.',
     'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/03/cantor-afogado-pe-2-2.jpg?w=1115',
-    '/uploads/Menino Arremessado.jpeg',
+    '/uploads/MeninoArremessado.jpeg',
     'Homicídio', '2020s', 2025, FALSE),
 
     ('Caso do motorista de app em SP',
     'Em março de 2025, um motorista de aplicativo foi preso após tentar estuprar e roubar uma passageira de 21 anos no bairro da Casa Verde, zona norte de São Paulo.',
     'A vítima conseguiu fugir e o homem foi preso.',
     'https://s2-g1.glbimg.com/JTYtBLWhlDV-pnM6l5rMDQd31mc=/1280x0/filters:format(jpeg)/https://thumbor.globoi.com/unsafe/fit-in/1280x720/s03.video.glbimg.com/deo/vi/54/13/13491354',
-    '/uploads/Motorista de App.jpeg',
+    '/uploads/MotoristadeApp.jpeg',
     'Violência Sexual', '2020s', 2025, FALSE),
 
     ('Caso Clara Maria em MG',
@@ -421,45 +421,71 @@
     'Em fevereiro de 2025, um cantor foi encontrado morto após se afogar em um rio em Pernambuco.',
     'A polícia investiga as circunstâncias do afogamento e se houve envolvimento de terceiros.',
     'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/03/cantor-afogado-pe-2-2.jpg?w=1115',
-    '/uploads/Cantor Afogado.jpeg',
+    '/uploads/CantorAfogado.jpeg',
     'Morte Suspeita', '2020s', 2025, FALSE),
 
     ('Filho mata pai alcoólatra em SC',
     'Em fevereiro de 2025, um homem de 23 anos matou o pai de 47 anos a golpes de tesoura em São João Batista, SC.',
     'A vítima foi encontrada com 22 perfurações. O suspeito se entregou à polícia após o crime.',
     'https://static.ndmais.com.br/2025/02/identificado-homem-morto-por-filho-a-tesouradas-sao-joao-batista-grande-florianopolis-elvis-marcos-da-silva-800x467.jpg',
-    '/uploads/Filho mata pai alcoolatra.jpeg',
+    '/uploads/Filhomatapaialcoolatra.jpeg',
     'Homicídio', '2020s', 2025, FALSE);
 
+INSERT INTO podcasts (title, description, link, image, category, is_featured)
+VALUES 
+('Crimes Reais: Ivan Mizanzuk', 
+ 'Ivan Mizanzuk é professor universitário, designer, escritor, produtor de podcasts e jornalista. Ele conta "histórias reais de pessoas reais" no podcast Projeto Humanos. Já o Vilela só contrata projetos de humanos para trabalharem com ele.', 
+ 'https://youtu.be/UywLajXBLw4?feature=shared', 
+ 'https://vejasp.abril.com.br/wp-content/uploads/2023/08/Ilana-Casoy-Erik-Almeida-Divulgac%CC%A7a%CC%83o.jpg.jpg?crop=1&resize=1212,909', 
+ 'casos reais', TRUE),
 
-    INSERT INTO podcasts (title, description, link, image, category, is_featured)
-    VALUES 
-    ('Ilana Casoy', 'Ilana Casoy e escritora e expert em serial killers. Ilana tem como tema principal de seus livros os crimes de serial killers e assassinatos marcados pela perversidade, como os Nardoni e a Richthofen. O Vilela pensou em chamar a Richthofen para um papo, mas ela so estaria disponivel no Dia das Maes.', 'https://www.youtube.com/live/YWaIk5BM3So?feature=shared', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZoSgadoZHW4HQo_85eXKaM55ms5fj_mvUg&s', 'antigo', TRUE),
-    ('Crimes Reais: Ivan Mizanzuk', 'Ivan Mizanzuk e  professor universitario, designer, escritor, produtor de podcasts e jornalista. Ele conta "historias reais de pessoas reais" no podcast Projeto Humanos. Ja o Vilela so contrata projetos de humanos para trabalharem com ele.', 'https://youtu.be/UywLajXBLw4?feature=shared', 'https://vejasp.abril.com.br/wp-content/uploads/2023/08/Ilana-Casoy-Erik-Almeida-Divulgac%CC%A7a%CC%83o.jpg.jpg?crop=1&resize=1212,909', 'reais', TRUE),
-    ('Ela cuida das mentes mais pertubadas - Gabriela Cruz', 'Ela conhece a mente dos ped0filos! Gabriela Cruz e uma renomada psicologa especialista em sexualidade humana. Antes de atender em clinicas, ela trabalhou durante anos em penitenciarias, acompanhando individuos condenados por ped0filia e outros cr1mes s3xuais', 'https://youtu.be/mdwQUT0i5dc?feature=shared', 'https://i.ytimg.com/vi/mdwQUT0i5dc/maxresdefault.jpg', 'investigacao', TRUE),
-    ('Crimes reais: Perita Rosangela Monteiro e Delegado Mauro Dias', 'Dra. Rosangela  e psicologa e perita criminal, e MAURO DIAS e ex-delegado. Eles vao conversar sobre crimes reais e os processos de investigacao e pericia para desvendar os casos. O Vilela e expert em esconder que comeu todo o chocolate da casa que nem um CSI Sao Paulo resolveria o caso.', 'https://www.youtube.com/live/28WQA1o1CDQ?feature=shared', 'https://i.ytimg.com/vi/28WQA1o1CDQ/maxresdefault.jpg', 'investigacao', TRUE),
-    ('Crimes Reais: Caso Nardoni', 'Discussao sobre o assassinato de Isabella Nardoni.', 'https://www.youtube.com/watch?v=1XyODZb7APk', 'https://f.i.uol.com.br/fotografia/2018/03/12/15209076785aa7359ecb363_1520907678_3x2_xl.jpg', 'famoso', TRUE),
-    ('Crimes Reais: Caso Marisia e Marcos Matsunaga', 'Investigacao sobre o assassinato de Marisia e Marcos Matsunaga.', 'https://www.youtube.com/watch?v=skj1q8v-f8k', 'https://s2-oglobo.glbimg.com/yqppgndr5hdBMscIOL-7ioLS2LM=/0x0:620x415/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/5/p/3jKTd5TzGIg9jBqCYRLA/63080943.jpg', 'investigacao', FALSE),
-    ('Crime Junkie', 'Podcast semanal dedicado a cobrir casos de crimes reais.', 'https://open.spotify.com/show/3DgfoleqaW61T2amZQKINx', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3zmZm2qANnrB1IJ3qbjpzcfJmfVYrYUaLQ&s', 'impactante', TRUE),
-    ('Crimecast', 'Podcast sobre crimes reais, abordando historias conhecidas no Brasil e no mundo.', 'https://open.spotify.com/show/07MoJXc7KpasBvDSJVOMw8', 'https://cdn-images.dzcdn.net/images/talk/08fcb47cb1970a881f34258fc451b553/1900x1900-000000-80-0-0.jpg', 'investigacao', TRUE),
-    ('Real Crime', 'Documentarios completos sobre crimes, gangsters, serial killers e as pessoas mais infames da historia.', 'https://open.spotify.com/show/0JLjqhHBRN8qMTGKikm97B', 'https://m.media-amazon.com/images/I/91O+l7tjmdL._AC_UF894,1000_QL80_.jpg', 'investigacao', FALSE),
-    ('Crimes Reais: Telma Rocha, Edu Tachlitsky e Leandro Lopes', 'Discussao sobre crimes reais no Brasil com especialistas.', 'https://www.youtube.com/watch?v=SCYsS6VgxPY', 'https://i.ytimg.com/vi/u6iCbtzIGM4/maxresdefault.jpg', 'famoso', TRUE),
-    ('Crimes Reais: Ricardo Salada e Jorge Lordello', 'Analise de casos criminais com especialistas.', 'https://www.youtube.com/watch?v=aPEYYaR8hVY', 'https://i.ytimg.com/vi/aPEYYaR8hVY/maxresdefault.jpg', 'impactante', FALSE),
-    ('Crimes Reais: Telma Rocha', '2 horas ouvindo crimes reais contados pela fotografa Telma Rocha', 'https://www.youtube.com/live/PPWehNBYq_M?feature=shared', 'https://conteudo.imguol.com.br/c/noticias/69/2024/10/24/fotografa-tecnico-pericial-telma-rocha-do-dhpp-departamento-estadual-de-homicidios-e-de-protecao-a-pessoa-no-podcast-inteligencia-ltda-em-27-de-agosto-de-2024-1729808672617_v2_900x506.png', 'famoso', FALSE),
-    ('Podcast: Rosangela - Melhores momentos', 'Melhores momentos com a Dra. Rosangela Monteiro sobre o caso da Milena Dantas Bereta Nistarda, que tinha acabado de sair da delegacia onde prestou queixa contra o marido, Marcelo Nistarda Antoniassi. Mas quis o destino que ele a encontrasse. Milena terminou sem vida e teve ainda seu coracao arr4ncad0 pelas maos daquele que jurou protege-la.', 'https://youtu.be/nreTvJi_Mz4?feature=shared', 'https://i.ytimg.com/vi/nreTvJi_Mz4/hqdefault.jpg', 'impactante', TRUE),
-    ('Christian Costa', 'Ele e diretor do Centro de Estudos do Comportamento Cr1min4l! O Dr. Christian Costa e um renomado profissional da area da psicologia cr1min4l, exaltado pelo seu trabalho de unir ciencia e pratica para tratar de cr1mes e psicopatologias.', 'https://youtu.be/0UwkMabyB78?feature=shared', 'https://emtempo.com.br/wp-content/uploads/2023/11/b0aaf3e3-5012-44bb-ade6-6d1e45e3297c.jpg', 'impactante', TRUE),
-    ('Marcia Lanze descobre morte atraves do tik tok', 'Ele foi pego pelo TikTok! Bruno Eustaquio ligou para a policia depois de encontrar a mae, Marcia Lanzane, m0rta. Porem, durante as investigacoes, os agentes descobriram uma dinamica chocante: a mulher havia sido ass4ssin4da pelo proprio filho, que, depois de cometer o cr1me, foi para a sala e ficou assistindo televisao.', 'https://youtu.be/XKJ7Zzmifig?feature=shared', 'https://i.ytimg.com/vi/1M6QBfFAq7I/maxresdefault.jpg', 'impactante', TRUE),
-    ('Doutora Luiza - ela atuou em lugares que mudaram o Brasil', 'Ela atuou em casos que pararam o Brasil! Luisa Muchon e uma experiente advogada criminalista, que ja trabalhou com casos de grande repercussao e conheceu de perto figuras emblematica do pais. Alem de ter sido advogada do casal Nardoni, foi a ultima pessoa a conversar com Farah Jorge Farah e representou diversos nomes associados a Operacao Lava Jato.', 'https://youtu.be/NhK_MjWjxsU?feature=shared', 'https://is3-ssl.mzstatic.com/image/thumb/Podcasts112/v4/5f/fd/21/5ffd2174-6076-f55b-27bc-2daf7a0e93ca/mza_7189227837507334208.jpg/1200x1200bb.jpg', 'impactante', TRUE),
-    ('Caso Vitoria Regina - Detalhes da investigacao', 'Confira minha entrevista com o advogado da familia de Vitoria Regina de Sousa, morta entre o final de fevereiro e comeco de marco de 2025, em circunstancias, no minimo, estranhas. A policia colocou o vizinho da familia, Maicol Sales do Santos, como unico suspeito e autor de tudo.', 'https://youtu.be/-W78mbchJbw?feature=shared', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYW7tHdUdbmvozHaVKUCb5hQcvrdzn4Ma8bQ&s', 'investigacao', TRUE),
-    ('Jogada no lixo, vendida p/ homens, queimada vida', 'Ela nasceu Larissa Duque e hoje se tornou Heloisa. Tudo para fugir da mae narcisista que criou um enredo de vida e m0rte para a filha. Ela consegiu mais que sobreviver, viver e vencer a progenitora que, logo ao dar a luz, jogou Heloisa no lixo. E esse foi so o comeco...', 'https://youtu.be/Kb0tZnF1IhU?feature=shared', 'https://s2-marieclaire.glbimg.com/1rLIfRAqEFgS2H8aepmgANIRAEw=/0x0:591x332/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2024/g/9/NDBA7iTkGLEx2LkK6lsw/larissa-duque-pequena.png', 'investigacao', TRUE),
-    ('Crimes Reais: Ullisses Campbell e Beto Ribeiro', 'ULLISSES CAMPBELL e escritor, e BETO RIBEIRO e diretor e roteirista. Eles vao contar historias e destrinchar crimes reais, como o caso da Suzane Von Richthofen. Agora que Suzane foi solta da cadeia, o Vilela ja reforcou a seguranca do porao, ja que ele tem idade pra ser pai dela.', 'https://www.youtube.com/live/zU8Ahy3zL1c?feature=shared', 'https://i.ytimg.com/vi/zU8Ahy3zL1c/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA0OXMP6xTmt11FYsC51hkilk9inA', 'casos reais', TRUE),
-    ('Crimes Reais: Ju Cassini e Giovanna Alba', 'JU CASSINI e GIOVANNA ALBA sao YouTubers. Elas vao bater um papo sobre os crimes reais da atualidade. O Vilela tem tanto medo de violencia que dorme de capacete.', 'https://www.youtube.com/live/HnCFLkqkSHc?feature=shared', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiYQNlmkbbRztXKmmdhXXVIBlVEMeGEDstHg&s', 'casos reais', TRUE),
-    ('Crimes Reais: Ju Cassini e Beto', 'JU CASSINI e YouTuber e BETO RIBEIRO e diretor e roteirista. Eles vao bater um papo sobre crimes reais com historias assustadoras, bizarras e misteriosas. O Vilela ja se preparou e comprou mais fraldas geriatricas pra trocar nessa live.', 'https://www.youtube.com/live/n9YXRqNtows?feature=shared', 'https://i.ytimg.com/vi/n9YXRqNtows/maxresdefault.jpg', 'casos reais', TRUE),
-    ('Crimes Reais: O caso mais pesado', 'TELMA ROCHA e fotografa pericial, e EDU TACHLITSKY e LEANDRO LOPES sao peritos criminais do Departamento de Homicidios e Protecao a Pessoa de Sao Paulo. Eles vao esclarecer muitas duvidas sobre os bastidores dos crimes mais conhecidos e tambem os mais curiosos. O Vilela que seu cuide, pois ele esta sempre em minoria no porao.', 'https://youtu.be/7x0UoLX4kmQ?feature=shared', 'https://i.ytimg.com/vi/7x0UoLX4kmQ/maxresdefault.jpg', 'crimes antigos', TRUE),
-    ('Crimes Reais: Ricardo Salada, Telma Rocha e Rafael Heck', 'RICARDO SALADA, TELMA ROCHA E RAFAEL HECK sao peritos criminais. Eles trabalham no DHPP (Departamento de Homicidios e de Protecao a Pessoa) do estado de SP e vao bater um papo sobre crimes reais. Ja o Vilela presenciou varios crimes do passado.', 'https://www.youtube.com/live/17PwIYnL28Y?feature=shared', 'https://i.ytimg.com/vi/17PwIYnL28Y/maxresdefault.jpg', 'crimes antigos', TRUE),
-    ('Telma Rocha e Andre DAvila', 'Neste podcast Telma Rocha e Andre DAvila abordam questoes cruciais relacionadas ao crime, a seguranca publica e aos desafios enfrentados pela sociedade contemporanea.', 'https://youtu.be/azFRrtdUnvE?feature=shared', 'https://i.ytimg.com/vi/azFRrtdUnvE/sddefault.jpg?v=6362b027', 'crimes antigos', TRUE),
-    ('Crimes Reais: Ricardo Ventura e Ricardo Salada', 'RICARDO VENTURA e psicanalista e RICARDO SALADA e perito criminal. Hoje descobriremos mutas tecnicas de como pegar o mentiroso e o bandido com as calcas na mao. A Mari deveria assistir a essa live, pois e obvio que o Vilela vai pisar na bola.', 'https://www.youtube.com/live/rMT78xVz_Qc?feature=shared', 'https://i.ytimg.com/vi/rMT78xVz_Qc/maxresdefault.jpg', 'crimes antigos', TRUE),
-    ('Caso Familia Goncalves', 'Em uma noite comum de janeiro de 2020, em Sao Bernardo do Campo, no Grande ABC de Sao Paulo, Flaviana Goncalves chegava em casa do trabalho quando encontrou sua familia rendida por tres ladroes. O Romoyuki, o marido, Juan, o filho adolescente, Anaflavia, a filha e a namorada de sua filha, Carina, todos estavam sob a mira dos assaltantes. Flaviana foi levada ao quarto para passar suas senhas de banco, quando foi morta ao lado do cacula e do esposo.', 'https://youtu.be/kcIpYBnwlBk?feature=shared', 'https://i.ytimg.com/vi/kcIpYBnwlBk/maxresdefault.jpg', 'crimes antigos', TRUE);
+('Ela cuida das mentes mais perturbadas - Gabriela Cruz', 
+ 'Ela conhece a mente dos pedófilos! Gabriela Cruz é uma renomada psicóloga especialista em sexualidade humana. Antes de atender em clínicas, ela trabalhou durante anos em penitenciárias, acompanhando indivíduos condenados por pedofilia e outros crimes sexuais.', 
+ 'https://youtu.be/mdwQUT0i5dc?feature=shared', 
+ 'https://i.ytimg.com/vi/mdwQUT0i5dc/maxresdefault.jpg', 
+ 'investigacao', TRUE),
+
+('Crimes reais: Perita Rosangela Monteiro e Delegado Mauro Dias', 
+ 'Dra. Rosangela é psicóloga e perita criminal, e MAURO DIAS é ex-delegado. Eles vão conversar sobre crimes reais e os processos de investigação e perícia para desvendar os casos. O Vilela é expert em esconder que comeu todo o chocolate da casa que nem um CSI São Paulo resolveria o caso.', 
+ 'https://www.youtube.com/live/28WQA1o1CDQ?feature=shared', 
+ 'https://i.ytimg.com/vi/28WQA1o1CDQ/maxresdefault.jpg', 
+ 'investigacao', TRUE),
+
+('Crimes Reais: Caso Nardoni', 
+ 'Discussão sobre o assassinato de Isabella Nardoni.', 
+ 'https://www.youtube.com/watch?v=1XyODZb7APk', 
+ 'https://f.i.uol.com.br/fotografia/2018/03/12/15209076785aa7359ecb363_1520907678_3x2_xl.jpg', 
+ 'famoso', TRUE),
+
+('Crimes Reais: Caso Marisia e Marcos Matsunaga', 
+ 'Investigação sobre o assassinato de Marisia e Marcos Matsunaga.', 
+ 'https://www.youtube.com/watch?v=skj1q8v-f8k', 
+ 'https://s2-oglobo.glbimg.com/yqppgndr5hdBMscIOL-7ioLS2LM=/0x0:620x415/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/5/p/3jKTd5TzGIg9jBqCYRLA/63080943.jpg', 
+ 'investigacao', FALSE);
+
+INSERT INTO podcasts (title, description, link, image, category,  is_featured) 
+VALUES
+('Crimes Reais: Telma Rocha, Edu Tachlitsky e Leandro Lopes', 'Discussao sobre crimes reais no Brasil com especialistas.', 'https://www.youtube.com/watch?v=SCYsS6VgxPY', 'https://i.ytimg.com/vi/u6iCbtzIGM4/maxresdefault.jpg', 'famoso', TRUE),
+('Crimes Reais: Ricardo Salada e Jorge Lordello', 'Analise de casos criminais com especialistas.', 'https://www.youtube.com/watch?v=aPEYYaR8hVY', 'https://i.ytimg.com/vi/aPEYYaR8hVY/maxresdefault.jpg', 'impactante', FALSE),
+('Crimes Reais: Telma Rocha', '2 horas ouvindo crimes reais contados pela fotografa Telma Rocha', 'https://www.youtube.com/live/PPWehNBYq_M?feature=shared', 'https://conteudo.imguol.com.br/c/noticias/69/2024/10/24/fotografa-tecnico-pericial-telma-rocha-do-dhpp-departamento-estadual-de-homicidios-e-de-protecao-a-pessoa-no-podcast-inteligencia-ltda-em-27-de-agosto-de-2024-1729808672617_v2_900x506.png', 'famoso', FALSE),
+('Podcast: Rosangela - Melhores momentos', 'Melhores momentos com a Dra. Rosangela Monteiro sobre o caso da Milena Dantas Bereta Nistarda, que tinha acabado de sair da delegacia onde prestou queixa contra o marido, Marcelo Nistarda Antoniassi. Mas quis o destino que ele a encontrasse. Milena terminou sem vida e teve ainda seu coracao arr4ncad0 pelas maos daquele que jurou protege-la.', 'https://youtu.be/nreTvJi_Mz4?feature=shared', 'https://i.ytimg.com/vi/nreTvJi_Mz4/hqdefault.jpg', 'impactante', TRUE),
+('Christian Costa', 'Ele e diretor do Centro de Estudos do Comportamento Cr1min4l! O Dr. Christian Costa e um renomado profissional da area da psicologia cr1min4l, exaltado pelo seu trabalho de unir ciencia e pratica para tratar de cr1mes e psicopatologias.', 'https://youtu.be/0UwkMabyB78?feature=shared', 'https://emtempo.com.br/wp-content/uploads/2023/11/b0aaf3e3-5012-44bb-ade6-6d1e45e3297c.jpg', 'impactante', TRUE);
+
+
+INSERT INTO podcasts (title, description, link, image, category,  is_featured) 
+VALUES
+('Marcia Lanze descobre morte atraves do tik tok', 'Ele foi pego pelo TikTok! Bruno Eustaquio ligou para a policia depois de encontrar a mae, Marcia Lanzane, m0rta. Porem, durante as investigacoes, os agentes descobriram uma dinamica chocante: a mulher havia sido ass4ssin4da pelo proprio filho, que, depois de cometer o cr1me, foi para a sala e ficou assistindo televisao.', 'https://youtu.be/XKJ7Zzmifig?feature=shared', 'https://i.ytimg.com/vi/1M6QBfFAq7I/maxresdefault.jpg', 'impactante', TRUE),
+('Doutora Luiza - ela atuou em lugares que mudaram o Brasil', 'Ela atuou em casos que pararam o Brasil! Luisa Muchon e uma experiente advogada criminalista, que ja trabalhou com casos de grande repercussao e conheceu de perto figuras emblematica do pais. Alem de ter sido advogada do casal Nardoni, foi a ultima pessoa a conversar com Farah Jorge Farah e representou diversos nomes associados a Operacao Lava Jato.', 'https://youtu.be/NhK_MjWjxsU?feature=shared', 'https://is3-ssl.mzstatic.com/image/thumb/Podcasts112/v4/5f/fd/21/5ffd2174-6076-f55b-27bc-2daf7a0e93ca/mza_7189227837507334208.jpg/1200x1200bb.jpg', 'impactante', TRUE),
+('Caso Vitoria Regina - Detalhes da investigacao', 'Confira minha entrevista com o advogado da familia de Vitoria Regina de Sousa, morta entre o final de fevereiro e comeco de marco de 2025, em circunstancias, no minimo, estranhas. A policia colocou o vizinho da familia, Maicol Sales do Santos, como unico suspeito e autor de tudo.', 'https://youtu.be/-W78mbchJbw?feature=shared', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYW7tHdUdbmvozHaVKUCb5hQcvrdzn4Ma8bQ&s', 'investigacao', TRUE),
+('Jogada no lixo, vendida p/ homens, queimada vida', 'Ela nasceu Larissa Duque e hoje se tornou Heloisa. Tudo para fugir da mae narcisista que criou um enredo de vida e m0rte para a filha. Ela consegiu mais que sobreviver, viver e vencer a progenitora que, logo ao dar a luz, jogou Heloisa no lixo. E esse foi so o comeco...', 'https://youtu.be/Kb0tZnF1IhU?feature=shared', 'https://s2-marieclaire.glbimg.com/1rLIfRAqEFgS2H8aepmgANIRAEw=/0x0:591x332/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2024/g/9/NDBA7iTkGLEx2LkK6lsw/larissa-duque-pequena.png', 'investigacao', TRUE),
+('Crimes Reais: Ullisses Campbell e Beto Ribeiro', 'ULLISSES CAMPBELL e escritor, e BETO RIBEIRO e diretor e roteirista. Eles vao contar historias e destrinchar crimes reais, como o caso da Suzane Von Richthofen. Agora que Suzane foi solta da cadeia, o Vilela ja reforcou a seguranca do porao, ja que ele tem idade pra ser pai dela.', 'https://www.youtube.com/live/zU8Ahy3zL1c?feature=shared', 'https://i.ytimg.com/vi/zU8Ahy3zL1c/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA0OXMP6xTmt11FYsC51hkilk9inA', 'casos reais', TRUE),
+('Crimes Reais: Ju Cassini e Giovanna Alba', 'JU CASSINI e GIOVANNA ALBA sao YouTubers. Elas vao bater um papo sobre os crimes reais da atualidade. O Vilela tem tanto medo de violencia que dorme de capacete.', 'https://www.youtube.com/live/HnCFLkqkSHc?feature=shared', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiYQNlmkbbRztXKmmdhXXVIBlVEMeGEDstHg&s', 'casos reais', TRUE),
+('Crimes Reais: Ju Cassini e Beto', 'JU CASSINI e YouTuber e BETO RIBEIRO e diretor e roteirista. Eles vao bater um papo sobre crimes reais com historias assustadoras, bizarras e misteriosas. O Vilela ja se preparou e comprou mais fraldas geriatricas pra trocar nessa live.', 'https://www.youtube.com/live/n9YXRqNtows?feature=shared', 'https://i.ytimg.com/vi/n9YXRqNtows/maxresdefault.jpg', 'casos reais', TRUE),
+('Crimes Reais: O caso mais pesado', 'TELMA ROCHA e fotografa pericial, e EDU TACHLITSKY e LEANDRO LOPES sao peritos criminais do Departamento de Homicidios e Protecao a Pessoa de Sao Paulo. Eles vao esclarecer muitas duvidas sobre os bastidores dos crimes mais conhecidos e tambem os mais curiosos. O Vilela que seu cuide, pois ele esta sempre em minoria no porao.', 'https://youtu.be/7x0UoLX4kmQ?feature=shared', 'https://i.ytimg.com/vi/7x0UoLX4kmQ/maxresdefault.jpg', 'crimes antigos', TRUE),
+('Crimes Reais: Ricardo Salada, Telma Rocha e Rafael Heck', 'RICARDO SALADA, TELMA ROCHA E RAFAEL HECK sao peritos criminais. Eles trabalham no DHPP (Departamento de Homicidios e de Protecao a Pessoa) do estado de SP e vao bater um papo sobre crimes reais. Ja o Vilela presenciou varios crimes do passado.', 'https://www.youtube.com/live/17PwIYnL28Y?feature=shared', 'https://i.ytimg.com/vi/17PwIYnL28Y/maxresdefault.jpg', 'crimes antigos', TRUE),
+('Telma Rocha e Andre DAvila', 'Neste podcast Telma Rocha e Andre DAvila abordam questoes cruciais relacionadas ao crime, a seguranca publica e aos desafios enfrentados pela sociedade contemporanea.', 'https://youtu.be/azFRrtdUnvE?feature=shared', 'https://i.ytimg.com/vi/azFRrtdUnvE/sddefault.jpg?v=6362b027', 'crimes antigos', TRUE),
+('Crimes Reais: Ricardo Ventura e Ricardo Salada', 'RICARDO VENTURA e psicanalista e RICARDO SALADA e perito criminal. Hoje descobriremos mutas tecnicas de como pegar o mentiroso e o bandido com as calcas na mao. A Mari deveria assistir a essa live, pois e obvio que o Vilela vai pisar na bola.', 'https://www.youtube.com/live/rMT78xVz_Qc?feature=shared', 'https://i.ytimg.com/vi/rMT78xVz_Qc/maxresdefault.jpg', 'crimes antigos', TRUE),
+('Caso Familia Goncalves', 'Em uma noite comum de janeiro de 2020, em Sao Bernardo do Campo, no Grande ABC de Sao Paulo, Flaviana Goncalves chegava em casa do trabalho quando encontrou sua familia rendida por tres ladroes. O Romoyuki, o marido, Juan, o filho adolescente, Anaflavia, a filha e a namorada de sua filha, Carina, todos estavam sob a mira dos assaltantes. Flaviana foi levada ao quarto para passar suas senhas de banco, quando foi morta ao lado do cacula e do esposo.', 'https://youtu.be/kcIpYBnwlBk?feature=shared', 'https://i.ytimg.com/vi/kcIpYBnwlBk/maxresdefault.jpg', 'crimes antigos', TRUE);
 
 
 
