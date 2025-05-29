@@ -473,15 +473,18 @@ Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violento
 
     INSERT INTO podcasts (title, description, link, image, category, is_featured)
     VALUES 
-    
     ('Crime Junkie', 'Podcast semanal dedicado a cobrir casos de crimes reais.', 'https://open.spotify.com/show/3DgfoleqaW61T2amZQKINx', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3zmZm2qANnrB1IJ3qbjpzcfJmfVYrYUaLQ&s', 'impactante', TRUE),
     ('Crimecast', 'Podcast sobre crimes reais, abordando historias conhecidas no Brasil e no mundo.', 'https://open.spotify.com/show/07MoJXc7KpasBvDSJVOMw8', 'https://cdn-images.dzcdn.net/images/talk/08fcb47cb1970a881f34258fc451b553/1900x1900-000000-80-0-0.jpg', 'investigacao', TRUE),
     ('Real Crime', 'Documentarios completos sobre crimes, gangsters, serial killers e as pessoas mais infames da historia.', 'https://open.spotify.com/show/0JLjqhHBRN8qMTGKikm97B', 'https://m.media-amazon.com/images/I/91O+l7tjmdL._AC_UF894,1000_QL80_.jpg', 'casos reais', FALSE),
     ('Crimes Reais: Telma Rocha, Edu Tachlitsky e Leandro Lopes', 'Discussao sobre crimes reais no Brasil com especialistas.', 'https://www.youtube.com/watch?v=SCYsS6VgxPY', 'https://i.ytimg.com/vi/u6iCbtzIGM4/maxresdefault.jpg', 'famoso', TRUE),
     ('Crimes Reais: Ricardo Salada e Jorge Lordello', 'Analise de casos criminais com especialistas.', 'https://www.youtube.com/watch?v=aPEYYaR8hVY', 'https://i.ytimg.com/vi/aPEYYaR8hVY/maxresdefault.jpg', 'impactante', FALSE),
     ('Crimes Reais: Telma Rocha', '2 horas ouvindo crimes reais contados pela fotografa Telma Rocha', 'https://www.youtube.com/live/PPWehNBYq_M?feature=shared', 'https://conteudo.imguol.com.br/c/noticias/69/2024/10/24/fotografa-tecnico-pericial-telma-rocha-do-dhpp-departamento-estadual-de-homicidios-e-de-protecao-a-pessoa-no-podcast-inteligencia-ltda-em-27-de-agosto-de-2024-1729808672617_v2_900x506.png', 'famoso', FALSE),
-    ('Marcia Lanze descobre morte atraves do tik tok', 'Ele foi pego pelo TikTok! Bruno Eustaquio ligou para a policia depois de encontrar a mae, Marcia Lanzane, m0rta. Porem, durante as investigacoes, os agentes descobriram uma dinamica chocante: a mulher havia sido ass4ssin4da pelo proprio filho, que, depois de cometer o cr1me, foi para a sala e ficou assistindo televisao.', 'https://youtu.be/XKJ7Zzmifig?feature=shared', 'https://i.ytimg.com/vi/1M6QBfFAq7I/maxresdefault.jpg', 'impactante', TRUE);
-
+    ('Marcia Lanze descobre morte atraves do tik tok', 'Ele foi pego pelo TikTok! Bruno Eustaquio ligou para a policia depois de encontrar a mae, Marcia Lanzane, m0rta. Porem, durante as investigacoes, os agentes descobriram uma dinamica chocante: a mulher havia sido ass4ssin4da pelo proprio filho, que, depois de cometer o cr1me, foi para a sala e ficou assistindo televisao.', 'https://youtu.be/XKJ7Zzmifig?feature=shared', 'https://i.ytimg.com/vi/1M6QBfFAq7I/maxresdefault.jpg', 'impactante', TRUE),
+    ('Chacina da Candelária – Execução das crianças de rua no RJ',
+    'Em 1993, oito crianças e adolescentes em situação de rua foram mortos brutalmente em frente à Igreja da Candelária, no Rio de Janeiro, em um crime que chocou o país e expôs violência policial.',
+    'https://www.youtube.com/watch?v=zf7Er2Nthto',
+    'https://www.fflch.usp.br/sites/fflch.usp.br/files/2022-07/HnH_23.07.jpg',
+    'crimes antigos', TRUE);
     
     INSERT INTO podcasts (title, description, link, image, category, is_featured)
     VALUES 
@@ -491,8 +494,18 @@ Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violento
     ('Crimes Reais: O caso mais pesado', 'TELMA ROCHA e fotografa pericial, e EDU TACHLITSKY e LEANDRO LOPES sao peritos criminais do Departamento de Homicidios e Protecao a Pessoa de Sao Paulo. Eles vao esclarecer muitas duvidas sobre os bastidores dos crimes mais conhecidos e tambem os mais curiosos. O Vilela que seu cuide, pois ele esta sempre em minoria no porao.', 'https://youtu.be/7x0UoLX4kmQ?feature=shared', 'https://i.ytimg.com/vi/7x0UoLX4kmQ/maxresdefault.jpg', 'crimes antigos', TRUE),
     ('Crimes Reais: Ricardo Salada, Telma Rocha e Rafael Heck', 'RICARDO SALADA, TELMA ROCHA E RAFAEL HECK sao peritos criminais. Eles trabalham no DHPP (Departamento de Homicidios e de Protecao a Pessoa) do estado de SP e vao bater um papo sobre crimes reais. Ja o Vilela presenciou varios crimes do passado.', 'https://www.youtube.com/live/17PwIYnL28Y?feature=shared', 'https://i.ytimg.com/vi/17PwIYnL28Y/maxresdefault.jpg', 'crimes antigos', TRUE),
     ('Telma Rocha e Andre Davila', 'Neste podcast Telma Rocha e Andre Davila abordam questoes cruciais relacionadas ao crime, a seguranca publica e aos desafios enfrentados pela sociedade contemporanea.', 'https://youtu.be/azFRrtdUnvE?feature=shared', 'https://i.ytimg.com/vi/azFRrtdUnvE/sddefault.jpg?v=6362b027', 'crimes antigos', TRUE),
-    ('Crimes Reais: Ricardo Ventura e Ricardo Salada', 'RICARDO VENTURA e psicanalista e RICARDO SALADA e perito criminal. Hoje descobriremos mutas tecnicas de como pegar o mentiroso e o bandido com as calcas na mao. A Mari deveria assistir a essa live, pois e obvio que o Vilela vai pisar na bola.', 'https://www.youtube.com/live/rMT78xVz_Qc?feature=shared', 'https://i.ytimg.com/vi/rMT78xVz_Qc/maxresdefault.jpg', 'crimes antigos', TRUE);
-    
+    ('Crimes Reais: Ricardo Ventura e Ricardo Salada', 'RICARDO VENTURA e psicanalista e RICARDO SALADA e perito criminal. Hoje descobriremos mutas tecnicas de como pegar o mentiroso e o bandido com as calcas na mao. A Mari deveria assistir a essa live, pois e obvio que o Vilela vai pisar na bola.', 'https://www.youtube.com/live/rMT78xVz_Qc?feature=shared', 'https://i.ytimg.com/vi/rMT78xVz_Qc/maxresdefault.jpg', 'crimes antigos', TRUE),
+    ('Caso Eloá Cristina – Sequestro e feminicídio ao vivo em SP',
+    'O sequestro e assassinato da jovem Eloá Cristina em 2008 por seu ex-namorado foi transmitido ao vivo pela mídia, levantando debates sobre violência contra a mulher e atuação policial.',
+    'https://www.youtube.com/watch?v=wBJw-VEatrE',
+    'https://rollingstone.com.br/media/_versions/2023/05/caso-eloa-linha-direta-globo-foto-reproducao_widemd.jpg',
+    'casos reais', TRUE),
+    ('Caso Pedrinho – Sequestro e reencontro após 16 anos em Brasília',
+    'Pedrinho foi sequestrado ainda bebê e reencontrou sua família biológica somente após 16 anos. Este caso comoveu o Brasil e revelou complexidades jurídicas e emocionais.',
+    'https://www.youtube.com/watch?v=HtcNWv_4zOE',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPiXrPOseKza-Dz9zIrPYk4yKWrApRkIT0jg&s',
+    'casos reais', TRUE);
+
 INSERT INTO podcasts (title, description, link, image, category, is_featured)
 VALUES 
 ('Crimes Reais: Ivan Mizanzuk', 
@@ -523,7 +536,14 @@ VALUES
  'Investigação sobre o assassinato de Marisia e Marcos Matsunaga.', 
  'https://www.youtube.com/watch?v=skj1q8v-f8k', 
  'https://s2-oglobo.glbimg.com/yqppgndr5hdBMscIOL-7ioLS2LM=/0x0:620x415/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/5/p/3jKTd5TzGIg9jBqCYRLA/63080943.jpg', 
- 'investigacao', FALSE);
+ 'investigacao', FALSE),
+
+('Caso Mangue 937: Executadas no Mangue', 
+ 'Em 2 de março de 2018, três mulheres foram sequestradas, torturadas e decapitadas em um manguezal próximo ao Rio Ceará, em Fortaleza. O crime foi registrado em vídeo e teve ampla repercussão nas redes sociais. O podcast investiga os detalhes do caso, os envolvidos e as consequências legais.',
+ 'https://www.youtube.com/watch?v=UywLajXBLw4',
+ 'https://upload.wikimedia.org/wikipedia/pt/thumb/c/cc/As_3_v%C3%ADtimas_do_Caso_Mangue_937.jpg/320px-As_3_v%C3%ADtimas_do_Caso_Mangue_937.jpg',
+ 'casos reais', TRUE);
+
 
 INSERT INTO podcasts (title, description, link, image, category,  is_featured) 
 VALUES
@@ -532,7 +552,12 @@ VALUES
 ('Crimes Reais: Ju Cassini e Beto', 'JU CASSINI e YouTuber e BETO RIBEIRO e diretor e roteirista. Eles vao bater um papo sobre crimes reais com historias assustadoras, bizarras e misteriosas. O Vilela ja se preparou e comprou mais fraldas geriatricas pra trocar nessa live.', 'https://www.youtube.com/live/n9YXRqNtows?feature=shared', 'https://i.ytimg.com/vi/n9YXRqNtows/maxresdefault.jpg', 'famoso', TRUE),
 ('Caso Familia Goncalves', 'Em uma noite comum de janeiro de 2020, em Sao Bernardo do Campo, no Grande ABC de Sao Paulo, Flaviana Goncalves chegava em casa do trabalho quando encontrou sua familia rendida por tres ladroes. O Romoyuki, o marido, Juan, o filho adolescente, Anaflavia, a filha e a namorada de sua filha, Carina, todos estavam sob a mira dos assaltantes. Flaviana foi levada ao quarto para passar suas senhas de banco, quando foi morta ao lado do cacula e do esposo.', 'https://youtu.be/kcIpYBnwlBk?feature=shared', 'https://i.ytimg.com/vi/kcIpYBnwlBk/maxresdefault.jpg', 'crimes antigos', TRUE),
 ('Podcast: Rosangela - Melhores momentos', 'Melhores momentos com a Dra. Rosangela Monteiro sobre o caso da Milena Dantas Bereta Nistarda, que tinha acabado de sair da delegacia onde prestou queixa contra o marido, Marcelo Nistarda Antoniassi. Mas quis o destino que ele a encontrasse. Milena terminou sem vida e teve ainda seu coracao arr4ncad0 pelas maos daquele que jurou protege-la.', 'https://youtu.be/nreTvJi_Mz4?feature=shared', 'https://i.ytimg.com/vi/nreTvJi_Mz4/hqdefault.jpg', 'impactante', TRUE),
-('Christian Costa', 'Ele e diretor do Centro de Estudos do Comportamento Cr1min4l! O Dr. Christian Costa e um renomado profissional da area da psicologia cr1min4l, exaltado pelo seu trabalho de unir ciencia e pratica para tratar de cr1mes e psicopatologias.', 'https://youtu.be/0UwkMabyB78?feature=shared', 'https://emtempo.com.br/wp-content/uploads/2023/11/b0aaf3e3-5012-44bb-ade6-6d1e45e3297c.jpg', 'impactante', TRUE);
+('Christian Costa', 'Ele e diretor do Centro de Estudos do Comportamento Cr1min4l! O Dr. Christian Costa e um renomado profissional da area da psicologia cr1min4l, exaltado pelo seu trabalho de unir ciencia e pratica para tratar de cr1mes e psicopatologias.', 'https://youtu.be/0UwkMabyB78?feature=shared', 'https://emtempo.com.br/wp-content/uploads/2023/11/b0aaf3e3-5012-44bb-ade6-6d1e45e3297c.jpg', 'impactante', TRUE),
+('A Mulher da Casa Abandonada', 
+ 'Chico Felitti investiga o mistério de uma mulher que vive em uma mansão decadente em Higienópolis, SP. Ao longo da série, revela-se que ela é foragida do FBI, acusada de manter uma mulher em regime de escravidão nos EUA. O podcast explora temas de racismo, privilégio e impunidade.', 
+ 'https://www1.folha.uol.com.br/podcasts/2022/06/a-mulher-da-casa-abandonada-ouca-o-podcast.shtml', 
+ 'https://www.cartacapital.com.br/wp-content/uploads/2022/07/A-mulher-da-casa-abandonada.jpg', 
+ 'casos reais', TRUE);
 
 
     INSERT INTO videos (title, description, link, image, category, is_featured)
