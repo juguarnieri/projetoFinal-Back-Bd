@@ -151,15 +151,27 @@
     (4, 2);
 
     INSERT INTO posts (user_id, title, caption, media_url) VALUES
-    (1, 'Meu primeiro post!', 'Curtindo o dia na praia 🌊', '/uploads/praia.jpeg'),
-    (2, 'Trabalho novo!', 'Começando um novo desafio 🚀', '/uploads/desafio.jpeg'),
-    (3, 'Look do dia', 'Pronta pra sair ✨', '/uploads/sair.jpeg'),
-    (1, 'Amanhecer na praia', 'Começando o dia com essa vista maravilhosa!', '/uploads/amanhecer.jpeg'),
-    (2, 'Trilha na montanha', 'Desafio superado! A vista lá de cima é incrível.', '/uploads/montanha.jpeg'),
-    (3, 'Café da manhã', 'Nada melhor que um café quentinho pela manhã.', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
-    (4, 'Leitura do dia', 'Começando o dia com uma boa leitura.', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
-    (5, 'Meu pet', 'Apresento o Max, meu fiel amigo!', 'https://pixabay.com/get/ea33b70b2efb1c22d2524518b7484f91e17ee3d21cac104496f0c07fa4e1b0_640.jpg'),
-    (1, 'Cachorro fofo', 'Olha esse doguinho 🐶', 'https://example.com/foto4.jpg');
+(1, 'Caso Evandro', 'O desaparecimento do menino Evandro chocou o Brasil nos anos 90.', 'evandro.jpg'),
+(2, 'Chacina da Candelária', 'Tragédia que marcou o Rio de Janeiro em 1993.', 'candelaria.jpg'),
+(3, 'Caso Isabella Nardoni', 'Uma investigação que parou o país em 2008.', 'nardoni.jpg'),
+(4, 'Crimes da Rua Cuba', 'Um mistério sem solução que intriga até hoje.', 'cuba.jpg'),
+(5, 'Maníaco do Parque', 'Francisco de Assis foi condenado por uma série de assassinatos brutais.', 'maniacoparque.jpg'),
+(1, 'Caso Richthofen', 'Suzane planejou o assassinato dos próprios pais.', 'richthofen.jpg'),
+(2, 'Caso Nardoni: Julgamento', 'Acompanhe os detalhes do julgamento mais marcante da década.', 'julgamento.jpg'),
+(3, 'Caso Eloá', 'O sequestro e morte de Eloá teve repercussão nacional.', 'eloa.jpg'),
+(4, 'Caso João Hélio', 'Um crime brutal que mobilizou o país por justiça.', 'joao_helio.jpg'),
+(5, 'Assassinato de PC Farias', 'Um dos maiores mistérios políticos do Brasil.', 'pcfarias.jpg'),
+(1, 'Caso Mércia Nakashima', 'Ciúmes e vingança em um dos crimes mais midiáticos.', 'nakashima.jpg'),
+(2, 'Bruno e Eliza', 'O goleiro Bruno foi condenado pelo assassinato de Eliza Samudio.', 'brunoeliza.jpg'),
+(3, 'Caso Daniela Perez', 'Crime passional que chocou o país na década de 90.', 'danielaperez.jpg'),
+(4, 'Caso Bernardo Boldrini', 'O assassinato de uma criança pelo próprio pai e madrasta.', 'bernardo.jpg'),
+(5, 'Chacina de Osasco', 'Execuções em série envolvendo PMs e ex-PMs.', 'osasco.jpg'),
+(1, 'Caso Ana Lídia', 'Assassinato brutal de uma criança em Brasília (1973).', 'analidia.jpg'),
+(2, 'Caso Madeleine McCann', 'Desaparecimento que teve repercussão internacional.', 'mccann.jpg'),
+(3, 'O Monstro de Goiânia', 'Crime de serial killer que chocou o centro-oeste brasileiro.', 'goiania.jpg'),
+(4, 'Assassinato de Ângela Diniz', 'Caso de feminicídio com grande repercussão nos anos 70.', 'angela.jpg'),
+(5, 'Massacre de Realengo', 'Ataque a uma escola no Rio em 2011 deixou 12 mortos.', 'realengo.png');
+
 
     INSERT INTO likes (user_id, post_id) VALUES
     (1, 2),
@@ -203,35 +215,35 @@
     'Campbell tinha 23 anos quando desapareceu do resort no Colorado. Ela foi vista pela última vez indo ao saguão buscar uma revista e nunca voltou.',
     'Caryn Campbell foi uma das vítimas de Ted Bundy, sequestrada em um resort no Colorado.',
     'https://www.reddit.com/r/serialkillers/comments/1794p7g/caryn_campbell_one_of_ted_bundys_victims_was_on/?tl=pt-br',
-    '/uploads/caryncampbell.jpeg',
+    'caryncampbell.jpeg',
     'Homicídio', '70', 1975, FALSE),
 
     ('Há 50 anos, Lynda Ann Healy foi sequestrada e assassinada por Ted Bundy. Ela tinha 21 anos e acredita-se que foi sua primeira vítima.',
     'Aos 21 anos, Lynda Ann Healey desapareceu em 1974. Sangue foi encontrado em seus lençóis, e sua camisola pendurada no armário.',
     'Lynda Ann Healy foi uma das primeiras vítimas de Ted Bundy, desaparecendo em 1974.',
     'https://aventurasnahistoria.com.br/noticias/vitrine/historia-as-vitimas-esquecidas-de-ted-bundy.phtml',
-    '/uploads/lyndaannhealy.jpeg',
+    'lyndaannhealy.jpeg',
     'Homicídio', '70', 1974, FALSE),
 
     ('Em memória de Kimberly Leach, 12, a última vítima de Ted Bundy: o mundo perdeu uma grande alma',
     'Kimberly Leach, 12 anos, desapareceu em 1978 em Lake City, Flórida. A polícia prendeu Ted Bundy, já procurado pelo FBI.',
     'Kimberly Leach foi a última vítima de Ted Bundy, desaparecendo em 1978.',
     'https://aventurasnahistoria.com.br/noticias/vitrine/historia-as-vitimas-esquecidas-de-ted-bundy.phtml',
-    '/uploads/KimberlyLeach.jpeg',
+    'KimberlyLeach.jpeg',
     'Homicídio', '70', 1978, TRUE),
 
     ('Quem ama não mata: o feminicídio de 1976 que ajudou a mudar a Justiça brasileira',
     'Em 2023, o caso da socialite Ângela Maria Fernandes Diniz, morta a tiros em 1976 pelo namorado Doca Street, foi citado no STF como marco contra o feminicídio.',
     'O caso Ângela Diniz foi um marco na luta contra o feminicídio no Brasil.',
     'https://g1.globo.com/rj/rio-de-janeiro/noticia/2023/09/16/quem-ama-nao-mata-o-feminicidio-de-1976-que-ajudou-a-mudar-a-justica-brasileira.ghtml',
-    '/uploads/angela-e-doca.jpeg',
+    'angela-e-doca.jpeg',
     'Feminicídio', '70', 1976, TRUE),
 
     ('Caso Carlinhos',
     'Em 1973, Carlinhos foi sequestrado em casa no Rio de Janeiro. A família recebeu um pedido de resgate, mas o destino do menino permanece desconhecido.',
     'O caso Carlinhos é um dos desaparecimentos mais misteriosos do Brasil.',
     'https://oglobo.globo.com/rio/dez-crimes-que-chocaram-rio-de-janeiro-17845895',
-    '/uploads/Carlinhos.jpeg',
+    'Carlinhos.jpeg',
     'Assassinato', '70', 1973, FALSE);
 
     --decadas de 80
@@ -241,35 +253,35 @@
     'Durante três décadas da segunda metade do século 20, a América do Norte registrou um crescimento expressivo no número de homicídios em série, caracterizados por crimes semelhantes cometidos por um mesmo autor, os chamados serial killers.',
     'Esse aumento teve início nos anos 1960 e intensificou-se nas décadas seguintes, atingindo seu auge nos anos 1980, quando os casos se tornaram mais frequentes e notórios.',
     'https://www.bbc.com/portuguese/internacional-45363043',
-    '/uploads/SerialKillers.jpeg',
+    'SerialKillers.jpeg',
     'Criminologia', '80', 1980, TRUE),
 
     ('Um homem aparentemente inofensivo dos EUA: Ted Bundy',
     'Jeffrey Dahmer, o Canibal de Milwaukee, matou 17 homens e garotos entre 1977 e 1991. Nascido em 1960, cometeu o primeiro assassinato aos 17 anos.',
     'Atraía vítimas para casa, onde cometia atos horríveis e desmembrava os corpos. Antes da prisão, teve problemas com a lei e foi expulso do exército.',
     'https://f5.folha.uol.com.br/cinema-e-series/2022/10/jeffrey-dahmer-por-que-serie-sobre-serial-killer-americano-causa-tanta-polemica.shtml',
-    '/uploads/JeffreyDahmer.jpg',
+    'JeffreyDahmer.jpg',
     'Homicídio Qualificado', '80', 1980, TRUE),
 
     ('O assassino em série que fez com que os palhaços nos aterrorizassem: John Wayne Gacy',
     'John Wayne Gacy, nascido em 1942 nos subúrbios de Chicago, teve uma infância marcada por abusos. Trabalhou em funerária, casou-se e virou gerente de restaurante, onde começou seus crimes.',
     'Enriquecido com sua empresa, criou o palhaço Pogo para eventos infantis, ocultando sua verdadeira face de predador sexual e assassino.',
     'https://brasil.elpais.com/brasil/2019/06/28/actualidad/1561705341_083525.html',
-    '/uploads/JohnWayne.jpeg',
+    'JohnWayne.jpeg',
     'Serial Killers', '80', 1980, TRUE),
 
     ('Alemanha condena “enfermeiro da morte” que assassinou 85 pacientes',
     'Niels Högel, enfermeiro alemão de 42 anos, foi condenado à prisão perpétua por matar 85 pacientes entre 2000 e 2005.',
     'A justiça considerou sua culpa particularmente grave, anulando a chance de liberdade após 15 anos. É considerado o maior assassino em massa da Alemanha desde a Segunda Guerra.',
     'https://brasil.elpais.com/brasil/2019/06/06/internacional/1559810905_905194.html',
-    '/uploads/NielsHogel.jpeg',
+    'NielsHogel.jpeg',
     'Homicídio em Série', '80', 1980, TRUE),
 
     ('Assassinato de John Lennon: A Tragédia que Abalou o Mundo',
     'Em 8 de dezembro de 1980, o ex-Beatle John Lennon foi assassinado a tiros por Mark David Chapman na entrada do edifício Dakota, em Nova York.',
     'Chapman, fã obcecado, alegou ter sido inspirado pelo livro O Apanhador no Campo de Centeio. Lennon morreu a caminho do hospital, aos 40 anos.',
     'https://people.com/john-lennon-death-what-to-know-7511226',
-    '/uploads/John_Lennon.jpeg',
+    'John_Lennon.jpeg',
     'Assassinato', '80', 1980, TRUE);
 
     --decadas de 90
@@ -279,35 +291,35 @@
     'Caso ocorrido no Rio de Janeiro, envolvendo o desaparecimento de 11 jovens. Supostamente mortos por policiais, o caso evidenciou questões de violência policial e omissão estatal, gerando repercussão internacional e pedidos de justiça por parte das famílias das vítimas.',
     'A Chacina de Ácari é um dos casos mais emblemáticos de violência policial no Brasil.',
     'https://g1.globo.com/jornal-nacional/noticia/2024/12/04/chacina-de-acari-corte-interamericana-responsabiliza-brasil-pelo-desaparecimento-de-11-jovens-no-rio.ghtml',
-    '/uploads/ChacinadeÀcari.jpeg',
+    'ChacinadeÀcari.jpeg',
     'Chacina', '90', 1990, FALSE),
 
     ('Caso da menina Míriam',
     'O desaparecimento e a morte da menina Míriam Brandão chocaram o Brasil em 1992. O caso expôs a brutalidade e a violência contra crianças, mobilizando a opinião pública e gerando questionamentos sobre a segurança infantil.',
     'O caso Míriam Brandão trouxe à tona a necessidade de maior proteção às crianças no Brasil.',
     'https://www.em.com.br/app/noticia/gerais/2011/09/02/interna_gerais,248406/assassino-que-chocou-a-capital-em-1992-esta-proximo-da-liberdade.shtml',
-    '/uploads/MeninaMíriam.jpeg',
+    'MeninaMíriam.jpeg',
     'Homicídio', '90', 1992, FALSE),
 
     ('Caso Daniella Perez',
     'O assassinato da atriz Daniella Perez em 1992, cometido por um colega de elenco, gerou grande comoção nacional. O crime foi amplamente coberto pela mídia e desencadeou um debate sobre feminicídio.',
     'O caso Daniella Perez foi um marco na luta contra o feminicídio no Brasil.',
     'https://www.cnnbrasil.com.br/entretenimento/daniella-perez-assassinato-de-atriz-completa-32-anos-relembre-o-caso/L',
-    '/uploads/DanielaPerez.jpeg',
+    'DanielaPerez.jpeg',
     'Feminicídio', '90', 1992, TRUE),
 
     ('Caso Maníaco do Parque',
     'Francisco de Assis Pereira, o Maníaco do Parque, aterrorizou São Paulo no final dos anos 1990 com uma série de assassinatos brutais. Ele atraía mulheres ao parque sob falsos pretextos e as assassinava.',
     'O caso Maníaco do Parque é um dos mais conhecidos envolvendo serial killers no Brasil.',
     'https://www.cnnbrasil.com.br/nacional/relembere-o-caso-do-maniaco-do-parque-tema-de-filme-que-estreia-hoje/',
-    '/uploads/ManíacodoParque.jpeg',
+    'ManíacodoParque.jpeg',
     'Assassinato em série', '90', 1998, TRUE),
 
     ('Caso atirador do shopping',
     'Em 1998, um atirador abriu fogo em um shopping center no Brasil, deixando vítimas e espalhando pânico entre os frequentadores. O caso trouxe à tona discussões sobre segurança em locais públicos e o controle de armas.',
     'O caso do atirador do shopping gerou debates sobre segurança pública e controle de armas no Brasil.',
     'https://www.cnnbrasil.com.br/nacional/atirador-do-shopping-morumbi-em-sp-deixa-prisao-apos-25-anos-entenda/',
-    '/uploads/AtiradordoShopping.jpeg',
+    'AtiradordoShopping.jpeg',
     'Homicídio', '90', 1998, FALSE);
 
     -- INSERTS de noticias pesquisadas anos 2000
@@ -432,42 +444,42 @@ Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violento
     'Em dezembro de 2023, Florencia Aranguren foi brutalmente assassinada a facadas enquanto passeava com o cachorro em Búzios, RJ.',
     'Carlos José foi preso em flagrante e condenado a 33 anos de prisão. O corpo da trapezista foi encontrado em uma trilha e o cão permaneceu ao lado da vítima até a chegada das autoridades.',
     'https://www.condorcontabilidade.com.br/nb2/rj/regiao-dos-lagos/noticia/2025/04/03/julgamento-marcado-acusado-de-matar-trapezista-argentina-em-buzios-enfrenta-o-tribunal-do-juri-no-dia-9-de-abril.ghtml',
-    '/uploads/Trapezistaargentina.jpeg',
+    'Trapezistaargentina.jpeg',
     'Homicídio', '2020s', 2023, FALSE),
 
     ('Caso do menino arremessado da ponte pelo pai',
     'Em março de 2025, um homem arremessou o próprio filho de cinco anos de uma ponte em São Gabriel, RS, em um ato de vingança contra a ex-esposa.',
     'Ele confessou o crime e está preso.',
     'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/03/cantor-afogado-pe-2-2.jpg?w=1115',
-    '/uploads/MeninoArremessado.jpeg',
+    'MeninoArremessado.jpeg',
     'Homicídio', '2020s', 2025, FALSE),
 
     ('Caso do motorista de app em SP',
     'Em março de 2025, um motorista de aplicativo foi preso após tentar estuprar e roubar uma passageira de 21 anos no bairro da Casa Verde, zona norte de São Paulo.',
     'A vítima conseguiu fugir e o homem foi preso.',
     'https://s2-g1.glbimg.com/JTYtBLWhlDV-pnM6l5rMDQd31mc=/1280x0/filters:format(jpeg)/https://thumbor.globoi.com/unsafe/fit-in/1280x720/s03.video.glbimg.com/deo/vi/54/13/13491354',
-    '/uploads/MotoristadeApp.jpeg',
+    'MotoristadeApp.jpeg',
     'Violência Sexual', '2020s', 2025, FALSE),
 
     ('Caso Clara Maria em MG',
     'Em março de 2025, Clara Maria, de 21 anos, foi encontrada morta e concretada em uma casa em Belo Horizonte.',
     'Os suspeitos Thiago e Pimentel foram presos após confessarem o crime.',
     'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/03/Clara-Maria.jpg?w=880',
-    '/uploads/Clara Maria.jpeg',
+    'Clara Maria.jpeg',
     'Homicídio', '2020s', 2025, FALSE),
 
     ('Caso do cantor morto afogado em PE',
     'Em fevereiro de 2025, um cantor foi encontrado morto após se afogar em um rio em Pernambuco.',
     'A polícia investiga as circunstâncias do afogamento e se houve envolvimento de terceiros.',
     'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/03/cantor-afogado-pe-2-2.jpg?w=1115',
-    '/uploads/CantorAfogado.jpeg',
+    'CantorAfogado.jpeg',
     'Morte Suspeita', '2020s', 2025, FALSE),
 
     ('Filho mata pai alcoólatra em SC',
     'Em fevereiro de 2025, um homem de 23 anos matou o pai de 47 anos a golpes de tesoura em São João Batista, SC.',
     'A vítima foi encontrada com 22 perfurações. O suspeito se entregou à polícia após o crime.',
     'https://static.ndmais.com.br/2025/02/identificado-homem-morto-por-filho-a-tesouradas-sao-joao-batista-grande-florianopolis-elvis-marcos-da-silva-800x467.jpg',
-    '/uploads/Filhomatapaialcoolatra.jpeg',
+    'Filhomatapaialcoolatra.jpeg',
     'Homicídio', '2020s', 2025, FALSE);
 
 
