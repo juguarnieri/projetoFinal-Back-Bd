@@ -1,9 +1,9 @@
 -- INSERTS de notícias pesquisadas anos 2000
 
-INSERT INTO news (title, description, link, image, category, decade, year, is_featured)
+INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured)
 VALUES 
 
-('Caso Richthofen: o assassinato que chocou o Brasil', 'O assassinato de Manfred e Marísia von Richthofen, pais de Suzane von Richthofen, ocorreu na madrugada de 31 de outubro de 2002, na casa da família em São Paulo. O crime, cometido com extrema brutalidade, chocou o país não apenas pela violência, mas pelo perfil social dos envolvidos. Suzane, então com 18 anos, planejou e executou o assassinato com a ajuda de seu namorado, Daniel Cravinhos, e do irmão dele, Cristian Cravinhos.
+('Caso Richthofen', 'Assassinato brutal dos pais de Suzane von Richthofen que chocou o país em 2002.', 'O assassinato de Manfred e Marísia von Richthofen, pais de Suzane von Richthofen, ocorreu na madrugada de 31 de outubro de 2002, na casa da família em São Paulo. O crime, cometido com extrema brutalidade, chocou o país não apenas pela violência, mas pelo perfil social dos envolvidos. Suzane, então com 18 anos, planejou e executou o assassinato com a ajuda de seu namorado, Daniel Cravinhos, e do irmão dele, Cristian Cravinhos.
 
 Suzane vinha enfrentando resistência dos pais em relação ao seu namoro com Daniel. Para se livrar da interferência e obter acesso à herança familiar, estimada em cerca de R$ 11 milhões, ela arquitetou o crime ao longo de semanas. No dia da execução, levou o irmão, Andreas, de 15 anos, para um cybercafé, garantindo que ele não testemunhasse o ato. Enquanto os pais dormiam, Daniel e Cristian os atacaram com barras de ferro, desferindo múltiplos golpes. Manfred morreu instantaneamente, enquanto Marísia tentou se defender, mas também foi morta.
 
@@ -13,7 +13,7 @@ O caso teve grande repercussão, inspirando livros, documentários e filmes, com
 
 
 
-('Caso Friedenbach-Caffé: o crime brutal que chocou o Brasil', 'O assassinato de Liana Friedenbach e Felipe Caffé em novembro de 2003 foi um dos crimes mais chocantes da história brasileira, mobilizando a opinião pública e reacendendo debates sobre segurança e legislação penal. O casal, que namorava há cerca de dois meses, decidiu viajar para acampar na zona rural de Embu-Guaçu, São Paulo. Para isso, Liana mentiu para os pais, dizendo que participaria de uma excursão para Ilhabela, enquanto Felipe omitiu que estaria apenas com ela. No dia 31 de outubro, partiram para o sítio abandonado onde montaram acampamento.
+('Caso Friedenbach-Caffé', 'Crime bárbaro contra casal de adolescentes que reacendeu o debate sobre maioridade penal no Brasil.', 'O assassinato de Liana Friedenbach e Felipe Caffé em novembro de 2003 foi um dos crimes mais chocantes da história brasileira, mobilizando a opinião pública e reacendendo debates sobre segurança e legislação penal. O casal, que namorava há cerca de dois meses, decidiu viajar para acampar na zona rural de Embu-Guaçu, São Paulo. Para isso, Liana mentiu para os pais, dizendo que participaria de uma excursão para Ilhabela, enquanto Felipe omitiu que estaria apenas com ela. No dia 31 de outubro, partiram para o sítio abandonado onde montaram acampamento.
 
 No dia seguinte, ao caminharem pela região, cruzaram com Roberto Aparecido Alves Cardoso, conhecido como "Champinha", de 16 anos, e Paulo César da Silva Marques, o "Pernambuco", de 32 anos. Os criminosos perceberam que o casal estava desprotegido e decidiram abordá-los. Na tarde de 1º de novembro, invadiram a barraca, armados, e os levaram para uma área isolada na mata. Mantidos em cativeiro, Felipe foi assassinado na manhã do dia 2 de novembro com um tiro na nuca por Pernambuco, enquanto Liana foi violentada repetidamente por Champinha e outros cúmplices por dias, antes de ser brutalmente morta.
 
@@ -25,7 +25,7 @@ O caso gerou forte impacto social e reacendeu debates sobre a maioridade penal n
 ​','https://projetocolabora.com.br/ods16/caso-champinha-crime-perverso-fim-aventura-adolescentes-apaixonados/', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fveja.abril.com.br%2Fcoluna%2Fradar%2Fos-motivos-de-friedenbach%2F&psig=AOvVaw3TqFflUPctiweo8Yt4wOJz&ust=1746812657040000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIiBvMy2lI0DFQAAAAAdAAAAABAE', 'Crime hediondo', 'anos 2000', 2003, FALSE),
 
 
-('Caso Madeleine McCann: o desaparecimento que mobilizou o mundo', 'O desaparecimento de Madeleine Beth McCann, uma menina britânica de 3 anos, ocorreu em 3 de maio de 2007, no resort Praia da Luz, Algarve, Portugal. O caso teve repercussão global imediata e, até hoje, permanece cercado de mistério, investigações e inúmeras teorias.
+('Caso Madeleine McCann', 'Desaparecimento de menina britânica em Portugal que virou um dos maiores mistérios da década.', 'O desaparecimento de Madeleine Beth McCann, uma menina britânica de 3 anos, ocorreu em 3 de maio de 2007, no resort Praia da Luz, Algarve, Portugal. O caso teve repercussão global imediata e, até hoje, permanece cercado de mistério, investigações e inúmeras teorias.
 
 Madeleine estava de férias com seus pais, Kate e Gerry McCann, médicos britânicos, e seus irmãos gêmeos. A família se hospedava no Ocean Club, e na noite do desaparecimento, os pais saíram para jantar com amigos em um restaurante próximo, deixando os filhos dormindo no apartamento. Eles faziam verificações periódicas, mas, por volta das 22h, Kate McCann descobriu que Madeleine havia sumido, com a janela aberta. O alerta foi dado, e buscas intensas começaram imediatamente.
 
@@ -41,7 +41,7 @@ Até hoje, Madeleine continua desaparecida, tornando esse caso um dos maiores mi
 
 
 
-('Caso Ônibus 174: o sequestro que parou o Brasil', 'O sequestro do ônibus 174, ocorrido em 12 de junho de 2000 no Rio de Janeiro, foi um dos episódios mais marcantes da crônica policial brasileira. O criminoso Sandro Barbosa do Nascimento, sobrevivente da Chacina da Candelária, manteve reféns dentro do veículo por quase cinco horas, em um evento transmitido ao vivo para todo o país.
+('Caso Ônibus 174', 'Sequestro de ônibus no Rio transmitido ao vivo, que terminou em tragédia e críticas à polícia.', 'O sequestro do ônibus 174, ocorrido em 12 de junho de 2000 no Rio de Janeiro, foi um dos episódios mais marcantes da crônica policial brasileira. O criminoso Sandro Barbosa do Nascimento, sobrevivente da Chacina da Candelária, manteve reféns dentro do veículo por quase cinco horas, em um evento transmitido ao vivo para todo o país.
 
 Sandro, então com 21 anos, entrou no ônibus da linha 174 no bairro Jardim Botânico, armado com um revólver calibre 38. Pouco depois, um dos passageiros conseguiu alertar uma viatura policial, que interceptou o veículo. O motorista e alguns passageiros conseguiram escapar, mas dez pessoas permaneceram como reféns. Durante o sequestro, Sandro obrigou uma das vítimas a escrever frases ameaçadoras nas janelas do ônibus, como “Ele vai matar geral às seis horas”.
 
@@ -53,7 +53,7 @@ O episódio inspirou o documentário Ônibus 174, dirigido por José Padilha, qu
 
 
 
-('Caso Isabella Nardoni: o assassinato que comoveu o Brasil', 'O assassinato de Isabella de Oliveira Nardoni, ocorrido em 29 de março de 2008, foi um dos crimes mais chocantes da história brasileira. A menina de cinco anos foi jogada do sexto andar de um prédio na Vila Guilherme, São Paulo, e seu caso comoveu o país pela brutalidade e pela suspeita de envolvimento de pessoas próximas.
+('Caso Isabella Nardoni', 'Assassinato de menina de cinco anos em São Paulo, com grande comoção nacional.', 'O assassinato de Isabella de Oliveira Nardoni, ocorrido em 29 de março de 2008, foi um dos crimes mais chocantes da história brasileira. A menina de cinco anos foi jogada do sexto andar de um prédio na Vila Guilherme, São Paulo, e seu caso comoveu o país pela brutalidade e pela suspeita de envolvimento de pessoas próximas.
 
 Na noite do crime, Isabella estava com o pai, Alexandre Nardoni, e a madrasta, Anna Carolina Jatobá. Segundo o casal, ao chegarem ao apartamento, alguém teria invadido o imóvel e jogado a criança pela janela. No entanto, as investigações apontaram um cenário completamente diferente. Exames periciais indicaram que Isabella havia sido agredida antes da queda, com sinais de asfixia e lesões compatíveis com violência dentro do apartamento.
 
@@ -67,7 +67,7 @@ Até hoje, a tragédia de Isabella Nardoni marca a memória coletiva brasileira,
 
 -- INSERTS de notícias pesquisadas anos 2010
 
-(' Caso Eliza Samudio: o assassinato que abalou o mundo do futebol', 'O assassinato de Eliza Samudio, ocorrido em junho de 2010, gerou grande repercussão nacional, especialmente pelo envolvimento do goleiro Bruno Fernandes, então jogador do Flamengo. O crime, marcado pela brutalidade e ocultação de provas, levantou debates sobre violência contra a mulher e impunidade.
+(' Caso Eliza Samudio', 'Feminicídio ligado ao goleiro Bruno que expôs a violência contra mulheres no meio esportivo.', 'O assassinato de Eliza Samudio, ocorrido em junho de 2010, gerou grande repercussão nacional, especialmente pelo envolvimento do goleiro Bruno Fernandes, então jogador do Flamengo. O crime, marcado pela brutalidade e ocultação de provas, levantou debates sobre violência contra a mulher e impunidade.
 
 Eliza e Bruno tiveram um relacionamento conturbado, do qual nasceu um filho. Em 2009, ela entrou com uma ação judicial para reconhecimento da paternidade, o que gerou conflitos. Em junho de 2010, ela desapareceu, e as investigações apontaram que Bruno ordenou seu sequestro no Rio de Janeiro. Eliza foi levada para um sítio em Minas Gerais, onde foi agredida e morta. Marcos Aparecido dos Santos, o "Bola", um ex-policial militar, teria sido responsável pela execução e ocultação do cadáver, que nunca foi encontrado.
 
@@ -79,7 +79,7 @@ Até hoje, o assassinato de Eliza Samudio permanece como um dos crimes mais marc
 
 
 
-('Caso Luka Magnotta: o assassino que chocou o mundo pela internet', 'O assassinato de Jun Lin, um estudante chinês de 33 anos, em maio de 2012, foi um dos crimes mais brutais e midiáticos da década. Com requintes de crueldade e exibição pública, o caso expôs questões sobre psicopatia, narcisismo e o impacto das redes sociais em crimes violentos.
+('Caso Luka Magnotta', 'Assassino canadense que filmou e divulgou crime brutal na internet, gerando comoção mundial.', 'O assassinato de Jun Lin, um estudante chinês de 33 anos, em maio de 2012, foi um dos crimes mais brutais e midiáticos da década. Com requintes de crueldade e exibição pública, o caso expôs questões sobre psicopatia, narcisismo e o impacto das redes sociais em crimes violentos.
 
 Luka Rocco Magnotta, um ex-modelo e ator pornô canadense, era obcecado por atenção e fama. Antes do crime, ele já havia publicado vídeos matando gatos, o que chamou a atenção de internautas e ativistas. Em 2012, Magnotta assassinou e esquartejou Jun Lin em Montreal, filmando toda a ação e divulgando o vídeo na internet com o título 1 Lunatic 1 Ice Pick. Como se não bastasse, ele enviou partes do corpo da vítima para escolas e sedes de partidos políticos no Canadá.
 
@@ -93,7 +93,7 @@ O assassinato de Jun Lin continua sendo lembrado como um dos mais macabros da er
 
 
 
-(' Caso Chris Watts – O assassinato da família perfeita', 'O assassinato de Shanann Watts, grávida de 15 semanas, e suas filhas Bella (4 anos) e Celeste (3 anos), ocorrido em agosto de 2018, foi um dos crimes mais chocantes dos Estados Unidos. A brutalidade do ato e a frieza do autor, Chris Watts, marido e pai das vítimas, causaram enorme repercussão mundial. O contraste entre a imagem pública da família nas redes sociais e a realidade sombria por trás do crime levantou questões sobre relacionamentos abusivos e a ilusão da vida perfeita online.
+(' Caso Chris Watts', 'Homem mata esposa grávida e filhas pequenas nos EUA em um dos crimes mais chocantes da década.', 'O assassinato de Shanann Watts, grávida de 15 semanas, e suas filhas Bella (4 anos) e Celeste (3 anos), ocorrido em agosto de 2018, foi um dos crimes mais chocantes dos Estados Unidos. A brutalidade do ato e a frieza do autor, Chris Watts, marido e pai das vítimas, causaram enorme repercussão mundial. O contraste entre a imagem pública da família nas redes sociais e a realidade sombria por trás do crime levantou questões sobre relacionamentos abusivos e a ilusão da vida perfeita online.
 
 Na manhã de 13 de agosto de 2018, Shanann desapareceu junto com suas filhas em Frederick, Colorado. Inicialmente, Chris Watts se apresentou como um marido preocupado, pedindo ajuda para encontrá-las. No entanto, as investigações revelaram inconsistências em seu depoimento. Um teste de polígrafo apontou suas mentiras, e, pouco depois, ele confessou ter estrangulado sua esposa durante uma discussão e, em seguida, matado suas filhas. Ele levou os corpos ao seu local de trabalho, um campo de petróleo, onde enterrou Shanann em uma cova rasa e colocou Bella e Celeste dentro de tanques de óleo.
 
@@ -105,7 +105,7 @@ A história de Chris Watts continua sendo lembrada como um alerta sobre os perig
 
 
 
-('Caso Stephen Paddock – O Massacre de Las Vegas', 'O Massacre de Las Vegas, ocorrido em 1º de outubro de 2017, foi o ataque a tiros mais mortal da história dos Estados Unidos. Stephen Paddock, um contador aposentado de 64 anos, abriu fogo contra uma multidão durante o festival de música country Route 91 Harvest, deixando 60 mortos e mais de 800 feridos. O ataque chocou o mundo pela brutalidade e pela falta de uma motivação clara.
+('Caso Stephen Paddock', 'Maior ataque a tiros da história dos EUA, com 60 mortos durante festival em 2017.', 'O Massacre de Las Vegas, ocorrido em 1º de outubro de 2017, foi o ataque a tiros mais mortal da história dos Estados Unidos. Stephen Paddock, um contador aposentado de 64 anos, abriu fogo contra uma multidão durante o festival de música country Route 91 Harvest, deixando 60 mortos e mais de 800 feridos. O ataque chocou o mundo pela brutalidade e pela falta de uma motivação clara.
 
 Paddock se hospedou no 32º andar do Mandalay Bay Hotel, em Las Vegas, e levou consigo um arsenal de armas – incluindo rifles semiautomáticos adaptados com bump stocks, dispositivos que aumentavam sua cadência de tiro. Por volta das 22h05, ele quebrou as janelas do quarto e disparou contra mais de 20 mil pessoas que assistiam ao show do cantor Jason Aldean. O tiroteio durou aproximadamente 10 minutos e provocou caos na multidão, com pessoas sendo pisoteadas durante a fuga.
 
