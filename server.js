@@ -10,6 +10,7 @@ const path = require("path");
 const videoRoutes = require("./src/routes/videoRoutes");   
 const aboutRoutes = require("./src/routes/aboutRoutes");
 const reportRoutes = require("./src/routes/reportRoutes");
+const quizRoutes = require("./src/routes/quizRoutes");
 const setupSwagger = require("./src/config/swagger");
 
 const app = express();
@@ -26,6 +27,8 @@ app.use("/api/podcasts", podcastRoutes);
 app.use("/api/videos", videoRoutes); 
 app.use("/api/about", aboutRoutes);
 app.use("/api/reports", reportRoutes);
+app.use("/api/quiz", quizRoutes);
+
 
 app.get("/", (req, res) => {
     res.send("🚀 API funcionando com Users, Posts, Comments, News, Videos e Podcasts!");
