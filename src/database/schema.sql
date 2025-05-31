@@ -399,7 +399,7 @@ A Policia Civil de Minas Gerais conduziu a investigacao, reunindo testemunhos qu
 
 O caso teve forte impacto social, gerando debates sobre violencia de genero e poder de figuras publicas. Bruno tentou retomar a carreira no futebol apos a prisao, provocando indignacao e protestos da sociedade. Sua possivel reintegracao levantou questoes sobre a responsabilidade de clubes e patrocinadores diante de crimes violentos.
 
-Ate hoje, o assassinato de Eliza Samudio permanece como um dos crimes mais marcantes do pais, evidenciando a necessidade de politicas mais rigidas contra o feminicidio e de maior protecao as vitimas de violencia domestica.', 'https://g1.globo.com/tudo-sobre/eliza-samudio/', 'https://noticias.uol.com.br/ultimas-noticias/efe/2017/06/21/canibal-de-montreal-se-casara-com-outro-preso-no-final-do-mes.htm', 'Crime Hediondo', 'anos 2010', 2010, TRUE),
+Ate hoje, o assassinato de Eliza Samudio permanece como um dos crimes mais marcantes do pais, evidenciando a necessidade de politicas mais rigidas contra o feminicidio e de maior protecao as vitimas de violencia domestica.', 'https://g1.globo.com/tudo-sobre/eliza-samudio/', 'ElizaSamúdio.jpeg', 'Crime Hediondo', 'anos 2010', 2010, TRUE),
 
 
 ('Caso Luka Magnotta', 'Assassino canadense que filmou e divulgou crime brutal na internet, gerando comocao mundial.', 'O assassinato de Jun Lin, um estudante chines de 33 anos, em maio de 2012, foi um dos crimes mais brutais e midiaticos da decada. Com requintes de crueldade e exibicao publica, o caso expos questoes sobre psicopatia, narcisismo e o impacto das redes sociais em crimes violentos.
@@ -412,7 +412,7 @@ No julgamento, ocorrido em 2014, a defesa tentou alegar insanidade, mas o juri r
 
 O caso ganhou ainda mais notoriedade com o lancamento do documentario da Netflix Dont Fk With Cats, que detalha como internautas ajudaram na captura do criminoso. Alem da investigacao, o documentario levanta debates sobre os limites da exibicao de crimes na internet e o papel das redes sociais na construcao da identidade de psicopatas.
 
-O assassinato de Jun Lin continua sendo lembrado como um dos mais macabros da era digital, evidenciando os perigos da busca desenfreada por atencao e notoriedade online.', 'https://noticias.uol.com.br/ultimas-noticias/efe/2017/06/21/canibal-de-montreal-se-casara-com-outro-preso-no-final-do-mes.htm', 'https://www.rfi.fr/br/americas/20130311-esquartejador-canadense-acusado-de-matar-o-namorado-sera-julgado-partir-desta-segu', 'Crime Hediondo', 'anos 2010', 2012, FALSE),
+O assassinato de Jun Lin continua sendo lembrado como um dos mais macabros da era digital, evidenciando os perigos da busca desenfreada por atencao e notoriedade online.', 'https://noticias.uol.com.br/ultimas-noticias/efe/2017/06/21/canibal-de-montreal-se-casara-com-outro-preso-no-final-do-mes.htm', 'LukaMagnnota.jpeg', 'Crime Hediondo', 'anos 2010', 2012, FALSE),
 
 
 ('Caso Chris Watts', 'Homem mata esposa gravida e filhas pequenas nos EUA em um dos crimes mais chocantes da decada.', 'O assassinato de Shanann Watts, gravida de 15 semanas, e suas filhas Bella (4 anos) e Celeste (3 anos), ocorrido em agosto de 2018, foi um dos crimes mais chocantes dos Estados Unidos. A brutalidade do ato e a frieza do autor, Chris Watts, marido e pai das vitimas, causaram enorme repercussao mundial. O contraste entre a imagem publica da familia nas redes sociais e a realidade sombria por tras do crime levantou questoes sobre relacionamentos abusivos e a ilusao da vida perfeita online.
@@ -423,7 +423,7 @@ A motivacao para o crime foi revelada durante as investigacoes. Chris mantinha u
 
 O caso gerou grande repercussao e virou documentario da Netflix (American Murder: The Family Next Door), que detalhou a vida da familia atraves de videos e mensagens. A tragedia levantou debates sobre violencia domestica, feminicidio e a influencia das redes sociais na construcao de imagens irreais.
 
-A historia de Chris Watts continua sendo lembrada como um alerta sobre os perigos de relacoes abusivas e sobre como uma fachada de felicidade pode esconder segredos sombrios.', 'https://g1.globo.com/mundo/noticia/2019/03/07/homem-que-matou-esposa-gravida-e-duas-filhas-nos-eua-revela-pela-primeira-vez-como-cometeu-crime.ghtml', 'https://s2-g1.glbimg.com/z-wrGH4Mf2M205byQAxvPkNKh-Y=/0x0:1700x1065/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/J/8/G8hTVPTjK9BFF3hdqHBg/ap18323689553525.jpg', 'Crime Hediondo', 'anos 2010', 2018, TRUE),
+A historia de Chris Watts continua sendo lembrada como um alerta sobre os perigos de relacoes abusivas e sobre como uma fachada de felicidade pode esconder segredos sombrios.', 'https://g1.globo.com/mundo/noticia/2019/03/07/homem-que-matou-esposa-gravida-e-duas-filhas-nos-eua-revela-pela-primeira-vez-como-cometeu-crime.ghtml', 'ChrisWhatts.jpeg', 'Crime Hediondo', 'anos 2010', 2018, TRUE),
 
 
 ('Caso Stephen Paddock', 'Maior ataque a tiros da historia dos EUA, com 60 mortos durante festival em 2017.', 'O Massacre de Las Vegas, ocorrido em 1 de outubro de 2017, foi o ataque a tiros mais mortal da historia dos Estados Unidos. Stephen Paddock, um contador aposentado de 64 anos, abriu fogo contra uma multidao durante o festival de musica country Route 91 Harvest, deixando 60 mortos e mais de 800 feridos. O ataque chocou o mundo pela brutalidade e pela falta de uma motivacao clara.
@@ -434,7 +434,7 @@ As equipes de seguranca levaram quase uma hora para encontrar a localizacao exat
 
 O massacre reacendeu debates sobre o controle de armas nos EUA, resultando na proibicao dos bump stocks pelo governo americano. Tambem houve mudancas nos protocolos de seguranca em grandes eventos e hoteis, visando evitar novas tragedias.
 
-Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violentos da historia moderna dos Estados Unidos, deixando um legado de dor e questionamentos sobre a facilidade de acesso a armas de alto poder destrutivo.', 'https://g1.globo.com/mundo/noticia/veja-quem-e-stephen-paddock-o-atirador-de-las-vegas.ghtml', 'https://www.bbc.com/portuguese/brasil-41467442', 'Crime Hediondo', 'anos 2010', 2017, FALSE);
+Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violentos da historia moderna dos Estados Unidos, deixando um legado de dor e questionamentos sobre a facilidade de acesso a armas de alto poder destrutivo.', 'https://g1.globo.com/mundo/noticia/veja-quem-e-stephen-paddock-o-atirador-de-las-vegas.ghtml', 'StephenPaddock.jpeg', 'Crime Hediondo', 'anos 2010', 2017, FALSE);
 
 
     --decadas de 2020
