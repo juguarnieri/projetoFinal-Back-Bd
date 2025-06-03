@@ -1,4 +1,4 @@
-    CREATE DATABASE rede_social;
+CREATE DATABASE rede_social;
     \c rede_social;
 
     -- Usuários
@@ -165,22 +165,73 @@
 ('familia_realengo', 'Família Realengo', 'familiarealengo.jpg');
 
     INSERT INTO followers (follower_id, following_id) VALUES
-    (1, 2),
-    (1, 3),
-    (1, 4),
-    (1, 5),
-    (1, 6),
-    (2, 3),
-    (2, 4),
-    (2, 5),
-    (2, 6),
-    (3, 2),
-    (3, 4),
-    (3, 5),
-    (3, 6),
-    (2, 1),
-    (3, 1),
-    (4, 2);
+    INSERT INTO followers (follower_id, following_id) VALUES
+(1, 2), 
+(1, 3), 
+(1, 4),
+(1, 5), 
+(1, 6),
+(2, 1), 
+(2, 3), 
+(2, 4), 
+(2, 5), 
+(3, 1), 
+(3, 2), 
+(3, 4), 
+(3, 5), 
+(3, 6),
+(4, 2), 
+(5, 1), 
+(6, 2), 
+(7, 3), 
+(8, 1),
+(20, 1), 
+(20, 2),
+(21, 3), 
+(21, 6),
+(22, 3),
+(23, 1), 
+(23, 2),
+(24, 3), 
+(24, 5),
+(25, 1),
+(25, 20),
+(26, 21),
+(27, 8),
+(28, 20), 
+(28, 23),
+(29, 1),
+(30, 3), 
+(30, 4),
+(31, 6), 
+(31, 24),
+(32, 2), 
+(32, 4),
+(33, 1), 
+(33, 3),
+(34, 2),
+(35, 3),
+(36, 26), 
+(36, 21),
+(37, 1), 
+(37, 2),
+(38, 14),
+(39, 5), 
+(39, 8),
+(40, 26),
+(41, 28), 
+(41, 23),
+(42, 29),
+(43, 30),
+(44, 31),
+(45, 32),
+(46, 33),
+(47, 34),
+(48, 35),
+(49, 36),
+(50, 37),
+(51, 5), 
+(51, 2);
 
     INSERT INTO posts (user_id, title, caption, media_url) VALUES
 (1, 'Caso Evandro', 'O desaparecimento do menino Evandro chocou o Brasil nos anos 90.', 'evandro.jpg'),
@@ -202,7 +253,53 @@
 (2, 'Caso Madeleine McCann', 'Desaparecimento que teve repercussão internacional.', 'mccann.jpg'),
 (3, 'O Monstro de Goiânia', 'Crime de serial killer que chocou o centro-oeste brasileiro.', 'goiania.jpg'),
 (4, 'Assassinato de Ângela Diniz', 'Caso de feminicídio com grande repercussão nos anos 70.', 'angela.jpg'),
-(5, 'Massacre de Realengo', 'Ataque a uma escola no Rio em 2011 deixou 12 mortos.', 'realengo.png');
+(5, 'Massacre de Realengo', 'Ataque a uma escola no Rio em 2011 deixou 12 mortos.', 'realengo.png'),
+(6, 'Caso Pedrinho', 'O reencontro emocionante após 16 anos de sequestro.', 'pedrinho.jpg'),
+(7, 'Caso Marielle Franco', 'O assassinato que mobilizou investigações federais.', 'marielle.jpg'),
+(8, 'Caso Henry Borel', 'A morte do menino Henry e a comoção nacional.', 'henryborel.jpg'),
+(9, 'Caso Daniel Correa', 'O crime brutal envolvendo o jogador Daniel Correa.', 'danielcorrea.jpg'),
+(10, 'Caso Rafael Miguel', 'O assassinato do ator e seus pais chocou o Brasil.', 'rafaelmiguel.jpg'),
+(11, 'Caso Amarildo', 'O desaparecimento do pedreiro Amarildo na Rocinha.', 'amarildo.jpg'),
+(12, 'Caso Celso Daniel', 'O mistério do assassinato do prefeito de Santo André.', 'celsodaniel.jpg'),
+(13, 'Caso Boate Kiss', 'A tragédia que matou 242 pessoas em Santa Maria.', 'boatekiss.jpg'),
+(14, 'Caso Madeleine McCann', 'O desaparecimento que virou mistério mundial.', 'madeleinemccann.jpg'),
+(15, 'Caso Eloá', 'O sequestro transmitido ao vivo pela TV.', 'eloa.jpg'),
+(16, 'Caso Suzane Richthofen', 'O crime que chocou o país pelo envolvimento da filha.', 'suzanerichthofen.jpg'),
+(17, 'Caso Maníaco do Parque', 'A história de um dos maiores serial killers do Brasil.', 'maniaco.jpg'),
+(18, 'Caso Bernardo Boldrini', 'O assassinato brutal de uma criança pelo próprio pai.', 'bernardo.jpg'),
+(19, 'Caso Realengo', 'O massacre em uma escola do Rio de Janeiro.', 'realengo.jpg'),
+(20, 'Caso Chris Watts', 'O crime familiar que chocou os EUA.', 'chriswatts.jpg'),
+(21, 'Caso Luka Magnotta', 'O assassinato filmado e divulgado na internet.', 'lukamagnotta.jpg'),
+(22, 'Caso Eliza Samudio', 'O feminicídio ligado ao goleiro Bruno.', 'elizasamudio.jpg'),
+(23, 'Caso Onibus 174', 'O sequestro transmitido ao vivo no Rio.', 'onibus174.jpg'),
+(24, 'Caso Friedenbach-Caffe', 'O crime bárbaro contra um casal de adolescentes.', 'friedenbachcaffe.jpg'),
+(25, 'Caso Angela Diniz', 'O feminicídio que marcou a luta por justiça.', 'angeladiniz.jpg'),
+(26, 'Caso Carlinhos', 'O desaparecimento misterioso no Rio de Janeiro.', 'carlinhos.jpg'),
+(27, 'Caso John Lennon', 'O assassinato do ex-Beatle em Nova York.', 'johnlennon.jpg'),
+(28, 'Caso Niels Hogel', 'O enfermeiro alemão condenado por 85 assassinatos.', 'nielshogel.jpg'),
+(29, 'Caso John Wayne Gacy', 'O palhaço assassino dos EUA.', 'johnwayne.jpg'),
+(30, 'Caso Jeffrey Dahmer', 'O canibal de Milwaukee.', 'jeffreydahmer.jpg'),
+(31, 'Caso Serial Killers nos EUA', 'A década de 80 marcada por assassinos em série.', 'serialkillers.jpg'),
+(32, 'Caso Caryn Campbell', 'Uma das vítimas de Ted Bundy.', 'caryncampbell.jpg'),
+(33, 'Caso Lynda Ann Healy', 'A primeira vítima conhecida de Ted Bundy.', 'lyndaannhealy.jpg'),
+(34, 'Caso Kimberly Leach', 'A última vítima de Ted Bundy.', 'kimberlyleach.jpg'),
+(35, 'Caso Angela Diniz no STF', 'O caso citado como marco contra o feminicídio.', 'angeladinizstf.jpg'),
+(36, 'Caso Daniella Perez', 'O assassinato da atriz e o debate sobre feminicídio.', 'daniellaperez.jpg'),
+(37, 'Caso Miriam Brandão', 'A morte da menina Miriam e a mobilização nacional.', 'miriambrandao.jpg'),
+(38, 'Caso Ácari', 'O desaparecimento de 11 jovens no Rio.', 'acari.jpg'),
+(39, 'Caso Shopping Morumbi', 'O ataque a tiros em um shopping de SP.', 'shoppingmorumbi.jpg'),
+(40, 'Caso Madeleine: Novas pistas', 'A investigação reaberta pela Scotland Yard.', 'madeleinepistas.jpg'),
+(41, 'Caso Stephen Paddock', 'O massacre de Las Vegas em 2017.', 'stephenpaddock.jpg'),
+(42, 'Caso Clara Maria', 'O crime brutal em Belo Horizonte em 2025.', 'claramaria.jpg'),
+(43, 'Caso Menino Arremessado', 'O crime chocante em São Gabriel, RS.', 'meninoarremessado.jpg'),
+(44, 'Caso Trapezista Argentina', 'O assassinato em Búzios em 2023.', 'trapezistaargentina.jpg'),
+(45, 'Caso Motorista de App', 'Tentativa de estupro e roubo em SP.', 'motoristadeapp.jpg'),
+(46, 'Caso Cantor Afogado', 'A morte suspeita em Pernambuco.', 'cantorafogado.jpg'),
+(47, 'Caso Filho Mata Pai', 'O crime familiar em Santa Catarina.', 'filhomatapai.jpg'),
+(48, 'Caso Vitoria Regina', 'Investigação sobre a morte de Vitoria Regina.', 'vitoriaregina.jpg'),
+(49, 'Caso Família Gonçalves', 'O crime brutal em São Bernardo do Campo.', 'familiagoncalves.jpg'),
+(50, 'Caso Milena Dantas', 'O feminicídio com requintes de crueldade.', 'milenadantas.jpg'),
+(51, 'Caso Mangue 937', 'O sequestro e execução de três mulheres em Fortaleza.', 'mangue937.jpg');
 
 
     INSERT INTO likes (user_id, post_id) VALUES
@@ -540,58 +637,6 @@ VALUES
 
 INSERT INTO podcasts (title, description, link, image, category, is_featured)
 VALUES 
-('Crimes Reais: Ivan Mizanzuk', 
- 'Ivan Mizanzuk e professor universitario, designer, escritor, produtor de podcasts e jornalista. Ele conta "historias reais de pessoas reais" no podcast Projeto Humanos. Ja o Vilela so contrata projetos de humanos para trabalharem com ele.', 
- 'https://youtu.be/UywLajXBLw4?feature=shared', 
- 'https://vejasp.abril.com.br/wp-content/uploads/2023/08/Ilana-Casoy-Erik-Almeida-Divulgac%CC%A7a%CC%83o.jpg.jpg?crop=1&resize=1212,909', 
- 'casos reais', TRUE),
-
-('Ela cuida das mentes mais perturbadas - Gabriela Cruz', 
- 'Ela conhece a mente dos pedofilos! Gabriela Cruz e uma renomada psicologa especialista em sexualidade humana. Antes de atender em clinicas, ela trabalhou durante anos em penitenciarias, acompanhando individuos condenados por pedofilia e outros crimes sexuais.', 
- 'https://youtu.be/mdwQUT0i5dc?feature=shared', 
- 'https://i.ytimg.com/vi/mdwQUT0i5dc/maxresdefault.jpg', 
- 'investigacao', TRUE),
-
-('Crimes reais: Perita Rosangela Monteiro e Delegado Mauro Dias', 
- 'Dra. Rosangela e psicologa e perita criminal, e MAURO DIAS e ex-delegado. Eles vao conversar sobre crimes reais e os processos de investigacao e pericia para desvendar os casos. O Vilela e expert em esconder que comeu todo o chocolate da casa que nem um CSI Sao Paulo resolveria o caso.', 
- 'https://www.youtube.com/live/28WQA1o1CDQ?feature=shared', 
- 'https://i.ytimg.com/vi/28WQA1o1CDQ/maxresdefault.jpg', 
- 'investigacao', TRUE),
-
-('Crimes Reais: Caso Nardoni', 
- 'Discussao sobre o assassinato de Isabella Nardoni.', 
- 'https://www.youtube.com/watch?v=1XyODZb7APk', 
- 'https://f.i.uol.com.br/fotografia/2018/03/12/15209076785aa7359ecb363_1520907678_3x2_xl.jpg', 
- 'casos reais', TRUE),
-
-('Crimes Reais: Caso Marisia e Marcos Matsunaga', 
- 'Investigacao sobre o assassinato de Marisia e Marcos Matsunaga.', 
- 'https://www.youtube.com/watch?v=skj1q8v-f8k', 
- 'https://s2-oglobo.glbimg.com/yqppgndr5hdBMscIOL-7ioLS2LM=/0x0:620x415/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/5/p/3jKTd5TzGIg9jBqCYRLA/63080943.jpg', 
- 'investigacao', FALSE),
-
-('Caso Mangue 937: Executadas no Mangue', 
- 'Em 2 de marco de 2018, tres mulheres foram sequestradas, torturadas e decapitadas em um manguezal proximo ao Rio Ceara, em Fortaleza. O crime foi registrado em video e teve ampla repercussao nas redes sociais. O podcast investiga os detalhes do caso, os envolvidos e as consequencias legais.',
- 'https://www.youtube.com/watch?v=UywLajXBLw4',
- 'https://upload.wikimedia.org/wikipedia/pt/thumb/c/cc/As_3_v%C3%ADtimas_do_Caso_Mangue_937.jpg/320px-As_3_v%C3%ADtimas_do_Caso_Mangue_937.jpg',
- 'famoso', TRUE),
-
-('Jogada no lixo, vendida para homens, queimada vida', 
- 'Ela nasceu Larissa Duque e hoje se tornou Heloisa. Tudo para fugir da mae narcisista que criou um enredo de vida e morte para a filha. Ela conseguiu mais que sobreviver, viver e vencer a progenitora que, logo ao dar a luz, jogou Heloisa no lixo. E esse foi so o comeco...', 
- 'https://youtu.be/Kb0tZnF1IhU?feature=shared', 
- 'https://s2-marieclaire.glbimg.com/1rLIfRAqEFgS2H8aepmgANIRAEw=/0x0:591x332/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2024/g/9/NDBA7iTkGLEx2LkK6lsw/larissa-duque-pequena.png', 
- 'investigacao', TRUE),
-
-('Crimes Reais: Ju Cassini e Giovanna Alba', 
- 'JU CASSINI e GIOVANNA ALBA sao YouTubers. Elas vao bater um papo sobre os crimes reais da atualidade. O Vilela tem tanto medo de violencia que dorme de capacete.', 
- 'https://www.youtube.com/live/HnCFLkqkSHc?feature=shared', 
- 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiYQNlmkbbRztXKmmdhXXVIBlVEMeGEDstHg&s', 
- 'casos reais', TRUE);
-
-
-INSERT INTO podcasts (title, description, link, image, category, is_featured)
-VALUES 
-
 ('Crimes Reais: Ju Cassini e Beto', 
  'JU CASSINI e YouTuber e BETO RIBEIRO e diretor e roteirista. Eles vao bater um papo sobre crimes reais com historias assustadoras, bizarras e misteriosas. O Vilela ja se preparou e comprou mais fraldas geriatricas pra trocar nessa live.', 
  'https://www.youtube.com/live/n9YXRqNtows?feature=shared', 
@@ -660,27 +705,6 @@ VALUES
     ('Caso Madeleine McCann', 'Acompanhe a investigacao do desaparecimento de Madeleine McCann, um dos casos mais misteriosos e debatidos no mundo, com detalhes das buscas e teorias.', 'https://youtu.be/Affj8j3ITBA?feature=shared', 'https://s2-g1.glbimg.com/Rk3yebs1Y1pTIXCBkzCRA4u2hiU=/0x0:640x360/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/A/Q/e5VE99R42ACuQcSPo5bA/thumbnail-image001-1-.jpg', 'Investigacao', FALSE),
     ('Caso de Daniella Perez', 'Entenda como foi o assassinato da atriz Daniella Perez, um dos crimes mais marcantes do Brasil na decada de 90.', 'https://youtu.be/8h2jWwSpIAg?feature=shared', 'https://s2.glbimg.com/-6DSugb9dLeUTy_Y4yOjACJRk94=/600x0/filters:quality(70)/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2022/E/L/FdCKeyTmaQxLHI5atsHA/61507276-rio-de-janeiro-rj-11-11-1992-televisao-rj-tv-globo-novela-de-corpo-e-alma-g.jpg', 'Crime', FALSE),
     ('Chacina de Realengo', 'Tragedia ocorrida em uma escola municipal no Rio de Janeiro em 2011.', 'https://youtu.be/1z0E6MzLdrA?feature=shared', 'https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/5EAC/production/_117863242_b01b7ab3-f0e8-41a6-8010-408afc54da7e.jpg.webp', 'Crime', FALSE);
-
-    INSERT INTO about_page (main_title, subtitle, description, commitment_title, commitment_text)
-    VALUES (
-        'Sobre Nós',
-        'Conheça nossa equipe e propósito',
-        'Somos uma equipe dedicada a preservar e divulgar a memória histórica de décadas passadas por meio de notícias, vídeos e podcasts.',
-        'Nosso Compromisso',
-        'Garantir informação de qualidade, curadoria histórica e acesso livre ao conhecimento.'
-    );
-        
-    INSERT INTO team_members (name, role, photo_url, about_page_id)
-    VALUES 
-        ('Julia Andrade Guarnieri', 'Product Owner', 'https://avatars.githubusercontent.com/u/158210661?v=4', 1),
-        ('Luiza Nicoluci Schettini', 'Scrum Master', 'https://avatars.githubusercontent.com/u/158210596?v=4', 1),
-        ('Anna Beatriz Leme Alves', 'Desenvolvedor (a)', 'https://avatars.githubusercontent.com/u/162629023?v=4', 1),
-        ('Anna Beatriz Ribeiro Valentim', 'Desenvolvedor (a)', 'https://avatars.githubusercontent.com/u/158473512?v=4', 1),
-        ('Luiz Gabriel Lopes Carvalho', 'Desenvolvedor (a)', 'https://github.com/juguarnieri/site-ingles/blob/main/img/luiz.jpg?raw=true', 1),
-        ('Carlos Eduardo Ferraz Augusto', 'Desenvolvedor (a)', 'https://avatars.githubusercontent.com/u/158209729?s=400&u=ea58c944f794b2851f01abda7ad25341d06255dc&v=4', 1);
-
-
-        ALTER TABLE likes ADD CONSTRAINT unique_user_post UNIQUE (user_id, post_id);
 
 
 
