@@ -118,7 +118,7 @@
     ('alice01', 'Alice Silva', 'alice01.jpeg'),
     ('bob02', 'Bob Costa', 'bob02.jpeg'),
     ('carol03', 'Carol Mendes', 'carolmendes.jpeg'),
-    ('david04', 'David Rocha', 'davidrocha'),
+    ('david04', 'David Rocha', 'davidrocha.jpeg'),
     ('eva05', 'Eva Lima', 'evalima.jpeg'),
     ('felipe06', 'Felipe Souza', 'felipesouza.jpeg'),
     ('gabriela07', 'Gabriela Oliveira', 'gabrielaoliveira.jpeg'),
