@@ -118,7 +118,7 @@ CREATE DATABASE rede_social;
     ('alice01', 'Alice Silva', 'alice01.jpeg'),
     ('bob02', 'Bob Costa', 'bob02.jpeg'),
     ('carol03', 'Carol Mendes', 'carolmendes.jpeg'),
-    ('david04', 'David Rocha', 'davidrocha.jpeg'),
+    ('david04', 'David Rocha', 'davidrocha'),
     ('eva05', 'Eva Lima', 'evalima.jpeg'),
     ('felipe06', 'Felipe Souza', 'felipesouza.jpeg'),
     ('gabriela07', 'Gabriela Oliveira', 'gabrielaoliveira.jpeg'),
@@ -132,37 +132,37 @@ CREATE DATABASE rede_social;
     ('olga15', 'Olga Fernandes', 'olgafernandes.jpeg'),
     ('lucas_ferreira', 'Lucas Ferreira', 'lucasferreira.jpeg'),
     ('jornalista_marcelo', 'Marcelo Almeida', 'marceloalmeida.jpg'),
-('criminologa_ana', 'Ana Costa', 'anacosta.jpeg'),
-('caio', 'Caio Lacerda', 'caiolacerda.jpg'),
-('investigador_joao', 'João Pereira', 'joaopereira.jpeg'),
+('criminologa_ana', 'Ana Costa', 'anacosta.jpg'),
+('familia_isabella', 'Família Nardoni', 'familianardoni.jpg'),
+('investigador_joao', 'João Pereira', 'joaopereira.jpg'),
 ('curioso_luana', 'Luana Souza', 'luanasouza.jpg'),
-('jornalista_luiza', 'Luiza Schettini', 'luizaschettini.jpg'),
+('jornalista_luiz', 'Luiz Oliveira', 'luizoliveira.jpg'),
 ('especialista_ricardo', 'Ricardo Silva', 'ricardosilva.jpg'),
-('babi_cristina', 'Babi Cristina', 'babicristina.jpeg'),
-('advogada_maria', 'Maria Fernandes', 'mariafernandes.jpeg'),
-('enzo', 'Enzo Alves', 'enzoalves.jpg'),
+('familia_eloa', 'Família Eloá', 'familiaeloa.jpg'),
+('advogada_maria', 'Maria Fernandes', 'mariafernandes.jpg'),
+('historiador_pedro', 'Pedro Gomes', 'pedrogomes.jpg'),
 ('psicologa_clara', 'Clara Martins', 'claramartins.jpg'),
-('blogueira_tatiane', 'Tatiane Lima', 'tatianelima.jpeg'),
-('fotografo_rafael', 'Rafael Costa', 'rafaelcosta.jpeg'),
-('youtuber_eduardo', 'Eduardo Pereira', 'eduardopereira.jpeg'),
+('blogueira_tatiane', 'Tatiane Lima', 'tatianelima.jpg'),
+('fotografo_rafael', 'Rafael Costa', 'rafaelcosta.jpg'),
+('youtuber_eduardo', 'Eduardo Pereira', 'eduardopereira.jpg'),
 ('professor_jose', 'José Almeida', 'josealmeida.jpg'),
-('estudante_ana', 'Ana Beatriz', 'anabeatriz.jpeg'),
-('pesquisador_bernardo', 'Bernardo Marques', 'bernardomarques.jpg'),
+('estudante_ana', 'Ana Beatriz', 'anabeatriz.jpg'),
+('pesquisador_lucas', 'Lucas Rocha', 'lucasrocha.jpg'),
 ('jornalista_fernanda', 'Fernanda Oliveira', 'fernandaoliveira.jpg'),
-('familia_bernardo', 'Família Boldrini', 'familiaboldrini.jpg'),
+('familia_bernardo', 'Família Boldrini', 'familiabernardo.jpg'),
 ('curioso_patricia', 'Patrícia Souza', 'patriciasouza.jpg'),
 ('especialista_fernando', 'Fernando Lima', 'fernandolima.jpg'),
 ('advogado_ricardo', 'Ricardo Costa', 'ricardocosta.jpg'),
 ('historiador_luiza', 'Luiza Martins', 'luizamartins.jpg'),
-('psicologa_julia', 'Julia Guarnieri', 'juliaguarnieri.jpg'),
-('blogueira_marcela', 'Marcela Gomes', 'marcelagomes.jpeg'),
+('psicologa_juliana', 'Juliana Pereira', 'julianapereira.jpg'),
+('blogueira_marcela', 'Marcela Gomes', 'marcelagomes.jpg'),
 ('fotografo_juliano', 'Juliano Silva', 'julianosilva.jpg'),
 ('youtuber_renata', 'Renata Costa', 'renatacosta.jpg'),
 ('professor_pedro', 'Pedro Lima', 'pedrolima.jpg'),
 ('estudante_rafael', 'Rafael Almeida', 'rafaelalmeida.jpg'),
 ('pesquisador_claudia', 'Claudia Rocha', 'claudiarocha.jpg'),
 ('jornalista_ana', 'Ana Souza', 'anasouza.jpg'),
-('cadu', 'Carlos Eduardo', 'carloseduardo.jpeg');
+('familia_realengo', 'Família Realengo', 'familiarealengo.jpg');
 
     INSERT INTO followers (follower_id, following_id) VALUES
     INSERT INTO followers (follower_id, following_id) VALUES
@@ -376,24 +376,84 @@ CREATE DATABASE rede_social;
     'Assassinato', '70', 1973, FALSE);
 
     --decadas de 80
-    INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured) VALUES
-('1980 o ano que ficou marcado como a decada dos SERIAL KILLERS nos EUA', 'Entre as decadas de 1960 e 1980 a America do Norte teve um aumento marcante nos homicidios em serie com os serial killers ganhando destaque especialmente nos 80.', 'Durante tres decadas da segunda metade do seculo 20 a America do Norte registrou um crescimento expressivo no numero de homicidios em serie caracterizados por crimes semelhantes cometidos por um mesmo autor os chamados serial killers. Esse aumento teve inicio nos anos 1960 e intensificou se nas decadas seguintes atingindo seu auge nos 80 quando os casos se tornaram mais frequentes e notorios.', 'https://www.bbc.com/portuguese/internacional-45363043', 'https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/C5C9/production/_103233605_gettyimages-107654068.jpg.webp', 'Criminologia', '80', 1980, TRUE),
-('Um homem aparentemente inofensivo dos EUA Jeffrey Dahmer', 'Conhecido como o Canibal de Milwaukee matou e desmembrou 17 homens e garotos entre 1977 e 1991.', 'Jeffrey Dahmer o Canibal de Milwaukee matou 17 homens e garotos entre 1977 e 1991. Nascido em 1960 cometeu o primeiro assassinato aos 17 anos. Atraiu vitimas para casa onde cometia atos horriveis e desmembrava os corpos. Antes da prisao teve problemas com a lei e foi expulso do exercito.', 'https://f5.folha.uol.com.br/cinema-e-series/2022/10/jeffrey-dahmer-por-que-serie-sobre-serial-killer-americano-causa-tanta-polemica.shtml', 'https://s2-oglobo.glbimg.com/ehrDKfj-30VCdCPvz2JsZM9IrMs=/0x0:3600x1506/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2022/x/L/MseiC6S06oAW6RSLHVjQ/dahmer-season1-episode8-00-34-46-09r.jpg', 'Homicidio qualificado', '80', 1980, TRUE),
-('O assassino em serie que fez com que os palhacos nos aterrorizaram John Wayne Gacy', 'Assassinou dezenas de jovens enquanto se disfarçava de palhaco em festas infantis aterrorizando os EUA nos anos 1970.', 'John Wayne Gacy nascido em 1942 nos suburbios de Chicago teve uma infancia marcada por abusos. Trabalhou em funeraria casou se e virou gerente de restaurante onde comecou seus crimes. Em 1967 foi preso por abuso de menor mas saiu apos 16 meses. Enriquecido com sua empresa criou o palhaco Pogo para eventos infantis ocultando sua verdadeira face de predador sexual e assassino.', 'https://brasil.elpais.com/brasil/2019/06/28/actualidad/1561705341_083525.html', 'https://imagenes.elpais.com/resizer/v2/BOI3RQ5IQEUQJVWVFV4PXQZW7A.jpg?auth=7fb606bf8587f56d1cd517f58f4e6d222c99ef65865f299e1371ea5e72e2cd90&width=1960&height=1470&smart=true', 'Serial Killers', '80', 1980, TRUE),
-('Alemanha condena enfermeiro da morte que assassinou 85 pacientes', 'Enfermeiro alemao condenado pelo assassinato de 85 pacientes tornando se um dos maiores assassinos em serie da historia da Alemanha.', 'Niels Hogel enfermeiro alemao de 42 anos foi condenado a prisao perpetua por matar 85 pacientes entre 2000 e 2005. A justica considerou sua culpa particularmente grave anulando a chance de liberdade apos 15 anos. Preso ha 10 anos Hogel ja havia sido condenado antes. E considerado o maior assassino em massa da Alemanha desde a Segunda Guerra.', 'https://brasil.elpais.com/brasil/2019/06/06/internacional/1559810905_905194.html#?rel=mas', 'https://s2-g1.glbimg.com/QI4GuWtFFw5oFfjS-jmxDIouNhM=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/j/9/sh0ASCT4qucopU45NG0A/2019-06-06t085211z-715565607-rc1d45909910-rtrmadp-3-germany-crime-nurse.jpg', 'Homicidio em serie', '80', 1980, TRUE),
-('Assassinato de John Lennon A Tragedia que Abalou o Mundo', 'O ex Beatle foi morto a tiros por Mark David Chapman em 1980 chocando o mundo.', 'Em 8 de dezembro de 1980 o ex Beatle John Lennon foi assassinado a tiros por Mark David Chapman na entrada do edificio Dakota em Nova York. Chapman fa obcecado alegou ter sido inspirado pelo livro O Apanhador no Campo de Centeio. Lennon morreu a caminho do hospital aos 40 anos.', 'https://people.com/john-lennon-death-what-to-know-7511226?utm_source=chatgpt.com', 'https://people.com/thmb/tfy6---qV_LOneVOGcobI3lcsTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(993x544:995x546)/john-lennon-1-b6149af014914b19b37a612eada10658.jpg', 'Assassinato', '80', 1980, TRUE);
+  INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured)
+    VALUES 
+    ('1980: O ano que ficou marcado como a decada dos SERIAL KILLERS nos EUA',
+    'Durante tres decadas da segunda metade do seculo 20, a America do Norte registrou um crescimento expressivo no numero de homicidios em serie, caracterizados por crimes semelhantes cometidos por um mesmo autor, os chamados serial killers.',
+    'Esse aumento teve inicio nos anos 1960 e intensificou-se nas decadas seguintes, atingindo seu auge nos anos 1980, quando os casos se tornaram mais frequentes e notorios.',
+    'https://www.bbc.com/portuguese/internacional-45363043',
+    'SerialKillers.jpeg',
+    'Criminologia', '80', 1980, TRUE),
 
---Casos Famosos - Nacionais
-INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured) VALUES
-('Elize Matsunaga O crime e o castigo da mulher que matou e esquartejou o marido', 'Em 2012 matou e esquartejou o marido apos discussao sobre traicoes chocando o pais.', 'Em 19 de maio de 2012 Elize Matsunaga matou seu marido Marcos Kitano Matsunaga apos uma discussao sobre suas traicoes. Apos o assassinato Elize esquartejou o corpo e o colocou em malas de viagem abandonando o em uma rodovia. O crime foi descoberto quando o corpo foi encontrado e identificado em 23 de maio. O casal tinha uma relacao conturbada e Elize agiu apos desconfiar de mais traicoes.', 'https://oglobo.globo.com/blogs/blog-do-acervo/post/2023/02/elize-matsunaga-o-crime-e-o-castigo-da-mulher-que-matou-e-esquartejou-o-marido.ghtml', 'https://cloudfront-us-east-1.images.arcpublishing.com/estadao/NYRIQGEPBJNKJCKLL3KAMDZB6E.jpg', 'Feminicidio', '10', 2010, TRUE),
-('Isabela Nardoni Alexandre Condenado por matar a filha Nardoni e liberado para passar fim de ano na praia', 'Menina de 5 anos foi jogada do sexto andar pelo pai e pela madrasta que foram condenados pelo crime.', 'Em marco de 2008 Isabella Nardoni caiu da janela do 6 andar de um predio em Sao Paulo estando sob os cuidados do pai Alexandre Nardoni e da madrasta Anna Carolina Jatoba. A investigacao revelou que a menina foi agredida pela madrasta e jogada pela janela pelo pai. Ambos foram condenados em 2010 Alexandre a 31 anos e Anna a 26 anos e oito meses de prisao.', 'https://www.cnnbrasil.com.br/nacional/sudeste/sp/morta-em-2008-isabella-nardoni-faria-23-anos-e-mae-faz-homenagem-veja/', 'https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/08/21/ana-carolina-e-isabela-u7u1zfj7h17o.PNG', 'Homicidio familiar', '00', 2008, TRUE),
-('Caso Eloa', 'Sequestro e morte de Eloa Pimentel pelo ex namorado apos quase 100 horas de cativeiro em 2008.', 'Em 13 de outubro de 2008 Lindemberg Alves sequestrou sua ex namorada Eloa e a amiga Nayara apos o fim do relacionamento. Apos quase 100 horas de cativeiro a policia invadiu o apartamento. Nayara foi libertada ferida mas Eloa foi baleada na cabeca e na virilha e teve a morte cerebral confirmada em 18 de outubro. O sequestrador foi capturado apos a operacao policial.', 'https://rollingstone.com.br/noticia/caso-eloa-producoes-para-entender-a-historia-que-chocou-o-pais/#google_vignette', 'https://rollingstone.com.br/media/_versions/2023/05/caso-eloa-linha-direta-globo-foto-reproducao_widelg.jpg', 'Sequestro e Homicidio', '00', 2008, TRUE),
-('Onibus 174', 'Sequestro de onibus no Rio de Janeiro em 2000 terminou tragicamente com a morte de uma refem e do sequestrador diante das cameras.', 'Em 12 de junho de 2000 Sandro Barbosa Nascimento sequestrou passageiros do onibus 174 no Rio de Janeiro. A acao transmitida ao vivo durou mais de quatro horas e terminou com a morte de uma passageira Geisa Firmo Goncalves e do sequestrador. Durante a abordagem um policial do Bope disparou acidentalmente contra Geisa que foi morta junto com o sequestrador minutos depois.', 'https://www.cnnbrasil.com.br/nacional/sequestro-do-onibus-174-no-rio-em-2000-durou-quase-4-horas/', 'https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/03/onibus7.183501.jpg?w=1200&h=1200&crop=1', 'Sequestro', '00', 2000, TRUE),
-('Mulher que matou 5 filhos e inocentada nos EUA', 'Americana que matou seus cinco filhos em 2001 considerada inimputavel devido a problemas mentais.', 'A americana Andrea Yates que matou seus cinco filhos afogando os em 2001 escapou da prisao perpetua em um segundo julgamento em 2006 apos um juri aceitar que ela sofria de problemas mentais. Em 2002 ela foi condenada a prisao perpetua mas alegou nao estar mentalmente apta na epoca do crime. Ela foi enviada para um hospital psiquiatrico ate ser considerada san.', 'https://www.bbc.com/portuguese/noticias/story/2006/07/060726_yates_novojulgamentopu', 'https://www.bbc.com/staticarchive/5e7baf5cf2fa8ec69dd9e2cf468f8451c50f7faf.jpg', 'Homicídio', '00', 2001, TRUE);
+    ('Um homem aparentemente inofensivo dos EUA: Ted Bundy',
+    'Jeffrey Dahmer, o Canibal de Milwaukee, matou 17 homens e garotos entre 1977 e 1991. Nascido em 1960, cometeu o primeiro assassinato aos 17 anos.',
+    'Atraia vitimas para casa, onde cometia atos horriveis e desmembrava os corpos. Antes da prisao, teve problemas com a lei e foi expulso do exercito.',
+    'https://f5.folha.uol.com.br/cinema-e-series/2022/10/jeffrey-dahmer-por-que-serie-sobre-serial-killer-americano-causa-tanta-polemica.shtml',
+    'JeffreyDahmer.jpg',
+    'Homicidio Qualificado', '80', 1980, TRUE),
+
+    ('O assassino em serie que fez com que os palhacos nos aterrorizassem: John Wayne Gacy',
+    'John Wayne Gacy, nascido em 1942 nos suburbios de Chicago, teve uma infancia marcada por abusos. Trabalhou em funeraria, casou-se e virou gerente de restaurante, onde comecou seus crimes.',
+    'Enriquecido com sua empresa, criou o palhaco Pogo para eventos infantis, ocultando sua verdadeira face de predador sexual e assassino.',
+    'https://brasil.elpais.com/brasil/2019/06/28/actualidad/1561705341_083525.html',
+    'JohnWayne.jpeg',
+    'Serial Killers', '80', 1980, TRUE),
+
+    ('Alemanha condena enfermeiro da morte que assassinou 85 pacientes',
+    'Niels Hogel, enfermeiro alemao de 42 anos, foi condenado a prisao perpetua por matar 85 pacientes entre 2000 e 2005.',
+    'A justica considerou sua culpa particularmente grave, anulando a chance de liberdade apos 15 anos. E considerado o maior assassino em massa da Alemanha desde a Segunda Guerra.',
+    'https://brasil.elpais.com/brasil/2019/06/06/internacional/1559810905_905194.html',
+    'NielsHogel.jpeg',
+    'Homicidio em Serie', '80', 1980, TRUE),
+
+    ('Assassinato de John Lennon: A Tragedia que Abalou o Mundo',
+    'Em 8 de dezembro de 1980, o ex-Beatle John Lennon foi assassinado a tiros por Mark David Chapman na entrada do edificio Dakota, em Nova York.',
+    'Chapman, fa obcecado, alegou ter sido inspirado pelo livro O Apanhador no Campo de Centeio. Lennon morreu a caminho do hospital, aos 40 anos.',
+    'https://people.com/john-lennon-death-what-to-know-7511226',
+    'John_Lennon.jpeg',
+    'Assassinato', '80', 1980, TRUE);
 
 
     --decadas de 90
-    INSERT INTO news (title, description, text link, image, category, decade, year, is_featured) 
+    INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured)
+    VALUES 
+    ('Chacina de Ácari',
+    'Caso ocorrido no Rio de Janeiro, envolvendo o desaparecimento de 11 jovens. Supostamente mortos por policiais, o caso evidenciou questões de violência policial e omissão estatal, gerando repercussão internacional e pedidos de justiça por parte das famílias das vítimas.',
+    'A Chacina de Ácari é um dos casos mais emblemáticos de violência policial no Brasil.',
+    'https://g1.globo.com/jornal-nacional/noticia/2024/12/04/chacina-de-acari-corte-interamericana-responsabiliza-brasil-pelo-desaparecimento-de-11-jovens-no-rio.ghtml',
+    'ChacinadeÀcari.jpeg',
+    'Chacina', '90', 1990, FALSE),
+
+    ('Caso da menina Míriam',
+    'O desaparecimento e a morte da menina Míriam Brandão chocaram o Brasil em 1992. O caso expôs a brutalidade e a violência contra crianças, mobilizando a opinião pública e gerando questionamentos sobre a segurança infantil.',
+    'O caso Míriam Brandão trouxe à tona a necessidade de maior proteção às crianças no Brasil.',
+    'https://www.em.com.br/app/noticia/gerais/2011/09/02/interna_gerais,248406/assassino-que-chocou-a-capital-em-1992-esta-proximo-da-liberdade.shtml',
+    'MeninaMíriam.jpeg',
+    'Homicídio', '90', 1992, FALSE),
+
+    ('Caso Daniella Perez',
+    'O assassinato da atriz Daniella Perez em 1992, cometido por um colega de elenco, gerou grande comoção nacional. O crime foi amplamente coberto pela mídia e desencadeou um debate sobre feminicídio.',
+    'O caso Daniella Perez foi um marco na luta contra o feminicídio no Brasil.',
+    'https://www.cnnbrasil.com.br/entretenimento/daniella-perez-assassinato-de-atriz-completa-32-anos-relembre-o-caso/L',
+    'DanielaPerez.jpeg',
+    'Feminicídio', '90', 1992, TRUE),
+
+    ('Caso Maníaco do Parque',
+    'Francisco de Assis Pereira, o Maníaco do Parque, aterrorizou São Paulo no final dos anos 1990 com uma série de assassinatos brutais. Ele atraía mulheres ao parque sob falsos pretextos e as assassinava.',
+    'O caso Maníaco do Parque é um dos mais conhecidos envolvendo serial killers no Brasil.',
+    'https://www.cnnbrasil.com.br/nacional/relembere-o-caso-do-maniaco-do-parque-tema-de-filme-que-estreia-hoje/',
+    'ManíacodoParque.jpeg',
+    'Assassinato em série', '90', 1998, TRUE),
+
+    ('Caso atirador do shopping',
+    'Em 1998, um atirador abriu fogo em um shopping center no Brasil, deixando vítimas e espalhando pânico entre os frequentadores. O caso trouxe à tona discussões sobre segurança em locais públicos e o controle de armas.',
+    'O caso do atirador do shopping gerou debates sobre segurança pública e controle de armas no Brasil.',
+    'https://www.cnnbrasil.com.br/nacional/atirador-do-shopping-morumbi-em-sp-deixa-prisao-apos-25-anos-entenda/',
+    'AtiradordoShopping.jpeg',
+    'Homicídio', '90', 1998, FALSE);
+
+    -- INSERTS de noticias pesquisadas anos 2000
+    INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured) 
 VALUES 
 ('Chacina de Ácari',
 'A Chacina de Acari ocorreu no dia 26 de julho de 1990 quando 11 jovens, sendo 7 menores de idade, da favela do Acari, no Rio de Janeiro.',
@@ -473,7 +533,7 @@ Suzane vinha enfrentando resistencia dos pais em relacao ao seu namoro com Danie
 
 Para simular um assalto, os criminosos espalharam documentos e levaram dinheiro. Após o assassinato, Suzane passou a noite com Daniel em um motel e retornou pela manha com os irmaos Cravinhos para "descobrir" o crime junto a policia. No entanto, sua frieza e comportamento levantaram suspeitas. Em poucos dias, os tres confessaram e foram condenados em 2006 por homicidio triplamente qualificado. Suzane e Daniel receberam 39 anos e 6 meses de prisao, enquanto Cristian foi condenado a 38 anos e 6 meses.
 
-O caso teve grande repercussao, inspirando livros, documentarios e filmes, como A Menina que Matou os Pais e O Menino que Matou Meus Pais. Em 2023, Suzane obteve liberdade condicional apos cumprir parte da pena, enquanto Cristian voltou a ser preso em 2018 por porte de armas e suborno. O crime gerou debates sobre valores familiares, justica criminal e reintegracao de condenados a sociedade.', 'https://www.estadao.com.br/brasil/suzane-von-richthofen-relembre-como-a-policia-desvendou-o-caso-e-como-estao-os-acusados-hoje-nprm/', 'https://oglobo.globo.com/epoca/brasil/serie-de-tv-inspirou-assassinos-dos-pais-de-suzane-von-richthofen-24195277', 'Crime hediondo', '00', 2002, TRUE),
+O caso teve grande repercussao, inspirando livros, documentarios e filmes, como A Menina que Matou os Pais e O Menino que Matou Meus Pais. Em 2023, Suzane obteve liberdade condicional apos cumprir parte da pena, enquanto Cristian voltou a ser preso em 2018 por porte de armas e suborno. O crime gerou debates sobre valores familiares, justica criminal e reintegracao de condenados a sociedade.', 'https://www.estadao.com.br/brasil/suzane-von-richthofen-relembre-como-a-policia-desvendou-o-caso-e-como-estao-os-acusados-hoje-nprm/', 'https://oglobo.globo.com/epoca/brasil/serie-de-tv-inspirou-assassinos-dos-pais-de-suzane-von-richthofen-24195277', 'Crime hediondo', 'anos 2000', 2002, TRUE),
 
 
 ('Caso Friedenbach-Caffe', 'Crime barbaro contra casal de adolescentes que reacendeu o debate sobre maioridade penal no Brasil.', 'O assassinato de Liana Friedenbach e Felipe Caffe em novembro de 2003 foi um dos crimes mais chocantes da historia brasileira, mobilizando a opiniao publica e reacendendo debates sobre seguranca e legislacao penal. O casal, que namorava ha cerca de dois meses, decidiu viajar para acampar na zona rural de Embu-Guacu, Sao Paulo. Para isso, Liana mentiu para os pais, dizendo que participaria de uma excursao para Ilhabela, enquanto Felipe omitiu que estaria apenas com ela. No dia 31 de outubro, partiram para o sitio abandonado onde montaram acampamento.
@@ -484,7 +544,7 @@ O desaparecimento dos jovens mobilizou familiares e autoridades. O pai de Liana,
 
 Os criminosos foram julgados e condenados. Pernambuco recebeu pena de 110 anos de prisao, enquanto Antonio Caetano da Silva foi sentenciado a 124 anos. Agnaldo Pires recebeu 47 anos, e Antonio Matias de Barros foi condenado a seis anos. Champinha, por ser menor de idade, cumpriu tres anos na Fundacao CASA e, devido a avaliacoes psiquiatricas que indicaram transtorno de personalidade antissocial, foi transferido para uma unidade psiquiatrica onde permanece ate hoje.
 
-O caso gerou forte impacto social e reacendeu debates sobre a maioridade penal no Brasil. Ari Friedenbach tornou-se um defensor de mudancas na legislacao para endurecer penas e garantir maior protecao aos jovens. A tragedia evidenciou fragilidades do sistema de seguranca e justica, impulsionando discussoes sobre reforma penal e medidas preventivas contra crimes violentos.', 'https://projetocolabora.com.br/ods16/caso-champinha-crime-perverso-fim-aventura-adolescentes-apaixonados/', 'https://veja.abril.com.br/coluna/radar/os-motivos-de-friedenbach/', 'Crime hediondo', '00', 2003, FALSE),
+O caso gerou forte impacto social e reacendeu debates sobre a maioridade penal no Brasil. Ari Friedenbach tornou-se um defensor de mudancas na legislacao para endurecer penas e garantir maior protecao aos jovens. A tragedia evidenciou fragilidades do sistema de seguranca e justica, impulsionando discussoes sobre reforma penal e medidas preventivas contra crimes violentos.', 'https://projetocolabora.com.br/ods16/caso-champinha-crime-perverso-fim-aventura-adolescentes-apaixonados/', 'https://veja.abril.com.br/coluna/radar/os-motivos-de-friedenbach/', 'Crime hediondo', 'anos 2000', 2003, FALSE),
 
 
 ('Caso Madeleine McCann', 'Desaparecimento de menina britanica em Portugal que virou um dos maiores misterios da decada.', 'O desaparecimento de Madeleine Beth McCann, uma menina britanica de 3 anos, ocorreu em 3 de maio de 2007, no resort Praia da Luz, Algarve, Portugal. O caso teve repercussao global imediata e, ate hoje, permanece cercado de misterio, investigacoes e inumeras teorias.
@@ -499,7 +559,7 @@ Em 2011, a Scotland Yard reabriu o caso com a Operacao Grange, investigando nova
 
 O caso ganhou enorme cobertura midiática e apoio de celebridades e lideres mundiais, como o Papa Bento XVI e o primeiro-ministro britanico Gordon Brown. A campanha "Find Madeleine" arrecadou milhoes em busca de respostas. Em 2019, a Netflix lancou o documentario The Disappearance of Madeleine McCann.
 
-Ate hoje, Madeleine continua desaparecida, tornando esse caso um dos maiores misterios criminais da historia recente. Seus pais seguem na luta por respostas, mantendo viva a esperanca de reencontra-la.', 'https://www.cnnbrasil.com.br/tudo-sobre/caso-madeleine-mccann/', 'https://www.estadao.com.br/internacional/caso-madeleine-mccann-testemunha-chave-policia-ignorou-denuncia-nprei/', 'Crime de Sequestro', '00', 2007, FALSE),
+Ate hoje, Madeleine continua desaparecida, tornando esse caso um dos maiores misterios criminais da historia recente. Seus pais seguem na luta por respostas, mantendo viva a esperanca de reencontra-la.', 'https://www.cnnbrasil.com.br/tudo-sobre/caso-madeleine-mccann/', 'https://www.estadao.com.br/internacional/caso-madeleine-mccann-testemunha-chave-policia-ignorou-denuncia-nprei/', 'Crime de Sequestro', 'anos 2000', 2007, FALSE),
 
 
 ('Caso Onibus 174', 'Sequestro de onibus no Rio transmitido ao vivo, que terminou em tragedia e criticas a policia.', 'O sequestro do onibus 174, ocorrido em 12 de junho de 2000 no Rio de Janeiro, foi um dos episodios mais marcantes da cronica policial brasileira. O criminoso Sandro Barbosa do Nascimento, sobrevivente da Chacina da Candelaria, manteve refens dentro do veiculo por quase cinco horas, em um evento transmitido ao vivo para todo o pais.
@@ -510,7 +570,7 @@ A operacao policial foi caotica e transmitida ao vivo pelas principais emissoras
 
 O sequestrador foi rendido e levado para uma viatura policial, onde morreu por asfixia, supostamente sufocado pelos agentes. O caso gerou grande repercussao e criticas a atuacao da policia, que falhou na contencao do criminoso e na protecao dos refens.
 
-O episodio inspirou o documentario Onibus 174, dirigido por Jose Padilha, que explora a infancia de Sandro e as condicoes sociais que o levaram ao crime. O caso tambem levantou debates sobre violencia urbana, desigualdade social e a abordagem policial em situacoes de crise.', 'https://oglobo.globo.com/blogs/blog-do-acervo/post/2024/03/sequestro-do-onibus-174-horas-de-tensao-com-uma-tragedia-no-final.ghtml', 'https://www.metropoles.com/brasil/em-2000-brasil-assistia-ao-vivo-ao-terror-do-sequestro-do-onibus-174', 'Crime Hediondo', '00', 2000, FALSE),
+O episodio inspirou o documentario Onibus 174, dirigido por Jose Padilha, que explora a infancia de Sandro e as condicoes sociais que o levaram ao crime. O caso tambem levantou debates sobre violencia urbana, desigualdade social e a abordagem policial em situacoes de crise.', 'https://oglobo.globo.com/blogs/blog-do-acervo/post/2024/03/sequestro-do-onibus-174-horas-de-tensao-com-uma-tragedia-no-final.ghtml', 'https://www.metropoles.com/brasil/em-2000-brasil-assistia-ao-vivo-ao-terror-do-sequestro-do-onibus-174', 'Crime Hediondo', 'anos 2000', 2000, FALSE),
 
 
 ('Caso Isabella Nardoni', 'Assassinato de menina de cinco anos em Sao Paulo, com grande comoção nacional.', 'O assassinato de Isabella de Oliveira Nardoni, ocorrido em 29 de marco de 2008, foi um dos crimes mais chocantes da historia brasileira. A menina de cinco anos foi jogada do sexto andar de um predio na Vila Guilherme, Sao Paulo, e seu caso comoveu o pais pela brutalidade e pela suspeita de envolvimento de pessoas proximas.
@@ -525,7 +585,6 @@ O caso gerou uma onda de comoção e revolta no Brasil, levando a debates sobre 
 
 Ate hoje, a tragedia de Isabella Nardoni marca a memoria coletiva brasileira, evidenciando a importancia da justica e do combate a violencia domestica.', 'https://g1.globo.com/tudo-sobre/isabella-nardoni/', 'https://fotografia.folha.uol.com.br/galerias/1594787331937579-caso-isabella-nardoni', 'Crime Hediondo', 'anos 2008', 2000, FALSE);
 
-
 -- INSERTS de notícias pesquisadas 10
 
 INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured)
@@ -539,7 +598,7 @@ A Policia Civil de Minas Gerais conduziu a investigacao, reunindo testemunhos qu
 
 O caso teve forte impacto social, gerando debates sobre violencia de genero e poder de figuras publicas. Bruno tentou retomar a carreira no futebol apos a prisao, provocando indignacao e protestos da sociedade. Sua possivel reintegracao levantou questoes sobre a responsabilidade de clubes e patrocinadores diante de crimes violentos.
 
-Ate hoje, o assassinato de Eliza Samudio permanece como um dos crimes mais marcantes do pais, evidenciando a necessidade de politicas mais rigidas contra o feminicidio e de maior protecao as vitimas de violencia domestica.', 'https://g1.globo.com/tudo-sobre/eliza-samudio/', 'ElizaSamúdio.jpeg', 'Crime Hediondo', '10', 2010, TRUE),
+Ate hoje, o assassinato de Eliza Samudio permanece como um dos crimes mais marcantes do pais, evidenciando a necessidade de politicas mais rigidas contra o feminicidio e de maior protecao as vitimas de violencia domestica.', 'https://g1.globo.com/tudo-sobre/eliza-samudio/', 'ElizaSamúdio.jpeg', 'Crime Hediondo', 'anos 2010', 2010, TRUE),
 
 
 ('Caso Luka Magnotta', 'Assassino canadense que filmou e divulgou crime brutal na internet, gerando comocao mundial.', 'O assassinato de Jun Lin, um estudante chines de 33 anos, em maio de 2012, foi um dos crimes mais brutais e midiaticos da decada. Com requintes de crueldade e exibicao publica, o caso expos questoes sobre psicopatia, narcisismo e o impacto das redes sociais em crimes violentos.
@@ -552,7 +611,7 @@ No julgamento, ocorrido em 2014, a defesa tentou alegar insanidade, mas o juri r
 
 O caso ganhou ainda mais notoriedade com o lancamento do documentario da Netflix Dont Fk With Cats, que detalha como internautas ajudaram na captura do criminoso. Alem da investigacao, o documentario levanta debates sobre os limites da exibicao de crimes na internet e o papel das redes sociais na construcao da identidade de psicopatas.
 
-O assassinato de Jun Lin continua sendo lembrado como um dos mais macabros da era digital, evidenciando os perigos da busca desenfreada por atencao e notoriedade online.', 'https://noticias.uol.com.br/ultimas-noticias/efe/2017/06/21/canibal-de-montreal-se-casara-com-outro-preso-no-final-do-mes.htm', 'LukaMagnnota.jpeg', 'Crime Hediondo', '10', 2012, FALSE),
+O assassinato de Jun Lin continua sendo lembrado como um dos mais macabros da era digital, evidenciando os perigos da busca desenfreada por atencao e notoriedade online.', 'https://noticias.uol.com.br/ultimas-noticias/efe/2017/06/21/canibal-de-montreal-se-casara-com-outro-preso-no-final-do-mes.htm', 'LukaMagnnota.jpeg', 'Crime Hediondo', 'anos 2010', 2012, FALSE),
 
 
 ('Caso Chris Watts', 'Homem mata esposa gravida e filhas pequenas nos EUA em um dos crimes mais chocantes da decada.', 'O assassinato de Shanann Watts, gravida de 15 semanas, e suas filhas Bella (4 anos) e Celeste (3 anos), ocorrido em agosto de 2018, foi um dos crimes mais chocantes dos Estados Unidos. A brutalidade do ato e a frieza do autor, Chris Watts, marido e pai das vitimas, causaram enorme repercussao mundial. O contraste entre a imagem publica da familia nas redes sociais e a realidade sombria por tras do crime levantou questoes sobre relacionamentos abusivos e a ilusao da vida perfeita online.
@@ -563,7 +622,7 @@ A motivacao para o crime foi revelada durante as investigacoes. Chris mantinha u
 
 O caso gerou grande repercussao e virou documentario da Netflix (American Murder: The Family Next Door), que detalhou a vida da familia atraves de videos e mensagens. A tragedia levantou debates sobre violencia domestica, feminicidio e a influencia das redes sociais na construcao de imagens irreais.
 
-A historia de Chris Watts continua sendo lembrada como um alerta sobre os perigos de relacoes abusivas e sobre como uma fachada de felicidade pode esconder segredos sombrios.', 'https://g1.globo.com/mundo/noticia/2019/03/07/homem-que-matou-esposa-gravida-e-duas-filhas-nos-eua-revela-pela-primeira-vez-como-cometeu-crime.ghtml', 'ChrisWhatts.jpeg', 'Crime Hediondo', '10', 2018, TRUE),
+A historia de Chris Watts continua sendo lembrada como um alerta sobre os perigos de relacoes abusivas e sobre como uma fachada de felicidade pode esconder segredos sombrios.', 'https://g1.globo.com/mundo/noticia/2019/03/07/homem-que-matou-esposa-gravida-e-duas-filhas-nos-eua-revela-pela-primeira-vez-como-cometeu-crime.ghtml', 'ChrisWhatts.jpeg', 'Crime Hediondo', 'anos 2010', 2018, TRUE),
 
 
 ('Caso Stephen Paddock', 'Maior ataque a tiros da historia dos EUA, com 60 mortos durante festival em 2017.', 'O Massacre de Las Vegas, ocorrido em 1 de outubro de 2017, foi o ataque a tiros mais mortal da historia dos Estados Unidos. Stephen Paddock, um contador aposentado de 64 anos, abriu fogo contra uma multidao durante o festival de musica country Route 91 Harvest, deixando 60 mortos e mais de 800 feridos. O ataque chocou o mundo pela brutalidade e pela falta de uma motivacao clara.
@@ -574,7 +633,7 @@ As equipes de seguranca levaram quase uma hora para encontrar a localizacao exat
 
 O massacre reacendeu debates sobre o controle de armas nos EUA, resultando na proibicao dos bump stocks pelo governo americano. Tambem houve mudancas nos protocolos de seguranca em grandes eventos e hoteis, visando evitar novas tragedias.
 
-Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violentos da historia moderna dos Estados Unidos, deixando um legado de dor e questionamentos sobre a facilidade de acesso a armas de alto poder destrutivo.', 'https://g1.globo.com/mundo/noticia/veja-quem-e-stephen-paddock-o-atirador-de-las-vegas.ghtml', 'StephenPaddock.jpeg', 'Crime Hediondo', '10', 2017, FALSE);
+Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violentos da historia moderna dos Estados Unidos, deixando um legado de dor e questionamentos sobre a facilidade de acesso a armas de alto poder destrutivo.', 'https://g1.globo.com/mundo/noticia/veja-quem-e-stephen-paddock-o-atirador-de-las-vegas.ghtml', 'StephenPaddock.jpeg', 'Crime Hediondo', 'anos 2010', 2017, FALSE);
 
 ('Deadpool Killer', 'Condenado a morte pelo assassinato de duas mulheres na Florida em 2019.', 'Wade Wilson foi condenado a pena de morte pelo assassinato de Kristine Melton e Diane Ruiz em outubro de 2019 em Cape Coral Florida. Ele atacou tambem sua ex namorada Melissa Montanez. Em junho um juri o considerou culpado de homicidios em primeiro grau e premeditados. Em 27 de junho o juiz sentenciou Wilson a morte apos votacao de jurados a favor da pena capital. As familias das vitimas comemoraram a sentenca.',  'https://aventurasnahistoria.com.br/noticias/historia-hoje/deadpool-killer-quem-saos-vitimas-do-homem-condenado-pena-de-morte.phtml', 'https://aventurasnahistoria.com.br/media/_versions/2024/08/deadpoolkiller4_widelg.jpg', 'Homicidio', '10', 2019, TRUE);
 
@@ -587,6 +646,7 @@ Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violento
     'Carlos José foi preso em flagrante e condenado a 33 anos de prisão. O corpo da trapezista foi encontrado em uma trilha e o cão permaneceu ao lado da vítima até a chegada das autoridades.',
     'https://www.condorcontabilidade.com.br/nb2/rj/regiao-dos-lagos/noticia/2025/04/03/julgamento-marcado-acusado-de-matar-trapezista-argentina-em-buzios-enfrenta-o-tribunal-do-juri-no-dia-9-de-abril.ghtml',
     'Trapezistaargentina.jpeg',
+    'Homicídio', '2020s', 2023, FALSE),
     'Homicídio', '20', 2023, FALSE),
 
     ('Caso do menino arremessado da ponte pelo pai',
@@ -594,6 +654,7 @@ Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violento
     'Ele confessou o crime e está preso.',
     'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/03/cantor-afogado-pe-2-2.jpg?w=1115',
     'MeninoArremessado.jpeg',
+    'Homicídio', '2020s', 2025, FALSE),
     'Homicídio', '20', 2025, FALSE),
 
     ('Caso do motorista de app em SP',
@@ -601,6 +662,7 @@ Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violento
     'A vítima conseguiu fugir e o homem foi preso.',
     'https://s2-g1.glbimg.com/JTYtBLWhlDV-pnM6l5rMDQd31mc=/1280x0/filters:format(jpeg)/https://thumbor.globoi.com/unsafe/fit-in/1280x720/s03.video.glbimg.com/deo/vi/54/13/13491354',
     'MotoristadeApp.jpeg',
+    'Violência Sexual', '2020s', 2025, FALSE),
     'Violência Sexual', '20', 2025, FALSE),
 
     ('Caso Clara Maria em MG',
@@ -608,6 +670,7 @@ Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violento
     'Os suspeitos Thiago e Pimentel foram presos após confessarem o crime.',
     'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/03/Clara-Maria.jpg?w=880',
     'Clara Maria.jpeg',
+    'Homicídio', '2020s', 2025, FALSE),
     'Homicídio', '20', 2025, FALSE),
 
     ('Caso do cantor morto afogado em PE',
@@ -615,6 +678,7 @@ Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violento
     'A polícia investiga as circunstâncias do afogamento e se houve envolvimento de terceiros.',
     'https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/03/cantor-afogado-pe-2-2.jpg?w=1115',
     'CantorAfogado.jpeg',
+    'Morte Suspeita', '2020s', 2025, FALSE),
     'Morte Suspeita', '20', 2025, FALSE),
 
     ('Filho mata pai alcoólatra em SC',
@@ -622,6 +686,7 @@ Ate hoje, o Massacre de Las Vegas e lembrado como um dos episodios mais violento
     'A vítima foi encontrada com 22 perfurações. O suspeito se entregou à polícia após o crime.',
     'https://static.ndmais.com.br/2025/02/identificado-homem-morto-por-filho-a-tesouradas-sao-joao-batista-grande-florianopolis-elvis-marcos-da-silva-800x467.jpg',
     'Filhomatapaialcoolatra.jpeg',
+    'Homicídio', '2020s', 2025, FALSE);
     'Homicídio', '20', 2025, FALSE);
 
 
