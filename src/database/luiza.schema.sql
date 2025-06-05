@@ -61,7 +61,7 @@ O julgamento, realizado em 2010, teve grande repercussao nacional. A defesa aleg
 
 O caso gerou uma onda de comoção e revolta no Brasil, levando a debates sobre violencia infantil e a eficacia da justica. Isabella tornou-se simbolo da luta por protecao as criancas, e sua historia continua sendo lembrada como um dos crimes mais impactantes do pais.
 
-Ate hoje, a tragedia de Isabella Nardoni marca a memoria coletiva brasileira, evidenciando a importancia da justica e do combate a violencia domestica.', 'https://g1.globo.com/tudo-sobre/isabella-nardoni/', 'https://fotografia.folha.uol.com.br/galerias/1594787331937579-caso-isabella-nardoni', 'Crime Hediondo', 'anos 2008', 2000, FALSE);
+Ate hoje, a tragedia de Isabella Nardoni marca a memoria coletiva brasileira, evidenciando a importancia da justica e do combate a violencia domestica.', 'https://g1.globo.com/tudo-sobre/isabella-nardoni/', 'https://fotografia.folha.uol.com.br/galerias/1594787331937579-caso-isabella-nardoni', 'Crime Hediondo', 'anos 2000', 2008, FALSE);
 
 
 -- INSERTS de notícias pesquisadas anos 2010
