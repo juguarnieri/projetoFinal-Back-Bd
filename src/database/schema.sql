@@ -720,22 +720,15 @@ VALUES
 
 ('Podcast: Rosangela - Melhores momentos', 
  'Melhores momentos com a Dra. Rosangela Monteiro sobre o caso da Milena Dantas Bereta Nistarda, que tinha acabado de sair da delegacia onde prestou queixa contra o marido, quando foi assassinada.', 
- 'https://www.youtube.com/watch?v=4gb-jxOVBGM', 
- 'https://i.ytimg.com/vi/4gb-jxOVBGM/maxresdefault.jpg', 
+ 'https://youtu.be/GhFAfPYy3fI?feature=shared', 
+ 'https://i.ytimg.com/vi/GhFAfPYy3fI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBWQfEsX_Sbc296gXwxbGtRT_Cupw', 
  'famoso', TRUE),
 
-('Caso Fernando, ex professor da UnB', 
- 'Fernando, ex professor da UnB, foi acusado de sequestro e assassinato, mas posteriormente inocentado. O caso gerou debates sobre a presuncao de inocencia e violencia midiática.', 
- 'https://www.youtube.com/watch?v=Ynt8bCzRXoo', 
- 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14KEbP_zZURGVW_sKOFkpNQsoBD6Y_9u3Pg&s', 
+('Caso Fernanda Bonin', 
+ 'O caso Fernanda Bonin chocou o Brasil em 2025. A professora de matemática, de 42 anos, foi encontrada morta com sinais de enforcamento em São Paulo, no final de abril. Inicialmente tratado como latrocínio, o crime passou a ser investigado como feminicídio após revelações da polícia', 
+ 'https://youtu.be/GQdTvM-AwY8?feature=shared', 
+ 'https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/05/Caso-Fernanda-Bonin-saiba-quem-e-quem-na-morte-de-professora-em-SP-1.jpg', 
  'investigacao', TRUE),
-
-('Caso Suzane von Richthofen - Historico completo', 
- 'Um relato detalhado sobre o caso Suzane von Richthofen, incluindo fatos novos e entrevistas exclusivas.', 
- 'https://www.youtube.com/watch?v=HhXEOE-vFc8', 
- 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPaxFbd76bt_GVzFyMDe2uKDxzQojP8zyUm_Q&s', 
- 'famoso', TRUE);
-
 
  INSERT INTO videos (title, description, link, image, category, is_featured) VALUES 
  
