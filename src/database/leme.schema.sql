@@ -75,7 +75,7 @@ VALUES
   '2020s', 
   2020, 
   FALSE
-);
+),
 
 
 ('Menina de 10 anos estuprada pelo tio no Espirito Santo tem gravidez interrompida',
