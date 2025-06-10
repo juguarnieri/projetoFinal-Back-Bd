@@ -272,7 +272,7 @@ CREATE DATABASE rede_social;
 (2, 'Caso Madeleine McCann', 'Desaparecimento que teve repercussao internacional.', 'mccann.jpg'),
 (3, 'O Monstro de Goiania', 'Crime de serial killer que chocou o centro-oeste brasileiro.', 'goiania.jpg'),
 (4, 'Assassinato de Angela Diniz', 'Caso de feminicidio com grande repercussao nos anos 70.', 'angela.jpg'),
-(5, 'Massacre de Realengo', 'Ataque a uma escola no Rio em 202011 deixou 12 mortos.', 'realengo.png'),
+(5, 'Massacre de Realengo', 'Ataque a uma escola no Rio em 202011 deixou 12 mortos.', 'realengo.jpg'),
 (6, 'Caso Pedrinho', 'O reencontro emocionante apos 16 anos de sequestro.', 'pedrinho.jpg'),
 (7, 'Caso Marielle Franco', 'O assassinato que mobilizou investigacoes federais.', 'mariellefranco.jpg'),
 (8, 'Caso Henry Borel', 'A morte do menino Henry e a comocao nacional.', 'henryborel.jpg'),
@@ -471,36 +471,52 @@ VALUES
     INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured)
 VALUES 
 ('Chacina de Acari',
-'Caso ocorrido no Rio de Janeiro, envolvendo o desaparecimento de 11 jovens. Supostamente mortos por policiais, o caso evidenciou questoes de violencia policial e omissao estatal, gerando repercussao internacional e pedidos de justica por parte das familias das vitimas.',
-'A Chacina de Acari e um dos casos mais emblematicos de violencia policial no Brasil.',
+'A Chacina de Acari ocorreu no dia 26 de julho de 1990 quando 11 jovens, sendo 7 menores de idade, da favela do Acari, no Rio de Janeiro.',
+'A Chacina de Acari ocorreu no dia 26 de julho de 1990 quando 11 jovens, sendo 7 menores de idade, da favela do Acari, no Rio de Janeiro, foram sequestrados de um sitio em Surui, municipio de Mage, onde passavam o dia, por um grupo que se identificava como sendo formado por policiais. Mesmo apos pedir joias e dinheiro em troca da liberacao dos jovens aos familiares, nenhum deles retornou a suas familias e seus corpos nunca foram encontrados. Formada pelas maes das vitimas, a organizacao Maes de Acari foi pioneira na luta contra a violencia da policia no pais, ainda que em 1993, Edmea da Silva Euzebio, lider do grupo, tenha sido assassinada. A Anistia Internacional relatou em 1994 que os sequestradores haviam sido identificados pelo setor de inteligencia da Policia Militar como sendo policiais militares. Em 2010 o caso prescreveu e nenhum acusado foi responsabilizado pela Chacina. Em 2019, foi anunciado que sete acusados de matar Edmea Euzebio vao a juri popular - o que tambem ainda nao aconteceu. A historia das maes dos garotos desaparecidos que buscam justica foi contada no livro "Maes de Acari", do jornalista Carlos Nobre. O caso esta na lista da Superinteressante (2015) de "5 crimes que chocaram o Brasil na decada de 1990". Apos 32 anos, em 1 de julho de 2022, foi sancionada lei que determina que o Governo do Estado do Rio de Janeiro pague indenizacao as maes das vitimas da Chacina de Acari.',
 'https://g1.globo.com/jornal-nacional/noticia/202024/12/04/chacina-de-acari-corte-interamericana-responsabiliza-brasil-pelo-desaparecimento-de-11-jovens-no-rio.ghtml',
 'ChacinadeAcari.jpeg',
 'Chacina', '90', 1990, FALSE),
 
 ('Caso da menina Miriam',
-'O desaparecimento e a morte da menina Miriam Brandao chocaram o Brasil em 1992. O caso expos a brutalidade e a violencia contra criancas, mobilizando a opiniao publica e gerando questionamentos sobre a seguranca infantil.',
-'O caso Miriam Brandao trouxe a tona a necessidade de maior protecao as criancas no Brasil.',
+'Em 22 de dezembro de 1992, Miriam Brandao, de 5 anos, foi sequestrada pelos irmãos Wellington e William enquanto dormia.',
+'Em 22 de dezembro de 1992, Miriam Brandão, de 5 anos, foi sequestrada pelos irmãos Wellington e William enquanto dormia, na casa de seus pais, o homeopata Volney Henrique Brandao e a sociologa Jocelia de Castro, no Bairro Dona Clara, Regiao da Pampulha de Belo Horizonte.Eles se passaram por funcionarios de uma empresa telefonica para entrar no imovel. No dia seguinte, Miriam chorou e chamou pela mae, no cativeiro.Para que a menina parasse de chorar, os irmaos a sufocaram com eter. Em seguida, ela foi estrangulada, esquartejada e queimada. No mesmo dia, os sequestradores fizeram o primeiro contato com a familia para exigir dinheiro pelo resgate. Em 7 de janeiro de 1993, os dois foram presos na casa usada como cativeiro, onde foram encontrados os restos mortais da crianca enterrados no quintal.',
 'https://www.em.com.br/app/noticia/gerais/202011/09/02/interna_gerais,248406/assassino-que-chocou-a-capital-em-1992-esta-proximo-da-liberdade.shtml',
 'MeninaMiriam.jpeg',
 'Homicidio', '90', 1992, FALSE),
 
 ('Caso Daniella Perez',
-'O assassinato da atriz Daniella Perez em 1992, cometido por um colega de elenco, gerou grande comocao nacional. O crime foi amplamente coberto pela midia e desencadeou um debate sobre feminicidio.',
-'O caso Daniella Perez foi um marco na luta contra o feminicidio no Brasil.',
+'O assassinato da atriz Daniella Perez em 1992, cometido por um colega de elenco, gerou grande comocao nacional.',
+'Filha da autora Gloria Perez e esposa do ator Raul Gazolla, foi vitima de um crime brutal, recebendo 18 punhaladas de tesoura e sem oportunidade de reagir. As investigacoes revelaram como responsaveis o ator Guilherme de Padua, que contracenava com Daniella como seu par romantico na novela, e sua esposa, Paula Thomaz.
+Os dois foram condenados pelo assassinato. De acordo com a acusacao, o crime teria sido motivado por inveja e ressentimento, uma vez que o ator buscava insistentemente mais destaque para seu personagem na novela "De Corpo e Alma", escrita pela mae da vitima.
+Antes de ser identificado como responsavel pelo crime, no entanto, Guilherme de Padua chegou a oferecer suas condolencias a Gloria Perez e a Raul Gazolla. O casal foi incriminado depois que uma testemunha registrou a placa do veiculo usado no crime.
+Horas depois, Guilherme confessou o crime. Segundo as investigacoes, Padua abordou Daniella ao final das gravacoes, obrigando-a a entrar no carro, que foi conduzido por sua esposa ate o local onde o assassinato ocorreu.
+Em 1997, Guilherme de Padua foi sentenciado a 19 anos de prisao e Paula Nogueira Thomaz a 18 anos e 6 meses pelo assassinato da atriz, classificado como homicidio qualificado por motivo torpe e sem chance de defesa para a vitima.
+Padua foi liberado em outubro de 1999, apos cumprir 6 anos e 9 meses de prisao. Ele se casou novamente em 2006, divorciou-se em 2014 e casou-se pela terceira vez em 2017, ano em que tambem passou a atuar como pastor na Igreja Batista da Lagoinha, em Belo Horizonte.',
 'https://www.cnnbrasil.com.br/entretenimento/daniella-perez-assassinato-de-atriz-completa-32-anos-relembre-o-caso/L',
 'danielaperez.jpg',
 'Feminicidio', '90', 1992, TRUE),
 
 ('Caso Maniaco do Parque',
-'Francisco de Assis Pereira, o Maniaco do Parque, aterrorizou Sao Paulo no final dos anos 1990 com uma serie de assassinatos brutais. Ele atraia mulheres ao parque sob falsos pretextos e as assassinava.',
-'O caso Maniaco do Parque e um dos mais conhecidos envolvendo serial killers no Brasil.',
+'Francisco de Assis Pereira, o Maniaco do Parque, aterrorizou Sao Paulo no final dos anos 1990.',
+'Em 1998, ele estuprou e assassinou pelo menos seis mulheres, e tentou matar outras nove. Seus crimes aconteciam no Parque do Estado, na regiao sul de Sao Paulo. Francisco tinha uma conversa sedutora. Ele dizia para suas vitimas que elas seriam fotografadas para um catalogo no meio da mata no parque do Estado. Para isso tinha de convence-las a fazer longas viagens, de dez a quinze quilometros.
+Na entrevista aos peritos, o Francisco diz que viveu aqui uma experiencia marcante de sua infancia, ele ficava escondido observando o abate dos bois no matadouro. Segundo Francisco, e como se depois de receber o golpe, os bois se ajoelhassem para pedir perdao ou clemencia.
+A primeira acusacao de tentativa de estupro contra Francisco foi feita em Sao Jose do Rio Preto, quase tres anos antes dele ser preso e ficar claro que se tratava de um assassino em serie de mulheres. Na epoca do crime, nao tinha ainda especificacao de feminicidio. Em sua defesa, Francisco relatou ter sido vitima de abuso de um tio e de uma tia quando crianca. Psiquiatras o descrevem como um homem que descontava sua frustracao nas mulheres. E ele ainda tinha um problema fisico que atrapalhava as relacoes sexuais.
+Francisco de Assis Pereira foi condenado a mais de 280 anos de cadeia em 1998. Ele podera pedir progressao de pena em 2028. Isso porque a Legislacao Brasileira impede que alguem fique preso por mais de trinta anos.',
 'https://www.cnnbrasil.com.br/nacional/relembere-o-caso-do-maniaco-do-parque-tema-de-filme-que-estreia-hoje/',
 'ManiacodoParque.jpeg',
 'Assassinato em serie', '90', 1998, TRUE),
 
 ('Caso atirador do shopping',
 'Em 1998, um atirador abriu fogo em um shopping center no Brasil, deixando vitimas e espalhando panico entre os frequentadores. O caso trouxe a tona discussoes sobre seguranca em locais publicos e o controle de armas.',
-'O caso do atirador do shopping gerou debates sobre seguranca publica e controle de armas no Brasil.',
+'Tres de novembro de 1999. Mateus da Costa Meira entrou no cinema de um shopping, em Sao Paulo, com uma submetralhadora.
+Ele reencenou o roteiro de um videogame do qual era fa. Depois de atirar contra o espelho do banheiro, veio para diante da tela e comecou a disparar.
+Uma das vitimas achou que era uma performance, parte da exibicao do filme Clube da luta.
+O planejamento para o massacre foi desenvolvido ao longo de 7 meses, como relatado pelo criminoso.
+Os tiros na sala duraram cerca de 3 minutos. Mateus foi detido por segurancas do local quando parou para recarregar a arma. Ele logo foi preso em flagrante, em sua mochila ainda foram encontradas mais municoes para a arma que usou.
+Tres pessoas morreram e quatro ficaram feridos.
+Mateus foi condenado a 120 anos de prisao, com cumprimento dos formais 30 anos, que sao o maximo previsto por lei, no Brasil. Nos primeiros anos de cadeia, ele foi transferido diversas vezes, e continuava com o mesmo comportamento agressivo com os presos.
+Em 8 de maio de 2009, Mateus tentou assassinar um colega de cela usando uma tesoura.
+So em 2011, com mais de uma decada de atraso, foi considerado inimputavel por doenca mental. Entao, nao poderia responder criminalmente pelo ataque. Hoje esta em um hospital de custodia na Bahia.',
 'https://www.cnnbrasil.com.br/nacional/atirador-do-shopping-morumbi-em-sp-deixa-prisao-apos-25-anos-entenda/',
 'AtiradordoShopping.jpeg',
 'Homicidio', '90', 1998, FALSE);
@@ -527,7 +543,7 @@ O desaparecimento dos jovens mobilizou familiares e autoridades. O pai de Liana,
 
 Os criminosos foram julgados e condenados. Pernambuco recebeu pena de 110 anos de prisao, enquanto Antonio Caetano da Silva foi sentenciado a 124 anos. Agnaldo Pires recebeu 47 anos, e Antonio Matias de Barros foi condenado a seis anos. Champinha, por ser menor de idade, cumpriu tres anos na Fundacao CASA e, devido a avaliacoes psiquiatricas que indicaram transtorno de personalidade antissocial, foi transferido para uma unidade psiquiatrica onde permanece ate hoje.
 
-O caso gerou forte impacto social e reacendeu debates sobre a maioridade penal no Brasil. Ari Friedenbach tornou-se um defensor de mudancas na legislacao para endurecer penas e garantir maior protecao aos jovens. A tragedia evidenciou fragilidades do sistema de seguranca e justica, impulsionando discussoes sobre reforma penal e medidas preventivas contra crimes violentos.', 'https://projetocolabora.com.br/ods16/caso-champinha-crime-perverso-fim-aventura-adolescentes-apaixonados/', 'Friedenbach.jpeg', 'Crime hediondo', '2000', 2003, FALSE),
+O caso gerou forte impacto social e reacendeu debates sobre a maioridade penal no Brasil. Ari Friedenbach tornou-se um defensor de mudancas na legislacao para endurecer penas e garantir maior protecao aos jovens. A tragedia evidenciou fragilidades do sistema de seguranca e justica, impulsionando discussoes sobre reforma penal e medidas preventivas contra crimes violentos.', 'https://projetocolabora.com.br/ods16/caso-champinha-crime-perverso-fim-aventura-adolescentes-apaixonados/', 'Friedenbach.jpg', 'Crime hediondo', '2000', 2003, FALSE),
 
 ('Caso Madeleine McCann', 'Desaparecimento de menina britanica em Portugal que virou um dos maiores misterios da decada.', 'O desaparecimento de Madeleine Beth McCann, uma menina britanica de 3 anos, ocorreu em 3 de maio de 2007, no resort Praia da Luz, Algarve, Portugal. O caso teve repercussao global imediata e, ate hoje, permanece cercado de misterio, investigacoes e inumeras teorias.
 
@@ -590,7 +606,7 @@ No julgamento, ocorrido em 2014, a defesa tentou alegar insanidade, mas o juri r
 
 O caso ganhou ainda mais notoriedade com o lancamento do documentario da Netflix Dont Fk With Cats, que detalha como internautas ajudaram na captura do criminoso. Alem da investigacao, o documentario levanta debates sobre os limites da exibicao de crimes na internet e o papel das redes sociais na construcao da identidade de psicopatas.
 
-O assassinato de Jun Lin continua sendo lembrado como um dos mais macabros da era digital, evidenciando os perigos da busca desenfreada por atencao e notoriedade online.', 'https://noticias.uol.com.br/ultimas-noticias/efe/202017/06/21/canibal-de-montreal-se-casara-com-outro-preso-no-final-do-mes.htm', 'LukaMagnnota.jpeg', 'Crime Hediondo', '2010', 2012, FALSE),
+O assassinato de Jun Lin continua sendo lembrado como um dos mais macabros da era digital, evidenciando os perigos da busca desenfreada por atencao e notoriedade online.', 'https://noticias.uol.com.br/ultimas-noticias/efe/202017/06/21/canibal-de-montreal-se-casara-com-outro-preso-no-final-do-mes.htm', 'LukaMagnotta.jpeg', 'Crime Hediondo', '2010', 2012, FALSE),
 
 ('Caso Chris Watts', 'Homem mata esposa gravida e filhas pequenas nos EUA em um dos crimes mais chocantes da decada.', 'O assassinato de Shanann Watts, gravida de 15 semanas, e suas filhas Bella (4 anos) e Celeste (3 anos), ocorrido em agosto de 2018, foi um dos crimes mais chocantes dos Estados Unidos. A brutalidade do ato e a frieza do autor, Chris Watts, marido e pai das vitimas, causaram enorme repercussao mundial. O contraste entre a imagem publica da familia nas redes sociais e a realidade sombria por tras do crime levantou questoes sobre relacionamentos abusivos e a ilusao da vida perfeita online.
 
