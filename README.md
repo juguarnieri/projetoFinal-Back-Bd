@@ -10,6 +10,13 @@
 ## 📄Descrição
 A plataforma vai além do simples acesso à informação: ela incentiva a participação ativa dos usuários, permitindo que publiquem notícias e relatos, promovendo a troca de informações e experiências em uma comunidade segura, interativa e colaborativa. Com recursos pensados para facilitar a navegação, a interação e o engajamento, a Crime Whispers se destaca como referência para quem busca estar sempre atualizado sobre o que acontece no mundo policial, em qualquer lugar e a qualquer momento.
 
+## 🚀 Tecnologias Utilizadas
+
+### 1. Back-end e Banco de Dados
+
+- ✔ **Node.js**
+- ✔ **PostgreSQL**
+
 ## 👥 Participantes da Equipe
 
 | Foto | Nome | Função | GitHub | E-mail |
