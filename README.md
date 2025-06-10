@@ -7,6 +7,7 @@
 
 **Crime Whispers** é uma plataforma inovadora disponível tanto para web quanto para dispositivos móveis, desenvolvida para conectar pessoas interessadas em notícias e casos reais ao redor do mundo. O objetivo é oferecer um ambiente moderno e acessível onde os usuários podem acompanhar as principais notícias, manter-se informados sobre acontecimentos relevantes e compartilhar suas próprias experiências, relatos e casos.
 
+## Descrição
 A plataforma vai além do simples acesso à informação: ela incentiva a participação ativa dos usuários, permitindo que publiquem notícias e relatos, promovendo a troca de informações e experiências em uma comunidade segura, interativa e colaborativa. Com recursos pensados para facilitar a navegação, a interação e o engajamento, a Crime Whispers se destaca como referência para quem busca estar sempre atualizado sobre o que acontece no mundo policial, em qualquer lugar e a qualquer momento.
 
 ## 👥 Participantes da Equipe
