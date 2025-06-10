@@ -183,7 +183,6 @@ CREATE DATABASE rede_social;
     ('jornalista_ana', 'Ana Souza', 'anasouza.jpg'),
     ('familia_realengo', 'Familia Realengo', 'familiarealengo.jpg');
 
-
     INSERT INTO followers (follower_id, following_id) VALUES
 (1, 2), 
 (1, 3), 
