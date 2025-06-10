@@ -770,7 +770,7 @@ VALUES
     ('Caso Henry Borel', 'Documentario sobre a morte do menino Henry Borel, um dos crimes mais recentes e comentados no Brasil.', 'https://youtu.be/YZQcbx9VHfg?feature=shared', 'henryborel.jpg', 'Recente', FALSE),
     ('Caso Daniel Correa', 'Analise completa do assassinato do jogador Daniel Correa, incluindo a investigacao e julgamento dos envolvidos.', 'https://youtu.be/e7njAbFZP2o?feature=shared', 'danielcorrea.jpg', 'Recente', FALSE),
     ('Caso Rafael Miguel', 'Confira os detalhes do assassinato de Rafael Miguel e seus pais, um crime recente que chocou o Brasil.', 'https://youtu.be/RwZ-A8niBNc?feature=shared', 'rafaelmiguel.jpg', 'Recente', FALSE),
-    ('Caso Eloa', 'Relembre o caso Eloa, um dos sequestros mais longos e dramaticos da historia do Brasil, com grande repercussao nacional.', 'https://youtu.be/J0dpDynvp80?feature=shared', 'CasoEloá.jpeg', 'Impactante', TRUE),
+    ('Caso Eloa', 'Relembre o caso Eloa, um dos sequestros mais longos e dramaticos da historia do Brasil, com grande repercussao nacional.', 'https://youtu.be/J0dpDynvp80?feature=shared', 'CasoEloa.jpeg', 'Impactante', TRUE),
     ('Caso Suzane Richthofen', 'Documentario sobre o impactante caso Suzane Richthofen, que chocou o Brasil pelo envolvimento da filha no assassinato dos proprios pais.', 'https://youtu.be/Qc0-WnFkTOI?feature=shared', 'Richthofen.jpeg', 'Impactante', TRUE),
     ('Caso Maniaco do Parque', 'A historia do Maniaco do Parque, um dos maiores serial killers do Brasil, cujos crimes impactaram a sociedade.', 'https://youtu.be/kfa4tuoQbHU?feature=shared', 'maniacoparque.jpg', 'Impactante', TRUE);
 
@@ -783,7 +783,7 @@ VALUES
     ('Documentario - O que e Justica?', 'Documentario que explora o conceito de justica, trazendo diferentes visoes filosoficas, juridicas e sociais sobre o tema.', 'https://youtu.be/9_3PC-CLGzA?feature=shared', 'justica.jpg', 'Leis', FALSE),
     ('Caso Madeleine McCann', 'Acompanhe a investigacao do desaparecimento de Madeleine McCann, um dos casos mais misteriosos e debatidos no mundo, com detalhes das buscas e teorias.', 'https://youtu.be/Affj8j3ITBA?feature=shared', 'MadeleineMcCann.jpeg', 'Investigacao', FALSE),
     ('Caso de Daniella Perez', 'Entenda como foi o assassinato da atriz Daniella Perez, um dos crimes mais marcantes do Brasil na decada de 90.', 'https://youtu.be/8h2jWwSpIAg?feature=shared', 'danielaperez.jpg', 'Crime', FALSE),
-    ('Chacina de Realengo', 'Tragedia ocorrida em uma escola municipal no Rio de Janeiro em 202011.', 'https://youtu.be/1z0E6MzLdrA?feature=shared', 'realengo.png', 'Crime', FALSE);
+    ('Chacina de Realengo', 'Tragedia ocorrida em uma escola municipal no Rio de Janeiro em 202011.', 'https://youtu.be/1z0E6MzLdrA?feature=shared', 'realengo.jpg', 'Crime', FALSE);
 
 
 
