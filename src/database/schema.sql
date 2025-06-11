@@ -715,6 +715,18 @@ VALUES
  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14KEbP_zZURGVW_sKOFkpNQsoBD6Y_9u3Pg&s', 
  'investigacao', TRUE),
 
+ ('Chacina da Candelaria - O massacre de 1993', 
+ 'chacina candelária, Na madrugada de 23 de julho de 1993, oito jovens em situação de rua foram assassinados por policiais militares em frente à Igreja da Candelária, no Rio de Janeiro. O crime gerou forte comoção nacional e internacional, denunciando a violência policial e a exclusão social no Brasil, 1993', 
+ 'https://youtu.be/zf7Er2Nthto?si=OMzKwQz24QXtGrOe', 
+ 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH9txKa6r0TuQQ1mTa1Eu5gmOWyE02Ku_WixI7hqLBDHdqxL7NKh_mb4o&s=10', 
+ 'impactante', TRUE),
+
+ ('Caso Mércia Nakashima - O crime que chocou o Brasil',
+ 'Caso Mércia Nakashima, A advogada Mércia Nakashima foi assassinada em 2010 por seu ex-namorado, o ex-policial Mizael Bispo. Ela foi baleada e jogada viva em uma represa em Nazaré Paulista (SP). O crime chocou o país e se tornou símbolo de violência contra a mulher e feminicídio, 2010', 
+ 'https://youtu.be/g8bjQ9U1CvA?si=jBuq3ABRwjP0fj9l', 
+ 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKuaggrME5IPj1TGxhDQ6aWb5mOnAAR56wyT3jI21pcj8qHSMlhWv61lQ&s=10', 
+ 'famoso', TRUE),
+
 ('Caso Suzane von Richthofen - Historico completo', 
  'Um relato detalhado sobre o caso Suzane von Richthofen, incluindo fatos novos e entrevistas exclusivas.', 
  'https://www.youtube.com/watch?v=HhXEOE-vFc8', 
