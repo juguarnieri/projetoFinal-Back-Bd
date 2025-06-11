@@ -211,28 +211,28 @@
     INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured)
     VALUES 
 
-    ('Caryn Campbell, uma das vítimas de Ted Bundy, estava de férias com sua família em seu hotel quando Bundy a sequestrou.',
+    ('Caryn Campbell, uma das vítimas de Ted Bundy.',
     'Campbell tinha 23 anos quando desapareceu do resort no Colorado. Ela foi vista pela última vez indo ao saguão buscar uma revista e nunca voltou.',
     'Caryn Campbell foi uma das vítimas de Ted Bundy, sequestrada em um resort no Colorado.',
     'https://www.reddit.com/r/serialkillers/comments/1794p7g/caryn_campbell_one_of_ted_bundys_victims_was_on/?tl=pt-br',
     'caryncampbell.jpeg',
     'Homicídio', '70', 1975, FALSE),
 
-    ('Há 50 anos, Lynda Ann Healy foi sequestrada e assassinada por Ted Bundy. Ela tinha 21 anos e acredita-se que foi sua primeira vítima.',
+    ('Há 50 anos, Lynda Ann Healy foi sequestrada e assassinada por Ted Bundy.',
     'Aos 21 anos, Lynda Ann Healey desapareceu em 1974. Sangue foi encontrado em seus lençóis, e sua camisola pendurada no armário.',
     'Lynda Ann Healy foi uma das primeiras vítimas de Ted Bundy, desaparecendo em 1974.',
     'https://aventurasnahistoria.com.br/noticias/vitrine/historia-as-vitimas-esquecidas-de-ted-bundy.phtml',
     'lyndaannhealy.jpeg',
     'Homicídio', '70', 1974, FALSE),
 
-    ('Em memória de Kimberly Leach, 12, a última vítima de Ted Bundy: o mundo perdeu uma grande alma',
+    ('Em memória de Kimberly Leach, 12, a última vítima de Ted Bundy',
     'Kimberly Leach, 12 anos, desapareceu em 1978 em Lake City, Flórida. A polícia prendeu Ted Bundy, já procurado pelo FBI.',
     'Kimberly Leach foi a última vítima de Ted Bundy, desaparecendo em 1978.',
     'https://aventurasnahistoria.com.br/noticias/vitrine/historia-as-vitimas-esquecidas-de-ted-bundy.phtml',
     'KimberlyLeach.jpeg',
     'Homicídio', '70', 1978, TRUE),
 
-    ('Quem ama não mata: o feminicídio de 1976 que ajudou a mudar a Justiça brasileira',
+    ('Quem ama não mata: o feminicídio de 1976 que mudou a Justiça brasileira',
     'Em 2023, o caso da socialite Ângela Maria Fernandes Diniz, morta a tiros em 1976 pelo namorado Doca Street, foi citado no STF como marco contra o feminicídio.',
     'O caso Ângela Diniz foi um marco na luta contra o feminicídio no Brasil.',
     'https://g1.globo.com/rj/rio-de-janeiro/noticia/2023/09/16/quem-ama-nao-mata-o-feminicidio-de-1976-que-ajudou-a-mudar-a-justica-brasileira.ghtml',
@@ -270,7 +270,7 @@
     'JohnWayne.jpeg',
     'Serial Killers', '80', 1980, TRUE),
 
-    ('Alemanha condena enfermeiro da morte que assassinou 85 pacientes',
+    ('Caso enfermeiro da morte - assassinou 85 pacientes',
     'Niels Hogel, enfermeiro alemao de 42 anos, foi condenado a prisao perpetua por matar 85 pacientes entre 2000 e 2005.',
     'A justica considerou sua culpa particularmente grave, anulando a chance de liberdade apos 15 anos. E considerado o maior assassino em massa da Alemanha desde a Segunda Guerra.',
     'https://brasil.elpais.com/brasil/2019/06/06/internacional/1559810905_905194.html',
