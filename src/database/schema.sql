@@ -759,7 +759,7 @@ VALUES
     ('Suzane von Richthofen', 'Documentario sobre o assassinato dos pais de Suzane von Richthofen.', 'https://www.youtube.com/watch?v=Iv572FJpZSc', 'richthofen.jpg', 'Crime', TRUE),
     ('Operacao Lava Jato', 'Especial sobre os 10 anos da Operacao Lava Jato e seus desdobramentos.', 'https://www.youtube.com/watch?v=xaiPHbjRTmE', 'lavajato.jpg', 'Investigacao', TRUE),
     ('Caso Lazaro Barbosa', 'Cobertura da cacada policial a Lazaro Barbosa em 202021.', 'https://www.youtube.com/watch?v=R6OGs5YQvKU', 'lazarobarbosa.jpeg', 'Recente', TRUE),
-    ('Joao de Deus: Condenacao', 'Noticia sobre a condenacao de Joao de Deus por crimes de estupro.', 'https://www.youtube.com/watch?v=8zFQn_Z1o-I', 'joaodedeus', 'Investigacao', FALSE),
+    ('Joao de Deus: Condenacao', 'Noticia sobre a condenacao de Joao de Deus por crimes de estupro.', 'https://www.youtube.com/watch?v=8zFQn_Z1o-I', 'joaodedeus.jpg', 'Investigacao', FALSE),
     ('Caso Miguel', 'Reportagem sobre a morte do menino Miguel e a responsabilidade da patroa.', 'https://www.youtube.com/watch?v=9BijzzxvENA', 'miguel.jpg', 'Crime', TRUE),
     ('Chacina da Candelaria', 'Analise do massacre de oito jovens em frente a Igreja da Candelaria.', 'https://www.youtube.com/watch?v=SJHxESnm6Ys', 'candelaria.jpg', 'Impactante', FALSE),
     ('Caso Amarildo', 'Reportagem sobre o desaparecimento do pedreiro Amarildo na Rocinha.', 'https://www.youtube.com/watch?v=7ujN1Z717sY', 'amarildo.jpg', 'Investigacao', FALSE),
