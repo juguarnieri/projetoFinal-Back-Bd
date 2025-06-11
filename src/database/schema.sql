@@ -748,6 +748,18 @@ VALUES
  'https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/05/Caso-Fernanda-Bonin-saiba-quem-e-quem-na-morte-de-professora-em-SP-1.jpg', 
  'investigacao', TRUE),
 
+ ('Caso Mércia Nakashima',
+ 'A advogada Mércia Nakashima foi assassinada em 2010 por seu ex-namorado, o ex-policial Mizael Bispo. Ela foi baleada e jogada viva em uma represa em Nazaré Paulista (SP). O crime chocou o país e se tornou símbolo de violência contra a mulher e feminicídio, 2010.',
+ 'https://youtu.be/g8bjQ9U1CvA?feature=shared',
+ 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKuaggrME5IPj1TGxhDQ6aWb5mOnAAR56wyT3jI21pcj8qHSMlhWv61lQ&s=10',
+ 'famoso', TRUE),
+
+ ('Chacina da Candelaria',
+ 'Na madrugada de 23 de julho de 1993, oito jovens em situação de rua foram assassinados por policiais militares em frente à Igreja da Candelária, no Rio de Janeiro. O crime gerou forte comoção nacional e internacional, denunciando a violência policial e a exclusão social no Brasil, 1993',
+ 'https://youtu.be/zf7Er2Nthto?feature=shared',
+ 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH9txKa6r0TuQQ1mTa1Eu5gmOWyE02Ku_WixI7hqLBDHdqxL7NKh_mb4o&s=10',
+ 'crimes antigos', TRUE);
+
  INSERT INTO videos (title, description, link, image, category, is_featured) VALUES 
  
 ('Caso Evandro', 'Serie documental sobre o desaparecimento de Evandro Ramos Caetano em 1992.', 'https://www.youtube.com/watch?v=XkoJiUI6jNg', 'evandro.jpg', 'Investigacao', TRUE),
