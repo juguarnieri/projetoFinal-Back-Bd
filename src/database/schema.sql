@@ -399,7 +399,7 @@ VALUES
 'caryncampbell.jpeg',
 'Homicidio', '70', 1975, FALSE),
 
-('Lynda Ann Healy: A Primeira Vitima Confirmada de Ted Bundy',
+('Lynda Ann Healy: A Primeira Vitima de Ted Bundy',
 'Aos 21 anos, Lynda Ann Healey desapareceu em 1974. Sangue foi encontrado em seus lencois, e sua camisola pendurada no armario.',
 'Lynda Ann Healy, uma jovem de 21 anos, era estudante da Universidade de Washington e trabalhava como garota do tempo em uma radio local. Em fevereiro de 1974, ela desapareceu misteriosamente de sua casa, marcando o inicio da serie de crimes brutais de Ted Bundy. Na manha seguinte ao desaparecimento, amigos estranharam sua ausencia e acionaram a policia, que encontrou o quarto de Lynda com sinais de luta: sangue em seus lencois e travesseiro, e marcas de violencia. O caso chocou a comunidade universitaria e trouxe medo a regiao, pois nao havia sinais de arrombamento e o crime parecia cuidadosamente planejado. Lynda foi posteriormente identificada como a primeira vitima confirmada de Bundy, um assassino em serie que ficaria conhecido por sua frieza e manipulacao, deixando um rastro de dor e misterio por onde passou.',
 'https://aventurasnahistoria.com.br/noticias/vitrine/historia-as-vitimas-esquecidas-de-ted-bundy.phtml',
@@ -413,7 +413,7 @@ VALUES
 'KimberlyLeach.jpeg',
 'Homicidio', '70', 1978, TRUE),
 
-('O Caso de Angela Diniz e o Feminicidio que Mudou a Justica Brasileira',
+('O Caso de Angela Diniz Mudou a Justica Brasileira',
 'O caso Angela Diniz foi um marco na luta contra o feminicidio no Brasil.',
 'O caso de Angela Diniz tornou-se um simbolo na luta contra o feminicidio no Brasil. Em 1976, Angela foi assassinada a tiros pelo entao namorado, Raul Fernando do Amaral Street, conhecido como Doca Street, em Buzios, RJ. O crime chocou o pais nao apenas pela brutalidade, mas tambem pela reacao da sociedade e pelos desdobramentos juridicos. Inicialmente, o assassino foi beneficiado por um discurso de defesa que culpabilizava a vitima, gerando revolta publica. A mobilizacao social e midiaticia em torno do caso impulsionou debates fundamentais sobre violencia de genero e mudancas na legislacao, influenciando o endurecimento das penas para crimes passionais e o reconhecimento do feminicidio como crime hediondo. Ate hoje, Angela e lembrada como um marco na luta pelos direitos das mulheres e justica para as vitimas de violencia domestica no Brasil.',
 'https://g1.globo.com/rj/rio-de-janeiro/noticia/202023/09/16/quem-ama-nao-mata-o-feminicidio-de-1976-que-ajudou-a-mudar-a-justica-brasileira.ghtml',
@@ -431,7 +431,7 @@ VALUES
     --decadas de 80
   INSERT INTO news (title, description, text, link, image, category, decade, year, is_featured)
 VALUES 
-('1980: O ano que ficou marcado como a decada dos SERIAL KILLERS nos EUA',
+('1980: decada dos SERIAL KILLERS nos EUA',
 'Durante tres decadas da segunda metade do seculo 2020, a America do Norte registrou um crescimento expressivo no numero de homicidios em serie, caracterizados por crimes semelhantes cometidos por um mesmo autor, os chamados serial killers.',
 'Washington 10 de junho de 2025. O ano de 1980 e mais amplamente a decada de 1980 ficou para sempre marcado na historia dos Estados Unidos como o periodo mais sombrio no que diz respeito a proliferacao de serial killers. Foi uma epoca em que o medo permeava as ruas e a midia popularizou o termo serial killer cunhado pelo FBI para descrever criminosos que cometiam assassinatos em serie com intervalos de tempo entre os crimes.Nos anos 80 os EUA enfrentavam uma combinacao de fatores que segundo especialistas contribuiram para o aumento da atividade desses assassinos em serie.Movimentacao massiva de pessoas entre estados dificultando o rastreamento de criminosos.
 Deficiencias tecnologicas nas investigacoes forenses.Mudancas culturais e sociais que criavam tanto vitimas vulneraveis quanto criminosos oportunistas.Ted Bundy executado em 1989 confessou mais de 30 assassinatos embora o numero real permaneça desconhecido.
@@ -450,7 +450,7 @@ David Berkowitz Son of Sam preso em 1977 mas seu caso e cobertura midiática imp
 'JeffreyDahmer.jpg',
 'Homicidio Qualificado', '80', 1980, TRUE),
 
-('O assassino em serie que fez com que os palhacos nos aterrorizassem: John Wayne Gacy',
+('O assassino em serie: John Wayne Gacy',
 'John Wayne Gacy, nascido em 1942 nos suburbios de Chicago, teve uma infancia marcada por abusos. Trabalhou em funeraria, casou-se e virou gerente de restaurante, onde comecou seus crimes.',
 'John Wayne Gacy ficou conhecido como o "Palhaco Assassino" e, durante os anos 1970, chocou os Estados Unidos com seus crimes. Entre 1972 e 1978, Gacy sequestrou, torturou e assassinou ao menos 33 jovens, a maioria garotos e adolescentes. Muitos de seus crimes foram cometidos em sua propria casa, onde escondia os corpos das vitimas sob o assoalho.
 
@@ -463,17 +463,7 @@ Condenado a morte, John Wayne Gacy foi executado em 1994. Sua historia permanece
 'JohnWayne.jpeg',
 'Serial Killers', '80', 1980, TRUE),
 
-('Alemanha condena enfermeiro da morte que assassinou 85 pacientes',
-'Niels Hogel, enfermeiro alemao de 42 anos, foi condenado a prisao perpetua por matar 85 pacientes entre 202000 e 202005.',
-'O caso do enfermeiro Niels Hogel ganhou grande repercussao na Alemanha e internacionalmente por sua extrema gravidade e pelo numero elevado de vitimas. Hogel trabalhava em dois hospitais no norte da Alemanha, em Oldenburg e Delmenhorst, onde, entre 2000 e 2005, administrou intencionalmente doses letais de medicamentos em pacientes internados. O objetivo declarado por ele era provocar paradas cardiacas para, em seguida, tentar reanimar as vitimas e demonstrar suas habilidades medicas. No entanto, muitas vezes, os pacientes nao sobreviviam.
-As investigacoes mostraram que as mortes incomuns so comecaram a levantar suspeitas apos varios anos. O numero oficial de vitimas confirmadas chegou a 85, mas autoridades estimam que o total pode ser ainda maior, ja que nem todos os corpos puderam ser exumados ou analisados. Durante o julgamento, Hogel confessou muitos dos assassinatos e demonstrou remorso, mas familiares das vitimas relataram sentimentos de revolta e indignacao.
-O tribunal classificou a culpa de Hogel como particularmente grave, o que significa que ele nao podera pedir liberdade condicional apos 15 anos de prisao, como normalmente preve a lei alema. Ele recebeu a pena maxima permitida no pais. O caso tambem gerou discussoes profundas sobre falhas sistemicas na supervisao hospitalar e na cultura de denuncia, ja que colegas e superiores ignoraram sinais de alerta por anos, o que pode ter contribuido para a continuidade dos crimes.
-A sociedade alema ficou chocada com a extensao dos assassinatos e com a facilidade com que Hogel conseguiu agir sem ser detectado por tanto tempo. O caso e considerado o maior massacre cometido por um individuo na Alemanha desde a Segunda Guerra Mundial e levantou questionamentos sobre a seguranca dos pacientes nos hospitais do pais.',
-'https://brasil.elpais.com/brasil/202019/06/06/internacional/1559810905_905194.html',
-'NielsHogel.jpeg',
-'Homicidio em Serie', '80', 1980, TRUE),
-
-('Assassinato de John Lennon: A Tragedia que Abalou o Mundo',
+('Assassinato de John Lennon',
 'Em 8 de dezembro de 1980, o ex-Beatle John Lennon foi assassinado a tiros por Mark David Chapman na entrada do edificio Dakota, em Nova York.',
 'No dia 8 de dezembro de 1980, o mundo foi surpreendido por uma noticia devastadora: John Lennon, ex-integrante da lendaria banda The Beatles, foi assassinado a tiros em Nova York. O crime aconteceu na entrada do edificio Dakota, onde Lennon morava com sua esposa, Yoko Ono.
 Naquela noite, Lennon voltava para casa apos uma sessao de gravacao. Mark David Chapman, um fa obcecado, ja o aguardava em frente ao predio. Mais cedo naquele dia, Chapman havia conseguido um autografo de Lennon. Quando Lennon retornou ao Dakota por volta das 22h50, Chapman se aproximou e disparou cinco vezes, acertando Lennon quatro vezes nas costas e no ombro. O musico foi rapidamente levado ao Hospital Roosevelt, mas chegou sem vida. Ele tinha apenas 40 anos de idade.
@@ -719,7 +709,7 @@ VALUES
 ('Crimes Reais: Ricardo Salada, Telma Rocha e Rafael Heck', 'RICARDO SALADA, TELMA ROCHA E RAFAEL HECK sao peritos criminais. Eles trabalham no DHPP (Departamento de Homicidios e de Protecao a Pessoa) do estado de SP e vao bater um papo sobre crimes reais. Ja o Vilela presenciou varios crimes do passado.', 'https://www.youtube.com/live/17PwIYnL28Y?feature=shared', 'https://i.ytimg.com/vi/17PwIYnL28Y/maxresdefault.jpg', 'crimes antigos', TRUE),
 ('Telma Rocha e Andre Davila', 'Neste podcast Telma Rocha e Andre Davila abordam questoes cruciais relacionadas ao crime, a seguranca publica e aos desafios enfrentados pela sociedade contemporanea.', 'https://youtu.be/azFRrtdUnvE?feature=shared', 'https://i.ytimg.com/vi/azFRrtdUnvE/sddefault.jpg?v=6362b027', 'crimes antigos', TRUE),
 ('Crimes Reais: Ricardo Ventura e Ricardo Salada', 'RICARDO VENTURA e psicanalista e RICARDO SALADA e perito criminal. Hoje descobriremos mutas tecnicas de como pegar o mentiroso e o bandido com as calcas na mao. A Mari deveria assistir a essa live, pois e obvio que o Vilela vai pisar na bola.', 'https://www.youtube.com/live/rMT78xVz_Qc?feature=shared', 'https://i.ytimg.com/vi/rMT78xVz_Qc/maxresdefault.jpg', 'crimes antigos', TRUE),
-('Caso Eloa Cristina - Sequestro e feminicidio ao vivo em SP', 'O sequestro e assassinato da jovem Eloa Cristina em 202008 por seu ex-namorado foi transmitido ao vivo pela midia, levantando debates sobre violencia contra a mulher e atuacao policial.', 'https://www.youtube.com/watch?v=wBJw-VEatrE', 'elo.png', 'famoso', TRUE),
+('Caso Eloa CristinaP', 'O sequestro e assassinato da jovem Eloa Cristina em 202008 por seu ex-namorado foi transmitido ao vivo pela midia, levantando debates sobre violencia contra a mulher e atuacao policial.', 'https://www.youtube.com/watch?v=wBJw-VEatrE', 'elo.png', 'famoso', TRUE),
 ('Caso Pedrinho - Sequestro e reencontro apos 16 anos em Brasilia', 'Pedrinho foi sequestrado ainda bebe e reencontrou sua familia biologica somente apos 16 anos. Este caso comoveu o Brasil e revelou complexidades juridicas e emocionais.', 'https://www.youtube.com/watch?v=HtcNWv_4zOE', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPiXrPOseKza-Dz9zIrPYk4yKWrApRkIT0jg&s', 'casos reais', TRUE);
 
 INSERT INTO podcasts (title, description, link, image, category, is_featured)
