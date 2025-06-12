@@ -680,9 +680,8 @@ VALUES
  'Filhomatapaialcoolatra.jpeg',
  'Homicidio', '2020s', 2025, FALSE);
 
-
 INSERT INTO podcasts (title, description, link, image, category, is_featured)
-VALUES 
+VALUES
 ('Crime Junkie', 'Podcast semanal dedicado a cobrir casos de crimes reais.', 'https://open.spotify.com/show/3DgfoleqaW61T2amZQKINx', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3zmZm2qANnrB1IJ3qbjpzcfJmfVYrYUaLQ&s', 'impactante', TRUE),
 ('Crimecast', 'Podcast sobre crimes reais, abordando historias conhecidas no Brasil e no mundo.', 'https://open.spotify.com/show/07MoJXc7KpasBvDSJVOMw8', 'https://cdn-images.dzcdn.net/images/talk/08fcb47cb1970a881f34258fc451b553/1900x1900-000000-80-0-0.jpg', 'investigacao', TRUE),
 ('Real Crime', 'Documentarios completos sobre crimes, gangsters, serial killers e as pessoas mais infames da historia.', 'https://open.spotify.com/show/0JLjqhHBRN8qMTGKikm97B', 'https://m.media-amazon.com/images/I/91O+l7tjmdL._AC_UF894,1000_QL80_.jpg', 'casos reais', FALSE),
@@ -691,17 +690,17 @@ VALUES
 ('Telma Rocha', '2 horas ouvindo crimes reais contados pela fotografa Telma Rocha', 'https://www.youtube.com/live/PPWehNBYq_M?feature=shared', 'thelma.png', 'famoso', FALSE),
 ('Morte do TikTok', 'Ele foi pego pelo TikTok! Bruno Eustaquio ligou para a policia depois de encontrar a mae, Marcia Lanzane, morta. Porem, durante as investigacoes, os agentes descobriram uma dinamica chocante: a mulher havia sido assassinada pelo proprio filho, que, depois de cometer o crime, foi para a sala e ficou assistindo televisao.', 'https://youtu.be/XKJ7Zzmifig?feature=shared', 'https://i.ytimg.com/vi/1M6QBfFAq7I/maxresdefault.jpg', 'impactante', TRUE),
 ('Chacina da Candelaria', 'Em 1993, oito criancas e adolescentes em situacao de rua foram mortos brutalmente em frente a Igreja da Candelaria, no Rio de Janeiro, em um crime que chocou o pais e expos violencia policial.', 'https://www.youtube.com/watch?v=zf7Er2Nthto', 'chacinaC.png', 'crimes antigos', TRUE),
-('Caso Suzane von Richthofen', 'O crime que chocou o Brasil: Suzane e os irmaos Cravinhos mataram os pais em 2002.', 'https://www.youtube.com/watch?v=XSBnl-3q8ks', 'susane.png', 'famoso', FALSE),
-('Caso Eloa Cristina', 'O sequestro e assassinato da jovem Eloa Cristina em 2008 por seu ex-namorado foi transmitido ao vivo pela midia.', 'https://www.youtube.com/watch?v=4dDfBT3kPqc', 'eloapod.png', 'casos reais', FALSE),
+('Caso Suzane von Richthofen', 'O crime que chocou o Brasil: Suzane e os irmãos Cravinhos mataram os pais em 2002.', 'https://www.youtube.com/watch?v=XSBnl-3q8ks', 'susane.png', 'famoso', FALSE),
+('Caso Eloá Cristina', 'O sequestro e assassinato da jovem Eloá Cristina em 2008 por seu ex-namorado foi transmitido ao vivo pela mídia.', 'https://www.youtube.com/watch?v=4dDfBT3kPqc', 'eloapod.png', 'casos reais', FALSE),
 ('Caso Pedrinho', 'O caso do menino Pedrinho, sequestrado em 2003 e reencontrado em 2019.', 'https://www.youtube.com/watch?v=HtcNWv_4zOE', 'pedrinho.png', 'investigacao', TRUE),
-('Caso Isabella Nardoni', 'O assassinato de Isabella Nardoni, ocorrido em 2008, foi um dos crimes mais chocantes da historia brasileira.', 'https://www.youtube.com/watch?v=PUeiy25UTH8', 'nardoni.png', 'investigacao', TRUE),
-('Caso Champinha', 'O caso Champinha, envolvendo o assassinato brutal de Liana Friedenbach e Felipe Caffe em 2003.', 'https://www.youtube.com/watch?v=MUtQtyKjwnE', 'champinha.png', 'casos reais', TRUE),
-('Caso Madeleine McCann', 'O desaparecimento de Madeleine McCann, uma menina britanica de 3 anos, ocorreu em 3 de maio de 2007, no resort Praia da Luz, Algarve, Portugal.', 'https://www.youtube.com/watch?v=5GBiggcsMyk', 'mc.png', 'casos reais', FALSE),
-('Caso Onibus 174', 'O sequestro do onibus 174, ocorrido em 12 de junho de 2000 no Rio de Janeiro, foi um dos episodios mais marcantes da cronica policial brasileira.', 'https://www.youtube.com/watch?v=FP8RBilap6Q', '174.png', 'investigacao', FALSE),
-('Caso Chris Watts', 'O assassinato de Shanann Watts, gravida de 15 semanas, e suas filhas Bella (4 anos) e Celeste (3 anos), ocorrido em agosto de 2018, foi um dos crimes mais chocantes dos Estados Unidos.', 'https://www.youtube.com/watch?v=F7rA9ksL_eQ', 'chiris.png', 'investigacao', FALSE);
+('Caso Isabella Nardoni', 'O assassinato de Isabella Nardoni, ocorrido em 2008, foi um dos crimes mais chocantes da história brasileira.', 'https://www.youtube.com/watch?v=PUeiy25UTH8', 'nardoni.png', 'investigacao', TRUE),
+('Caso Champinha', 'O caso Champinha, envolvendo o assassinato brutal de Liana Friedenbach e Felipe Caffé em 2003.', 'https://www.youtube.com/watch?v=MUtQtyKjwnE', 'champinha.png', 'casos reais', TRUE),
+('Caso Madeleine McCann', 'O desaparecimento de Madeleine McCann, uma menina britânica de 3 anos, ocorreu em 3 de maio de 2007, no resort Praia da Luz, Algarve, Portugal.', 'https://www.youtube.com/watch?v=5GBiggcsMyk', 'mc.png', 'casos reais', FALSE),
+('Caso Onibus 174', 'O sequestro do ônibus 174, ocorrido em 12 de junho de 2000 no Rio de Janeiro, foi um dos episódios mais marcantes da crônica policial brasileira.', 'https://www.youtube.com/watch?v=FP8RBilap6Q', '174.png', 'investigacao', FALSE),
+('Caso Chris Watts', 'O assassinato de Shanann Watts, grávida de 15 semanas, e suas filhas Bella (4 anos) e Celeste (3 anos), ocorrido em agosto de 2018, foi um dos crimes mais chocantes dos Estados Unidos.', 'https://www.youtube.com/watch?v=F7rA9ksL_eQ', 'chiris.png', 'investigacao', FALSE);
 
 INSERT INTO podcasts (title, description, link, image, category, is_featured)
-VALUES 
+VALUES
 ('Doutora Luiza', 'Ela atuou em casos que pararam o Brasil! Luisa Muchon e uma experiente advogada criminalista, que ja trabalhou com casos de grande repercussao e conheceu de perto figuras emblematica do pais. Alem de ter sido advogada do casal Nardoni, foi a ultima pessoa a conversar com Farah Jorge Farah e representou diversos nomes associados a Operacao Lava Jato.', 'https://youtu.be/NhK_MjWjxsU?feature=shared', 'doutoraLuiza.png', 'famoso', TRUE),
 ('Caso Vitoria Regina - Detalhes da investigacao', 'Confira minha entrevista com o advogado da familia de Vitoria Regina de Sousa, morta entre o final de fevereiro e comeco de marco de 202025, em circunstancias, no minimo, estranhas. A policia colocou o vizinho da familia, Maicol Sales do Santos, como unico suspeito e autor de tudo.', 'https://youtu.be/-W78mbchJbw?feature=shared', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYW7tHdUdbmvozHaVKUCb5hQcvrdzn4Ma8bQ&s', 'investigacao', TRUE),
 ('Crimes Reais: Ullisses Campbell e Beto Ribeiro', 'ULLISSES CAMPBELL e escritor, e BETO RIBEIRO e diretor e roteirista. Eles vao contar historias e destrinchar crimes reais, como o caso da Suzane Von Richthofen. Agora que Suzane foi solta da cadeia, o Vilela ja reforcou a seguranca do porao, ja que ele tem idade pra ser pai dela.', 'https://www.youtube.com/live/zU8Ahy3zL1c?feature=shared', 'podcast2.png', 'casos reais', TRUE),
@@ -709,46 +708,40 @@ VALUES
 ('Crimes Reais: Ricardo Salada, Telma Rocha e Rafael Heck', 'RICARDO SALADA, TELMA ROCHA E RAFAEL HECK sao peritos criminais. Eles trabalham no DHPP (Departamento de Homicidios e de Protecao a Pessoa) do estado de SP e vao bater um papo sobre crimes reais. Ja o Vilela presenciou varios crimes do passado.', 'https://www.youtube.com/live/17PwIYnL28Y?feature=shared', 'https://i.ytimg.com/vi/17PwIYnL28Y/maxresdefault.jpg', 'crimes antigos', TRUE),
 ('Telma Rocha e Andre Davila', 'Neste podcast Telma Rocha e Andre Davila abordam questoes cruciais relacionadas ao crime, a seguranca publica e aos desafios enfrentados pela sociedade contemporanea.', 'https://youtu.be/azFRrtdUnvE?feature=shared', 'https://i.ytimg.com/vi/azFRrtdUnvE/sddefault.jpg?v=6362b027', 'crimes antigos', TRUE),
 ('Crimes Reais: Ricardo Ventura e Ricardo Salada', 'RICARDO VENTURA e psicanalista e RICARDO SALADA e perito criminal. Hoje descobriremos mutas tecnicas de como pegar o mentiroso e o bandido com as calcas na mao. A Mari deveria assistir a essa live, pois e obvio que o Vilela vai pisar na bola.', 'https://www.youtube.com/live/rMT78xVz_Qc?feature=shared', 'https://i.ytimg.com/vi/rMT78xVz_Qc/maxresdefault.jpg', 'crimes antigos', TRUE),
-('Caso Eloa CristinaP', 'O sequestro e assassinato da jovem Eloa Cristina em 202008 por seu ex-namorado foi transmitido ao vivo pela midia, levantando debates sobre violencia contra a mulher e atuacao policial.', 'https://www.youtube.com/watch?v=wBJw-VEatrE', 'elo.png', 'famoso', TRUE),
+('Caso Eloa Cristina - Sequestro e feminicidio ao vivo em SP', 'O sequestro e assassinato da jovem Eloa Cristina em 202008 por seu ex-namorado foi transmitido ao vivo pela midia, levantando debates sobre violencia contra a mulher e atuacao policial.', 'https://www.youtube.com/watch?v=wBJw-VEatrE', 'elo.png', 'famoso', TRUE),
 ('Caso Pedrinho - Sequestro e reencontro apos 16 anos em Brasilia', 'Pedrinho foi sequestrado ainda bebe e reencontrou sua familia biologica somente apos 16 anos. Este caso comoveu o Brasil e revelou complexidades juridicas e emocionais.', 'https://www.youtube.com/watch?v=HtcNWv_4zOE', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPiXrPOseKza-Dz9zIrPYk4yKWrApRkIT0jg&s', 'casos reais', TRUE);
 
 INSERT INTO podcasts (title, description, link, image, category, is_featured)
-VALUES 
-('Crimes Reais: Ju Cassini e Beto', 
- 'JU CASSINI e YouTuber e BETO RIBEIRO e diretor e roteirista. Eles vao bater um papo sobre crimes reais com historias assustadoras, bizarras e misteriosas. O Vilela ja se preparou e comprou mais fraldas geriatricas pra trocar nessa live.', 
- 'https://www.youtube.com/live/n9YXRqNtows?feature=shared', 
- 'https://i.ytimg.com/vi/n9YXRqNtows/maxresdefault.jpg', 
- 'famoso', TRUE),
+VALUES
+('Crimes Reais: Ju Cassini e Beto',
+'JU CASSINI e YouTuber e BETO RIBEIRO e diretor e roteirista. Eles vao bater um papo sobre crimes reais com historias assustadoras, bizarras e misteriosas. O Vilela ja se preparou e comprou mais fraldas geriatricas pra trocar nessa live.',
+'https://www.youtube.com/live/n9YXRqNtows?feature=shared',
+'https://i.ytimg.com/vi/n9YXRqNtows/maxresdefault.jpg',
+'famoso', TRUE),
 
-('Caso Familia Goncalves', 
- 'Em uma noite comum de janeiro de 20202020, em Sao Bernardo do Campo, no Grande ABC de Sao Paulo, Flaviana Goncalves chegava em casa do trabalho quando encontrou sua familia rendida por tres ladroes. O Romoyuki, o marido, Juan, o filho adolescente, Anaflavia, a filha e a namorada de sua filha, Carina, todos estavam sob a mira dos assaltantes. Flaviana foi levada ao quarto para passar suas senhas de banco, quando foi morta ao lado do cacula e do esposo.', 
- 'https://youtu.be/kcIpYBnwlBk?feature=shared', 
- 'https://i.ytimg.com/vi/kcIpYBnwlBk/maxresdefault.jpg', 
- 'crimes antigos', TRUE),
+('Caso Familia Goncalves',
+'Em uma noite comum de janeiro de 20202020, em Sao Bernardo do Campo, no Grande ABC de Sao Paulo, Flaviana Goncalves chegava em casa do trabalho quando encontrou sua familia rendida por tres ladroes. O Romoyuki, o marido, Juan, o filho adolescente, Anaflavia, a filha e a namorada de sua filha, Carina, todos estavam sob a mira dos assaltantes. Flaviana foi levada ao quarto para passar suas senhas de banco, quando foi morta ao lado do cacula e do esposo.',
+'https://youtu.be/kcIpYBnwlBk?feature=shared',
+'https://i.ytimg.com/vi/kcIpYBnwlBk/maxresdefault.jpg',
+'crimes antigos', TRUE),
 
-('Podcast: Rosangela - Melhores momentos', 
- 'Melhores momentos com a Dra. Rosangela Monteiro sobre o caso da Milena Dantas Bereta Nistarda, que tinha acabado de sair da delegacia onde prestou queixa contra o marido, quando foi assassinada.', 
- 'https://youtu.be/GhFAfPYy3fI?feature=shared', 
- 'https://i.ytimg.com/vi/GhFAfPYy3fI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBWQfEsX_Sbc296gXwxbGtRT_Cupw', 
- 'famoso', TRUE),
+('Podcast: Rosangela - Melhores momentos',
+'Melhores momentos com a Dra. Rosangela Monteiro sobre o caso da Milena Dantas Bereta Nistarda, que tinha acabado de sair da delegacia onde prestou queixa contra o marido, Marcelo Nistarda Antoniassi. Mas quis o destino que ele a encontrasse. Milena terminou sem vida e teve ainda seu coracao arrancado pelas maos daquele que jurou protege-la.',
+'https://youtu.be/nreTvJi_Mz4?feature=shared',
+'https://i.ytimg.com/vi/nreTvJi_Mz4/hqdefault.jpg',
+'impactante', TRUE),
 
-('Caso Fernanda Bonin', 
- 'O caso Fernanda Bonin chocou o Brasil em 2025. A professora de matemática, de 42 anos, foi encontrada morta com sinais de enforcamento em São Paulo, no final de abril. Inicialmente tratado como latrocínio, o crime passou a ser investigado como feminicídio após revelações da polícia', 
- 'https://youtu.be/GQdTvM-AwY8?feature=shared', 
- 'https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/05/Caso-Fernanda-Bonin-saiba-quem-e-quem-na-morte-de-professora-em-SP-1.jpg', 
- 'investigacao', TRUE),
+('Christian Costa',
+'Ele e diretor do Centro de Estudos do Comportamento Criminal! O Dr. Christian Costa e um renomado profissional da area da psicologia criminal, exaltado pelo seu trabalho de unir ciencia e pratica para tratar de crimes e psicopatologias.',
+'https://youtu.be/0UwkMabyB78?feature=shared',
+'costa.png',
+'impactante', TRUE),
 
- ('Caso Mércia Nakashima',
- 'A advogada Mércia Nakashima foi assassinada em 2010 por seu ex-namorado, o ex-policial Mizael Bispo. Ela foi baleada e jogada viva em uma represa em Nazaré Paulista (SP). O crime chocou o país e se tornou símbolo de violência contra a mulher e feminicídio, 2010.',
- 'https://youtu.be/g8bjQ9U1CvA?feature=shared',
- 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKuaggrME5IPj1TGxhDQ6aWb5mOnAAR56wyT3jI21pcj8qHSMlhWv61lQ&s=10',
- 'famoso', TRUE),
-
- ('Chacina da Candelaria',
- 'Na madrugada de 23 de julho de 1993, oito jovens em situação de rua foram assassinados por policiais militares em frente à Igreja da Candelária, no Rio de Janeiro. O crime gerou forte comoção nacional e internacional, denunciando a violência policial e a exclusão social no Brasil, 1993',
- 'https://youtu.be/zf7Er2Nthto?feature=shared',
- 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH9txKa6r0TuQQ1mTa1Eu5gmOWyE02Ku_WixI7hqLBDHdqxL7NKh_mb4o&s=10',
- 'crimes antigos', TRUE);
+('A Mulher da Casa Abandonada',
+'Chico Felitti investiga o misterio de uma mulher que vive em uma mansao decadente em Higienopolis, SP. Ao longo da serie, revela-se que ela e foragida do FBI, acusada de manter uma mulher em regime de escravidao nos EUA. O podcast explora temas de racismo, privilegio e impunidade.',
+'https://www1.folha.uol.com.br/podcasts/202022/06/a-mulher-da-casa-abandonada-ouca-o-podcast.shtml',
+'mulher.png',
+'impactante', TRUE);
 
  INSERT INTO videos (title, description, link, image, category, is_featured) VALUES 
  
